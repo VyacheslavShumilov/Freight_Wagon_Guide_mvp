@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SMGR App</string>
+    <string name="search">Введите модель вагона</string>
+</resources>
