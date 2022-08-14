@@ -1,4 +1,4 @@
-package com.hfad.smgrapp
+package com.hfad.smgrapp.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnToSmgr.setOnClickListener {
-            var intent = Intent(this, SmgrActivity::class.java)
+            var intent = Intent(this, WagonsActivity::class.java)
             startActivity(intent)
         }
 
