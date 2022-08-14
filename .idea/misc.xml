@@ -4,12 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/drawable/arrow_back.xml" value="0.1" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/drawable/swipe_indicator_active.xml" value="0.1" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/activity_wagon.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/activity_wagons.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_cargos_wagon.xml" value="0.11481481481481481" />
-        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_parameter_wagon.xml" value="0.33" />
-        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_repairs_wagon.xml" value="0.11481481481481481" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_parameter_wagon.xml" value="0.25" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_repairs_wagon.xml" value="0.33" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_wagons.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar.xml" value="0.16" />
       </map>

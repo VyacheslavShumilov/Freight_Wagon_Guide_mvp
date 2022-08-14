@@ -24,8 +24,10 @@ class WagonsActivity : AppCompatActivity(), ISmgrView {
          smgrController = SmgrController(this)
         (smgrController as SmgrController).onSmgrList()
 
-        binding.textNextActivity.setOnClickListener {
-            startActivity(Intent(this, WagonActivity::class.java))
+        // TODO: тестовый переход на другую активити
+        binding.testNextActivity.setOnClickListener {
+            var intent = Intent(this, WagonActivity::class.java)
+            startActivity(intent)
         }
 
     }

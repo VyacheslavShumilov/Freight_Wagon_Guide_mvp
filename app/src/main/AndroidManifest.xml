@@ -16,7 +16,7 @@
         android:theme="@style/Theme.SMGRApp"
         tools:targetApi="31">
         <activity
-            android:name=".WagonActivity"
+            android:name=".view.WagonActivity"
             android:exported="false" />
         <activity
             android:name=".view.WagonsActivity"
