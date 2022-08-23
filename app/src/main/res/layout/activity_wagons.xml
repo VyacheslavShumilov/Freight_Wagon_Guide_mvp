@@ -41,8 +41,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/layoutNotConnection"
         android:layout_width="match_parent"
@@ -64,14 +62,5 @@
             android:text="Повторный запрос" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/testNextActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:text="testNextActivity"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

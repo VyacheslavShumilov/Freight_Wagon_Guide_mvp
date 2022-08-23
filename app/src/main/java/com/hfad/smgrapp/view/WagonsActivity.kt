@@ -7,10 +7,11 @@ import android.view.View
 import com.hfad.smgrapp.adapter.AdapterSmgr
 import com.hfad.smgrapp.controller.SmgrController
 import com.hfad.smgrapp.databinding.ActivityWagonsBinding
-import com.hfad.smgrapp.model.Smgr
+import com.hfad.smgrapp.model.Wagons
+import java.io.Serializable
 
 
-class WagonsActivity : AppCompatActivity(), ISmgrView {
+class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListener {
 
     private lateinit var binding: ActivityWagonsBinding
     private var smgrController: SmgrController? = null
@@ -23,17 +24,10 @@ class WagonsActivity : AppCompatActivity(), ISmgrView {
 
          smgrController = SmgrController(this)
         (smgrController as SmgrController).onSmgrList()
-
-        // TODO: тестовый переход на другую активити
-        binding.testNextActivity.setOnClickListener {
-            var intent = Intent(this, WagonActivity::class.java)
-            startActivity(intent)
-        }
-
     }
 
-    override fun onSuccessList(smgr: ArrayList<Smgr>) {
-        val adapterSmgr = AdapterSmgr(smgr)
+    override fun onSuccessList(wagons: ArrayList<Wagons>) {
+        val adapterSmgr = AdapterSmgr(wagons, this)
         binding.recyclerView.adapter = adapterSmgr
     }
 
@@ -53,4 +47,11 @@ class WagonsActivity : AppCompatActivity(), ISmgrView {
             binding.progressBar.visibility = View.GONE
         }
     }
+
+    override fun onClickModel(wagons: Wagons) {
+        val intent = Intent(this, WagonActivity::class.java)
+        intent.putExtra("WAGON", wagons as Serializable)
+        startActivity(intent)
+    }
 }
+
