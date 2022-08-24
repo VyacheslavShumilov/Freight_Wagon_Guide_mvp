@@ -46,6 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/color_item_repair"
             android:paddingTop="10dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -55,7 +56,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftReleas"
+                android:id="@+id/text_Dr_Aft_Release"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
@@ -75,7 +76,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftDRTo1KR"
+                android:id="@+id/text_Dr_Aft_Dr_To_1kr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
@@ -86,6 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/color_item_repair"
             android:paddingTop="10dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -95,7 +97,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftDRAft1KR"
+                android:id="@+id/text_Dr_Aft_Dr_Aft_1Kr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
@@ -115,7 +117,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftKR"
+                android:id="@+id/text_Dr_Aft_Kr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2"
@@ -126,6 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/color_item_repair"
             android:paddingTop="10dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -135,7 +138,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/KRAftRelease"
+                android:id="@+id/text_Kr_Aft_Release"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12"
@@ -155,7 +158,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/KRAftKR"
+                android:id="@+id/text_Kr_Aft_Kr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
@@ -166,6 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/color_item_repair"
             android:paddingTop="10dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -175,7 +179,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftReleaseRepProbKm"
+                android:id="@+id/text_Dr_Aft_Release_Rep_Prob_Km"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="210"
@@ -195,7 +199,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftReleaseRepYears"
+                android:id="@+id/text_Dr_Aft_Release_Rep_Years"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
@@ -206,6 +210,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/color_item_repair"
             android:paddingTop="10dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -215,7 +220,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftDRRepProbKm"
+                android:id="@+id/text_Dr_Aft_Dr_Rep_Prob_Km"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="110"
@@ -235,7 +240,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftDRRepYears"
+                android:id="@+id/text_Dr_Aft_Dr_Rep_Prob_Years"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
@@ -246,6 +251,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/color_item_repair"
             android:paddingTop="10dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -255,7 +261,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftKRRepProbKm"
+                android:id="@+id/text_Dr_Aft_Kr_Rep_Prob_Km"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="160"
@@ -275,7 +281,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftKRRepYears"
+                android:id="@+id/text_Dr_Aft_Kr_Rep_Years"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
@@ -286,6 +292,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/color_item_repair"
             android:paddingTop="10dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -295,7 +302,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftKRPRepProbKm"
+                android:id="@+id/text_Dr_Aft_Krp_Rep_Prob_Km"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="210"
@@ -315,7 +322,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftKRPRepYears"
+                android:id="@+id/text_Dr_Aft_Krp_Rep_Prob_Years"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
@@ -326,6 +333,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/color_item_repair"
             android:paddingTop="10dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -335,7 +343,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/ContinueTU"
+                android:id="@+id/text_Continue_Tu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="16"
@@ -355,7 +363,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/DRAftKrpTU"
+                android:id="@+id/text_Dr_Aft_Krp_Tu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
@@ -366,6 +374,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/color_item_repair"
             android:paddingTop="10dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -375,7 +384,7 @@
                 android:textColor="@color/black" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/KRAftKrpTU"
+                android:id="@+id/text_Kr_Aft_Krp_Tu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12"

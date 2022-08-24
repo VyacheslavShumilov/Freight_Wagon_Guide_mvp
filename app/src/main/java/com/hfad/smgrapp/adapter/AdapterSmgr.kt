@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.smgrapp.databinding.ItemWagonsBinding
 import com.hfad.smgrapp.model.Wagons
+import kotlin.collections.ArrayList
 
 class AdapterSmgr(private val wagons: ArrayList<Wagons>, private val listener: OnClickListener) :
     RecyclerView.Adapter<AdapterSmgr.ViewHolder>() {
@@ -34,9 +35,9 @@ class AdapterSmgr(private val wagons: ArrayList<Wagons>, private val listener: O
         }
     }
 
-        override fun getItemCount(): Int = this.wagons.size
+    override fun getItemCount(): Int = this.wagons.size
 
-        interface OnClickListener {
-            fun onClickModel(wagons: Wagons)
-        }
+    interface OnClickListener {
+        fun onClickModel(wagons: Wagons)
     }
+}

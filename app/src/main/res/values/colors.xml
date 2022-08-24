@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="custom_tab_clicked">#64C626</color>
+    <color name="color_item_repair">#1A000000</color>
 </resources>

@@ -14,8 +14,7 @@ private const val CARGOS_WAGON_FRAGMENT = 2
 
 class ViewPagerAdapter(var wagons: Wagons, fragmentManager: FragmentManager): FragmentPagerAdapter (fragmentManager){
 
-
-    private val fragments = arrayOf(ParameterWagonFragment(wagons), RepairsWagonFragment(), CargosWagonFragment())
+    private val fragments = arrayOf(ParameterWagonFragment(wagons), RepairsWagonFragment(wagons), CargosWagonFragment())
 
     override fun getItem(position: Int): Fragment {
         return when(position) {
@@ -30,7 +29,7 @@ class ViewPagerAdapter(var wagons: Wagons, fragmentManager: FragmentManager): Fr
         return fragments.size
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return when(position) {
             0 -> "Параметы"
             1 -> "Ремонты"

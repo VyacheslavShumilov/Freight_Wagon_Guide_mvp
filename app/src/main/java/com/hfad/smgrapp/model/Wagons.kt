@@ -28,32 +28,32 @@ data class Wagons(
     @SerializedName("Bogie") var bogie: String,
     @SerializedName("Size") var size: String,
     @SerializedName("Servicelife") var serviceLife: String,
-    @SerializedName("Long") var long: String
-
+    @SerializedName("Long") var long: String,
+    @SerializedName("Inventorynum") var inventoryNum: String,
+    @SerializedName("Typeofowncar") var typeOfOwnCar: String,
+    @SerializedName("DRaftreleas") var drAftRelease: String,
+    @SerializedName("DRaftDRto1KR") var drAftDrTo1Kr: String,
+    @SerializedName("DRaftDRaft1KR") var drAftDraft1Kr: String,
+    @SerializedName("DRaftKR") var drAftKr: String,
+    @SerializedName("KRaftrelease") var krAftRelease: String,
+    @SerializedName("KRaftKR") var krAftKr: String,
+    @SerializedName("DRaftreleaserepprobkm") var drAftReleaseRepProbKm: String,
+    @SerializedName("DRaftreleaserepyears") var drAftReleaseRepYears: String,
+    @SerializedName("DRaftDRrepprobkm") var drAftDrRepProbKm: String,
+    @SerializedName("DRaftDRrepprobyears") var drAftDrRepProbYears: String,
+    @SerializedName("DRaftKRrepprobkm") var drAftKrRepProbKm: String,
+    @SerializedName("DRaftKRrepprobyears") var drAftKrRepProbYears: String,
+    @SerializedName("DRaftKRPrepprobkm") var drAftKrpRepProbKm: String,
+    @SerializedName("DRaftKRPrepprobyears") var drAftKrpRepProbYears: String,
+    @SerializedName("ContinueTU") var continueTu: String,
+    @SerializedName("DRaftKRPTU") var drAftKrpTu: String,
+    @SerializedName("KRaftKRPTU") var krAftKrpTu: String
 ): Serializable
 
+data class Cargos(
+    @SerializedName("Model") var model: String,
+    @SerializedName("Code ETSNG") var codeEtsng: String,
+    @SerializedName("Name ETSNG") var nameEtsng: String,
+    @SerializedName("Model Code") var modelCode: String
+): Serializable
 
-
-
-//"Inventorynum": "908",
-//"Typeofowncar": "5913",
-
-
-//"DRaftreleas": "2",
-//"DRaftDRto1KR": "1",
-//"DRaftDRaft1KR": "1",
-//"DRaftKR": "2",
-//"KRaftrelease": "10",
-//"KRaftKR": "8",
-//"DRaftreleaserepprobkm": "210",
-//"DRaftreleaserepyears": "3",
-//"DRaftDRrepprobkm": "110",
-//"DRaftDRrepprobyears": "2",
-//"DRaftKRrepprobkm": "160",
-//"DRaftKRrepprobyears": "2",
-//"DRaftKRPrepprobkm": "210",
-//"DRaftKRPrepprobyears": "3",
-//"ContinueTU": "0",
-//"DRaftKRPTU": "0",
-//"KRaftKRPTU": "0",
-//"Long": "отсутствует"
