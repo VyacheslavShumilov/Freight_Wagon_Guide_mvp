@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -71,4 +73,8 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     implementation "androidx.cardview:cardview:1.0.0"
+
+    // Hilt dependencies
+    implementation "com.google.dagger:hilt-android:2.40"
+    kapt "com.google.dagger:hilt-android-compiler:2.40"
 }
