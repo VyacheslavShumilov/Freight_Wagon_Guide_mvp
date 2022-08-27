@@ -24,6 +24,7 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
 
          smgrController = SmgrController(this)
         (smgrController as SmgrController).onSmgrList()
+
     }
 
     override fun onSuccessList(wagons: ArrayList<Wagons>) {

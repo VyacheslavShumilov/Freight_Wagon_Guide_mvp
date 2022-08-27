@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnToOrv.setOnClickListener {
 
+            var intent = Intent(this, OrvActivity::class.java)
+            startActivity(intent)
         }
     }
 }
