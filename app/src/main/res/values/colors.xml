@@ -10,4 +10,5 @@
 
     <color name="custom_tab_clicked">#64C626</color>
     <color name="color_item_repair">#1A000000</color>
+    <color name="toolbar_color">#8009B36F</color>
 </resources>

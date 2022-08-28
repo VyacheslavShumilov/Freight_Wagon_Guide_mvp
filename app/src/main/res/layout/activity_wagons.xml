@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".view.WagonsActivity">
 
-    <include layout="@layout/toolbar"
+    <include layout="@layout/toolbar_start"
         android:id="@+id/toolbar"/>
 
     <androidx.appcompat.widget.SearchView

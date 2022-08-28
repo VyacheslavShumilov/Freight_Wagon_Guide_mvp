@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.ParameterWagonFragment"
-    android:padding="10dp">
+    tools:context=".view.ParameterWagonFragment">
+
+    <include layout="@layout/toolbar_parameters_wagon_frag"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imageIdContainer"
+        android:padding="8dp"
         android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatImageView

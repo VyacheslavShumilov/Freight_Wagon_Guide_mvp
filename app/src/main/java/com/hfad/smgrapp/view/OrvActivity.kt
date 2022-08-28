@@ -10,7 +10,7 @@ import com.hfad.smgrapp.navigator.Screen
 class OrvActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityOrvBinding
-    private lateinit var navigator: AppNavigator
+    private lateinit var appNavigator: AppNavigator
     lateinit var servicesLocator: ServicesLocator
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,10 +19,10 @@ class OrvActivity : AppCompatActivity() {
         setContentView(binding.root)
         servicesLocator = ServicesLocator()
 
-        navigator = servicesLocator.providerNavigator(this)
+        appNavigator = servicesLocator.providerNavigator(this)
 
         if (savedInstanceState == null) {
-            navigator.navigateTo(Screen.ORV_LIST)
+            appNavigator.navigateTo(Screen.ORV_LIST)
         }
     }
 
