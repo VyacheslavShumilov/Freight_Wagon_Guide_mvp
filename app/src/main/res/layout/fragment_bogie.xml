@@ -1,14 +1,609 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.BogieFragment">
+    android:orientation="vertical"
+    tools:context=".view.Orv.AutomaticCouplerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <include layout="@layout/toolbar_bogie_frag"/>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Суммарный зазор между скользунами\nв одной тележке"
+                android:textAlignment="center"
+                android:background="#0D000000"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="15sp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:rowCount="5"
+                android:columnCount="2"
+                android:background="#0D000000"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="основные типы 4-х осных вагонов"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="0"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="4 - 20 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="цистерны; хопперы для зерна,\nцемента, минер. удобрений, окатышей,\nЦНИИ-ДВЗ"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="4 - 14 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="хопперы для угля, горячего агломерата,\nапатитов, ЦНИИ-2, ЦНИИ-3, думпкары\n все модели тележек"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="2"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="6 - 12 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="3"
+                    android:gravity="start"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill_horizontal"
+                    android:textColor="@color/black"
+                    android:text="Допускается отсутствие зазоров между скользунами одной стороны тележки, кроме цистерн для перевозки газов, а также думпкаров, для которых величина зазора должна быть не менее 3 мм."/>
+
+            </GridLayout>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Суммарный зазор между \nскользунами 8-ми осных"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="15sp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:rowCount="6"
+                android:columnCount="2"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="между соединительной и\nшкворневой балками"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="0"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="4 - 15 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="между соединительной и\nнадрессорной балкой"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="4 - 20 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:gravity="start"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill_horizontal"
+                    android:textColor="@color/black"
+                    android:text="Не допускается отсутствие зазоров:\n- в двух любых скользунах одной четырехосной тележки с одной стороны цистерны;\n- по диагонали цистерны между скользунами соединительной и шкворневой балок;\n- по диагонали четырехосной тележки между скользунами\nнадрессорной и соединительной балок."/>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="3"
+                    android:gravity="start"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill_horizontal"
+                    android:textColor="@color/black"
+                    android:text="Для регулировки зазоров применяют регулировочные прокладки из стали толщиной 1,5 - 5,0 мм в количестве не более четырёх штук."/>
+
+            </GridLayout>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Тележки типа КВЗ - И2 и ЦМВ Дессау"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="#0D000000"
+                android:textSize="15sp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:rowCount="12"
+                android:columnCount="2"
+                android:background="#0D000000"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:gravity="center"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill_horizontal"
+                    android:textColor="@color/black"
+                    android:text="Суммарные зазоры в скользунах"/>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="Горизонтальные скользуны"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="2 - 6 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="Боковые вертикальные\nскользуны ЦМВ Дессау"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="2"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="не более 16 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="3"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="Боковые вертикальные\nскользуны КВЗ-И5"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="3"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="не более 8 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="4"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="Торцевые вертикальные скользуны"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="4"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="81 - 84 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="5"
+                    android:gravity="start"
+                    android:singleLine="false"
+                    android:textColor="@color/black"
+                    android:text="Зазор между опорной балкой\nи подвеской балки"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="5"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="не менее 20 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="6"
+                    android:gravity="center"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill_horizontal"
+                    android:textColor="@color/black"
+                    android:text="Зазор между рамой тележки и\nпотолком буксы тележки"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="7"
+                    android:gravity="start"
+                    android:singleLine="false"
+                    android:textColor="@color/black"
+                    android:text="тележка типа КВЗ - И5"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="7"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="не менее 56 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="8"
+                    android:gravity="start"
+                    android:singleLine="false"
+                    android:textColor="@color/black"
+                    android:text="тележка типа ЦМВ Дессау"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="8"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="не менее 43 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="9"
+                    android:gravity="center"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill_horizontal"
+                    android:textColor="@color/black"
+                    android:text="Упруго-катковый скользун тележки 18 - 578"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="10"
+                    android:gravity="start"
+                    android:singleLine="false"
+                    android:textColor="@color/black"
+                    android:text="между роликом и\nверхним элементом (под тарой)"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="10"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="8 ± 2 мм"/>
+
+            </GridLayout>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Поглощающий аппарат"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:rowCount="12"
+                android:columnCount="2"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="Суммарный зазор между угольниками,\n упорной плитой и поглощающим\nаппаратом"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="0"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="не более 1080 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:gravity="start"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill_horizontal"
+                    android:textColor="@color/black"
+                    android:text="При зазоре более 5 мм,  но не более 50 мм разрешается довезти:"/>
+
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="- порожний вагон"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="2"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="до ближайш. ПТО"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="3"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="- гружёный вагон"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="3"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="до ст. выгрузки"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="4"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="При обнаружении более 50 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="4"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="отцепить в ТОР"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="5"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill_horizontal"
+                    android:gravity="start"
+                    android:singleLine="false"
+                    android:textColor="@color/black"
+                    android:text="Крепление поддерживающей планки осуществляется:"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="6"
+                    android:gravity="start"
+                    android:singleLine="false"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill_horizontal"
+                    android:textColor="@color/black"
+                    android:text="8-мь болтов Ø 22 мм или 10-ть болтов Ø 20 мм"/>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="7"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="Высота клина тягового хомута\nавтосцепки СА-3"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="7"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="не менее 305 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="8"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="Высота ограничительных буртиков клина"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="8"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="не менее 15 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="9"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="Марка стали клина тягового хомута"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="9"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="38ХС"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="10"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="Длина болтов поддерживающих клин,\nдиаметром 20 мм"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="10"
+                    android:layout_gravity="end"
+                    android:textColor="@color/black"
+                    android:text="145 ± 3 мм"/>
+
+            </GridLayout>
+
+
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

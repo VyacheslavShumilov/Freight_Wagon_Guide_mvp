@@ -1,4 +1,4 @@
-package com.hfad.smgrapp.view
+package com.hfad.smgrapp.view.smgr
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

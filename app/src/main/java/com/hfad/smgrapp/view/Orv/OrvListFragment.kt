@@ -1,4 +1,4 @@
-package com.hfad.smgrapp
+package com.hfad.smgrapp.view.Orv
 
 import android.content.Context
 import android.os.Bundle
@@ -6,10 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.hfad.smgrapp.App
 import com.hfad.smgrapp.databinding.FragmentOrvListBinding
 import com.hfad.smgrapp.navigator.AppNavigator
 import com.hfad.smgrapp.navigator.Screen
-import com.hfad.smgrapp.view.OrvActivity
 
 
 class OrvListFragment : Fragment() {
@@ -27,7 +27,7 @@ class OrvListFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        //appNavigator = (context.applicationContext as OrvActivity).servicesLocator.providerNavigator(this.requireActivity())
+        appNavigator = (context.applicationContext as App).servicesLocator.providerNavigator(requireActivity())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,6 +52,4 @@ class OrvListFragment : Fragment() {
 
         }
     }
-
-
 }

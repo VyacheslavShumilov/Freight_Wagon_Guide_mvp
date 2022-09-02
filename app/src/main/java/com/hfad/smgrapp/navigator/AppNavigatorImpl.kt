@@ -1,9 +1,13 @@
 package com.hfad.smgrapp.navigator
 
 import androidx.fragment.app.FragmentActivity
-import com.hfad.smgrapp.OrvListFragment
+import com.hfad.smgrapp.view.Orv.OrvListFragment
 import com.hfad.smgrapp.R
-import com.hfad.smgrapp.view.*
+import com.hfad.smgrapp.view.Orv.AutomaticCouplerFragment
+import com.hfad.smgrapp.view.Orv.BogieFragment
+import com.hfad.smgrapp.view.Orv.BreakSystemFragment
+import com.hfad.smgrapp.view.Orv.WheelsetFragment
+import com.hfad.smgrapp.view.Orv.ComponentsFragment
 
 class AppNavigatorImpl(private var fragmentActivity: FragmentActivity) : AppNavigator {
     override fun navigateTo(screen: Screen) {

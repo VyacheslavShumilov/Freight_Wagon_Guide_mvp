@@ -1,21 +1,23 @@
-package com.hfad.smgrapp.view
+package com.hfad.smgrapp.view.Orv
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hfad.smgrapp.R
+import com.hfad.smgrapp.databinding.FragmentBogieBinding
 
 
-class CargosWagonFragment : Fragment() {
-
+class BogieFragment : Fragment() {
+    private lateinit var binding: FragmentBogieBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_cargos_wagon, container, false)
+        binding = FragmentBogieBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
 
 }

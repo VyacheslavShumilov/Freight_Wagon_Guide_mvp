@@ -1,5 +1,6 @@
 package com.hfad.smgrapp.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,8 +8,15 @@ import com.hfad.smgrapp.databinding.ItemWagonsBinding
 import com.hfad.smgrapp.model.Wagons
 import kotlin.collections.ArrayList
 
-class AdapterSmgr(private val wagons: ArrayList<Wagons>, private val listener: OnClickListener) :
+class AdapterSmgr(private var wagonsList: ArrayList<Wagons>, private val listener: OnClickListener) :
     RecyclerView.Adapter<AdapterSmgr.ViewHolder>() {
+
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun filtersList(wagons: ArrayList<Wagons>) {
+        wagonsList = wagons
+        notifyDataSetChanged()
+    }
 
     inner class ViewHolder(var binding: ItemWagonsBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -23,7 +31,7 @@ class AdapterSmgr(private val wagons: ArrayList<Wagons>, private val listener: O
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val wagons = wagons[position]
+        val wagons = wagonsList[position]
         with(holder.binding) {
             modelTextView.text = wagons.model
             yearOfReleaseTextView.text = wagons.yearOfRelease
@@ -35,7 +43,7 @@ class AdapterSmgr(private val wagons: ArrayList<Wagons>, private val listener: O
         }
     }
 
-    override fun getItemCount(): Int = this.wagons.size
+    override fun getItemCount(): Int = this.wagonsList.size
 
     interface OnClickListener {
         fun onClickModel(wagons: Wagons)

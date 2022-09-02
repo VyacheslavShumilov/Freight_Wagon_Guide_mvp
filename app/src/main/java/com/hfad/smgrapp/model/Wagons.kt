@@ -50,10 +50,11 @@ data class Wagons(
     @SerializedName("KRaftKRPTU") var krAftKrpTu: String
 ): Serializable
 
+
 data class Cargos(
     @SerializedName("Model") var model: String,
-    @SerializedName("Code ETSNG") var codeEtsng: String,
-    @SerializedName("Name ETSNG") var nameEtsng: String,
-    @SerializedName("Model Code") var modelCode: String
+    @SerializedName("CodeETSNG") var codeEtsng: Int,
+    @SerializedName("NameETSNG") var nameEtsng: String,
+    @SerializedName("ModelCode") var modelCode: Int
 ): Serializable
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.AutomaticCouplerFragment">
+    tools:context=".view.Orv.AutomaticCouplerFragment">
 
     <include layout="@layout/toolbar_automatic_coupler"/>
 

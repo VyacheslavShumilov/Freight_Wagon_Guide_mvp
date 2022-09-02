@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.ParameterWagonFragment">
+    tools:context=".view.smgr.ParameterWagonFragment">
 
     <include layout="@layout/toolbar_parameters_wagon_frag"/>
 
@@ -22,8 +22,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/wagonPhotoUrl"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/wagon"/>
+        android:layout_height="200dp"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.hfad.smgrapp
+package com.hfad.smgrapp.service
 
 
 import androidx.fragment.app.FragmentActivity

@@ -1,4 +1,4 @@
-package com.hfad.smgrapp.view
+package com.hfad.smgrapp.view.Orv
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.hfad.smgrapp.databinding.ActivityMainBinding
+import com.hfad.smgrapp.view.Orv.OrvActivity
+import com.hfad.smgrapp.view.smgr.WagonsActivity
 
 class MainActivity : AppCompatActivity() {
 

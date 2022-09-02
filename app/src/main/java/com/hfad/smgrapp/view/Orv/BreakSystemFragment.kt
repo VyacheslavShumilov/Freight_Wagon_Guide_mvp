@@ -1,23 +1,21 @@
-package com.hfad.smgrapp.view
+package com.hfad.smgrapp.view.Orv
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hfad.smgrapp.databinding.FragmentComponentsBinding
+import com.hfad.smgrapp.databinding.FragmentBreakSystemBinding
 
 
-class ComponentsFragment : Fragment() {
-    private lateinit var binding: FragmentComponentsBinding
+class BreakSystemFragment : Fragment() {
+    private lateinit var binding: FragmentBreakSystemBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentComponentsBinding.inflate(inflater, container, false)
+        binding = FragmentBreakSystemBinding.inflate(inflater, container, false)
         return binding.root
     }
-
-
 }
