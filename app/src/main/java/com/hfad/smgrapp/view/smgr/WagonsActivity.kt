@@ -3,6 +3,8 @@ package com.hfad.smgrapp.view.smgr
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import com.hfad.smgrapp.adapter.AdapterSmgr
@@ -19,7 +21,8 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
     private lateinit var binding: ActivityWagonsBinding
     private var smgrController: SmgrController? = null
     lateinit var adapterSmgr: AdapterSmgr
-    var wagonsListFilter: ArrayList<Wagons> = arrayListOf()
+    lateinit var wagonsListFilter: ArrayList<Wagons>
+    lateinit var wagonsList: ArrayList<Wagons>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,37 +33,32 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
         smgrController = SmgrController(this)
         (smgrController as SmgrController).onSmgrList()
 
-        adapterSmgr = AdapterSmgr(wagonsListFilter, this)
-        binding.recyclerView.adapter = adapterSmgr
+        wagonsListFilter = ArrayList()
+        wagonsList = ArrayList()
 
-  }
+        binding.searchView.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
+            }
+
+            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun afterTextChanged(text: Editable?) {
+                if (text.toString() != "") {
+                    adapterSmgr.getFilter().filter(text.toString())
+                }
+
+            }
+        })
+    }
 
     override fun onSuccessList(wagons: ArrayList<Wagons>) {
         wagonsListFilter.addAll(wagons)
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(text: String?): Boolean {
-                for (i in wagons) {
-                    if (i.model.lowercase(Locale.getDefault())
-                            .contains(text!!.lowercase(Locale.getDefault()))
-                    ) {
-                        wagonsListFilter.add(i)
-                    }
-                }
-
-                if (text!!.isEmpty()){
-
-                }else{
-                    adapterSmgr.filtersList(wagonsListFilter)
-                }
-
-                return true
-            }
-        })
+        wagonsList.addAll(wagons)
+        adapterSmgr = AdapterSmgr(wagonsListFilter, this)
+        binding.recyclerView.adapter = adapterSmgr
+        adapterSmgr.notifyDataSetChanged()
     }
 
     override fun error(errMessage: String) {

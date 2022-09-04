@@ -1,21 +1,26 @@
 package com.hfad.smgrapp.adapter
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.smgrapp.databinding.ItemWagonsBinding
 import com.hfad.smgrapp.model.Wagons
+import java.util.*
+import android.widget.Filter
 import kotlin.collections.ArrayList
 
-class AdapterSmgr(private var wagonsList: ArrayList<Wagons>, private val listener: OnClickListener) :
+class AdapterSmgr(
+    private var wagonsList: ArrayList<Wagons>,
+    private val listener: OnClickListener
+) :
     RecyclerView.Adapter<AdapterSmgr.ViewHolder>() {
 
+    var wagonsListFilters = ArrayList<Wagons>()
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun filtersList(wagons: ArrayList<Wagons>) {
-        wagonsList = wagons
-        notifyDataSetChanged()
+    init {
+        wagonsListFilters = wagonsList
     }
 
     inner class ViewHolder(var binding: ItemWagonsBinding) : RecyclerView.ViewHolder(binding.root)
@@ -31,7 +36,7 @@ class AdapterSmgr(private var wagonsList: ArrayList<Wagons>, private val listene
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val wagons = wagonsList[position]
+        val wagons = wagonsListFilters[position]
         with(holder.binding) {
             modelTextView.text = wagons.model
             yearOfReleaseTextView.text = wagons.yearOfRelease
@@ -43,7 +48,41 @@ class AdapterSmgr(private var wagonsList: ArrayList<Wagons>, private val listene
         }
     }
 
-    override fun getItemCount(): Int = this.wagonsList.size
+    override fun getItemCount(): Int = wagonsListFilters.size
+
+    @Suppress("UNCHECKED_CAST")
+    fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(charSequence: CharSequence?): FilterResults {
+                Log.d("CHAR_SEARCH", charSequence.toString())
+                val charSearch = charSequence.toString()
+                if (charSearch.isEmpty()) {
+                    wagonsListFilters = wagonsList
+                } else {
+                    val filteredList = ArrayList<Wagons>()
+                    for (row in wagonsList) {
+                        if (row.model.lowercase(Locale.ROOT).contains(charSearch.lowercase(Locale.ROOT))
+                        ) {
+                            filteredList.add(row)
+
+                            Log.d("CHAR_SEARCH_MODEL", row.model)
+                        }
+                    }
+                    wagonsListFilters = filteredList
+                    Log.d("FILTER_LIST", filteredList.toString())
+                }
+                val filterResults = FilterResults()
+                filterResults.values = wagonsListFilters
+                return filterResults
+            }
+
+            @SuppressLint("UNCHECKED_CAST", "NotifyDataSetChanged")
+            override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults) {
+                wagonsListFilters = filterResults.values as ArrayList<Wagons>
+                notifyDataSetChanged()
+            }
+        }
+    }
 
     interface OnClickListener {
         fun onClickModel(wagons: Wagons)

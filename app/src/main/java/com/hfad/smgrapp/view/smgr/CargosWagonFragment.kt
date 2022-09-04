@@ -38,14 +38,22 @@ class CargosWagonFragment(var wagons: Wagons) : Fragment(), ICargosView {
 
     override fun onSuccessList(cargos: ArrayList<Cargos>) {
         for (i in cargos) {
-            if (i.model == wagons.model) {
-                Log.d("MODELS", i.toString())
+            if (i.model == wagons.model && i.modelCode.toString() == wagons.modelCode) {
                 adapterCargos.addItem(i)
                 adapterCargos.notifyDataSetChanged()
             }
         }
         binding.recyclerView.adapter = adapterCargos
+
+        if (adapterCargos.isListEmpty()) {
+            binding.recyclerView.visibility = View.GONE
+            binding.noCargosTextView.visibility = View.VISIBLE
+        } else {
+            binding.recyclerView.visibility = View.VISIBLE
+            binding.noCargosTextView.visibility = View.GONE
+        }
     }
+
 
     override fun error(errMessage: String) {
         binding.layoutNotConnection.visibility = View.VISIBLE

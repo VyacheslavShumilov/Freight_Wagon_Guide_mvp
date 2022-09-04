@@ -58,3 +58,15 @@ data class Cargos(
     @SerializedName("ModelCode") var modelCode: Int
 ): Serializable
 
+data class Bogies(
+    @SerializedName("ModelBogie") var modelBogie: String,
+    @SerializedName("Factory") var factory: String,
+    @SerializedName("AxialLoad") var axialLoad: String
+): Serializable
+
+data class BogiesDetails(
+    @SerializedName("Element") var element: String,
+    @SerializedName("BluePrint") var bluePrint: String,
+    @SerializedName("ModelBogie") var modelBogie: String,
+): Serializable
+
