@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/toolbar_bogies_list_frag" />
+        layout="@layout/toolbar_bogie_components_frag" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,6 +20,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:text="Основные комплектующие тележек по РД ЦВ 052-2009 приложение Е (последнее изменение ЦВ 38-2020"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

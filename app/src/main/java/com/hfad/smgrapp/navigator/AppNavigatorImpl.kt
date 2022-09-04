@@ -1,6 +1,7 @@
 package com.hfad.smgrapp.navigator
 
 import androidx.fragment.app.FragmentActivity
+import com.hfad.smgrapp.view.Orv.BogieComponentsFragment
 import com.hfad.smgrapp.view.Orv.OrvListFragment
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.view.Orv.AutomaticCouplerFragment
@@ -18,6 +19,7 @@ class AppNavigatorImpl(private var fragmentActivity: FragmentActivity) : AppNavi
             Screen.WHEELSET -> WheelsetFragment()
             Screen.BOGIE -> BogieFragment()
             Screen.COMPONENTS -> ComponentsFragment()
+            Screen.BOGIE_COMPONENTS_INFO -> BogieComponentsFragment()
         }
 
         fragmentActivity.supportFragmentManager.beginTransaction()

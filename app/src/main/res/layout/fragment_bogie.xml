@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context=".view.Orv.AutomaticCouplerFragment">
 
-    <include layout="@layout/toolbar_bogie_frag" />
+    <include layout="@layout/toolbar_bogies_frag" />
 
     <ScrollView
         android:layout_width="match_parent"

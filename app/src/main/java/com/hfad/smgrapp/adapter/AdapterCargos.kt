@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.smgrapp.databinding.ItemCargosBinding
 import com.hfad.smgrapp.model.Cargos
-import com.hfad.smgrapp.model.Wagons
 
 class AdapterCargos : RecyclerView.Adapter<AdapterCargos.ViewHolder>() {
 

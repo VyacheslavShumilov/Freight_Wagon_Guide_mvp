@@ -64,7 +64,7 @@ data class Bogies(
     @SerializedName("AxialLoad") var axialLoad: String
 ): Serializable
 
-data class BogiesDetails(
+data class BogiesComponents(
     @SerializedName("Element") var element: String,
     @SerializedName("BluePrint") var bluePrint: String,
     @SerializedName("ModelBogie") var modelBogie: String,

@@ -12,7 +12,6 @@ class OrvActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityOrvBinding
     private lateinit var appNavigator: AppNavigator
-    lateinit var servicesLocator: ServicesLocator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

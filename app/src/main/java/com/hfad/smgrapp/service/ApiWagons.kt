@@ -1,6 +1,7 @@
 package com.hfad.smgrapp.service
 
 import com.hfad.smgrapp.model.Bogies
+import com.hfad.smgrapp.model.BogiesComponents
 import com.hfad.smgrapp.model.Cargos
 import com.hfad.smgrapp.model.Wagons
 import retrofit2.Call
@@ -17,6 +18,9 @@ interface ApiWagons {
 
     @GET("dataBogies.json")
     fun getBogies(): Call<ArrayList<Bogies>>
+
+    @GET("dataBogiesComponents.json")
+    fun getBogiesComponents(): Call<ArrayList<BogiesComponents>>
 
     companion object {
         var BASE_URL = "https://raw.githubusercontent.com/VyacheslavShumilov/test/main/"
