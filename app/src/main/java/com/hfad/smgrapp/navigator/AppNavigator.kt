@@ -7,10 +7,18 @@ enum class Screen {
     WHEELSET,
     BOGIE,
     COMPONENTS,
-    BOGIE_COMPONENTS_INFO
+    //COMPONENTS_BOGIE_LIST
 }
 
 interface AppNavigator {
     fun navigateTo(screen: Screen)
+}
+
+enum class ScreenParam {
+    COMPONENTS_BOGIE_INFO
+}
+
+interface AppNavigatorParam {
+    fun navigateToParam(screen: ScreenParam, modelBogie: String)
 }
 

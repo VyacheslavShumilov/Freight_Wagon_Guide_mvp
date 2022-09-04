@@ -13,13 +13,15 @@ import com.hfad.smgrapp.controller.IBogiesController
 import com.hfad.smgrapp.databinding.FragmentComponentsBinding
 import com.hfad.smgrapp.model.Bogies
 import com.hfad.smgrapp.navigator.AppNavigator
+import com.hfad.smgrapp.navigator.AppNavigatorParam
 import com.hfad.smgrapp.navigator.Screen
+import com.hfad.smgrapp.navigator.ScreenParam
 
 
 class ComponentsFragment : Fragment(), IBogiesView, AdapterBogies.SetOnClickListener {
     private lateinit var binding: FragmentComponentsBinding
     private var bogiesController: IBogiesController? = null
-    private lateinit var appNavigator: AppNavigator
+    private lateinit var appNavigatorParam: AppNavigatorParam
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,11 +60,11 @@ class ComponentsFragment : Fragment(), IBogiesView, AdapterBogies.SetOnClickList
     }
 
     override fun onClickBogie(modelBogie: String) {
-        appNavigator.navigateTo(Screen.BOGIE_COMPONENTS_INFO)
+        appNavigatorParam.navigateToParam(ScreenParam.COMPONENTS_BOGIE_INFO, modelBogie)
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        appNavigator = (context.applicationContext as App).servicesLocator.providerNavigator(requireActivity())
+        appNavigatorParam = (context.applicationContext as App).servicesLocator.providerNavigatorParam(requireActivity())
     }
 }

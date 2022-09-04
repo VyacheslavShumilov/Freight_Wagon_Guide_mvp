@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hfad.smgrapp.databinding.ItemBogiesBinding
 import com.hfad.smgrapp.model.Bogies
 
-class AdapterBogies(private var bogiesList: ArrayList<Bogies>, private val listener: SetOnClickListener): RecyclerView.Adapter<AdapterBogies.ViewHolder>() {
+class AdapterBogies(
+    private var bogiesList: ArrayList<Bogies>,
+    private val listener: SetOnClickListener
+) : RecyclerView.Adapter<AdapterBogies.ViewHolder>() {
 
 
     inner class ViewHolder(var binding: ItemBogiesBinding) : RecyclerView.ViewHolder(binding.root) {
