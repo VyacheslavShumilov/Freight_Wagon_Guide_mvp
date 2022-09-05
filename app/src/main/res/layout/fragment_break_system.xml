@@ -6,8 +6,9 @@
     android:orientation="vertical"
     tools:context=".view.orv.AutomaticCouplerFragment">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,9 +38,8 @@
                 android:background="#0D000000"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="10">
+                android:rowCount="10"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -217,9 +217,8 @@
                 android:layout_height="wrap_content"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="3">
+                android:rowCount="3"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -292,9 +291,8 @@
                 android:layout_height="wrap_content"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="4">
+                android:rowCount="4"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -387,9 +385,8 @@
                 android:background="#0D000000"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="8">
+                android:rowCount="8"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -454,9 +451,8 @@
                 android:layout_height="wrap_content"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="12">
+                android:rowCount="12"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -583,9 +579,8 @@
                 android:layout_height="wrap_content"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="12">
+                android:rowCount="12"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -719,9 +714,8 @@
                 android:background="#0D000000"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="5">
+                android:rowCount="5"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -811,9 +805,8 @@
                 android:layout_height="wrap_content"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="9">
+                android:rowCount="9"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -893,7 +886,6 @@
                     android:singleLine="false"
                     android:text="С авторежимом, на среднем режиме ВР и расчётное нажатие"
                     android:textColor="@color/black" />
-
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"

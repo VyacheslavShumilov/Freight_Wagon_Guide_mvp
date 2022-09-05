@@ -35,11 +35,10 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
                 android:rowCount="5"
                 android:columnCount="2"
                 android:background="#0D000000"
+                android:useDefaultMargins="true"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -146,10 +145,9 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
                 android:rowCount="6"
                 android:columnCount="2"
+                android:useDefaultMargins="true"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -231,7 +229,7 @@
                     android:layout_row="4"
                     android:gravity="start"
                     android:textColor="@color/black"
-                    android:text="для 4-х осных вагонов (130 мм)/ Ш-6-ТО-4"/>
+                    android:text="для 4-х осных вагонов (130 мм)\nШ-6-ТО-4"/>
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -276,11 +274,10 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
                 android:rowCount="8"
                 android:columnCount="2"
                 android:background="#0D000000"
+                android:useDefaultMargins="true"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -444,10 +441,9 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
                 android:rowCount="12"
                 android:columnCount="2"
+                android:useDefaultMargins="true"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -585,7 +581,7 @@
                     android:layout_row="8"
                     android:gravity="start"
                     android:textColor="@color/black"
-                    android:text="Высота ограничительных буртиков клина"/>
+                    android:text="Высота ограничительных\nбуртиков клина"/>
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -634,14 +630,8 @@
 
             </GridLayout>
 
-
-
-
-
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>
-
-
 
 </androidx.appcompat.widget.LinearLayoutCompat>

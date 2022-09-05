@@ -6,8 +6,9 @@
     android:orientation="vertical"
     tools:context=".view.orv.AutomaticCouplerFragment">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,9 +38,8 @@
                 android:background="#0D000000"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="5">
+                android:rowCount="5"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -123,9 +123,8 @@
                 android:layout_height="wrap_content"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="6">
+                android:rowCount="6"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -171,7 +170,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:text="Не допускается отсутствие зазоров:\n- в двух любых скользунах одной четырехосной тележки с одной стороны цистерны;\n- по диагонали цистерны между скользунами соединительной и шкворневой балок;\n- по диагонали четырехосной тележки между скользунами\nнадрессорной и соединительной балок."
+                    android:text="Не допускается отсутствие зазоров:\n- в двух любых скользунах одной четырехосной тележки с одной стороны цистерны;\n\n- по диагонали цистерны между скользунами соединительной и шкворневой балок;\n\n- по диагонали четырехосной тележки между скользунами\nнадрессорной и соединительной балок."
                     android:textColor="@color/black" />
 
 
@@ -205,9 +204,8 @@
                 android:background="#0D000000"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="12">
+                android:rowCount="12"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -369,7 +367,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="center"
-                    android:text="Упруго-катковый скользун тележки 18 - 578"
+                    android:text="Упруго-катковый скользун тележки 18-578"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -408,9 +406,8 @@
                 android:layout_height="wrap_content"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="12">
+                android:rowCount="12"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -569,9 +566,8 @@
                 android:background="#0D000000"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="11">
+                android:rowCount="11"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -758,7 +754,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#0D000000"
-                android:text="Техническое обслуживание вагонов на тележках barber модели 18-9810 и 18-9855 на станции формирования поезда следующего по гарантийным участкам от 3500 до 6000 км"
+                android:text="Техническое обслуживание вагонов\nна тележках barber модели 18-9810 и 18-9855\nна станции формирования поезда следующего по гарантийным участкам от 3500 до 6000 км"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15sp"
@@ -770,9 +766,8 @@
                 android:background="#0D000000"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="7">
+                android:rowCount="7"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -914,9 +909,8 @@
                 android:background="#0D000000"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:rowCount="26">
+                android:rowCount="26"
+                android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -926,9 +920,9 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="center"
-                    android:textStyle="bold"
                     android:text="Изготовленные до 1975 г."
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -949,7 +943,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:text="Для деталей 1974 г. срок службы закончился 31.12.2003 г."
+                    android:text="Для деталей 1974 г. срок службы\nзакончился 31.12.2003 г."
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -960,9 +954,9 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="center"
-                    android:textStyle="bold"
                     android:text="Изготовленные с 1975 г. по 1983 г. включительно"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -983,7 +977,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:text="Для деталей 1982 г. срок службы закончился 31.12.2022 г."
+                    android:text="Для деталей 1982 г. срок службы\nзакончился 31.12.2022 г."
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -994,7 +988,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:text="Для деталей 1983 г. срок службы закончился 31.12.2023 г."
+                    android:text="Для деталей 1983 г. срок службы\nзакончился 31.12.2023 г."
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -1016,9 +1010,9 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="center"
-                    android:textStyle="bold"
                     android:text="Изготовленные с 1984 г по 2001 г. включительно"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -1039,7 +1033,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:text="Для деталей 1992 г. срок службы закончился 31.12.2022 г."
+                    android:text="Для деталей 1992 г. срок службы\nзакончился 31.12.2022 г."
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -1050,7 +1044,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:text="Для деталей 1993 г. срок службы закончился 31.12.2023 г."
+                    android:text="Для деталей 1993 г. срок службы\nзакончился 31.12.2023 г."
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -1061,7 +1055,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:text="Для деталей 1994 г. срок службы заканчился 31.12.2024 г."
+                    android:text="Для деталей 1994 г. срок службы\nзакончился 31.12.2024 г."
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -1072,9 +1066,9 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="center"
-                    android:textStyle="bold"
-                    android:text="Польша (клеймо 6) и Румыния (клейма: 23; F; TO; FAYR; CUG; INTOF; 10B)"
-                    android:textColor="@color/black" />
+                    android:text="Польша (клеймо 6) и\nРумыния (клейма: 23; F; TO; FAYR; CUG; INTOF; 10B)"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -1095,7 +1089,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:text="Для деталей 1992 г. срок службы закончился 31.12.2022 г."
+                    android:text="Для деталей 1992 г. срок службы\nзакончился 31.12.2022 г."
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -1106,7 +1100,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:text="Для деталей 1993 г. срок службы закончился 31.12.2023 г."
+                    android:text="Для деталей 1993 г. срок службы\nзакончился 31.12.2023 г."
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -1117,7 +1111,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:text="Для деталей 1994 г. срок службы заканчился 31.12.2024 г."
+                    android:text="Для деталей 1994 г. срок службы\nзакончился 31.12.2024 г."
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -1128,9 +1122,9 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="center"
-                    android:textStyle="bold"
                     android:text="Изготовленные по ОСТ 32.183-2001 с 2002 г."
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
@@ -1209,10 +1203,7 @@
                     android:text="20ХГНФТЛ - 31.12.2037 г."
                     android:textColor="@color/black" />
 
-
-
             </GridLayout>
-
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
