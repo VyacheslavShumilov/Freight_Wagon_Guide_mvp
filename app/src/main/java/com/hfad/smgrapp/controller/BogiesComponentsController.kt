@@ -2,7 +2,7 @@ package com.hfad.smgrapp.controller
 
 import com.hfad.smgrapp.model.BogiesComponents
 import com.hfad.smgrapp.service.ApiWagons
-import com.hfad.smgrapp.view.Orv.IBogiesComponentsView
+import com.hfad.smgrapp.view.orv.components.IBogiesComponentsView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

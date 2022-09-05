@@ -1,4 +1,4 @@
-package com.hfad.smgrapp.view.Orv
+package com.hfad.smgrapp.view.orv.components
 
 import com.hfad.smgrapp.model.BogiesComponents
 

@@ -1,4 +1,4 @@
-package com.hfad.smgrapp.view.Orv
+package com.hfad.smgrapp.view.orv
 
 import android.content.Context
 import android.os.Bundle

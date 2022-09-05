@@ -1,4 +1,4 @@
-package com.hfad.smgrapp.view.Orv
+package com.hfad.smgrapp.view.orv.components
 
 import android.content.Context
 import android.os.Bundle
@@ -12,9 +12,7 @@ import com.hfad.smgrapp.controller.BogiesController
 import com.hfad.smgrapp.controller.IBogiesController
 import com.hfad.smgrapp.databinding.FragmentComponentsBinding
 import com.hfad.smgrapp.model.Bogies
-import com.hfad.smgrapp.navigator.AppNavigator
 import com.hfad.smgrapp.navigator.AppNavigatorParam
-import com.hfad.smgrapp.navigator.Screen
 import com.hfad.smgrapp.navigator.ScreenParam
 
 

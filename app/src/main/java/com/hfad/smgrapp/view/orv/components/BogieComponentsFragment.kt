@@ -1,4 +1,4 @@
-package com.hfad.smgrapp.view.Orv
+package com.hfad.smgrapp.view.orv.components
 
 
 import android.os.Bundle
@@ -7,11 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hfad.smgrapp.adapter.AdapterBogieComponents
-import com.hfad.smgrapp.adapter.AdapterCargos
 import com.hfad.smgrapp.controller.BogiesComponentsController
-import com.hfad.smgrapp.controller.CargosController
 import com.hfad.smgrapp.databinding.FragmentBogieComponentsBinding
-import com.hfad.smgrapp.model.Bogies
 import com.hfad.smgrapp.model.BogiesComponents
 
 class BogieComponentsFragment(var modelBogie: String) : Fragment(), IBogiesComponentsView {

@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"
-            android:background="@color/toolbar_color"
+            android:background="@android:color/transparent"
             app:srcCompat="@drawable/arrow_back"/>
 
         <com.google.android.material.textview.MaterialTextView
@@ -31,6 +31,15 @@
             android:textSize="@dimen/toolbar_text_size"
             android:layout_weight="3"
             android:text="Модели грузовых вагонов"/>
+
+        <ImageButton
+            android:id="@+id/clickHomeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/ic_baseline_home"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

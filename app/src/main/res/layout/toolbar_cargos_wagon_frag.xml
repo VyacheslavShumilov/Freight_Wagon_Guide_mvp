@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"
-            android:background="@color/toolbar_color"
+            android:background="@android:color/transparent"
             app:srcCompat="@drawable/arrow_back"/>
 
         <com.google.android.material.textview.MaterialTextView

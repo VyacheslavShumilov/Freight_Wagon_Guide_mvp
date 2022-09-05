@@ -17,7 +17,7 @@
         android:theme="@style/Theme.SMGRApp"
         tools:targetApi="31">
         <activity
-            android:name=".view.Orv.OrvActivity"
+            android:name=".view.orv.OrvActivity"
             android:exported="false"
             android:label="@string/title_activity_orv"
             android:theme="@style/Theme.SMGRApp.NoActionBar" />

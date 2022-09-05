@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/drawable/arrow_back.xml" value="0.1" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/drawable/ic_baseline_home.xml" value="0.338" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/drawable/swipe_indicator_active.xml" value="0.1" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/activity_orv.xml" value="0.25" />
@@ -28,18 +29,22 @@
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_wagons.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/tab_parameters_custom.xml" value="0.1" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar.xml" value="0.30303030303030304" />
-        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_automatic_coupler.xml" value="0.33" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_automatic_coupler.xml" value="0.1" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_bogie.xml" value="0.3307291666666667" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_bogie_components.xml" value="0.33177083333333335" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_bogie_components_frag.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_bogie_frag.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_bogies.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_bogies_frag.xml" value="0.33177083333333335" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_bogies_list_frag.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_break_system_frag.xml" value="0.3307291666666667" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_cargos_wagon_frag.xml" value="0.19814814814814816" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_parameters_wagon_frag.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_repair.xml" value="0.19814814814814816" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_repair_frag.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_start.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_wheelset.xml" value="0.3307291666666667" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar_wheelset_frag.xml" value="0.33177083333333335" />
       </map>
     </option>
   </component>
