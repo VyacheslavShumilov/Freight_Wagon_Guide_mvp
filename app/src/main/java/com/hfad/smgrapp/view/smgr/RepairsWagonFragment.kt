@@ -24,6 +24,15 @@ class RepairsWagonFragment(var wagons: Wagons) : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
+
+            toolbar.textView.text = "Периодичность ремонтов"
+
+            toolbar.clickBackBtn.setOnClickListener{
+                (requireActivity() as WagonActivity).onBackPressed()
+            }
+
+            toolbar.clickHomeBtn.visibility = View.GONE
+
             wagonModel.text = wagons.model
             textDrAftRelease.text = wagons.drAftRelease
             textDrAftDrTo1kr.text = wagons.drAftDrTo1Kr

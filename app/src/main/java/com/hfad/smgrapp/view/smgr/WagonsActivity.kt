@@ -11,6 +11,7 @@ import com.hfad.smgrapp.adapter.AdapterSmgr
 import com.hfad.smgrapp.controller.SmgrController
 import com.hfad.smgrapp.databinding.ActivityWagonsBinding
 import com.hfad.smgrapp.model.Wagons
+import com.hfad.smgrapp.view.orv.OrvActivity
 import java.io.Serializable
 import java.util.*
 import kotlin.collections.ArrayList
@@ -36,19 +37,27 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
         wagonsListFilter = ArrayList()
         wagonsList = ArrayList()
 
+        with(binding) {
+
+            toolbar.textView.text = "Модели грузовых вагонов"
+
+            toolbar.clickBackBtn.setOnClickListener{
+                onBackPressed()
+            }
+
+            toolbar.clickHomeBtn.visibility = View.GONE
+        }
+
         binding.searchView.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-            }
+            override fun beforeTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
-            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            }
+            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun afterTextChanged(text: Editable?) {
                 if (text.toString() != "") {
                     adapterSmgr.getFilter().filter(text.toString())
                 }
-
             }
         })
     }

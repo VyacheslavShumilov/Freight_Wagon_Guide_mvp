@@ -7,7 +7,8 @@
     android:orientation="vertical"
     tools:context=".view.orv.AutomaticCouplerFragment">
 
-    <include layout="@layout/toolbar_wheelset_frag"/>
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"

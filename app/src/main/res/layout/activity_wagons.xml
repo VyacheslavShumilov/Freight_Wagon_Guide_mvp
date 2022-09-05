@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar_start" />
+        layout="@layout/toolbar" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/searchView"

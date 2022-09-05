@@ -18,5 +18,20 @@ class WheelsetFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        with(binding) {
+
+            toolbar.textView.text = "Колесная пара"
+
+            toolbar.clickBackBtn.setOnClickListener{
+                (requireActivity() as OrvActivity).onBackPressed()
+            }
+
+            toolbar.clickHomeBtn.setOnClickListener {
+                (requireActivity() as OrvActivity).finish()
+            }
+        }
+    }
 }

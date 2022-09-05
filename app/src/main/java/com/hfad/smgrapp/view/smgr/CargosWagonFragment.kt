@@ -32,7 +32,18 @@ class CargosWagonFragment(var wagons: Wagons) : Fragment(), ICargosView {
         cargosController = CargosController(this)
         (cargosController as CargosController).onCargosList()
 
-        binding.wagonModel.text = wagons.model
+        with(binding) {
+
+            toolbar.textView.text = "Перевозимые грузы (ЕТСНГ)"
+
+            wagonModel.text = wagons.model
+
+            toolbar.clickBackBtn.setOnClickListener {
+                (requireActivity() as WagonActivity).onBackPressed()
+            }
+
+            toolbar.clickHomeBtn.visibility = View.GONE
+        }
     }
 
     override fun onSuccessList(cargos: ArrayList<Cargos>) {

@@ -18,4 +18,21 @@ class BreakSystemFragment : Fragment() {
         binding = FragmentBreakSystemBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        with(binding) {
+
+            toolbar.textView.text = "Автотормоз"
+
+            toolbar.clickBackBtn.setOnClickListener{
+                (requireActivity() as OrvActivity).onBackPressed()
+            }
+
+            toolbar.clickHomeBtn.setOnClickListener {
+                (requireActivity() as OrvActivity).finish()
+            }
+        }
+    }
 }

@@ -7,12 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".view.orv.OrvActivity">
 
-    <include layout="@layout/toolbar_start" />
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_start"
+        android:layout_below="@+id/toolbar"
         android:rowCount="3"
         android:columnCount="2">
 

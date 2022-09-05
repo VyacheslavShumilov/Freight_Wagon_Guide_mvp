@@ -11,7 +11,6 @@ class AutomaticCouplerFragment : Fragment() {
 
     private lateinit var binding: FragmentAutomaticCouplerBinding
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,12 +22,17 @@ class AutomaticCouplerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.toolbarAutomaticCoupler.clickBackBtn.setOnClickListener{
-            (requireActivity() as OrvActivity).onBackPressed()
-        }
+        with(binding) {
 
-        binding.toolbarAutomaticCoupler.clickHomeBtn.setOnClickListener {
-            (requireActivity() as OrvActivity).finish()
+            toolbar.textView.text = "Автосцепка"
+
+            toolbar.clickBackBtn.setOnClickListener{
+                (requireActivity() as OrvActivity).onBackPressed()
+            }
+
+            toolbar.clickHomeBtn.setOnClickListener {
+                (requireActivity() as OrvActivity).finish()
+            }
         }
     }
 }

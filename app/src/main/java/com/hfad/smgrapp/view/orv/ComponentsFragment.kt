@@ -1,4 +1,4 @@
-package com.hfad.smgrapp.view.orv.components
+package com.hfad.smgrapp.view.orv
 
 import android.content.Context
 import android.os.Bundle
@@ -14,6 +14,7 @@ import com.hfad.smgrapp.databinding.FragmentComponentsBinding
 import com.hfad.smgrapp.model.Bogies
 import com.hfad.smgrapp.navigator.AppNavigatorParam
 import com.hfad.smgrapp.navigator.ScreenParam
+import com.hfad.smgrapp.view.orv.components.IBogiesView
 
 
 class ComponentsFragment : Fragment(), IBogiesView, AdapterBogies.SetOnClickListener {
@@ -33,6 +34,19 @@ class ComponentsFragment : Fragment(), IBogiesView, AdapterBogies.SetOnClickList
         super.onViewCreated(view, savedInstanceState)
         bogiesController = BogiesController(this)
         (bogiesController as BogiesController).onBogiesList()
+
+        with(binding) {
+
+            toolbar.textView.text = "Модели тележек 23,5 т/ось"
+
+            toolbar.clickBackBtn.setOnClickListener{
+                (requireActivity() as OrvActivity).onBackPressed()
+            }
+
+            toolbar.clickHomeBtn.setOnClickListener {
+                (requireActivity() as OrvActivity).finish()
+            }
+        }
     }
 
     override fun onSuccessList(bogies: ArrayList<Bogies>) {

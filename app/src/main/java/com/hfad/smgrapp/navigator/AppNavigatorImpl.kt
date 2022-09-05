@@ -8,7 +8,7 @@ import com.hfad.smgrapp.view.orv.AutomaticCouplerFragment
 import com.hfad.smgrapp.view.orv.BogieFragment
 import com.hfad.smgrapp.view.orv.BreakSystemFragment
 import com.hfad.smgrapp.view.orv.WheelsetFragment
-import com.hfad.smgrapp.view.orv.components.ComponentsFragment
+import com.hfad.smgrapp.view.orv.ComponentsFragment
 
 class AppNavigatorImpl(private var fragmentActivity: FragmentActivity) : AppNavigator, AppNavigatorParam {
     override fun navigateTo(screen: Screen) {

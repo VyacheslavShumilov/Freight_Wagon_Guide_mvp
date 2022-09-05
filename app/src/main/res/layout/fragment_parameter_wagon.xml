@@ -6,7 +6,8 @@
     android:orientation="vertical"
     tools:context=".view.smgr.ParameterWagonFragment">
 
-    <include layout="@layout/toolbar_parameters_wagon_frag"/>
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"

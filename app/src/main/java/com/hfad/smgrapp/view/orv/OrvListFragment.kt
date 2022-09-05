@@ -33,6 +33,17 @@ class OrvListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
+
+            toolbar.textView.text = "Памятка ОРВ"
+
+            toolbar.clickBackBtn.setOnClickListener{
+                (requireActivity() as OrvActivity).onBackPressed()
+            }
+
+            toolbar.clickHomeBtn.setOnClickListener {
+                (requireActivity() as OrvActivity).finish()
+            }
+
             cardViewAutomaticCoupler.setOnClickListener {
                 appNavigator.navigateTo(Screen.AUTOMATIC_COUPLER)
             }

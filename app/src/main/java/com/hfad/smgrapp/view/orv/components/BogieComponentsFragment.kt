@@ -10,6 +10,7 @@ import com.hfad.smgrapp.adapter.AdapterBogieComponents
 import com.hfad.smgrapp.controller.BogiesComponentsController
 import com.hfad.smgrapp.databinding.FragmentBogieComponentsBinding
 import com.hfad.smgrapp.model.BogiesComponents
+import com.hfad.smgrapp.view.orv.OrvActivity
 
 class BogieComponentsFragment(var modelBogie: String) : Fragment(), IBogiesComponentsView {
     private lateinit var binding: FragmentBogieComponentsBinding
@@ -28,6 +29,19 @@ class BogieComponentsFragment(var modelBogie: String) : Fragment(), IBogiesCompo
         super.onViewCreated(view, savedInstanceState)
         bogiesComponentsController = BogiesComponentsController(this)
         (bogiesComponentsController as BogiesComponentsController).onBogiesComponentsList()
+
+        with(binding) {
+
+            toolbar.textView.text = "Модель: $modelBogie"
+
+            toolbar.clickBackBtn.setOnClickListener{
+                (requireActivity() as OrvActivity).onBackPressed()
+            }
+
+            toolbar.clickHomeBtn.setOnClickListener {
+                (requireActivity() as OrvActivity).finish()
+            }
+        }
     }
 
     override fun onSuccessList(bogiesComponents: ArrayList<BogiesComponents>) {
