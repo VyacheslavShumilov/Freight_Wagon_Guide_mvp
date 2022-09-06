@@ -46,6 +46,7 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
             }
             wagonModel.text = wagons.model
             wagonProperty.text = wagons.property
+            wagonSpecialization.text = wagons.specialization
             wagonMaterial.text = wagons.material
             wagonFactory.text = wagons.factory
             wagonCapacity.text = wagons.capacity

@@ -35,13 +35,10 @@ class OrvListFragment : Fragment() {
         with(binding) {
 
             toolbar.textView.text = "Памятка ОРВ"
+            toolbar.clickHomeBtn.visibility = View.GONE
 
             toolbar.clickBackBtn.setOnClickListener{
                 (requireActivity() as OrvActivity).onBackPressed()
-            }
-
-            toolbar.clickHomeBtn.setOnClickListener {
-                (requireActivity() as OrvActivity).finish()
             }
 
             cardViewAutomaticCoupler.setOnClickListener {

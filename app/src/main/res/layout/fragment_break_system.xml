@@ -37,25 +37,19 @@
                 android:layout_height="wrap_content"
                 android:background="#0D000000"
                 android:columnCount="2"
-                android:orientation="horizontal"
                 android:rowCount="10"
                 android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="0"
-                    android:gravity="start"
                     android:text="сетчато-проволочный каркас"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="1"
-                    android:layout_gravity="end"
+                    android:gravity="end"
                     android:text="не менее 10 мм"
                     android:textColor="@color/black" />
 
@@ -96,12 +90,9 @@
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_row="3"
                     android:layout_column="0"
                     android:layout_columnSpan="2"
-                    android:layout_gravity="fill_horizontal"
                     android:gravity="start"
                     android:singleLine="false"
                     android:text="при клиновидном износе на расстоянии 50 мм от тонкого края колодки:"
@@ -109,8 +100,6 @@
 
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_row="4"
                     android:layout_column="0"
                     android:gravity="start"
@@ -150,7 +139,6 @@
                     android:layout_row="6"
                     android:layout_column="0"
                     android:layout_columnSpan="2"
-                    android:layout_gravity="fill_horizontal"
                     android:gravity="start"
                     android:singleLine="false"
                     android:text="на вагонах с пассажирскими тележками выход колодки за наружную грань обода колеса не допускается"

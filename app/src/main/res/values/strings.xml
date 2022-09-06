@@ -1,15 +1,76 @@
 <resources>
     <string name="app_name">SMGR App</string>
     <string name="search">Введите модель вагона</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_orv">OrvActivity</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- Strings used for activity_main -->
+    <string name="txtView_title_name">СВОДНЫЙ \nСПРАВОЧНИК\nГРУЗОВЫХ ВАГОНОВ</string>
+    <string name="txtView_about_guides">Включает данные справочников:</string>
+    <string name="txtView_smgr1">СМГР1 от 03.03.2022 г.</string>
+    <string name="txtView_smgr2">СМГР2 от 10.02.2022 г.</string>
+    <string name="btn_enter_smgr">Вход в СМГР</string>
+    <string name="btn_enter_orv">Вход в памятку ОРВ</string>
+    <string name="editTxt_hint">Поиск модели вагона</string>
+
+    <!-- Strings used for fragment_parameter_wagon -->
+    <string name="txtView_model">Модель:</string>
+    <string name="txtView_property">Особенность:</string>
+    <string name="txtView_specialization">Специализация:</string>
+    <string name="txtView_material">Материал кузова:</string>
+    <string name="txtView_factory">Изготовитель:</string>
+    <string name="txtView_capacity">Грузоподъемность:</string>
+    <string name="txtView_capacity_unit">т</string>
+    <string name="txtView_tare_min">Тара min:</string>
+    <string name="txtView_tare_min_unit">т</string>
+    <string name="txtView_tare_max">Тара max:</string>
+    <string name="txtView_tare_max_unit">т</string>
+    <string name="txtView_tare_min_exp">Масса тары min в эксплуатации:</string>
+    <string name="txtView_tare_min_exp_unit">т</string>
+    <string name="txtView_length">Длина:</string>
+    <string name="txtView_length_unit">мм</string>
+    <string name="txtView_num_axles">Осность:</string>
+    <string name="txtView_axial_load">Осевая нагрузка:</string>
+    <string name="txtView_axial_load_unit">т/ось</string>
+    <string name="txtView_volume">Объем (площадь):</string>
+    <string name="txtView_volume_unit">м^3 (м^2)</string>
+    <string name="txtView_bogie">Тележка:</string>
+    <string name="txtView_size">Габарит:</string>
+    <string name="txtView_year_release">Год выпуска:</string>
+    <string name="txtView_year_end_release">Год снятия:</string>
+    <string name="txtView_service_life">Срок службы в годах:</string>
+
+    <!-- Strings used for fragment_repairs_wagon -->
+    <string name="txtView_dr_aft_release">ДР после постройки в г.:</string>
+    <string name="txtView_Dr_Aft_Dr_To_1kr">ДР после ДР, до 1 КР в г.:</string>
+    <string name="txtView_Dr_Aft_Dr_Aft_1Kr">ДР после ДР, после 1 КР в г.:</string>
+    <string name="txtView_Dr_Aft_Kr">ДР после КР в г.:</string>
+    <string name="txtView_Kr_Aft_Release">КР после постройки в г.:</string>
+    <string name="txtView_Kr_Aft_Kr">КР после КР в г.:</string>
+    <string name="txtView_Dr_Aft_Release_Rep_Prob_Km">ДР после постройки, рем. по проб. в т. км.:</string>
+    <string name="txtView_Dr_Aft_Release_Rep_Years">ДР после постройки, рем. по проб. в г.:</string>
+    <string name="txtView_Dr_Aft_Dr_Rep_Prob_Km">ДР после ДР, рем. по проб. в т. км.:</string>
+    <string name="txtView_Dr_Aft_Dr_Rep_Prob_Years">ДР после ДР, рем. по проб. в г.:</string>
+    <string name="txtView_Dr_Aft_Kr_Rep_Prob_Km">ДР после КР, рем. по проб. в т. км.:</string>
+    <string name="txtView_Dr_Aft_Kr_Rep_Years">ДР после КР, рем. по проб. в г.:</string>
+    <string name="txtView_Dr_Aft_Krp_Rep_Prob_Km">ДР после КРП, рем. по проб. в т. км.:</string>
+    <string name="txtView_Dr_Aft_Krp_Rep_Prob_Years">ДР после КРП, рем. по проб. в г.:</string>
+    <string name="txtView_Continue_Tu">Срок продления по ТУ в г.:</string>
+    <string name="txtView_Dr_Aft_Krp_Tu">ДР после КРП по ТУ в г.:</string>
+    <string name="txtView_Kr_Aft_Krp_Tu">КР после КРП по ТУ в г.:</string>
+
+    <!-- Strings used for fragment_cargos_wagon -->
+    <string name="txtView_no_info_wagon_cargos">Информация по грузам для данной модели вагона отсутствует в справочнике СМГР2</string>
+
+
 </resources>

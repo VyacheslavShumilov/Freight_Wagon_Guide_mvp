@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -36,7 +37,7 @@
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Модель: "
+            android:text="@string/txtView_model"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="15sp"/>
@@ -45,7 +46,6 @@
             android:id="@+id/wagonModel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="11-066-04"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="15sp"/>
@@ -63,14 +63,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Особенность: "/>
+            android:text="@string/txtView_property"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonProperty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Крытый с разрузочными люками в боковой стене и крыше"/>
+            android:textColor="@color/black"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -84,14 +83,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Специализация: "/>
+            android:text="@string/txtView_specialization"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonSpecialization"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Крытый универсальный"/>
+            android:textColor="@color/black"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -105,14 +103,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Материал кузова: "/>
+            android:text="@string/txtView_material"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonMaterial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Деверо"/>
+            android:textColor="@color/black"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -126,14 +123,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Изготовитель: "/>
+            android:text="@string/txtView_factory"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonFactory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="АО 'Алтайвагон'"/>
+            android:textColor="@color/black"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -148,20 +144,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Грузоподъемность: "/>
+            android:text="@string/txtView_capacity"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonCapacity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="61"/>
+            android:textColor="@color/black"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text=" т"/>
+            android:text="@string/txtView_capacity_unit"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -176,20 +171,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Тара min: "/>
+            android:text="@string/txtView_tare_min"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonTareMin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="21.3"/>
+            android:textColor="@color/black"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text=" т"/>
+            android:text="@string/txtView_tare_min_unit"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -204,20 +198,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Тара max: "/>
+            android:text="@string/txtView_tare_max"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonTareMax"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="22.0"/>
+            android:textColor="@color/black"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text=" т"/>
+            android:text="@string/txtView_tare_max_unit"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -232,20 +225,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Масса тары min в эксплуатации: "/>
+            android:text="@string/txtView_tare_min_exp"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonTareMinExp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="22.0"/>
+            android:textColor="@color/black"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text=" т"/>
+            android:text="@string/txtView_tare_min_exp_unit"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -260,20 +252,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Длина: "/>
+            android:text="@string/txtView_length"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonLength"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="14.730"/>
+            android:textColor="@color/black"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text=" мм"/>
+            android:text="@string/txtView_length_unit"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -288,14 +279,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Осность: "/>
+            android:text="@string/txtView_num_axles"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonNumAxles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="4"/>
+            android:textColor="@color/black"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -310,20 +300,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Осевая нагрузка: "/>
+            android:text="@string/txtView_axial_load"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonAxialLoad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="22.5"/>
+            android:textColor="@color/black"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text=" т/ось"/>
+            android:text="@string/txtView_axial_load_unit"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -338,20 +327,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Объем (площадь): "/>
+            android:text="@string/txtView_volume"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonVolume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="120"/>
+            android:textColor="@color/black"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text=" м^3 (м^2)"/>
+            android:text="@string/txtView_volume_unit"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -366,14 +354,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Тележка: "/>
+            android:text="@string/txtView_bogie"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonBogie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="18-100 или аналоги"/>
+            android:textColor="@color/black"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -388,14 +375,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Габарит: "/>
+            android:text="@string/txtView_size"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="1-ВМ"/>
+            android:textColor="@color/black"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -410,14 +396,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Год выпуска: "/>
+            android:text="@string/txtView_year_release"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonYearOfRelease"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="1960"/>
+            android:textColor="@color/black"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -432,14 +417,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Год снятия: "/>
+            android:text="@string/txtView_year_end_release"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonYearEndOfRelease"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="1984"/>
+            android:textColor="@color/black"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -454,14 +438,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Срок службы в годах: "/>
+            android:text="@string/txtView_service_life"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonServiceLife"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="32"/>
+            android:textColor="@color/black"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

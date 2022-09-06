@@ -32,7 +32,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Модель: "
+                    android:text="@string/txtView_model"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -41,7 +41,6 @@
                     android:id="@+id/wagonModel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="11-066-04"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -59,14 +58,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после постройки в г.: "
+                    android:text="@string/txtView_dr_aft_release"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Release"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -80,14 +78,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после ДР, до 1 КР в г.: "
+                    android:text="@string/txtView_Dr_Aft_Dr_To_1kr"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Dr_To_1kr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -102,14 +99,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после ДР, после 1 КР в г.: "
+                    android:text="@string/txtView_Dr_Aft_Dr_Aft_1Kr"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Dr_Aft_1Kr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -123,14 +119,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после КР в г.: "
+                    android:text="@string/txtView_Dr_Aft_Kr"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Kr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -145,14 +140,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="КР после постройки в г.: "
+                    android:text="@string/txtView_Kr_Aft_Release"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Kr_Aft_Release"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="12"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -166,14 +160,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="КР после КР в г.: "
+                    android:text="@string/txtView_Kr_Aft_Kr"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Kr_Aft_Kr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -188,14 +181,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после постройки, рем. по проб. в т. км.: "
+                    android:text="@string/txtView_Dr_Aft_Release_Rep_Prob_Km"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Release_Rep_Prob_Km"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="210"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -209,14 +201,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после постройки, рем. по проб. в г.: "
+                    android:text="@string/txtView_Dr_Aft_Release_Rep_Years"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Release_Rep_Years"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -231,14 +222,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после ДР, рем. по проб. в т. км.: "
+                    android:text="@string/txtView_Dr_Aft_Dr_Rep_Prob_Km"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Dr_Rep_Prob_Km"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="110"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -252,14 +242,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после ДР, рем. по проб. в г.: "
+                    android:text="@string/txtView_Dr_Aft_Dr_Rep_Prob_Years"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Dr_Rep_Prob_Years"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -274,14 +263,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после КР, рем. по проб. в т. км.: "
+                    android:text="@string/txtView_Dr_Aft_Kr_Rep_Prob_Km"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Kr_Rep_Prob_Km"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="160"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -295,15 +283,15 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после КР, рем. по проб. в г.: "
+                    android:text="@string/txtView_Dr_Aft_Kr_Rep_Years"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Kr_Rep_Years"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3"
                     android:textColor="@color/black" />
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -317,15 +305,15 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после КРП, рем. по проб. в т. км.: "
+                    android:text="@string/txtView_Dr_Aft_Krp_Rep_Prob_Km"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Krp_Rep_Prob_Km"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="210"
                     android:textColor="@color/black" />
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -338,15 +326,15 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после КРП, рем. по проб. в г.: "
+                    android:text="@string/txtView_Dr_Aft_Krp_Rep_Prob_Years"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Krp_Rep_Prob_Years"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3"
                     android:textColor="@color/black" />
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -360,14 +348,13 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Срок продления по ТУ в г.: "
+                    android:text="@string/txtView_Continue_Tu"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Continue_Tu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="16"
                     android:textColor="@color/black" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -381,15 +368,15 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ДР после КРП по ТУ в г.: "
+                    android:text="@string/txtView_Dr_Aft_Krp_Tu"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Krp_Tu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3"
                     android:textColor="@color/black" />
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -403,18 +390,18 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="КР после КРП по ТУ в г.: "
+                    android:text="@string/txtView_Kr_Aft_Krp_Tu"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Kr_Aft_Krp_Tu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="12"
                     android:textColor="@color/black" />
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|bottom"
@@ -448,7 +435,7 @@
                     android:layout_marginEnd="7dp"
                     android:layout_marginRight="7dp"
                     android:src="@drawable/swipe_indicator_passive" />
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

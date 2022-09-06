@@ -23,4 +23,11 @@ class OrvActivity : AppCompatActivity() {
             appNavigator.navigateTo(Screen.ORV_LIST)
         }
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if (supportFragmentManager.backStackEntryCount == 0) {
+            finish()
+        }
+    }
 }
