@@ -29,7 +29,6 @@ class AdapterCargos : RecyclerView.Adapter<AdapterCargos.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val cargos = cargosList[position]
         with(holder.binding) {
-            modelTextView.text = cargos.model
             nameEtsngTextView.text = cargos.nameEtsng
             codeEtsngTextView.text = cargos.codeEtsng.toString()
         }

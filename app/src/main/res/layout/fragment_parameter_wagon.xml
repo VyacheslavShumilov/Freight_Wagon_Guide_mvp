@@ -459,25 +459,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Признак длиннобазности: "/>
+            android:text="@string/txtView_long"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/wagonLong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Отсутствует"/>
+            android:textColor="@color/black"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
-            <ImageView
+
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
@@ -485,7 +485,8 @@
                 android:layout_marginEnd="7dp"
                 android:layout_marginRight="7dp"
                 android:src="@drawable/swipe_indicator_active" />
-            <ImageView
+
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
@@ -493,7 +494,7 @@
                 android:layout_marginEnd="7dp"
                 android:layout_marginRight="7dp"
                 android:src="@drawable/swipe_indicator_passive" />
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
@@ -501,7 +502,7 @@
                 android:layout_marginEnd="7dp"
                 android:layout_marginRight="7dp"
                 android:src="@drawable/swipe_indicator_passive" />
-        </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

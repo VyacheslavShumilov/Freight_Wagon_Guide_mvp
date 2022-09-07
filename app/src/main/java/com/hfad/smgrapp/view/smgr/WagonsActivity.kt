@@ -7,11 +7,13 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.appcompat.widget.SearchView
+import com.hfad.smgrapp.R
 import com.hfad.smgrapp.adapter.AdapterSmgr
 import com.hfad.smgrapp.controller.SmgrController
 import com.hfad.smgrapp.databinding.ActivityWagonsBinding
 import com.hfad.smgrapp.model.Wagons
 import com.hfad.smgrapp.view.orv.OrvActivity
+import com.hfad.smgrapp.view.smgr.favourite.FavouriteWagonsActivity
 import java.io.Serializable
 import java.util.*
 import kotlin.collections.ArrayList
@@ -45,7 +47,12 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
                 onBackPressed()
             }
 
-            toolbar.clickHomeBtn.visibility = View.GONE
+            toolbar.clickHomeBtn.visibility = View.VISIBLE
+            toolbar.clickHomeBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_favourite_list))
+            toolbar.clickHomeBtn.setOnClickListener {
+                val intent = Intent(this@WagonsActivity, FavouriteWagonsActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         binding.searchView.addTextChangedListener(object : TextWatcher {

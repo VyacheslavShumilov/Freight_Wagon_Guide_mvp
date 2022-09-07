@@ -68,6 +68,7 @@
     <string name="txtView_Continue_Tu">Срок продления по ТУ в г.:</string>
     <string name="txtView_Dr_Aft_Krp_Tu">ДР после КРП по ТУ в г.:</string>
     <string name="txtView_Kr_Aft_Krp_Tu">КР после КРП по ТУ в г.:</string>
+    <string name="txtView_long">Признак длиннобазности:</string>
 
     <!-- Strings used for fragment_cargos_wagon -->
     <string name="txtView_no_info_wagon_cargos">Информация по грузам для данной модели вагона отсутствует в справочнике СМГР2</string>

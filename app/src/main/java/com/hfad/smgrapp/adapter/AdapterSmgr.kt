@@ -46,6 +46,9 @@ class AdapterSmgr(
         holder.itemView.setOnClickListener {
             listener.onClickModel(wagons)
         }
+        holder.binding.addFavouriteWagon.setOnClickListener {
+
+        }
     }
 
     override fun getItemCount(): Int = wagonsListFilters.size

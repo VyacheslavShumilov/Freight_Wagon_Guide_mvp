@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.databinding.FragmentParameterWagonBinding
 import com.hfad.smgrapp.model.Wagons
-import com.hfad.smgrapp.view.orv.OrvActivity
 import com.squareup.picasso.Picasso
 
 
@@ -38,6 +36,7 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
             }
 
             toolbar.clickHomeBtn.visibility = View.GONE
+
 
             if (wagons.photoURL.isEmpty()) {
                 wagonPhotoUrl.setImageResource(R.drawable.no_image_wagon)
