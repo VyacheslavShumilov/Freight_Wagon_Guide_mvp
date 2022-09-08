@@ -6,6 +6,7 @@
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/drawable/arrow_back.xml" value="0.1" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/drawable/ic_baseline_home.xml" value="0.338" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/drawable/ic_favourite_list.xml" value="0.165" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/drawable/search_shape_view.xml" value="0.2465" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/drawable/swipe_indicator_active.xml" value="0.1" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/activity_favourite_wagons.xml" value="0.3175925925925926" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/activity_main.xml" value="0.33" />
@@ -20,7 +21,7 @@
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_bogie_components.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_break_system.xml" value="0.33" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_cargos_wagon.xml" value="0.33" />
-        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_components.xml" value="0.15" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_components.xml" value="0.33" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_orv_list.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_parameter_wagon.xml" value="0.33" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_repairs_wagon.xml" value="0.33" />
@@ -28,6 +29,7 @@
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_bogie_components.xml" value="0.3307291666666667" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_bogies.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_cargos.xml" value="0.33" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_wagon_favourite.xml" value="0.33" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_wagons.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/tab_parameters_custom.xml" value="0.1" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar.xml" value="0.30303030303030304" />

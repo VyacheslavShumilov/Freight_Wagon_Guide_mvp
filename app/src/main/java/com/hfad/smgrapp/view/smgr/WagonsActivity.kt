@@ -7,13 +7,19 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.lifecycleScope
+import androidx.room.Dao
+import com.hfad.smgrapp.App
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.adapter.AdapterSmgr
 import com.hfad.smgrapp.controller.SmgrController
+import com.hfad.smgrapp.dao.WagonsDao
 import com.hfad.smgrapp.databinding.ActivityWagonsBinding
 import com.hfad.smgrapp.model.Wagons
+import com.hfad.smgrapp.model.WagonsFavourite
 import com.hfad.smgrapp.view.orv.OrvActivity
 import com.hfad.smgrapp.view.smgr.favourite.FavouriteWagonsActivity
+import kotlinx.coroutines.launch
 import java.io.Serializable
 import java.util.*
 import kotlin.collections.ArrayList
@@ -26,12 +32,15 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
     lateinit var adapterSmgr: AdapterSmgr
     lateinit var wagonsListFilter: ArrayList<Wagons>
     lateinit var wagonsList: ArrayList<Wagons>
+    lateinit var appDao:WagonsDao
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWagonsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        appDao = (applicationContext as App).getDatabase().wagonsDao()
 
         smgrController = SmgrController(this)
         (smgrController as SmgrController).onSmgrList()
@@ -98,6 +107,18 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
         val intent = Intent(this, WagonActivity::class.java)
         intent.putExtra("WAGON", wagons as Serializable)
         startActivity(intent)
+    }
+
+    override fun onAddWagon(wagons: Wagons) {
+        lifecycleScope.launch {
+//            val wagonsFavourite = WagonsFavourite(
+//                0,
+//                wagons.modelCode,
+//
+//            )
+//
+//            appDao.insertWagon(wagonsFavourite)
+        }
     }
 }
 

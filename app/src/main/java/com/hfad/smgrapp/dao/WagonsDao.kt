@@ -1,20 +1,22 @@
 package com.hfad.smgrapp.dao
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.hfad.smgrapp.model.Wagons
 import com.hfad.smgrapp.model.WagonsFavourite
 
+@Dao
 interface WagonsDao {
     @Query("SELECT * FROM wagonsFavourite")
     fun getAllWagons(): List<WagonsFavourite>
 
     @Insert
-    fun insertWagon(wagon: Wagons)
+    fun insertWagon(wagon: WagonsFavourite)
 
     @Delete
-    fun deleteWagon(wagon: Wagons)
+    fun deleteWagon(wagon: WagonsFavourite)
 
     @Query("DELETE FROM wagonsFavourite")
     fun deleteAll()

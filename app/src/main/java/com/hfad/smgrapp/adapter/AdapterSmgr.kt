@@ -47,7 +47,7 @@ class AdapterSmgr(
             listener.onClickModel(wagons)
         }
         holder.binding.addFavouriteWagon.setOnClickListener {
-
+            listener.onAddWagon(wagons)
         }
     }
 
@@ -89,5 +89,6 @@ class AdapterSmgr(
 
     interface OnClickListener {
         fun onClickModel(wagons: Wagons)
+        fun onAddWagon(wagons: Wagons)
     }
 }

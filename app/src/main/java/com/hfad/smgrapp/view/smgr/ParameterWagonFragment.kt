@@ -43,7 +43,7 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
             } else {
                 Picasso.get().load(wagons.photoURL).into(wagonPhotoUrl)
             }
-            wagonModel.text = wagons.model
+            wagonModel.text = " ${wagons.model}"
             wagonProperty.text = wagons.property
             wagonSpecialization.text = wagons.specialization
             wagonMaterial.text = wagons.material

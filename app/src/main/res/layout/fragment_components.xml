@@ -6,14 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".view.smgr.CargosWagonFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/toolbar_color">
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
-    </com.google.android.material.appbar.AppBarLayout>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
