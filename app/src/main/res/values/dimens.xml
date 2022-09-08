@@ -1,4 +1,6 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="toolbar_text_size">20sp</dimen>
+    <dimen name="frag_param_wagon_main_txt_size">16sp</dimen>
+    <dimen name="frag_param_rep_carg_model_txt_size">18sp</dimen>
 </resources>

@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/txtView_model"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/frag_param_rep_carg_model_txt_size"
                     android:textStyle="bold" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -41,7 +41,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:paddingStart="8dp"
+                    android:textSize="@dimen/frag_param_rep_carg_model_txt_size"
                     android:textStyle="bold" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>

@@ -10,7 +10,10 @@ import com.hfad.smgrapp.model.WagonsFavourite
 @Dao
 interface WagonsDao {
     @Query("SELECT * FROM wagonsFavourite")
-    fun getAllWagons(): List<WagonsFavourite>
+    fun getAllFavouriteWagons(): List<WagonsFavourite>
+
+    @Query("SELECT * FROM wagonsFavourite")
+    fun getFavouriteWagon(): WagonsFavourite
 
     @Insert
     fun insertWagon(wagon: WagonsFavourite)

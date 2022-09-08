@@ -43,7 +43,7 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
             } else {
                 Picasso.get().load(wagons.photoURL).into(wagonPhotoUrl)
             }
-            wagonModel.text = " ${wagons.model}"
+            wagonModel.text = wagons.model
             wagonProperty.text = wagons.property
             wagonSpecialization.text = wagons.specialization
             wagonMaterial.text = wagons.material
@@ -57,6 +57,7 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
             wagonAxialLoad.text = wagons.axialLoad
             wagonVolume.text = wagons.volume
             wagonBogie.text = wagons.bogie
+            wagonSize.text = wagons.size
             wagonYearOfRelease.text = wagons.yearOfRelease
             wagonYearEndOfRelease.text = wagons.yearEndOfRelease
             wagonServiceLife.text = wagons.serviceLife

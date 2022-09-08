@@ -1,525 +1,566 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".view.smgr.ParameterWagonFragment">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageIdContainer"
-        android:padding="8dp"
-        android:orientation="vertical">
-
-        <com.google.android.material.card.MaterialCardView
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/imageIdContainer"
             android:layout_width="match_parent"
-            app:cardCornerRadius="26dp"
-            app:cardElevation="0dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/wagonPhotoUrl"
                 android:layout_width="match_parent"
-                android:scaleType="center"
-                android:layout_height="200dp"/>
-
-        </com.google.android.material.card.MaterialCardView>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txtView_model"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="18sp"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonModel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="15sp"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#6C6C6C"
-            android:layout_marginEnd="16dp"
-            android:text="@string/txtView_property"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonProperty"
-            android:layout_width="wrap_content"
-            android:textSize="16sp"
-            android:hint="@string/txtView_property"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_specialization"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonSpecialization"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_material"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonMaterial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_factory"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonFactory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_capacity"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonCapacity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_capacity_unit"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_tare_min"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonTareMin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_tare_min_unit"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_tare_max"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonTareMax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_tare_max_unit"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_tare_min_exp"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonTareMinExp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_tare_min_exp_unit"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_length"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonLength"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_length_unit"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_num_axles"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonNumAxles"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_axial_load"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonAxialLoad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_axial_load_unit"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_volume"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonVolume"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_volume_unit"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_bogie"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonBogie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_size"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonSize"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_year_release"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonYearOfRelease"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_year_end_release"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonYearEndOfRelease"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_service_life"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonServiceLife"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/txtView_long"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/wagonLong"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_height="200dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtView_model"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_rep_carg_model_txt_size"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonModel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:paddingStart="8dp"
+                    android:textSize="@dimen/frag_param_rep_carg_model_txt_size"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_property"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonProperty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txtView_property"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_specialization"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonSpecialization"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_material"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonMaterial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_factory"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonFactory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_capacity"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonCapacity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:text="@string/txtView_capacity_unit"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_tare_min"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonTareMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:text="@string/txtView_tare_min_unit"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_tare_max"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonTareMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:text="@string/txtView_tare_max_unit"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
+                    android:textColor="@color/black" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_tare_min_exp"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonTareMinExp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:text="@string/txtView_tare_min_exp_unit"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
+                    android:textColor="@color/black" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_length"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonLength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:text="@string/txtView_length_unit"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
+                    android:textColor="@color/black" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_num_axles"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonNumAxles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_axial_load"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonAxialLoad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:text="@string/txtView_axial_load_unit"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
+                    android:textColor="@color/black" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_volume"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonVolume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:text="@string/txtView_volume_unit"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
+                    android:textColor="@color/black" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_bogie"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonBogie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_size"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_year_release"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonYearOfRelease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_year_end_release"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonYearEndOfRelease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_service_life"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonServiceLife"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/txtView_long"
+                    android:textColor="@color/frag_param_wagons_secondary_txt_color" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonLong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/frag_param_wagon_main_txt_size" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginEnd="7dp"
-                android:layout_marginRight="7dp"
-                android:src="@drawable/swipe_indicator_active" />
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginEnd="7dp"
-                android:layout_marginRight="7dp"
-                android:src="@drawable/swipe_indicator_passive" />
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginEnd="7dp"
-                android:layout_marginRight="7dp"
-                android:src="@drawable/swipe_indicator_passive" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginRight="7dp"
+                    android:src="@drawable/swipe_indicator_active" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginRight="7dp"
+                    android:src="@drawable/swipe_indicator_passive" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginRight="7dp"
+                    android:src="@drawable/swipe_indicator_passive" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
     </ScrollView>
-
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
+import androidx.room.ColumnInfo
 import androidx.room.Dao
 import com.hfad.smgrapp.App
 import com.hfad.smgrapp.R
@@ -32,7 +33,7 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
     lateinit var adapterSmgr: AdapterSmgr
     lateinit var wagonsListFilter: ArrayList<Wagons>
     lateinit var wagonsList: ArrayList<Wagons>
-    lateinit var appDao:WagonsDao
+    lateinit var appDao: WagonsDao
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +53,7 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
 
             toolbar.textView.text = "Модели грузовых вагонов"
 
-            toolbar.clickBackBtn.setOnClickListener{
+            toolbar.clickBackBtn.setOnClickListener {
                 onBackPressed()
             }
 
@@ -109,15 +110,56 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
         startActivity(intent)
     }
 
-    override fun onAddWagon(wagons: Wagons) {
+    override fun onAddFavouriteWagon(wagons: Wagons) {
         lifecycleScope.launch {
-//            val wagonsFavourite = WagonsFavourite(
-//                0,
-//                wagons.modelCode,
-//
-//            )
-//
-//            appDao.insertWagon(wagonsFavourite)
+            val wagonsFavourite = WagonsFavourite(
+                0,
+                wagons.modelCode,
+                wagons.model,
+                wagons.photoURL,
+                wagons.rod,
+                wagons.yearOfRelease,
+                wagons.yearEndOfRelease,
+                wagons.capacity,
+                wagons.property,
+                wagons.specialization,
+                wagons.material,
+                wagons.factory,
+                wagons.tareMin,
+                wagons.tareMax,
+                wagons.tareMinExp,
+                wagons.boltedConnection,
+                wagons.length,
+                wagons.numAxles,
+                wagons.axialLoad,
+                wagons.footbridge,
+                wagons.volume,
+                wagons.calibration,
+                wagons.bogie,
+                wagons.size,
+                wagons.serviceLife,
+                wagons.long,
+                wagons.inventoryNum,
+                wagons.typeOfOwnCar,
+                wagons.drAftRelease,
+                wagons.drAftDrTo1Kr,
+                wagons.drAftDraft1Kr,
+                wagons.drAftKr,
+                wagons.krAftRelease,
+                wagons.krAftKr,
+                wagons.drAftReleaseRepProbKm,
+                wagons.drAftReleaseRepYears,
+                wagons.drAftDrRepProbKm,
+                wagons.drAftDrRepProbYears,
+                wagons.drAftKrRepProbKm,
+                wagons.drAftKrRepProbYears,
+                wagons.drAftKrpRepProbKm,
+                wagons.drAftKrpRepProbYears,
+                wagons.continueTu,
+                wagons.drAftKrpTu,
+                wagons.krAftKrpTu
+            )
+            appDao.insertWagon(wagonsFavourite)
         }
     }
 }

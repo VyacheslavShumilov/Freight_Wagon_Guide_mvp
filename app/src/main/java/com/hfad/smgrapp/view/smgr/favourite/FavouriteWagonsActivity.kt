@@ -20,7 +20,7 @@ class FavouriteWagonsActivity : AppCompatActivity() {
 
 
         lifecycleScope.launch {
-            val list = appDao.getAllWagons() as ArrayList
+            val list = appDao.getAllFavouriteWagons() as ArrayList
 
         }
     }
