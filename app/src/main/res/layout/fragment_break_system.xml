@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#0D000000"
-                android:text="Толщина тормозных колодок"
+                android:text="@string/txtView_br_thickness_brake_pads"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15sp"
@@ -43,14 +43,14 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_row="0"
                     android:layout_column="0"
-                    android:text="сетчато-проволочный каркас"
+                    android:text="@string/txtView_br_param_1_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_row="0"
                     android:layout_column="1"
                     android:gravity="end"
-                    android:text="не менее 10 мм"
+                    android:text="@string/txtView_br_unit_1_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -59,7 +59,7 @@
                     android:layout_row="1"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="чугунные"
+                    android:text="@string/txtView_br_param_1_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -68,7 +68,7 @@
                     android:layout_row="1"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не менее 12 мм"
+                    android:text="@string/txtView_br_unit_1_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -77,7 +77,7 @@
                     android:layout_row="2"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="с металлической спинкой"
+                    android:text="@string/txtView_br_param_1_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -86,7 +86,7 @@
                     android:layout_row="2"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не менее 14 мм"
+                    android:text="@string/txtView_br_unit_1_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -95,7 +95,7 @@
                     android:layout_columnSpan="2"
                     android:gravity="start"
                     android:singleLine="false"
-                    android:text="при клиновидном износе на расстоянии 50 мм от тонкого края колодки:"
+                    android:text="@string/txtView_br_param_1_4"
                     android:textColor="@color/black" />
 
 
@@ -103,7 +103,7 @@
                     android:layout_row="4"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="дзазор между колодкой и колесом"
+                    android:text="@string/txtView_br_param_1_4_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -112,7 +112,7 @@
                     android:layout_row="4"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не более 10 мм"
+                    android:text="@string/txtView_br_unit_1_4_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -121,7 +121,7 @@
                     android:layout_row="5"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="выход за наружную грань обода колеса"
+                    android:text="@string/txtView_br_param_1_4_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -130,7 +130,7 @@
                     android:layout_row="5"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не более 10 мм"
+                    android:text="@string/txtView_br_unit_1_4_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -141,7 +141,7 @@
                     android:layout_columnSpan="2"
                     android:gravity="start"
                     android:singleLine="false"
-                    android:text="на вагонах с пассажирскими тележками выход колодки за наружную грань обода колеса не допускается"
+                    android:text="@string/txtView_br_param_1_5"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -150,7 +150,7 @@
                     android:layout_row="7"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="разница толщин колодок\n на одном триангеле"
+                    android:text="@string/txtView_br_param_1_5_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -159,7 +159,7 @@
                     android:layout_row="7"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не более 10 мм"
+                    android:text="@string/txtView_br_unit_1_5_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -168,7 +168,7 @@
                     android:layout_row="8"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="толщина вновь устанавливаемой колодки"
+                    android:text="@string/txtView_br_param_1_5_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -177,7 +177,7 @@
                     android:layout_row="8"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не менее 25 мм"
+                    android:text="@string/txtView_br_unit_1_5_2"
                     android:textColor="@color/black" />
             </GridLayout>
 
@@ -185,7 +185,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Выход штока"
+                android:text="@string/txtView_stock_output"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15sp"
@@ -194,10 +194,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="грузовые на чугунных колодках"
+                android:text="@string/txtView_br_cast_iron"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <GridLayout
@@ -214,7 +214,7 @@
                     android:layout_row="0"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="при первой ступени торможения"
+                    android:text="@string/txtView_br_param_2_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -223,7 +223,7 @@
                     android:layout_row="0"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="40 - 100 мм"
+                    android:text="@string/txtView_br_unit_2_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -232,7 +232,7 @@
                     android:layout_row="1"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="при полном служебном торможении"
+                    android:text="@string/txtView_br_param_2_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -241,7 +241,7 @@
                     android:layout_row="1"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="75 - 125 мм"
+                    android:text="@string/txtView_br_unit_2_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -250,7 +250,7 @@
                     android:layout_row="2"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="без авторегулятора"
+                    android:text="@string/txtView_br_param_2_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -259,7 +259,7 @@
                     android:layout_row="2"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не более 175 мм"
+                    android:text="@string/txtView_br_unit_2_3"
                     android:textColor="@color/black" />
 
             </GridLayout>
@@ -268,10 +268,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="грузовые на композиционных колодках"
+                android:text="@string/txtView_br_composition"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <GridLayout
@@ -288,7 +288,7 @@
                     android:layout_row="0"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="с РТРП, *(с буксами адаптерного типа)"
+                    android:text="@string/txtView_br_param_3_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -297,7 +297,7 @@
                     android:layout_row="0"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="25 - 65 (75)* мм"
+                    android:text="@string/txtView_br_unit_3_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -306,7 +306,7 @@
                     android:layout_row="1"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="при первой ступени торможения"
+                    android:text="@string/txtView_br_param_3_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -315,7 +315,7 @@
                     android:layout_row="1"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="40 - 80 мм"
+                    android:text="@string/txtView_br_unit_3_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -324,7 +324,7 @@
                     android:layout_row="2"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="при полном служебном торможении"
+                    android:text="@string/txtView_br_param_3_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -333,7 +333,7 @@
                     android:layout_row="2"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="50 - 100 мм"
+                    android:text="@string/txtView_br_unit_3_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -342,7 +342,7 @@
                     android:layout_row="3"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="без авторегулятора"
+                    android:text="@string/txtView_br_param_3_4"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -351,7 +351,7 @@
                     android:layout_row="3"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не более 130 мм"
+                    android:text="@string/txtView_br_unit_3_4"
                     android:textColor="@color/black" />
 
             </GridLayout>
@@ -361,7 +361,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#0D000000"
-                android:text="Расстояние от торца муфты \nдо резьбы на винте - а"
+                android:text="@string/txtView_br_distance_a"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15sp"
@@ -382,7 +382,7 @@
                     android:layout_row="0"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="грузовые (574Б, РТРП-675, РТРП-675-М)"
+                    android:text="@string/txtView_br_param_4_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -391,7 +391,7 @@
                     android:layout_row="0"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не менее 150 мм"
+                    android:text="@string/txtView_br_unit_4_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -400,7 +400,7 @@
                     android:layout_row="1"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="грузовые (РТРП -300)"
+                    android:text="@string/txtView_br_param_4_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -409,7 +409,7 @@
                     android:layout_row="1"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не менее 50 мм"
+                    android:text="@string/txtView_br_unit_4_2"
                     android:textColor="@color/black" />
 
             </GridLayout>
@@ -418,7 +418,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Расстояние от упора привода до корпуса авторегулятора «А»"
+                android:text="@string/txtView_br_distance_A"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15sp"
@@ -428,10 +428,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="рычажный привод"
+                android:text="@string/txtView_br_lever_drive"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <GridLayout
@@ -448,7 +448,7 @@
                     android:layout_row="0"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="4-осный вагон, авторегулятор\n574Б и 675"
+                    android:text="@string/txtView_br_param_5_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -457,7 +457,7 @@
                     android:layout_row="0"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="К 35 - 50 мм\nЧ 40 - 60 мм"
+                    android:text="@string/txtView_br_unit_5_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -466,7 +466,7 @@
                     android:layout_row="2"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="рефрижераторные вагоны на тележках\nКВЗ-И2 и на тележках ЦМВ-Дессау"
+                    android:text="@string/txtView_br_param_5_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -475,7 +475,7 @@
                     android:layout_row="2"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="К 25 - 60 мм\nЧ 40 - 75 мм"
+                    android:text="@string/txtView_br_unit_5_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -484,7 +484,7 @@
                     android:layout_row="3"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="4-осный вагон с двумя\nТЦ Ø 254 мм, ход 125 мм"
+                    android:text="@string/txtView_br_param_5_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -493,7 +493,7 @@
                     android:layout_row="3"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="К 15 - 25 мм"
+                    android:text="@string/txtView_br_unit_5_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -502,7 +502,7 @@
                     android:layout_row="4"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="4-осный вагон с двумя ТЦ,\n адаптерные буксы"
+                    android:text="@string/txtView_br_param_5_4"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -511,7 +511,7 @@
                     android:layout_row="4"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="К 20 - 40 мм"
+                    android:text="@string/txtView_br_unit_5_4"
                     android:textColor="@color/black" />
 
 
@@ -521,7 +521,7 @@
                     android:layout_row="7"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="6-осный грузовой вагон с одним\nТЦ Ø 400 мм"
+                    android:text="@string/txtView_br_param_5_5"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -530,7 +530,7 @@
                     android:layout_row="7"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="К 20 - 40 мм"
+                    android:text="@string/txtView_br_unit_5_5"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -539,7 +539,7 @@
                     android:layout_row="8"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="8-осный грузовой вагон с одним\nТЦ Ø 400 мм"
+                    android:text="@string/txtView_br_param_5_6"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -548,7 +548,7 @@
                     android:layout_row="8"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="К 30 - 50 мм"
+                    android:text="@string/txtView_br_unit_5_6"
                     android:textColor="@color/black" />
 
             </GridLayout>
@@ -556,10 +556,10 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="стержневой привод"
+                android:text="@string/txtView_br_rod_drive"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <GridLayout
@@ -576,7 +576,7 @@
                     android:layout_row="0"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="4-осный вагон с одним\nтормозным цилиндром "
+                    android:text="@string/txtView_br_param_6_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -585,7 +585,7 @@
                     android:layout_row="0"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="К 140 - 200 мм\nЧ 130 - 150 мм"
+                    android:text="@string/txtView_br_unit_6_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -594,7 +594,7 @@
                     android:layout_row="1"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="рефрижераторные вагоны на тележках\nКВЗ-И2 и на тележках ЦМВ-Дессау"
+                    android:text="@string/txtView_br_param_6_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -603,7 +603,7 @@
                     android:layout_row="1"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="К 55 - 145 мм\nЧ 60 - 100 мм"
+                    android:text="@string/txtView_br_unit_6_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -612,7 +612,7 @@
                     android:layout_row="2"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="Один оборот авторегулятора\nрегулирует выход штока ТЦ"
+                    android:text="@string/txtView_br_param_6_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -621,7 +621,7 @@
                     android:layout_row="2"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="+\- на 30 мм"
+                    android:text="@string/txtView_br_unit_6_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -633,7 +633,7 @@
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
                     android:singleLine="false"
-                    android:text="Зазор между упором авторежима и контактной планкой на порожнем вагоне не более 3 мм, допускается постановка не более пяти регулировочных планок\nтолщиной от 1,5 до 5 мм."
+                    android:text="@string/txtView_br_param_6_4"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -642,7 +642,7 @@
                     android:layout_row="7"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="Кольцевая выточка должна выступать\n из корпуса авторежима"
+                    android:text="@string/txtView_br_param_6_5"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -651,7 +651,7 @@
                     android:layout_row="7"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не менее,\nчем на 2 мм"
+                    android:text="@string/txtView_br_unit_6_5"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -660,7 +660,7 @@
                     android:layout_row="8"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="Расстояние от упора авторежима\n до края контактной планки должно быть"
+                    android:text="@string/txtView_br_param_6_6"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -669,7 +669,7 @@
                     android:layout_row="8"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="не менее 50 мм"
+                    android:text="@string/txtView_br_unit_6_6"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -681,7 +681,7 @@
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
                     android:singleLine="false"
-                    android:text="Зазор между шайбой и шплинтом в шарнирных соединениях ТРП не более 3 мм, регулировка одной шайбой толщиной не более 6 мм"
+                    android:text="@string/txtView_br_param_6_7"
                     android:textColor="@color/black" />
 
             </GridLayout>
@@ -690,7 +690,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#0D000000"
-                android:text="Проверка авторегулятора на стягивание ТРП после после полного служебного торможения по контролю размера а "
+                android:text="@string/txtView_br_check_autoregulator"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15sp"
@@ -711,7 +711,7 @@
                     android:layout_row="0"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="регулятор 574Б"
+                    android:text="@string/txtView_br_param_7_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -720,7 +720,7 @@
                     android:layout_row="0"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="5 - 11 мм"
+                    android:text="@string/txtView_br_unit_7_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -729,7 +729,7 @@
                     android:layout_row="1"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="регулятор РТРП - 675 и РТРП - 675М"
+                    android:text="@string/txtView_br_param_7_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -738,7 +738,7 @@
                     android:layout_row="1"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="7 - 20 мм"
+                    android:text="@string/txtView_br_unit_7_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -747,7 +747,7 @@
                     android:layout_row="2"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="регулятор РТРП - 300"
+                    android:text="@string/txtView_br_param_7_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -756,7 +756,7 @@
                     android:layout_row="2"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="5 - 10 мм"
+                    android:text="@string/txtView_br_unit_7_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -765,7 +765,7 @@
                     android:layout_row="3"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="Угол разворота концевого крана к\nвертикальной оси "
+                    android:text="@string/txtView_br_param_7_4"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -774,7 +774,7 @@
                     android:layout_row="3"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="60˚"
+                    android:text="@string/txtView_br_unit_7_4"
                     android:textColor="@color/black" />
 
             </GridLayout>
@@ -782,7 +782,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Давление в тормозном цилиндре порожнего вагона при ПСТ"
+                android:text="@string/txtView_br_pressure"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15sp"
@@ -802,7 +802,7 @@
                     android:layout_row="0"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="Без авторежима, Режим ВР - порожний"
+                    android:text="@string/txtView_br_param_8_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -811,7 +811,7 @@
                     android:layout_row="0"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="0,14-0,18 МПа"
+                    android:text="@string/txtView_br_unit_8_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -823,7 +823,7 @@
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
                     android:singleLine="false"
-                    android:text="С авторежимом для вагонов с тарой до 27 тонн"
+                    android:text="@string/txtView_br_param_8_2"
                     android:textColor="@color/black" />
 
 
@@ -833,7 +833,7 @@
                     android:layout_row="2"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="Режим ВР - средний"
+                    android:text="@string/txtView_br_param_8_2_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -842,7 +842,7 @@
                     android:layout_row="2"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="0,12 - 0,16 МПа"
+                    android:text="@string/txtView_br_unit_8_2_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -851,7 +851,7 @@
                     android:layout_row="3"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="Режим ВР - груженый"
+                    android:text="@string/txtView_br_param_8_2_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -860,7 +860,7 @@
                     android:layout_row="3"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="0,14 - 0,20 МПа"
+                    android:text="@string/txtView_br_unit_8_2_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -872,7 +872,7 @@
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
                     android:singleLine="false"
-                    android:text="С авторежимом, на среднем режиме ВР и расчётное нажатие"
+                    android:text="@string/txtView_br_param_8_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -881,7 +881,7 @@
                     android:layout_row="5"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="для вагонов с тарой от 27 до 32 тонн"
+                    android:text="@string/txtView_br_param_8_3_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -890,7 +890,7 @@
                     android:layout_row="5"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="4,5/0,15 - 0,17 МПа"
+                    android:text="@string/txtView_br_unit_8_3_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -899,7 +899,7 @@
                     android:layout_row="6"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="для вагонов с тарой от 32 до 36 тонн"
+                    android:text="@string/txtView_br_param_8_3_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -908,7 +908,7 @@
                     android:layout_row="6"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="5,0/0,18 - 0,20 МПа"
+                    android:text="@string/txtView_br_unit_8_3_2"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -917,7 +917,7 @@
                     android:layout_row="7"
                     android:layout_column="0"
                     android:gravity="start"
-                    android:text="для вагонов с тарой от 36 до 45 тонн"
+                    android:text="@string/txtView_br_param_8_3_3"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -926,7 +926,7 @@
                     android:layout_row="7"
                     android:layout_column="1"
                     android:layout_gravity="end"
-                    android:text="6,5/0,21 - 0,23 МПа"
+                    android:text="@string/txtView_br_unit_8_3_3"
                     android:textColor="@color/black" />
 
             </GridLayout>
