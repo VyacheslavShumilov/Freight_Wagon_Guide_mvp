@@ -32,7 +32,8 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=", выпуск "
+                    android:text="@string/item_wagons_txtView_release"
+                    android:paddingEnd="5dp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
 
@@ -69,19 +70,21 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="грузоподъемность "
+                    android:text="@string/item_wagons_txtView_capacity"
                     android:textColor="@color/black"/>
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/capacityTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
                     android:textColor="@color/black"/>
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="  т."
+                    android:text="@string/item_wagons_txtView_unit"
+                    android:paddingStart="5dp"
                     android:textColor="@color/black"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -92,7 +95,7 @@
             android:id="@+id/addFavouriteWagonBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|fill_horizontal"
+            android:layout_gravity="center"
             android:paddingEnd="5dp"
             app:srcCompat="@drawable/ic_baseline_favorite_border"/>
 

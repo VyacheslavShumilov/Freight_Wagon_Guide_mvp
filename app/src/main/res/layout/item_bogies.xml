@@ -19,7 +19,7 @@
                 android:id="@+id/modelBogieTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="18-100"
+                android:hint="@string/item_bogies_hint_txtView_bogie"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
                 android:id="@+id/bogieFactoryTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Алтайвагон"
+                android:hint="@string/item_bogie_comp_txtView_bogieFactory"
                 android:textColor="@color/black" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

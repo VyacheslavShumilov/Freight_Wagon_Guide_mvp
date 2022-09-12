@@ -20,14 +20,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="Чepтёж тeлeжки"
+            android:hint="@string/item_bogie_comp_hint_txtView_element"
             android:textColor="@color/black" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/bluePrintTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100.00.000-0 CБ, \n100.00.000-1 CБ"
+            android:hint="@string/item_bogie_comp_hint_txtView_blue_print"
             android:textColor="@color/black" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

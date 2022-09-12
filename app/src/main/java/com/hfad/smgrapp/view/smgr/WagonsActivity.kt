@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
 import androidx.room.ColumnInfo
@@ -20,6 +22,7 @@ import com.hfad.smgrapp.model.Wagons
 import com.hfad.smgrapp.model.WagonsFavourite
 import com.hfad.smgrapp.view.orv.OrvActivity
 import com.hfad.smgrapp.view.smgr.favourite.FavouriteWagonsActivity
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.Serializable
 import java.util.*
@@ -111,7 +114,7 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
     }
 
     override fun onAddFavouriteWagon(wagons: Wagons) {
-        lifecycleScope.launch {
+        lifecycleScope.launch(Dispatchers.IO) {
             val wagonsFavourite = WagonsFavourite(
                 0,
                 wagons.modelCode,
@@ -137,27 +140,27 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
                 wagons.calibration,
                 wagons.bogie,
                 wagons.size,
-                wagons.serviceLife,
-                wagons.long,
-                wagons.inventoryNum,
-                wagons.typeOfOwnCar,
-                wagons.drAftRelease,
-                wagons.drAftDrTo1Kr,
-                wagons.drAftDraft1Kr,
-                wagons.drAftKr,
-                wagons.krAftRelease,
-                wagons.krAftKr,
-                wagons.drAftReleaseRepProbKm,
-                wagons.drAftReleaseRepYears,
-                wagons.drAftDrRepProbKm,
-                wagons.drAftDrRepProbYears,
-                wagons.drAftKrRepProbKm,
-                wagons.drAftKrRepProbYears,
-                wagons.drAftKrpRepProbKm,
-                wagons.drAftKrpRepProbYears,
-                wagons.continueTu,
-                wagons.drAftKrpTu,
-                wagons.krAftKrpTu
+                wagons.serviceLife
+//                wagons.long,
+//                wagons.inventoryNum,
+//                wagons.typeOfOwnCar,
+//                wagons.drAftRelease,
+//                wagons.drAftDrTo1Kr,
+//                wagons.drAftDraft1Kr,
+//                wagons.drAftKr,
+//                wagons.krAftRelease,
+//                wagons.krAftKr,
+//                wagons.drAftReleaseRepProbKm,
+//                wagons.drAftReleaseRepYears,
+//                wagons.drAftDrRepProbKm,
+//                wagons.drAftDrRepProbYears,
+//                wagons.drAftKrRepProbKm,
+//                wagons.drAftKrRepProbYears,
+//                wagons.drAftKrpRepProbKm,
+//                wagons.drAftKrpRepProbYears,
+//                wagons.continueTu,
+//                wagons.drAftKrpTu,
+//                wagons.krAftKrpTu
             )
             appDao.insertWagon(wagonsFavourite)
         }

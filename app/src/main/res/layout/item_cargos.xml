@@ -34,7 +34,8 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Код: "
+                android:text="@string/item_cargos_txtView_code"
+                android:paddingEnd="5dp"
                 android:textColor="@color/black"/>
 
             <com.google.android.material.textview.MaterialTextView

@@ -59,13 +59,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Проверьте подключение к интернету и повторите попытку" />
+            android:text="@string/txtView_check_internet_connection" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClickReply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Повторный запрос" />
+            android:text="@string/txtView_repeat_request" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

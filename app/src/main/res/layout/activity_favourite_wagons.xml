@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".view.smgr.favourite.FavouriteWagonsActivity">
 
@@ -11,5 +11,38 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layoutNotConnection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/txtView_check_internet_connection" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnClickReply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtView_repeat_request" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

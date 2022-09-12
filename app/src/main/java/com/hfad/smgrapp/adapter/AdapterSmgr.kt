@@ -3,6 +3,7 @@ package com.hfad.smgrapp.adapter
 import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.smgrapp.databinding.ItemWagonsBinding
@@ -48,6 +49,7 @@ class AdapterSmgr(
         }
         holder.binding.addFavouriteWagonBtn.setOnClickListener {
             listener.onAddFavouriteWagon(wagons)
+            holder.binding.addFavouriteWagonBtn.visibility = View.GONE
         }
     }
 
