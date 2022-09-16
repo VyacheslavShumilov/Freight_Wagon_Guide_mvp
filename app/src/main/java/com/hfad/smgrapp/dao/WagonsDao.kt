@@ -8,17 +8,17 @@ import com.hfad.smgrapp.model.WagonsFavourite
 
 @Dao
 interface WagonsDao {
-    @Query("SELECT * FROM wagonsFavourite")
+    @Query("SELECT * FROM wagonsFavourite  ORDER BY modelCode DESC")
     fun getAllFavouriteWagons(): List<WagonsFavourite>
 
     @Insert
     fun insertWagon(wagon: WagonsFavourite)
 
-    @Query("SELECT * FROM wagonsFavourite WHERE id =:id")
-    fun getFavouriteWagon (id: Int): WagonsFavourite
-
     @Delete
     fun deleteWagon(wagon: WagonsFavourite)
+
+    @Query("SELECT * FROM wagonsFavourite WHERE modelCode =:modelCode")
+    fun getWagonFavorite(modelCode: String): WagonsFavourite
 
     @Query("DELETE FROM wagonsFavourite")
     fun deleteAll()

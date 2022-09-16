@@ -7,11 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
-import androidx.room.ColumnInfo
-import androidx.room.Dao
 import com.hfad.smgrapp.App
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.adapter.AdapterSmgr
@@ -20,12 +16,11 @@ import com.hfad.smgrapp.dao.WagonsDao
 import com.hfad.smgrapp.databinding.ActivityWagonsBinding
 import com.hfad.smgrapp.model.Wagons
 import com.hfad.smgrapp.model.WagonsFavourite
-import com.hfad.smgrapp.view.orv.OrvActivity
 import com.hfad.smgrapp.view.smgr.favourite.FavouriteWagonsActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.Serializable
-import java.util.*
 import kotlin.collections.ArrayList
 
 
@@ -36,15 +31,11 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
     lateinit var adapterSmgr: AdapterSmgr
     lateinit var wagonsListFilter: ArrayList<Wagons>
     lateinit var wagonsList: ArrayList<Wagons>
-    lateinit var appDao: WagonsDao
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWagonsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        appDao = (applicationContext as App).getDatabase().wagonsDao()
 
         smgrController = SmgrController(this)
         (smgrController as SmgrController).onSmgrList()
@@ -77,6 +68,7 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
             override fun afterTextChanged(text: Editable?) {
                 if (text.toString() != "") {
                     adapterSmgr.getFilter().filter(text.toString())
+                    adapterSmgr.notifyDataSetChanged()
                 }
             }
         })
@@ -85,10 +77,24 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
     override fun onSuccessList(wagons: ArrayList<Wagons>) {
         wagonsListFilter.addAll(wagons)
         wagonsList.addAll(wagons)
-        adapterSmgr = AdapterSmgr(wagonsListFilter, this)
+        adapterSmgr = AdapterSmgr(wagonsList, this)
         binding.recyclerView.adapter = adapterSmgr
-        adapterSmgr.notifyDataSetChanged()
+//        all()
+
     }
+
+//    private fun all(){
+//        lifecycleScope.launch(Dispatchers.IO) {
+//            val list = appDao.getAllFavouriteWagons() as ArrayList
+//            for (i in list) {
+//                withContext(Dispatchers.Main) {
+//                    val l = arrayListOf(i.modelCode)
+//                    adapterSmgr.addListFavourites(l)
+//                    adapterSmgr.notifyDataSetChanged()
+//                }
+//            }
+//        }
+//    }
 
     override fun error(errMessage: String) {
         binding.layoutNotConnection.visibility = View.VISIBLE
@@ -113,34 +119,34 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
         startActivity(intent)
     }
 
-    override fun onAddFavouriteWagon(wagons: Wagons) {
-        lifecycleScope.launch(Dispatchers.IO) {
-            val wagonsFavourite = WagonsFavourite(
-                0,
-                wagons.modelCode,
-                wagons.model,
-                wagons.photoURL,
-                wagons.rod,
-                wagons.yearOfRelease,
-                wagons.yearEndOfRelease,
-                wagons.capacity,
-                wagons.property,
-                wagons.specialization,
-                wagons.material,
-                wagons.factory,
-                wagons.tareMin,
-                wagons.tareMax,
-                wagons.tareMinExp,
-                wagons.boltedConnection,
-                wagons.length,
-                wagons.numAxles,
-                wagons.axialLoad,
-                wagons.footbridge,
-                wagons.volume,
-                wagons.calibration,
-                wagons.bogie,
-                wagons.size,
-                wagons.serviceLife
+//    override fun onAddFavouriteWagon(wagons: Wagons) {
+//        lifecycleScope.launch(Dispatchers.IO) {
+//            val wagonFavourite = WagonsFavourite(
+//                0,
+//                wagons.modelCode,
+//                wagons.model,
+//                wagons.photoURL,
+//                wagons.rod,
+//                wagons.yearOfRelease,
+//                wagons.yearEndOfRelease,
+//                wagons.capacity,
+//                wagons.property,
+//                wagons.specialization,
+//                wagons.material,
+//                wagons.factory,
+//                wagons.tareMin,
+//                wagons.tareMax,
+//                wagons.tareMinExp,
+//                wagons.boltedConnection,
+//                wagons.length,
+//                wagons.numAxles,
+//                wagons.axialLoad,
+//                wagons.footbridge,
+//                wagons.volume,
+//                wagons.calibration,
+//                wagons.bogie,
+//                wagons.size,
+//                wagons.serviceLife
 //                wagons.long,
 //                wagons.inventoryNum,
 //                wagons.typeOfOwnCar,
@@ -161,9 +167,22 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
 //                wagons.continueTu,
 //                wagons.drAftKrpTu,
 //                wagons.krAftKrpTu
-            )
-            appDao.insertWagon(wagonsFavourite)
-        }
-    }
+//            )
+//            appDao.insertWagon(wagonFavourite)
+//        }
+//    }
+
+//    override fun onGetFavouriteListWagons() {
+//
+//    }
+//
+//    override fun onDeleteFavourite(wagonsFavourite: WagonsFavourite) {
+//        lifecycleScope.launch(Dispatchers.IO) {
+//            appDao.deleteWagon(wagonsFavourite)
+//        }
+//    }
+
+
+
 }
 

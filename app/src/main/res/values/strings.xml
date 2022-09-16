@@ -459,5 +459,12 @@
     <string name="item_wagon_fav_txtView_tare_min">Тара мин.</string>
     <string name="item_wagon_fav_txtView_tare_max">Тара макс.</string>
 
+    <!-- Strings used for items for custom_tab's-->
+    <string name="custom_tab_param_txtView">Парам.</string>
+    <string name="custom_tab_repair_txtView">Ремонты</string>
+    <string name="custom_tab_cargos_txtView">Грузы</string>
+    <string name="no_internet_txtView">Проверьте подключение к интернету\nи повторите запрос</string>
+    <string name="repeated_request_bnt">Повторный запрос</string>
+
 
 </resources>

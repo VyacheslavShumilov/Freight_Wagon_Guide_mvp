@@ -91,16 +91,6 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/addFavouriteWagonBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingEnd="5dp"
-            app:srcCompat="@drawable/ic_baseline_favorite_border"/>
-
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
 
 </com.google.android.material.card.MaterialCardView>

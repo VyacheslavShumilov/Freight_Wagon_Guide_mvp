@@ -36,7 +36,7 @@
                     android:id="@+id/deleteFavouriteWagonBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_favorite_24"/>
+                    app:srcCompat="@drawable/ic_baseline_delete_24"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -88,12 +88,6 @@
                     android:paddingStart="8dp"
                     android:textColor="@color/black"/>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_length_unit"
-                    android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -119,7 +113,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/txtView_length_unit"
+                    android:text="@string/txtView_volume_unit"
                     android:paddingStart="8dp"
                     android:textColor="@color/black"/>
 
@@ -147,7 +141,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/txtView_length_unit"
+                    android:text="@string/txtView_axial_load_unit"
                     android:paddingStart="8dp"
                     android:textColor="@color/black"/>
 

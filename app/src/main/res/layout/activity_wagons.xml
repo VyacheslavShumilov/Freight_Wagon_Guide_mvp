@@ -20,7 +20,7 @@
         android:background="@drawable/search_shape_view"
         android:hint="@string/editTxt_hint"
         android:imeOptions="actionSearch"
-        android:inputType="text"
+        android:inputType="phone"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -59,13 +59,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/txtView_check_internet_connection" />
+            android:paddingBottom="10dp"
+            android:text="@string/no_internet_txtView" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClickReply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txtView_repeat_request" />
+            android:text="@string/repeated_request_bnt" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

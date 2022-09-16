@@ -15,7 +15,7 @@
         android:drawableStart="@drawable/ic_baseline_cargos"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
-        android:text="Грузы"
+        android:text="@string/custom_tab_cargos_txtView"
         android:textColor="@color/black"
         android:textSize="15sp" />
 </androidx.appcompat.widget.LinearLayoutCompat>

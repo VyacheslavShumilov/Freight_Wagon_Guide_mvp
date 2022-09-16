@@ -14,7 +14,7 @@
         android:drawableStart="@drawable/ic_baseline_repair"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
-        android:text="Ремонты"
+        android:text="@string/custom_tab_repair_txtView"
         android:textColor="@color/black"
         android:textSize="15sp" />
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -10,13 +10,13 @@ import com.hfad.smgrapp.databinding.ItemWagonsBinding
 import com.hfad.smgrapp.model.Wagons
 import java.util.*
 import android.widget.Filter
+import com.hfad.smgrapp.model.WagonsFavourite
 import kotlin.collections.ArrayList
 
 class AdapterSmgr(
     private var wagonsList: ArrayList<Wagons>,
     private val listener: OnClickListener
-) :
-    RecyclerView.Adapter<AdapterSmgr.ViewHolder>() {
+) : RecyclerView.Adapter<AdapterSmgr.ViewHolder>() {
 
     var wagonsListFilters = ArrayList<Wagons>()
 
@@ -24,7 +24,45 @@ class AdapterSmgr(
         wagonsListFilters = wagonsList
     }
 
-    inner class ViewHolder(var binding: ItemWagonsBinding) : RecyclerView.ViewHolder(binding.root)
+//    private var wagonsListFavourites: ArrayList<String> = arrayListOf()
+
+//    fun addListFavourites(model: ArrayList<String>) {
+//        wagonsListFavourites.addAll(model)
+//    }
+
+
+    inner class ViewHolder(var binding: ItemWagonsBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bindView(wagons: Wagons) {
+            with(binding) {
+                modelTextView.text = wagons.model
+                yearOfReleaseTextView.text = wagons.yearOfRelease
+                yearEndOfReleaseTextView.text = wagons.yearEndOfRelease
+                capacityTextView.text = wagons.capacity
+
+//                for (i in wagonsListFavourites) {
+//                    if (i == wagons.modelCode) {
+//                        addFavouriteWagonBtn.visibility = View.GONE
+//                    }
+//                }
+            }
+        }
+
+        fun bindClickFavourites(wagons: Wagons) {
+
+            with(binding) {
+                itemView.setOnClickListener {
+                    listener.onClickModel(wagons)
+                }
+
+//                addFavouriteWagonBtn.setOnClickListener {
+//                    addFavouriteWagonBtn.visibility = View.GONE
+//                    listener.onAddFavouriteWagon(wagons)
+//                }
+            }
+        }
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -37,19 +75,12 @@ class AdapterSmgr(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val wagons = wagonsListFilters[position]
-        with(holder.binding) {
-            modelTextView.text = wagons.model
-            yearOfReleaseTextView.text = wagons.yearOfRelease
-            yearEndOfReleaseTextView.text = wagons.yearEndOfRelease
-            capacityTextView.text = wagons.capacity
-        }
-        holder.itemView.setOnClickListener {
-            listener.onClickModel(wagons)
-        }
-        holder.binding.addFavouriteWagonBtn.setOnClickListener {
-            listener.onAddFavouriteWagon(wagons)
-            holder.binding.addFavouriteWagonBtn.visibility = View.GONE
+        try {
+            val wagons = wagonsListFilters[position]
+            holder.bindView(wagons)
+            holder.bindClickFavourites(wagons)
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 
@@ -66,7 +97,8 @@ class AdapterSmgr(
                 } else {
                     val filteredList = ArrayList<Wagons>()
                     for (row in wagonsList) {
-                        if (row.model.lowercase(Locale.ROOT).contains(charSearch.lowercase(Locale.ROOT))
+                        if (row.model.lowercase(Locale.ROOT)
+                                .contains(charSearch.lowercase(Locale.ROOT))
                         ) {
                             filteredList.add(row)
 
@@ -81,16 +113,25 @@ class AdapterSmgr(
                 return filterResults
             }
 
+
             @SuppressLint("UNCHECKED_CAST", "NotifyDataSetChanged")
-            override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults) {
+            override fun publishResults(
+                charSequence: CharSequence?,
+                filterResults: FilterResults
+            ) {
                 wagonsListFilters = filterResults.values as ArrayList<Wagons>
                 notifyDataSetChanged()
             }
         }
     }
 
+
     interface OnClickListener {
         fun onClickModel(wagons: Wagons)
-        fun onAddFavouriteWagon(wagons: Wagons)
+//        fun onAddFavouriteWagon(wagons: Wagons)
+//
+//        fun onGetFavouriteListWagons()
+//        fun onDeleteFavourite(wagonsFavourite: WagonsFavourite)
     }
 }
+
