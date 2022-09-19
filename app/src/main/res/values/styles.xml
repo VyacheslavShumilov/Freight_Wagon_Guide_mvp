@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Main_Activity_Name_App">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/txtView_title_name</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/main_activity_name_app_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Main_Activity_Txt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/main_activity_info_app_text_size</item>
+    </style>
+
+    <style name="Main_Activity_Txt.Info">
+        <item name="android:text">@string/txtView_about_guides</item>
+    </style>
+
+    <style name="Main_Activity_Txt.Guide1">
+        <item name="android:text">@string/txtView_smgr1</item>
+    </style>
+
+    <style name="Main_Activity_Txt.Guide2">
+        <item name="android:text">@string/txtView_smgr2</item>
+    </style>
+
+
+    <style name="Main_Activity_Btn">
+        <item name="android:layout_width">@dimen/main_activity_btn_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="cornerRadius">@dimen/main_activity_bnt_corner_radius</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="backgroundTint">@color/toolbar_color</item>
+    </style>
+
+    <style name="Main_Activity_Btn.Smgr">
+        <item name="android:text">@string/btn_enter_smgr</item>
+    </style>
+
+    <style name="Main_Activity_Btn.Orv">
+        <item name="android:text">@string/btn_enter_orv</item>
+    </style>
+
+    <style name="Fragments_Smgr_Static_Header">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="Fragments_Smgr_Static_Text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/frag_param_wagons_static_txt_color</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Fragments_Smgr_Static_Text.Dynamic_Text">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Fragments_Smgr_Value_Text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Fragments_Smgr_Item_Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingTop">@dimen/frag_param_wagon_layout_inner_paddingTop</item>
+        <item name="android:paddingBottom">@dimen/frag_param_wagon_layout_inner_paddingBottom</item>
+    </style>
+
+    <style name="Fragments_Smgr_ViewPager_Scale_Layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal|bottom</item>
+        <item name="android:layout_marginTop">13dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Fragments_Smgr_ViewPager_Scale_Item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">7dp</item>
+        <item name="android:layout_marginLeft">7dp</item>
+        <item name="android:layout_marginEnd">7dp</item>
+        <item name="android:layout_marginRight">7dp</item>
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+</resources>
