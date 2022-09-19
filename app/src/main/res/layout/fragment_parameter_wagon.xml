@@ -138,7 +138,8 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.appcompat.widget.LinearLayoutCompat style="@style/Fragments_Smgr_Item_Layout">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                style="@style/Fragments_Smgr_Item_Layout">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"
@@ -232,7 +233,8 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.appcompat.widget.LinearLayoutCompat style="@style/Fragments_Smgr_Item_Layout">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                style="@style/Fragments_Smgr_Item_Layout">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"

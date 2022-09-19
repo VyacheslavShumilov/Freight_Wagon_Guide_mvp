@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="@dimen/frag_smgr_default_padding">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -23,14 +23,10 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/modelTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Activity_Wagons_Favourite_Item_Header"
                     android:layout_gravity="start"
                     android:layout_weight="1"
-                    android:hint="@string/item_wagon_fav_txtView_model"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:hint="@string/item_wagon_fav_txtView_model" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/deleteFavouriteWagonBtn"
@@ -42,32 +38,24 @@
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
                 android:paddingTop="5dp">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_length"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
+                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
+                    android:text="@string/txtView_length" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/lengthTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:text="@string/txtView_length_unit"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                    android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
+                    android:text="@string/txtView_length_unit" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -78,26 +66,20 @@
                 android:paddingTop="5dp">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_axial_load"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
+                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
+                    android:text="@string/txtView_axial_load" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/axialLoadTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:text="@string/txtView_axial_load_unit"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                    android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
+                    android:text="@string/txtView_axial_load_unit" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -109,26 +91,20 @@
                 android:paddingTop="5dp">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_capacity"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
+                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
+                    android:text="@string/txtView_capacity" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/capacityTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:text="@string/txtView_capacity_unit"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                    android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
+                    android:text="@string/txtView_capacity_unit" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -139,82 +115,33 @@
                 android:paddingTop="5dp">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/item_wagon_fav_txtView_tare"
-                    android:textColor="@color/black" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:text="@string/item_wagon_fav_txtView_tare_min_exp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
+                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
+                    android:text="@string/item_wagon_fav_txtView_tare" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tareMinExpTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:text="@string/txtView_capacity_unit"
-                    android:textColor="@color/black" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:text="@string/item_wagon_fav_txtView_tare_min"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                    android:text="@string/item_slash" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tareMinTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:text="@string/txtView_capacity_unit"
-                    android:textColor="@color/black" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:text="@string/item_wagon_fav_txtView_tare_max"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                    android:text="@string/item_slash" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tareMaxTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:text="@string/txtView_capacity_unit"
-                    android:textColor="@color/black" />
+
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -226,26 +153,20 @@
                 android:paddingTop="5dp">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_volume"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
+                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
+                    android:text="@string/txtView_volume" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/volumeTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:text="@string/txtView_volume_unit"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                    android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
+                    android:text="@string/txtView_volume_unit" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -257,38 +178,22 @@
                 android:paddingTop="5dp">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/item_wagon_fav_txtView_release"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
+                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
+                    android:text="@string/item_wagon_fav_txtView_release" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/yearReleaseTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/item_wagons_txtView_dash"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                    android:text="@string/item_wagons_txtView_dash" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/yearEndReleaseTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:textColor="@color/black" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -299,18 +204,14 @@
                 android:paddingTop="5dp">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_service_life"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
+                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
+                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
+                    android:text="@string/txtView_service_life" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/serviceLifeTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@color/black" />
+                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

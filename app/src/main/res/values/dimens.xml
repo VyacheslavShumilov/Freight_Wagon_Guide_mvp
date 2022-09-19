@@ -26,6 +26,12 @@
     <dimen name="frag_param_wagon_image_height">200dp</dimen>
     <dimen name="frag_cargos_wagons_item_paddingTop">8dp</dimen>
     <dimen name="frag_cargos_wagons_item_paddingBottom">8dp</dimen>
+    <dimen name="activity_wagons_item_header_paddingStart">0dp</dimen>
+    <dimen name="activity_wagons_item_header_paddingEnd">8dp</dimen>
+    <dimen name="activity_wagon_fav_value_txt_paddingStart">8dp</dimen>
+    <dimen name="activity_wagon_fav_value_txt_paddingEnd">0dp</dimen>
+    <dimen name="activity_wagon_fav_param_txt_paddingStart">0dp</dimen>
+    <dimen name="activity_wagon_fav_param_txt_paddingEnd">8dp</dimen>
 
 
 </resources>

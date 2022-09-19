@@ -17,18 +17,14 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/elementTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:hint="@string/item_bogie_comp_hint_txtView_element"
-            android:textColor="@color/black" />
+            style="@style/Bogies_Components_Item_Header"
+            android:hint="@string/item_bogie_comp_hint_txtView_element" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/bluePrintTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/item_bogie_comp_hint_txtView_blue_print"
-            android:textColor="@color/black" />
+            style="@style/Bogies_Components_Item_Header.Medium"
+            android:layout_marginTop="5dp"
+            android:hint="@string/item_bogie_comp_hint_txtView_blue_print" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

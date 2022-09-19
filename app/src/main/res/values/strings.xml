@@ -105,7 +105,7 @@
     <string name="txtView_param_2_4">для 8-ми осных вагонов</string>
     <string name="txtView_unit_2_4">100 – 140 мм</string>
     <string name="txtView_param_2_5">для 4-х осных вагонов (130 мм)\nШ-6-ТО-4</string>
-    <string name="txtView_unit_2_5">100  –150 мм</string>
+    <string name="txtView_unit_2_5">100 –150 мм</string>
     <string name="txtView_param_2_6">расстояние от вертикальной кромки \nмалого зуба до вертикальной кромки \nзамка в его крайнем нижнем положении</string>
     <string name="txtView_unit_2_6">2 – 8 мм</string>
     <string name="txtView_height_coupling_axis_above_rail">Высота оси автосцепки \nнад уровнем головки рельсов</string>
@@ -452,8 +452,8 @@
     <string name="item_wagons_txtView_capacity">грузоподъемность</string>
     <string name="item_wagons_txtView_unit">т</string>
     <string name="item_wagon_fav_txtView_model">Модель</string>
-    <string name="item_wagon_fav_txtView_tare">Тара</string>
-    <string name="item_wagon_fav_txtView_tare_min_exp">мин. экспл.</string>
+    <string name="item_wagon_fav_txtView_tare">Тара мин.экспл./мин./макс.:</string>
+    <string name="item_slash">/</string>
     <string name="item_wagon_fav_txtView_tare_min">мин.</string>
     <string name="item_wagon_fav_txtView_tare_max">макс.</string>
 

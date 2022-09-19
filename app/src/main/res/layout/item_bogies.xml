@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="8dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -17,11 +17,8 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/modelBogieTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/item_bogies_hint_txtView_bogie"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                style="@style/Bogies_Components_Item_Header"
+                android:hint="@string/item_bogies_hint_txtView_bogie" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -29,14 +26,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="5dp">
+            android:layout_marginTop="5dp">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/bogieFactoryTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/item_bogie_comp_txtView_bogieFactory"
-                android:textColor="@color/black" />
+                style="@style/Bogies_Components_Item_Header.Medium"
+                android:hint="@string/item_bogie_comp_txtView_bogieFactory" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
