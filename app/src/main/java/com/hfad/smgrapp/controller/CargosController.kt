@@ -1,6 +1,5 @@
 package com.hfad.smgrapp.controller
 
-import android.util.Log
 import com.hfad.smgrapp.model.Cargos
 import com.hfad.smgrapp.service.ApiWagons
 import com.hfad.smgrapp.view.smgr.ICargosView

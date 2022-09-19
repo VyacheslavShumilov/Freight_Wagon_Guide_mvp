@@ -22,4 +22,8 @@
     <style name="Theme.SMGRApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.SMGRApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+
 </resources>

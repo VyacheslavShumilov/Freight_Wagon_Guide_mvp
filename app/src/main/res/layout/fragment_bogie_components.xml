@@ -27,7 +27,7 @@
                 android:textStyle="bold"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
-                android:text="Основные комплектующие тележки по\nРД ЦВ 052-2009 приложение Е\n(последнее изменение ЦВ 38-2020)"/>
+                android:text="@string/frag_bogie_components_txtView_document"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

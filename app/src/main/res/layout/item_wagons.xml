@@ -47,7 +47,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" - "
+                    android:text="@string/item_wagons_txtView_dash"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
 

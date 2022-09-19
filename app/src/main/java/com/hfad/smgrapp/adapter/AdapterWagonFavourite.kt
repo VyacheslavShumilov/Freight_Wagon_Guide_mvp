@@ -21,14 +21,15 @@ class AdapterWagonFavourite(
             with(binding) {
                 modelTextView.text = wagonsFavourite.model
                 lengthTextView.text = wagonsFavourite.length
-                numAxlesTextView.text = wagonsFavourite.numAxles
                 volumeTextView.text = wagonsFavourite.volume
                 axialLoadTextView.text = wagonsFavourite.axialLoad
                 capacityTextView.text = wagonsFavourite.capacity
-                serviceLifeTextView.text = wagonsFavourite.serviceLife
                 tareMinExpTextView.text = wagonsFavourite.tareMinExp
                 tareMinTextView.text = wagonsFavourite.tareMin
                 tareMaxTextView.text = wagonsFavourite.tareMax
+                yearReleaseTextView.text = wagonsFavourite.yearOfRelease
+                yearEndReleaseTextView.text = wagonsFavourite.yearEndOfRelease
+                serviceLifeTextView.text = wagonsFavourite.serviceLife
 
 
                 deleteFavouriteWagonBtn.setOnClickListener {

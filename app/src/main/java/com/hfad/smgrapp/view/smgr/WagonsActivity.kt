@@ -5,21 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
-import androidx.lifecycle.lifecycleScope
-import com.hfad.smgrapp.App
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.adapter.AdapterSmgr
 import com.hfad.smgrapp.controller.SmgrController
-import com.hfad.smgrapp.dao.WagonsDao
 import com.hfad.smgrapp.databinding.ActivityWagonsBinding
 import com.hfad.smgrapp.model.Wagons
-import com.hfad.smgrapp.model.WagonsFavourite
 import com.hfad.smgrapp.view.smgr.favourite.FavouriteWagonsActivity
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.io.Serializable
 import kotlin.collections.ArrayList
 
@@ -79,22 +71,7 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
         wagonsList.addAll(wagons)
         adapterSmgr = AdapterSmgr(wagonsList, this)
         binding.recyclerView.adapter = adapterSmgr
-//        all()
-
     }
-
-//    private fun all(){
-//        lifecycleScope.launch(Dispatchers.IO) {
-//            val list = appDao.getAllFavouriteWagons() as ArrayList
-//            for (i in list) {
-//                withContext(Dispatchers.Main) {
-//                    val l = arrayListOf(i.modelCode)
-//                    adapterSmgr.addListFavourites(l)
-//                    adapterSmgr.notifyDataSetChanged()
-//                }
-//            }
-//        }
-//    }
 
     override fun error(errMessage: String) {
         binding.layoutNotConnection.visibility = View.VISIBLE
@@ -118,71 +95,5 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
         intent.putExtra("WAGON", wagons as Serializable)
         startActivity(intent)
     }
-
-//    override fun onAddFavouriteWagon(wagons: Wagons) {
-//        lifecycleScope.launch(Dispatchers.IO) {
-//            val wagonFavourite = WagonsFavourite(
-//                0,
-//                wagons.modelCode,
-//                wagons.model,
-//                wagons.photoURL,
-//                wagons.rod,
-//                wagons.yearOfRelease,
-//                wagons.yearEndOfRelease,
-//                wagons.capacity,
-//                wagons.property,
-//                wagons.specialization,
-//                wagons.material,
-//                wagons.factory,
-//                wagons.tareMin,
-//                wagons.tareMax,
-//                wagons.tareMinExp,
-//                wagons.boltedConnection,
-//                wagons.length,
-//                wagons.numAxles,
-//                wagons.axialLoad,
-//                wagons.footbridge,
-//                wagons.volume,
-//                wagons.calibration,
-//                wagons.bogie,
-//                wagons.size,
-//                wagons.serviceLife
-//                wagons.long,
-//                wagons.inventoryNum,
-//                wagons.typeOfOwnCar,
-//                wagons.drAftRelease,
-//                wagons.drAftDrTo1Kr,
-//                wagons.drAftDraft1Kr,
-//                wagons.drAftKr,
-//                wagons.krAftRelease,
-//                wagons.krAftKr,
-//                wagons.drAftReleaseRepProbKm,
-//                wagons.drAftReleaseRepYears,
-//                wagons.drAftDrRepProbKm,
-//                wagons.drAftDrRepProbYears,
-//                wagons.drAftKrRepProbKm,
-//                wagons.drAftKrRepProbYears,
-//                wagons.drAftKrpRepProbKm,
-//                wagons.drAftKrpRepProbYears,
-//                wagons.continueTu,
-//                wagons.drAftKrpTu,
-//                wagons.krAftKrpTu
-//            )
-//            appDao.insertWagon(wagonFavourite)
-//        }
-//    }
-
-//    override fun onGetFavouriteListWagons() {
-//
-//    }
-//
-//    override fun onDeleteFavourite(wagonsFavourite: WagonsFavourite) {
-//        lifecycleScope.launch(Dispatchers.IO) {
-//            appDao.deleteWagon(wagonsFavourite)
-//        }
-//    }
-
-
-
 }
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,16 +19,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingTop="25dp">
+                android:paddingTop="@dimen/main_activity_name_app_padding_top">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/txtView_title_name"
-                    android:textColor="@color/black"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                <com.google.android.material.textview.MaterialTextView style="@style/Main_Activity_Name_App" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -37,15 +29,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingTop="25dp">
+                android:paddingTop="@dimen/main_activity_txt_padding_top">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/txtView_about_guides"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    style="@style/Main_Activity_Txt.Info" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -53,35 +40,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingTop="15dp">
+                android:paddingTop="@dimen/main_activity_txt_padding_top">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/txtView_smgr1"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    style="@style/Main_Activity_Txt.Guide1" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/txtView_smgr2"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    style="@style/Main_Activity_Txt.Guide2" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="300dp"
-                android:layout_height="250dp"
+                android:layout_width="@dimen/main_activity_image_width"
+                android:layout_height="@dimen/main_activity_image_height"
                 android:layout_gravity="center"
                 android:src="@drawable/title_image" />
 
@@ -89,22 +61,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="bottom"
-                android:orientation="vertical"
-                android:paddingBottom="20dp">
+                android:orientation="vertical">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnToSmgr"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/btn_enter_smgr" />
+                    style="@style/Main_Activity_Btn.Smgr"
+                    android:layout_marginBottom="@dimen/main_activity_space_btn_padding" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnToOrv"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/btn_enter_orv" />
+                    style="@style/Main_Activity_Btn.Orv" />
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>

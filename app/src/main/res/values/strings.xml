@@ -143,7 +143,7 @@
     <string name="txtView_unit_4_5">не менее 15 мм</string>
     <string name="txtView_param_4_6">Марка стали клина тягового хомута</string>
     <string name="txtView_unit_4_6">38ХС</string>
-    <string name="txtView_param_4_7">Длина болтов поддерживающих клин,\nдиаметром 20 мм</string>
+    <string name="txtView_param_4_7">Длина болтов поддерживающих\n клин, диаметром 20 мм</string>
     <string name="txtView_unit_4_7">145 ± 3 мм</string>
 
     <!-- Strings used for fragment_break_system -->
@@ -182,11 +182,11 @@
     <string name="txtView_br_param_3_4">без авторегулятора</string>
     <string name="txtView_br_unit_3_4">не более 130 мм</string>
     <string name="txtView_br_distance_a">Расстояние от торца муфты \nдо резьбы на винте - а</string>
-    <string name="txtView_br_param_4_1">грузовые (574Б, РТРП-675, РТРП-675-М)</string>
+    <string name="txtView_br_param_4_1">грузовые (574Б, РТРП-675,\nРТРП-675-М)</string>
     <string name="txtView_br_unit_4_1">не менее 150 мм</string>
     <string name="txtView_br_param_4_2">грузовые (РТРП -300)</string>
     <string name="txtView_br_unit_4_2">не менее 50 мм</string>
-    <string name="txtView_br_distance_A">Расстояние от упора привода до корпуса авторегулятора «А»</string>
+    <string name="txtView_br_distance_A">Расстояние от упора привода\nдо корпуса авторегулятора «А»</string>
     <string name="txtView_br_lever_drive">рычажный привод</string>
     <string name="txtView_br_param_5_1">4-осный вагон, авторегулятор\n574Б и 675</string>
     <string name="txtView_br_unit_5_1">К 35 – 50 мм\nЧ 40 – 60 мм</string>
@@ -222,8 +222,8 @@
     <string name="txtView_br_unit_7_3">5 – 10 мм</string>
     <string name="txtView_br_param_7_4">Угол разворота концевого крана к\nвертикальной оси</string>
     <string name="txtView_br_unit_7_4">60˚</string>
-    <string name="txtView_br_pressure">Давление в тормозном цилиндре порожнего вагона при ПСТ</string>
-    <string name="txtView_br_param_8_1">Без авторежима, Режим ВР - порожний</string>
+    <string name="txtView_br_pressure">Давление в тормозном цилиндре\nпорожнего вагона при ПСТ</string>
+    <string name="txtView_br_param_8_1">Без авторежима,\nРежим ВР - порожний</string>
     <string name="txtView_br_unit_8_1">0,14 – 0,18 МПа</string>
     <string name="txtView_br_param_8_2">С авторежимом для вагонов с тарой до 27 тонн</string>
     <string name="txtView_br_param_8_2_1">Режим ВР - средний</string>
@@ -262,7 +262,7 @@
     <string name="txtView_wh_param_7">Поверхностный откол наружной грани обода колеса</string>
     <string name="txtView_wh_param_7_1">глубиной (по радиусу)</string>
     <string name="txtView_wh_unit_7_1">не более 10 мм</string>
-    <string name="txtView_wh_param_7_2">ширина оставшейся части обода колеса</string>
+    <string name="txtView_wh_param_7_2">ширина оставшейся части\nобода колеса</string>
     <string name="txtView_wh_unit_7_2">не менее 120 мм</string>
     <string name="txtView_wh_param_8">Выщербина</string>
     <string name="txtView_wh_param_8_1">длиной</string>
@@ -450,21 +450,24 @@
     <string name="item_cargos_txtView_code">Код:</string>
     <string name="item_wagons_txtView_release">, выпуск</string>
     <string name="item_wagons_txtView_capacity">грузоподъемность</string>
-    <string name="item_wagons_txtView_unit">т.</string>
+    <string name="item_wagons_txtView_unit">т</string>
     <string name="item_wagon_fav_txtView_model">Модель</string>
-    <string name="item_wagon_fav_txtView_num_axles">Осность</string>
-    <string name="item_wagon_fav_txtView_axial_load">Осевая нагрузка</string>
-    <string name="item_wagon_fav_txtView_capacity">Грузоподъемность</string>
-    <string name="item_wagon_fav_txtView_tare_min_exp">Тара мин. экспл.</string>
-    <string name="item_wagon_fav_txtView_tare_min">Тара мин.</string>
-    <string name="item_wagon_fav_txtView_tare_max">Тара макс.</string>
+    <string name="item_wagon_fav_txtView_tare">Тара</string>
+    <string name="item_wagon_fav_txtView_tare_min_exp">мин. экспл.</string>
+    <string name="item_wagon_fav_txtView_tare_min">мин.</string>
+    <string name="item_wagon_fav_txtView_tare_max">макс.</string>
 
     <!-- Strings used for items for custom_tab's-->
     <string name="custom_tab_param_txtView">Парам.</string>
     <string name="custom_tab_repair_txtView">Ремонты</string>
     <string name="custom_tab_cargos_txtView">Грузы</string>
+
+    <!-- Strings used for items for no internet bnt & txtView-->
     <string name="no_internet_txtView">Проверьте подключение к интернету\nи повторите запрос</string>
     <string name="repeated_request_bnt">Повторный запрос</string>
+    <string name="item_wagon_fav_txtView_release">Выпуск:</string>
+    <string name="item_wagons_txtView_dash">-</string>
+    <string name="frag_bogie_components_txtView_document">Основные комплектующие тележки по\nРД ЦВ 052–2009 приложение Е\n(последнее изменение ЦВ 38–2020)</string>
 
 
 </resources>

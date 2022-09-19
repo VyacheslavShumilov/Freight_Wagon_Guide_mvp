@@ -1,6 +1,31 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="toolbar_text_size">20sp</dimen>
-    <dimen name="frag_param_wagon_main_txt_size">16sp</dimen>
     <dimen name="frag_param_rep_carg_model_txt_size">18sp</dimen>
+    <dimen name="main_activity_name_app_text_size">30sp</dimen>
+    <dimen name="main_activity_info_app_text_size">15sp</dimen>
+    <dimen name="main_activity_btn_width">300dp</dimen>
+    <dimen name="main_activity_bnt_corner_radius">15dp</dimen>
+    <dimen name="main_activity_image_width">300dp</dimen>
+    <dimen name="main_activity_image_height">250dp</dimen>
+    <dimen name="main_activity_name_app_padding_top">25dp</dimen>
+    <dimen name="main_activity_txt_padding_top">15dp</dimen>
+    <dimen name="main_activity_space_btn_padding">15dp</dimen>
+
+    <dimen name="frag_smgr_header_paddingStart">0dp</dimen>
+    <dimen name="frag_smgr_header_paddingEnd">8dp</dimen>
+    <dimen name="frag_smgr_static_txt_paddingStart">0dp</dimen>
+    <dimen name="frag_smgr_static_txt_paddingEnd">8dp</dimen>
+    <dimen name="frag_smgr_default_padding">8dp</dimen>
+    <dimen name="frag_param_wagon_layout_inner_paddingTop">5dp</dimen>
+    <dimen name="frag_param_wagon_layout_inner_paddingBottom">5dp</dimen>
+    <dimen name="frag_param_wagon_header_txt_size">16sp</dimen>
+    <dimen name="frag_param_wagon_dynamic_txt_size">18sp</dimen>
+    <dimen name="frag_param_wagon_value_txt_paddingStart">8dp</dimen>
+    <dimen name="frag_param_wagon_value_txt_paddingEnd">0dp</dimen>
+    <dimen name="frag_param_wagon_image_height">200dp</dimen>
+    <dimen name="frag_cargos_wagons_item_paddingTop">8dp</dimen>
+    <dimen name="frag_cargos_wagons_item_paddingBottom">8dp</dimen>
+
+
 </resources>

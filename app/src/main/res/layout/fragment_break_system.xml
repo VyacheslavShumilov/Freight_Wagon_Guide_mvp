@@ -41,12 +41,17 @@
                 android:useDefaultMargins="true">
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="0"
+                    android:gravity="start"
                     android:text="@string/txtView_br_param_1_1"
                     android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="1"
                     android:gravity="end"
@@ -94,7 +99,7 @@
                     android:layout_column="0"
                     android:layout_columnSpan="2"
                     android:gravity="start"
-                    android:singleLine="false"
+                    android:layout_gravity="fill_horizontal"
                     android:text="@string/txtView_br_param_1_4"
                     android:textColor="@color/black" />
 
@@ -632,7 +637,6 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="start"
-                    android:singleLine="false"
                     android:text="@string/txtView_br_param_6_4"
                     android:textColor="@color/black" />
 

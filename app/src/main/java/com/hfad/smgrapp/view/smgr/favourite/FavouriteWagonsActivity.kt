@@ -10,8 +10,6 @@ import com.hfad.smgrapp.adapter.AdapterWagonFavourite
 import com.hfad.smgrapp.dao.WagonsDao
 import com.hfad.smgrapp.databinding.ActivityFavouriteWagonsBinding
 import com.hfad.smgrapp.model.WagonsFavourite
-import com.hfad.smgrapp.view.MainActivity
-import com.hfad.smgrapp.view.orv.OrvActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

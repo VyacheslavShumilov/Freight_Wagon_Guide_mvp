@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:paddingTop="@dimen/frag_cargos_wagons_item_paddingTop"
+        android:paddingBottom="@dimen/frag_cargos_wagons_item_paddingBottom">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -17,32 +18,25 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/nameEtsngTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
+               style="@style/Fragments_Smgr_Static_Text.Dynamic_Text"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="5dp">
+            android:orientation="horizontal">
 
 
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Fragments_Smgr_Static_Text"
                 android:text="@string/item_cargos_txtView_code"
-                android:paddingEnd="5dp"
-                android:textColor="@color/black"/>
+                android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"/>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/codeEtsngTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"/>
+                style="@style/Fragments_Smgr_Static_Text.Dynamic_Text"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

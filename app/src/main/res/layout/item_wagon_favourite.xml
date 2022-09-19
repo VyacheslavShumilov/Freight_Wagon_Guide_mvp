@@ -11,8 +11,8 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -25,18 +25,18 @@
                     android:id="@+id/modelTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="17sp"
                     android:layout_gravity="start"
                     android:layout_weight="1"
                     android:hint="@string/item_wagon_fav_txtView_model"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/deleteFavouriteWagonBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_delete_24"/>
+                    app:srcCompat="@drawable/ic_baseline_delete_24" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -51,21 +51,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txtView_length"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/lengthTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
                     android:text="@string/txtView_length_unit"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -78,18 +80,144 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/item_wagon_fav_txtView_num_axles"
-                    android:textColor="@color/black"/>
+                    android:text="@string/txtView_axial_load"
+                    android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/numAxlesTextView"
+                    android:id="@+id/axialLoadTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black" />
 
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/txtView_axial_load_unit"
+                    android:textColor="@color/black" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtView_capacity"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/capacityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/txtView_capacity_unit"
+                    android:textColor="@color/black" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="5dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_wagon_fav_txtView_tare"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/item_wagon_fav_txtView_tare_min_exp"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tareMinExpTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/txtView_capacity_unit"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/item_wagon_fav_txtView_tare_min"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tareMinTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/txtView_capacity_unit"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/item_wagon_fav_txtView_tare_max"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tareMaxTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/txtView_capacity_unit"
+                    android:textColor="@color/black" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -101,52 +229,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txtView_volume"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/volumeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
                     android:text="@string/txtView_volume_unit"
-                    android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/item_wagon_fav_txtView_axial_load"
-                    android:textColor="@color/black"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/axialLoadTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_axial_load_unit"
-                    android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -158,22 +259,36 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/item_wagon_fav_txtView_capacity"
-                    android:textColor="@color/black"/>
+                    android:text="@string/item_wagon_fav_txtView_release"
+                    android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/capacityTextView"
+                    android:id="@+id/yearReleaseTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/txtView_capacity_unit"
+                    android:text="@string/item_wagons_txtView_dash"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/yearEndReleaseTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -187,85 +302,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txtView_service_life"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/serviceLifeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="5dp">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/item_wagon_fav_txtView_tare_min_exp"
-                    android:textColor="@color/black"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tareMinExpTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_capacity_unit"
-                    android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:text="@string/item_wagon_fav_txtView_tare_min"
-                    android:textColor="@color/black"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tareMinTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_capacity_unit"
-                    android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:text="@string/item_wagon_fav_txtView_tare_max"
-                    android:textColor="@color/black"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tareMaxTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_capacity_unit"
-                    android:paddingStart="8dp"
-                    android:textColor="@color/black"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

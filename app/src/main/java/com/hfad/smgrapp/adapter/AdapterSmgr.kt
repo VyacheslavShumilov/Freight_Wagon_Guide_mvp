@@ -3,14 +3,12 @@ package com.hfad.smgrapp.adapter
 import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.smgrapp.databinding.ItemWagonsBinding
 import com.hfad.smgrapp.model.Wagons
 import java.util.*
 import android.widget.Filter
-import com.hfad.smgrapp.model.WagonsFavourite
 import kotlin.collections.ArrayList
 
 class AdapterSmgr(
@@ -24,12 +22,6 @@ class AdapterSmgr(
         wagonsListFilters = wagonsList
     }
 
-//    private var wagonsListFavourites: ArrayList<String> = arrayListOf()
-
-//    fun addListFavourites(model: ArrayList<String>) {
-//        wagonsListFavourites.addAll(model)
-//    }
-
 
     inner class ViewHolder(var binding: ItemWagonsBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -39,12 +31,6 @@ class AdapterSmgr(
                 yearOfReleaseTextView.text = wagons.yearOfRelease
                 yearEndOfReleaseTextView.text = wagons.yearEndOfRelease
                 capacityTextView.text = wagons.capacity
-
-//                for (i in wagonsListFavourites) {
-//                    if (i == wagons.modelCode) {
-//                        addFavouriteWagonBtn.visibility = View.GONE
-//                    }
-//                }
             }
         }
 
@@ -54,11 +40,6 @@ class AdapterSmgr(
                 itemView.setOnClickListener {
                     listener.onClickModel(wagons)
                 }
-
-//                addFavouriteWagonBtn.setOnClickListener {
-//                    addFavouriteWagonBtn.visibility = View.GONE
-//                    listener.onAddFavouriteWagon(wagons)
-//                }
             }
         }
     }
@@ -128,10 +109,6 @@ class AdapterSmgr(
 
     interface OnClickListener {
         fun onClickModel(wagons: Wagons)
-//        fun onAddFavouriteWagon(wagons: Wagons)
-//
-//        fun onGetFavouriteListWagons()
-//        fun onDeleteFavourite(wagonsFavourite: WagonsFavourite)
     }
 }
 

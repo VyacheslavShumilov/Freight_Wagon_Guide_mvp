@@ -17,458 +17,292 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="8dp">
+            android:padding="@dimen/frag_smgr_default_padding">
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout"
+                android:gravity="center">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_model"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/frag_param_rep_carg_model_txt_size"
-                    android:textStyle="bold" />
+                    style="@style/Fragments_Smgr_Static_Header"
+                    android:paddingStart="@dimen/frag_smgr_header_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_header_paddingEnd"
+                    android:text="@string/txtView_model"/>
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/wagonModel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/frag_param_rep_carg_model_txt_size"
-                    android:paddingStart="8dp"
-                    android:textStyle="bold" />
+                    style="@style/Fragments_Smgr_Static_Header" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_item_repair"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout"
+                android:background="@color/color_item_repair">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
                     android:text="@string/txtView_dr_aft_release"
-                    android:textColor="@color/black" />
+                     />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Release"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text"
+                    android:hint="@string/txtView_property"/>
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Dr_To_1kr"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Dr_To_1kr" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Dr_To_1kr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_item_repair"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout"
+                android:background="@color/color_item_repair">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Dr_Aft_1Kr"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Dr_Aft_1Kr" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Dr_Aft_1Kr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Kr"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Kr" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Kr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_item_repair"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout"
+                android:background="@color/color_item_repair">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Kr_Aft_Release"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Kr_Aft_Release" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Kr_Aft_Release"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Kr_Aft_Kr"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Kr_Aft_Kr" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Kr_Aft_Kr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_item_repair"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout"
+                android:background="@color/color_item_repair">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Release_Rep_Prob_Km"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Release_Rep_Prob_Km" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Release_Rep_Prob_Km"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Release_Rep_Years"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Release_Rep_Years" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Release_Rep_Years"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_item_repair"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout"
+                android:background="@color/color_item_repair">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Dr_Rep_Prob_Km"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Dr_Rep_Prob_Km" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Dr_Rep_Prob_Km"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Dr_Rep_Prob_Years"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Dr_Rep_Prob_Years" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Dr_Rep_Prob_Years"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_item_repair"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout"
+                android:background="@color/color_item_repair">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Kr_Rep_Prob_Km"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Kr_Rep_Prob_Km" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Kr_Rep_Prob_Km"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Kr_Rep_Years"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Kr_Rep_Years" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Kr_Rep_Years"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_item_repair"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout"
+                android:background="@color/color_item_repair">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Krp_Rep_Prob_Km"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Krp_Rep_Prob_Km" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Krp_Rep_Prob_Km"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Krp_Rep_Prob_Years"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Krp_Rep_Prob_Years" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Krp_Rep_Prob_Years"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_item_repair"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout"
+                android:background="@color/color_item_repair">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Continue_Tu"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Continue_Tu"/>
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Continue_Tu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Dr_Aft_Krp_Tu"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Dr_Aft_Krp_Tu" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Krp_Tu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_item_repair"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                style="@style/Fragments_Smgr_Item_Layout"
+                android:background="@color/color_item_repair">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txtView_Kr_Aft_Krp_Tu"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text"
+                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
+                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
+                    android:text="@string/txtView_Kr_Aft_Krp_Tu" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Kr_Aft_Krp_Tu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:textSize="@dimen/frag_param_wagon_main_txt_size"
-                    android:textColor="@color/black" />
+                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
+                style="@style/Fragments_Smgr_ViewPager_Scale_Layout">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="7dp"
-                    android:layout_marginLeft="7dp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginRight="7dp"
+                <androidx.appcompat.widget.AppCompatImageView
+                    style="@style/Fragments_Smgr_ViewPager_Scale_Item"
                     android:src="@drawable/swipe_indicator_passive" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="7dp"
-                    android:layout_marginLeft="7dp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginRight="7dp"
+                <androidx.appcompat.widget.AppCompatImageView
+                    style="@style/Fragments_Smgr_ViewPager_Scale_Item"
                     android:src="@drawable/swipe_indicator_active" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="7dp"
-                    android:layout_marginLeft="7dp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginRight="7dp"
+                <androidx.appcompat.widget.AppCompatImageView
+                    style="@style/Fragments_Smgr_ViewPager_Scale_Item"
                     android:src="@drawable/swipe_indicator_passive" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 

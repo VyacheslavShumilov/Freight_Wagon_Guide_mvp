@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.adapter.ViewPagerAdapter
-import com.hfad.smgrapp.dao.WagonsDao
 import com.hfad.smgrapp.databinding.ActivityWagonBinding
 import com.hfad.smgrapp.model.Wagons
 

@@ -18,21 +18,21 @@
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/custom_tab_cargos.xml" value="0.3307291666666667" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/custom_tab_parameters.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/custom_tab_repair.xml" value="0.22" />
-        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_automatic_coupler.xml" value="0.25" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_automatic_coupler.xml" value="0.41811175337186895" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_bogie.xml" value="0.33" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_bogie_components.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_break_system.xml" value="0.33" />
-        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_cargos_wagon.xml" value="0.33" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_cargos_wagon.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_components.xml" value="0.33" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_orv_list.xml" value="0.25" />
-        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_parameter_wagon.xml" value="0.33" />
-        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_repairs_wagon.xml" value="0.33" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_parameter_wagon.xml" value="0.67" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_repairs_wagon.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/fragment_wheelset.xml" value="0.33" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_bogie_components.xml" value="0.3307291666666667" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_bogies.xml" value="0.33177083333333335" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_cargos.xml" value="0.33" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_favourite_wagon.xml" value="0.3307291666666667" />
-        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_wagon_favourite.xml" value="0.33" />
+        <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_wagon_favourite.xml" value="0.5" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/item_wagons.xml" value="0.25" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/tab_parameters_custom.xml" value="0.1" />
         <entry key="..\:/GB_Study/13_MyApps/1_SMGR/app/src/main/res/layout/toolbar.xml" value="0.30303030303030304" />
