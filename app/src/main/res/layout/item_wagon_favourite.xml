@@ -141,8 +141,6 @@
                     android:id="@+id/tareMaxTextView"
                     style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
-
-
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
