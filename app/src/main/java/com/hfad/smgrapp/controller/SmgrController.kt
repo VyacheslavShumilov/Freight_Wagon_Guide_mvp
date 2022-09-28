@@ -13,7 +13,7 @@ class SmgrController(val smgrView: ISmgrView): ISmgrController {
     override fun onSmgrList() {
         smgrView.let { view ->
             view.progress(true)
-            apiWagons.getSmgr().enqueue(object : Callback<ArrayList<Wagons>> {
+           apiWagons.getSmgr().enqueue(object : Callback<ArrayList<Wagons>> {
                 override fun onResponse(
                     call: Call<ArrayList<Wagons>>,
                     response: Response<ArrayList<Wagons>>

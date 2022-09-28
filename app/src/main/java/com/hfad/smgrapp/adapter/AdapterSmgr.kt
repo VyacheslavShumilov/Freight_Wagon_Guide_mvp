@@ -71,36 +71,44 @@ class AdapterSmgr(
     fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(charSequence: CharSequence?): FilterResults {
-                Log.d("CHAR_SEARCH", charSequence.toString())
-                val charSearch = charSequence.toString()
+                val charSearch = charSequence?.toString() ?: ""
                 if (charSearch.isEmpty()) {
                     wagonsListFilters = wagonsList
                 } else {
                     val filteredList = ArrayList<Wagons>()
-                    for (row in wagonsList) {
-                        if (row.model.lowercase(Locale.ROOT)
-                                .contains(charSearch.lowercase(Locale.ROOT))
-                        ) {
-                            filteredList.add(row)
-
-                            Log.d("CHAR_SEARCH_MODEL", row.model)
-                        }
+                    wagonsList.filter {
+                        (it.model.contains(charSequence!!))
+                    }.forEach {
+                        filteredList.add(it)
                     }
                     wagonsListFilters = filteredList
-                    Log.d("FILTER_LIST", filteredList.toString())
                 }
-                val filterResults = FilterResults()
-                filterResults.values = wagonsListFilters
-                return filterResults
+                return FilterResults().apply { values = wagonsListFilters }
             }
+//                    for (row in wagonsList) {
+//                        if (row.model.lowercase(Locale.ROOT)
+//                                .contains(charSearch.lowercase(Locale.ROOT))
+//                        ) {
+//                            filteredList.add(row)
+//
+//                            Log.d("CHAR_SEARCH_MODEL", row.model)
+//                        }
+//                    }
+//                    wagonsListFilters = filteredList
+//                    Log.d("FILTER_LIST", filteredList.toString())
+//                }
+//                val filterResults = FilterResults()
+//                filterResults.values = wagonsListFilters
+//                return filterResults
+//            }
 
 
             @SuppressLint("UNCHECKED_CAST", "NotifyDataSetChanged")
-            override fun publishResults(
-                charSequence: CharSequence?,
-                filterResults: FilterResults
-            ) {
-                wagonsListFilters = filterResults.values as ArrayList<Wagons>
+            override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults?) {
+                wagonsListFilters = if (filterResults?.values == null)
+                    ArrayList()
+                else
+                    filterResults.values as ArrayList<Wagons>
                 notifyDataSetChanged()
             }
         }

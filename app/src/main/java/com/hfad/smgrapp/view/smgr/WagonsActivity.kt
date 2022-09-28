@@ -60,6 +60,7 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
             override fun afterTextChanged(text: Editable?) {
                 if (text.toString() != "") {
                     adapterSmgr.getFilter().filter(text.toString())
+                    binding.recyclerView.recycledViewPool.clear()
                     adapterSmgr.notifyDataSetChanged()
                 }
             }
@@ -75,8 +76,11 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
 
     override fun error(errMessage: String) {
         binding.layoutNotConnection.visibility = View.VISIBLE
+        binding.txtInputLayout.visibility = View.GONE
         binding.btnClickReply.setOnClickListener {
             (smgrController as SmgrController).onSmgrList()
+            binding.txtInputLayout.visibility = View.VISIBLE
+
         }
     }
 

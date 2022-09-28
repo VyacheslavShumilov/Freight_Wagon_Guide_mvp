@@ -4,9 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import com.hfad.smgrapp.App
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.dao.WagonsDao
@@ -44,7 +50,7 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
 
             toolbar.textView.text = "Параметры вагона"
 
-            toolbar.clickBackBtn.setOnClickListener{
+            toolbar.clickBackBtn.setOnClickListener {
                 (requireActivity() as WagonActivity).onBackPressed()
             }
 
@@ -81,8 +87,30 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
                     appDao.insertWagon(wagonFavourite)
                 }
                 toolbar.clickHomeBtn.isClickable = false
-
                 Toast.makeText(context, "Добавлен в избранное", Toast.LENGTH_SHORT).show()
+            }
+
+            var isFullScreen = false
+
+            wagonPhotoUrl.setOnClickListener {
+                isFullScreen = isFullScreen.not()
+                TransitionManager.beginDelayedTransition(
+                    imageIdContainer,
+                    TransitionSet()
+                        .addTransition(ChangeBounds())
+                        .addTransition(ChangeImageTransform())
+                )
+                val dimensionWidth = if(isFullScreen) ViewGroup.LayoutParams.WRAP_CONTENT else resources.getDimension(R.dimen.frag_param_wagon_image_width).toInt()
+                val dimensionHeight = if(isFullScreen) ViewGroup.LayoutParams.WRAP_CONTENT else resources.getDimension(R.dimen.frag_param_wagon_image_height).toInt()
+
+                val scaleType = if(isFullScreen) ImageView.ScaleType.CENTER else ImageView.ScaleType.CENTER_INSIDE
+
+                wagonPhotoUrl.updateLayoutParams {
+                    width = dimensionWidth
+                    height = dimensionHeight
+                }
+
+                wagonPhotoUrl.scaleType = scaleType
             }
 
             lifecycleScope.launch(Dispatchers.IO) {
