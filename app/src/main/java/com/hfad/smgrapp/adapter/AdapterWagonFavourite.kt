@@ -2,6 +2,7 @@ package com.hfad.smgrapp.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.smgrapp.databinding.ItemWagonFavouriteBinding
@@ -34,6 +35,8 @@ class AdapterWagonFavourite(
 
                 deleteFavouriteWagonBtn.setOnClickListener {
                     listener.onDeleteFavourite(wagonsFavourite)
+                    notifyDataSetChanged()
+                    listener.onExplode(itemView)
                     deleteItem(wagonsFavourite)
                     notifyDataSetChanged()
                 }
@@ -67,5 +70,7 @@ class AdapterWagonFavourite(
     interface OnClickListener {
         fun onDeleteFavourite(wagonsFavourite: WagonsFavourite)
         fun notFavourites()
+        fun onExplode(view: View)
     }
+
 }

@@ -1,10 +1,12 @@
 package com.hfad.smgrapp.view.smgr.favourite
 
+import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.transition.*
 import com.hfad.smgrapp.App
 import com.hfad.smgrapp.adapter.AdapterWagonFavourite
 import com.hfad.smgrapp.dao.WagonsDao
@@ -59,10 +61,29 @@ class FavouriteWagonsActivity : AppCompatActivity(), AdapterWagonFavourite.OnCli
         lifecycleScope.launch(Dispatchers.IO) {
             appDao.deleteWagon(wagonsFavourite)
         }
-
     }
 
     override fun notFavourites() {
         Toast.makeText(this, "Нет сохраненных", Toast.LENGTH_SHORT).show()
     }
+
+    override fun onExplode(view: View) {
+        val rect = Rect()
+        view.getGlobalVisibleRect(rect)
+
+        val explode = Explode().apply {
+            epicenterCallback = object : Transition.EpicenterCallback() {
+                override fun onGetEpicenter(transition: Transition): Rect = rect
+            }
+            duration = 1000L
+        }
+
+        val animSet = TransitionSet()
+            .addTransition(explode)
+            .addTransition(Fade().addTarget(view))
+
+        TransitionManager.beginDelayedTransition(binding.recyclerView, animSet)
+    }
+
+
 }

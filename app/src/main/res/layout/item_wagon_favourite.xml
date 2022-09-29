@@ -2,6 +2,10 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="8dp"
+    android:layout_weight="1"
+    android:layout_margin="8dp"
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -62,7 +66,7 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingTop="5dp">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -71,15 +75,24 @@
                     android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
                     android:text="@string/txtView_axial_load" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/axialLoadTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                    android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
-                    android:text="@string/txtView_axial_load_unit" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/axialLoadTextView"
+                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                        android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
+                        android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
+                        android:text="@string/txtView_axial_load_unit" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -94,7 +107,9 @@
                     style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
                     android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
                     android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
-                    android:text="@string/txtView_capacity" />
+                    android:text="@string/txtView_capacity_short" />
+
+
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/capacityTextView"
@@ -111,7 +126,7 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingTop="5dp">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -120,26 +135,39 @@
                     android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
                     android:text="@string/item_wagon_fav_txtView_tare" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tareMinExpTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tareMinExpTextView"
+                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                    android:text="@string/item_slash" />
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                        android:text="@string/item_slash" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tareMinTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tareMinTextView"
+                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                    android:text="@string/item_slash" />
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                        android:text="@string/item_slash" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tareMaxTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tareMaxTextView"
+                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                        android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
+                        android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
+                        android:text="@string/txtView_capacity_unit" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -147,7 +175,7 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingTop="5dp">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -156,15 +184,22 @@
                     android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
                     android:text="@string/txtView_volume" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/volumeTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                    android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
-                    android:text="@string/txtView_volume_unit" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/volumeTextView"
+                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
+                        android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
+                        android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
+                        android:text="@string/txtView_volume_unit" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -205,7 +240,7 @@
                     style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
                     android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
                     android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
-                    android:text="@string/txtView_service_life" />
+                    android:text="@string/txtView_service_life_short" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/serviceLifeTextView"
