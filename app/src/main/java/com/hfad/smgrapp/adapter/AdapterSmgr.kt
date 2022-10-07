@@ -1,13 +1,11 @@
 package com.hfad.smgrapp.adapter
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.smgrapp.databinding.ItemWagonsBinding
 import com.hfad.smgrapp.model.Wagons
-import java.util.*
 import android.widget.Filter
 import kotlin.collections.ArrayList
 
@@ -35,11 +33,8 @@ class AdapterSmgr(
         }
 
         fun bindClickFavourites(wagons: Wagons) {
-
-            with(binding) {
-                itemView.setOnClickListener {
-                    listener.onClickModel(wagons)
-                }
+            itemView.setOnClickListener {
+                listener.onClickModel(wagons)
             }
         }
     }
@@ -85,26 +80,13 @@ class AdapterSmgr(
                 }
                 return FilterResults().apply { values = wagonsListFilters }
             }
-//                    for (row in wagonsList) {
-//                        if (row.model.lowercase(Locale.ROOT)
-//                                .contains(charSearch.lowercase(Locale.ROOT))
-//                        ) {
-//                            filteredList.add(row)
-//
-//                            Log.d("CHAR_SEARCH_MODEL", row.model)
-//                        }
-//                    }
-//                    wagonsListFilters = filteredList
-//                    Log.d("FILTER_LIST", filteredList.toString())
-//                }
-//                val filterResults = FilterResults()
-//                filterResults.values = wagonsListFilters
-//                return filterResults
-//            }
 
 
             @SuppressLint("UNCHECKED_CAST", "NotifyDataSetChanged")
-            override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults?) {
+            override fun publishResults(
+                charSequence: CharSequence?,
+                filterResults: FilterResults?
+            ) {
                 wagonsListFilters = if (filterResults?.values == null)
                     ArrayList()
                 else

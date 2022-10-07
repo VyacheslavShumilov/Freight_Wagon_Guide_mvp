@@ -351,7 +351,7 @@
                     android:layout_gravity="fill_horizontal"
                     android:singleLine="false"
                     android:text="@string/txtView_bg_param_4_5"
-                     />
+                    />
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Orv_Text"
@@ -732,7 +732,7 @@
                     android:layout_column="0"
                     android:layout_columnSpan="2"
                     android:text="@string/txtView_bg_param_7_3_4"
-                 />
+                    />
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Orv_Text"

@@ -17,8 +17,8 @@
     <!-- Strings used for activity_main -->
     <string name="txtView_title_name">СВОДНЫЙ \nСПРАВОЧНИК\nГРУЗОВЫХ ВАГОНОВ</string>
     <string name="txtView_about_guides">Включает данные справочников:</string>
-    <string name="txtView_smgr1">СМГР1 от 03.03.2022 г.</string>
-    <string name="txtView_smgr2">СМГР2 от 10.02.2022 г.</string>
+    <string name="txtView_smgr1">СМГР1 от 01.09.2022 г.</string>
+    <string name="txtView_smgr2">СМГР2 от 01.09.2022 г.</string>
     <string name="btn_enter_smgr">Вход в СМГР</string>
     <string name="btn_enter_orv">Вход в памятку ОРВ</string>
     <string name="editTxt_hint">Поиск модели вагона</string>
@@ -85,18 +85,18 @@
 
     <!-- Strings used for fragment_automatic_coupler -->
     <string name="txtView_auto_coupling_output">Выход автосцепки</string>
-    <string name="txtView_param_1_1">между потолком розетки и хвостовиком</string>
+    <string name="txtView_param_1_1">между потолком розетки\nи хвостовиком</string>
     <string name="txtView_unit_1_1">не менее 25 мм</string>
-    <string name="txtView_param_1_2">разница высот автосц. на одном вагоне</string>
+    <string name="txtView_param_1_2">разница высот автосцепки\nна одном вагоне</string>
     <string name="txtView_unit_1_2">не более 25 мм</string>
     <string name="txtView_param_1_3">для 4-х осных вагонов (185 мм)</string>
     <string name="txtView_unit_1_3">60 – 90 мм</string>
     <string name="txtView_param_1_4">для 8-ми осных вагонов</string>
     <string name="txtView_unit_1_4">100 – 140 мм</string>
-    <string name="txtView_param_1_5">для 4-х осных вагонов (130 мм)/ Ш-6-ТО-4</string>
+    <string name="txtView_param_1_5">для 4-х осных вагонов (130 мм)/\nШ-6-ТО-4</string>
     <string name="txtView_unit_1_5">110 – 150 мм</string>
     <string name="txtView_height_difference">Разница по высоте \n между продольными осями</string>
-    <string name="txtView_param_2_1">локомотив и первый груженый вагон</string>
+    <string name="txtView_param_2_1">локомотив и первый\nгруженый вагон</string>
     <string name="txtView_unit_2_1">не более 110 мм</string>
     <string name="txtView_param_2_2">в составе грузового поезда</string>
     <string name="txtView_unit_2_2">не более 100 мм</string>
@@ -106,7 +106,7 @@
     <string name="txtView_unit_2_4">100 – 140 мм</string>
     <string name="txtView_param_2_5">для 4-х осных вагонов (130 мм)\nШ-6-ТО-4</string>
     <string name="txtView_unit_2_5">100 –150 мм</string>
-    <string name="txtView_param_2_6">расстояние от вертикальной кромки \nмалого зуба до вертикальной кромки \nзамка в его крайнем нижнем положении</string>
+    <string name="txtView_param_2_6">расстояние от вертикальной \nкромки малого зуба \nдо вертикальной кромки замка\nв его крайнем нижнем положении</string>
     <string name="txtView_unit_2_6">2 – 8 мм</string>
     <string name="txtView_height_coupling_axis_above_rail">Высота оси автосцепки \nнад уровнем головки рельсов</string>
     <string name="txtView_param_3_1">у порожних вагонов всех типов</string>
@@ -126,7 +126,7 @@
     <string name="txtView_param_3_8">задир головы автосцепки</string>
     <string name="txtView_unit_3_8">не более 3 мм</string>
     <string name="txtView_Absorbing_device">Поглощающий аппарат</string>
-    <string name="txtView_param_4_1">Суммарный зазор между угольниками,\n упорной плитой и поглощающим\nаппаратом</string>
+    <string name="txtView_param_4_1">Суммарный зазор между \nугольниками, упорной плитой \nи поглощающим аппаратом</string>
     <string name="txtView_unit_4_1">не более 1080 мм</string>
     <string name="txtView_param_4_2">При зазоре более 5 мм, но не более 50 мм разрешается довезти:</string>
     <string name="txtView_param_4_2_1">- порожний вагон</string>
@@ -154,15 +154,15 @@
     <string name="txtView_br_unit_1_2">не менее 12 мм</string>
     <string name="txtView_br_param_1_3">с металлической спинкой</string>
     <string name="txtView_br_unit_1_3">не менее 14 мм</string>
-    <string name="txtView_br_param_1_4">при клиновидном износе на расстоянии 50 мм от тонкого края колодки:</string>
+    <string name="txtView_br_param_1_4">при клиновидном износе на расстоянии\n50 мм от тонкого края колодки:</string>
     <string name="txtView_br_param_1_4_1">дзазор между колодкой и колесом</string>
     <string name="txtView_br_unit_1_4_1">не более 10 мм</string>
-    <string name="txtView_br_param_1_4_2">выход за наружную грань обода колеса</string>
+    <string name="txtView_br_param_1_4_2">выход за наружную грань\nобода колеса</string>
     <string name="txtView_br_unit_1_4_2">не более 10 мм</string>
     <string name="txtView_br_param_1_5">на вагонах с пассажирскими тележками выход колодки за наружную грань обода колеса не допускается:</string>
-    <string name="txtView_br_param_1_5_1">разница толщин колодок\n на одном триангеле</string>
+    <string name="txtView_br_param_1_5_1">разница толщин колодок\nна одном триангеле</string>
     <string name="txtView_br_unit_1_5_1">не более 10 мм</string>
-    <string name="txtView_br_param_1_5_2">толщина вновь устанавливаемой колодки</string>
+    <string name="txtView_br_param_1_5_2">толщина вновь\nустанавливаемой колодки</string>
     <string name="txtView_br_unit_1_5_2">не менее 25 мм</string>
     <string name="txtView_stock_output">Выход штока</string>
     <string name="txtView_br_cast_iron">грузовые на чугунных колодках</string>
@@ -173,8 +173,8 @@
     <string name="txtView_br_param_2_3">без авторегулятора</string>
     <string name="txtView_br_unit_2_3">не более 175 мм</string>
     <string name="txtView_br_composition">грузовые на композиционных колодках</string>
-    <string name="txtView_br_param_3_1">с РТРП, *(с буксами адаптерного типа)</string>
-    <string name="txtView_br_unit_3_1">25 – 65 (75)* мм</string>
+    <string name="txtView_br_param_3_1">с РТРП,\n*(с буксами адаптерного типа)</string>
+    <string name="txtView_br_unit_3_1">25 – 65\n(75)* мм</string>
     <string name="txtView_br_param_3_2">при первой ступени торможения</string>
     <string name="txtView_br_unit_3_2">40 – 80 мм</string>
     <string name="txtView_br_param_3_3">при полном служебном торможении</string>
@@ -203,14 +203,14 @@
     <string name="txtView_br_rod_drive">стержневой привод</string>
     <string name="txtView_br_param_6_1">4-осный вагон с одним\nтормозным цилиндром</string>
     <string name="txtView_br_unit_6_1">К 140 – 200 мм\nЧ 130 – 150 мм</string>
-    <string name="txtView_br_param_6_2">рефрижераторные вагоны на тележках\nКВЗ-И2 и на тележках ЦМВ-Дессау</string>
+    <string name="txtView_br_param_6_2">рефрижераторные вагоны\nна тележках КВЗ-И2\nи на тележках ЦМВ-Дессау</string>
     <string name="txtView_br_unit_6_2">К 55 – 145 мм\nЧ 60 – 100 мм</string>
     <string name="txtView_br_param_6_3">Один оборот авторегулятора\nрегулирует выход штока ТЦ</string>
     <string name="txtView_br_unit_6_3">+- на 30 мм</string>
     <string name="txtView_br_param_6_4">Зазор между упором авторежима и контактной планкой на порожнем вагоне не более 3 мм, допускается постановка не более пяти регулировочных планок\nтолщиной от 1,5 до 5 мм.</string>
-    <string name="txtView_br_param_6_5">Кольцевая выточка должна выступать\n из корпуса авторежима</string>
-    <string name="txtView_br_unit_6_5">не менее,\nчем на 2 мм</string>
-    <string name="txtView_br_param_6_6">Расстояние от упора авторежима\n до края контактной планки должно быть</string>
+    <string name="txtView_br_param_6_5">Кольцевая выточка должна\nвыступать из корпуса\nавторежима</string>
+    <string name="txtView_br_unit_6_5">не менее\nчем на 2 мм</string>
+    <string name="txtView_br_param_6_6">Расстояние от упора авторежима\nдо края контактной планки\nдолжно быть</string>
     <string name="txtView_br_unit_6_6">не менее 50 мм</string>
     <string name="txtView_br_param_6_7">Зазор между шайбой и шплинтом в шарнирных соединениях ТРП не более 3 мм, регулировка одной шайбой толщиной не более 6 мм</string>
     <string name="txtView_br_check_autoregulator">Проверка авторегулятора на стягивание ТРП после полного служебного торможения по контролю размера а</string>
@@ -231,11 +231,11 @@
     <string name="txtView_br_param_8_2_2">Режим ВР - груженый</string>
     <string name="txtView_br_unit_8_2_2">0,14 – 0,20 МПа</string>
     <string name="txtView_br_param_8_3">С авторежимом, на среднем режиме ВР и расчётное нажатие</string>
-    <string name="txtView_br_param_8_3_1">для вагонов с тарой от 27 до 32 тонн</string>
+    <string name="txtView_br_param_8_3_1">для вагонов с тарой\nот 27 до 32 тонн</string>
     <string name="txtView_br_unit_8_3_1">4,5/0,15 – 0,17 МПа</string>
-    <string name="txtView_br_param_8_3_2">для вагонов с тарой от 32 до 36 тонн</string>
+    <string name="txtView_br_param_8_3_2">для вагонов с тарой\nот 32 до 36 тонн</string>
     <string name="txtView_br_unit_8_3_2">5,0/0,18 – 0,20 МПа</string>
-    <string name="txtView_br_param_8_3_3">для вагонов с тарой от 36 до 45 тонн</string>
+    <string name="txtView_br_param_8_3_3">для вагонов с тарой\nот 36 до 45 тонн</string>
     <string name="txtView_br_unit_8_3_3">6,5/0,21 – 0,23 МПа</string>
 
     <!-- Strings used for fragment_wheelset -->
@@ -269,7 +269,7 @@
     <string name="txtView_wh_unit_8_1">не более 50 мм</string>
     <string name="txtView_wh_param_8_2">глубиной</string>
     <string name="txtView_wh_unit_8_2">не более 10 мм</string>
-    <string name="txtView_wh_param_8_3">глубиной до 1 мм независимо от длины</string>
+    <string name="txtView_wh_param_8_3">глубиной до 1 мм \nнезависимо от длины</string>
     <string name="txtView_wh_unit_8_3">не бракуется</string>
     <string name="txtView_wh_param_8_4">толщина обода в месте дефекта\nдолжна быть</string>
     <string name="txtView_wh_unit_8_4">не менее\nдопустимой</string>
@@ -278,10 +278,10 @@
     <string name="txtView_wh_unit_9_1">не более 1 мм</string>
     <string name="txtView_wh_param_9_2">грузовые вагоны\nс кассетными подшипниками</string>
     <string name="txtView_wh_unit_9_2">не более 2 мм</string>
-    <string name="txtView_wh_param_9_3">более 1 до 2 мм: до ближайшего ПТО, V - не более 70 км/ч</string>
-    <string name="txtView_wh_param_9_4">от 2 до 6 мм: до ближайшей станции, V - не более 15 км/ч</string>
-    <string name="txtView_wh_param_9_5">от 6 до 12 мм: до ближайшей станции, V - не более 10 км/ч</string>
-    <string name="txtView_wh_param_9_6">более 12 мм: до ближайшей станции, V - не более 10 км/ч, с исключением вращения КП</string>
+    <string name="txtView_wh_param_9_3">более 1 до 2 мм: до ближайшего ПТО, V:\nне более 70 км/ч</string>
+    <string name="txtView_wh_param_9_4">от 2 до 6 мм: до ближайшей станции, V:\nне более 15 км/ч</string>
+    <string name="txtView_wh_param_9_5">от 6 до 12 мм: до ближайшей станции, V:\nне более 10 км/ч</string>
+    <string name="txtView_wh_param_9_6">более 12 мм: до ближайшей станции, V:\nне более 10 км/ч, с исключением вращения КП</string>
     <string name="txtView_wh_param_10">Навар (смещение металла)</string>
     <string name="txtView_wh_param_10_1">грузовые вагоны</string>
     <string name="txtView_wh_unit_10_1">не более 1 мм</string>
@@ -472,6 +472,7 @@
     <!-- Strings used for activity_favorite -->
     <string name="txtView_capacity_short">Грузоп-ть:</string>
     <string name="txtView_service_life_short">Срок службы:</string>
+    <string name="activity_main_push_train">Нажми на поезд!</string>
 
 
 </resources>

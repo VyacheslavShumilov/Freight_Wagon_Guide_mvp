@@ -30,7 +30,7 @@ class AdapterCargos : RecyclerView.Adapter<AdapterCargos.ViewHolder>() {
         val cargos = cargosList[position]
         with(holder.binding) {
             nameEtsngTextView.text = cargos.nameEtsng
-            codeEtsngTextView.text = cargos.codeEtsng.toString()
+            codeEtsngTextView.text = cargos.codeEtsng
         }
     }
 

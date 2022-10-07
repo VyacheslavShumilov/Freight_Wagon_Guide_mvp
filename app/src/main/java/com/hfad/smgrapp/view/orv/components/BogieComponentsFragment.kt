@@ -20,7 +20,7 @@ class BogieComponentsFragment(var modelBogie: String) : Fragment(), IBogiesCompo
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentBogieComponentsBinding.inflate(inflater, container, false)
         return binding.root
     }

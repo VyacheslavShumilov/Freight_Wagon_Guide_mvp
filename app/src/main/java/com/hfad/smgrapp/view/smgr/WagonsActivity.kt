@@ -53,9 +53,11 @@ class WagonsActivity : AppCompatActivity(), ISmgrView, AdapterSmgr.OnClickListen
 
         binding.searchView.addTextChangedListener(object : TextWatcher {
 
-            override fun beforeTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun beforeTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
 
-            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
 
             override fun afterTextChanged(text: Editable?) {
                 if (text.toString() != "") {

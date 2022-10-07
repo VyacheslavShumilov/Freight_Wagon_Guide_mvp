@@ -44,7 +44,7 @@
                     android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
                     android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
                     android:text="@string/txtView_dr_aft_release"
-                     />
+                    />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_Dr_Aft_Release"
@@ -288,22 +288,6 @@
                     android:id="@+id/text_Kr_Aft_Krp_Tu"
                     style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_ViewPager_Scale_Layout">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    style="@style/Fragments_Smgr_ViewPager_Scale_Item"
-                    android:src="@drawable/swipe_indicator_passive" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    style="@style/Fragments_Smgr_ViewPager_Scale_Item"
-                    android:src="@drawable/swipe_indicator_active" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    style="@style/Fragments_Smgr_ViewPager_Scale_Item"
-                    android:src="@drawable/swipe_indicator_passive" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>

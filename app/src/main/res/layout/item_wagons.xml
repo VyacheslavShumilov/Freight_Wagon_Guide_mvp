@@ -1,74 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="@dimen/item_wagons_cardView_linLayout_padding">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:orientation="horizontal">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/modelTextView"
+                style="@style/Activity_Wagons_Item_Header"/>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/modelTextView"
-                    style="@style/Activity_Wagons_Item_Header"/>
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Activity_Wagons_Item_Header"
+                android:text="@string/item_wagons_txtView_release"
+                android:paddingStart="@dimen/activity_wagons_item_header_paddingStart"
+                android:paddingEnd="@dimen/activity_wagons_item_header_paddingEnd"/>
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Item_Header"
-                    android:text="@string/item_wagons_txtView_release"
-                    android:paddingStart="@dimen/activity_wagons_item_header_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagons_item_header_paddingEnd"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/yearOfReleaseTextView"
+                style="@style/Activity_Wagons_Item_Header"/>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/yearOfReleaseTextView"
-                    style="@style/Activity_Wagons_Item_Header"/>
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Activity_Wagons_Item_Header"
+                android:text="@string/item_wagons_txtView_dash" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Item_Header"
-                    android:text="@string/item_wagons_txtView_dash" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/yearEndOfReleaseTextView"
+                style="@style/Activity_Wagons_Item_Header"/>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/yearEndOfReleaseTextView"
-                    style="@style/Activity_Wagons_Item_Header"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
 
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Item_Header.Medium"
-                    android:paddingStart="@dimen/activity_wagons_item_header_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagons_item_header_paddingEnd"
-                    android:text="@string/item_wagons_txtView_capacity"/>
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Activity_Wagons_Item_Header.Medium"
+                android:paddingStart="@dimen/activity_wagons_item_header_paddingStart"
+                android:paddingEnd="@dimen/activity_wagons_item_header_paddingEnd"
+                android:text="@string/item_wagons_txtView_capacity"/>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/capacityTextView"
-                    style="@style/Activity_Wagons_Item_Header.Medium"
-                    android:paddingStart="@dimen/activity_wagons_item_header_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagons_item_header_paddingEnd"
-                    />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/capacityTextView"
+                style="@style/Activity_Wagons_Item_Header.Medium"
+                android:paddingStart="@dimen/activity_wagons_item_header_paddingStart"
+                android:paddingEnd="@dimen/activity_wagons_item_header_paddingEnd"
+                />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Item_Header.Medium"
-                    android:text="@string/item_wagons_txtView_unit"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Activity_Wagons_Item_Header.Medium"
+                android:text="@string/item_wagons_txtView_unit"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

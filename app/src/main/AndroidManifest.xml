@@ -12,26 +12,32 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
+
         android:roundIcon="@mipmap/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.SMGRApp"
         tools:targetApi="31">
         <activity
             android:name=".view.smgr.favourite.FavouriteWagonsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".view.orv.OrvActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:label="@string/title_activity_orv"
             android:theme="@style/Theme.SMGRApp.NoActionBar" />
         <activity
             android:name=".view.smgr.WagonActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".view.smgr.WagonsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

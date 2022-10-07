@@ -19,8 +19,4 @@ interface WagonsDao {
 
     @Query("SELECT * FROM wagonsFavourite WHERE modelCode =:modelCode")
     fun getWagonFavorite(modelCode: String): WagonsFavourite
-
-    @Query("DELETE FROM wagonsFavourite")
-    fun deleteAll()
-
 }

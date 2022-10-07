@@ -53,9 +53,9 @@ data class Wagons(
 
 data class Cargos(
     @SerializedName("Model") val model: String,
-    @SerializedName("CodeETSNG") val codeEtsng: Int,
+    @SerializedName("CodeETSNG") val codeEtsng: String,
     @SerializedName("NameETSNG") val nameEtsng: String,
-    @SerializedName("ModelCode") val modelCode: Int
+    @SerializedName("ModelCode") val modelCode: String
 ): Serializable
 
 data class Bogies(

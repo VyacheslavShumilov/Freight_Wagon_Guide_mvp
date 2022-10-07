@@ -354,26 +354,6 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.appcompat.widget.LinearLayoutCompat style="@style/Fragments_Smgr_ViewPager_Scale_Layout">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="7dp"
-                    android:layout_marginLeft="7dp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginRight="7dp"
-                    android:src="@drawable/swipe_indicator_active" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    style="@style/Fragments_Smgr_ViewPager_Scale_Item"
-                    android:src="@drawable/swipe_indicator_passive" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    style="@style/Fragments_Smgr_ViewPager_Scale_Item"
-                    android:src="@drawable/swipe_indicator_passive" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>
