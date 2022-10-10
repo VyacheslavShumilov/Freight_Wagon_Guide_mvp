@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:gravity="center"
-    tools:context=".view.smgr.WagonsActivity">
+    tools:context=".ui.smgr.wagons.WagonsActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tab_image_textview"
@@ -17,5 +17,5 @@
         android:gravity="center_vertical"
         android:text="@string/custom_tab_cargos_txtView"
         android:textColor="@color/black"
-        android:textSize="15sp" />
+        android:textSize="@dimen/custom_tab_cargos_txt_size" />
 </androidx.appcompat.widget.LinearLayoutCompat>

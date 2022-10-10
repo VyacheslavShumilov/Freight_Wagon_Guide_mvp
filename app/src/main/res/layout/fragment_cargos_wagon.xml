@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.smgr.CargosWagonFragment">
+    tools:context=".ui.smgr.wagon_cargos.CargosWagonFragment">
 
     <include
         android:id="@+id/toolbar"
@@ -54,7 +54,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:visibility="gone"
-                android:textSize="15sp"
+                android:textSize="@dimen/frag_cargos_activity_no_matches_txt_size"
                 android:text="@string/txtView_no_info_wagon_cargos"/>
 
             <ProgressBar

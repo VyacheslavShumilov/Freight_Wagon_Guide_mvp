@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.smgr.CargosWagonFragment">
+    tools:context=".ui.smgr.wagon_cargos.CargosWagonFragment">
 
     <include
         android:id="@+id/toolbar"

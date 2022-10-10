@@ -18,25 +18,25 @@
         android:theme="@style/Theme.SMGRApp"
         tools:targetApi="31">
         <activity
-            android:name=".view.smgr.favourite.FavouriteWagonsActivity"
+            android:name=".ui.smgr.favourite.FavouriteWagonsActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".view.orv.OrvActivity"
+            android:name=".ui.orv.OrvActivity"
             android:screenOrientation="portrait"
             android:exported="false"
             android:label="@string/title_activity_orv"
             android:theme="@style/Theme.SMGRApp.NoActionBar" />
         <activity
-            android:name=".view.smgr.WagonActivity"
+            android:name=".ui.smgr.WagonActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".view.smgr.WagonsActivity"
+            android:name=".ui.smgr.wagons.WagonsActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
