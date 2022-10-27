@@ -84,6 +84,4 @@ class FavouriteWagonsActivity : AppCompatActivity(), AdapterWagonFavourite.OnCli
 
         TransitionManager.beginDelayedTransition(binding.recyclerView, animSet)
     }
-
-
 }

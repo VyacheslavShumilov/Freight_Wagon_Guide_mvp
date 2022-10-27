@@ -33,13 +33,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
-    packagingOptions{
-        exclude 'META-INF/rxjava.properties'
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/rxjava.properties']
+        }
     }
+
     buildFeatures {
         viewBinding true
     }
+    namespace 'com.hfad.smgrapp'
 }
 
 dependencies {
