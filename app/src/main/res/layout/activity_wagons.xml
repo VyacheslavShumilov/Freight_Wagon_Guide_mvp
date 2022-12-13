@@ -14,6 +14,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -21,26 +22,27 @@
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="?attr/colorPrimary"
         app:counterEnabled="true"
         app:counterMaxLength="12"
+        app:counterTextColor="?attr/colorStaticText"
         app:endIconMode="clear_text"
+        app:endIconDrawable="@drawable/ic_clear"
+        app:endIconTint="?attr/colorOnSecondary"
         app:helperText="@string/editTxt_hint"
-        app:helperTextTextColor="@color/black"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:helperTextTextColor="?attr/colorStaticText"
         app:hintAnimationEnabled="true"
-        app:boxStrokeColor="@color/main_color_light"
-        app:counterTextColor="@color/black"
-        app:prefixTextColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:elegantTextHeight="true"
             android:inputType="phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textColor="?attr/colorOnSecondary"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

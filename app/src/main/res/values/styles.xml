@@ -40,7 +40,7 @@
     <style name="Fragments_Smgr_Static_Text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/static_txt_light</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
         <item name="android:textSize">16sp</item>
     </style>
 
@@ -101,7 +101,7 @@
     <style name="Activity_Wagons_Favourite_Item_Header_Medium">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/static_txt_light</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
         <item name="android:textSize">16sp</item>
     </style>
 
@@ -167,7 +167,9 @@
         <item name="elevation">@dimen/cardView_elevation</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="strokeColor">?attr/colorOnSurfaceVariant</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+<!--        <item name="android:foreground">?attr/colorSurface</item>-->
     </style>
 
 </resources>

@@ -15,6 +15,6 @@
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:text="@string/custom_tab_repair_txtView"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnSecondary"
         android:textSize="@dimen/custom_tab_repairs_txt_size" />
 </androidx.appcompat.widget.LinearLayoutCompat>
