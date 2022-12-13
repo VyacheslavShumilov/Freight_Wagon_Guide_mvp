@@ -5,7 +5,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:textSize">@dimen/main_activity_name_app_text_size</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -14,8 +14,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
-
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:textSize">@dimen/main_activity_info_app_text_size</item>
     </style>
 
@@ -32,7 +31,7 @@
     <style name="Fragments_Smgr_Static_Header">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -41,12 +40,12 @@
     <style name="Fragments_Smgr_Static_Text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/frag_param_wagons_static_txt_color</item>
+        <item name="android:textColor">@color/static_txt_light</item>
         <item name="android:textSize">16sp</item>
     </style>
 
     <style name="Fragments_Smgr_Static_Text.Dynamic_Text">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
     </style>
@@ -54,7 +53,7 @@
     <style name="Fragments_Smgr_Value_Text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
     </style>
@@ -80,7 +79,7 @@
     <style name="Activity_Wagons_Item_Header">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
     </style>
@@ -93,7 +92,7 @@
     <style name="Activity_Wagons_Favourite_Item_Header">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
 
@@ -102,17 +101,17 @@
     <style name="Activity_Wagons_Favourite_Item_Header_Medium">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/frag_param_wagons_static_txt_color</item>
+        <item name="android:textColor">@color/static_txt_light</item>
         <item name="android:textSize">16sp</item>
     </style>
 
     <style name="Activity_Wagons_Favourite_Item_Header_Medium.Dynamic">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Activity_Wagons_Favourite_Item_Header_Medium.Value">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -123,7 +122,7 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:paddingTop">5dp</item>
         <item name="android:paddingBottom">5dp</item>
     </style>
@@ -134,7 +133,7 @@
         <item name="android:gravity">start</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:singleLine">false</item>
     </style>
 
@@ -144,7 +143,7 @@
         <item name="android:layout_gravity">end</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:singleLine">false</item>
     </style>
 
@@ -152,7 +151,7 @@
     <style name="Bogies_Components_Item_Header">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?attr/colorText</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
     </style>

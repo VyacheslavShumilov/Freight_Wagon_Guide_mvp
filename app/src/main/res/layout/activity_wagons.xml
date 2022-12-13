@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
+    android:background="?attr/colorMainBackground"
     tools:context=".ui.smgr.wagons.WagonsActivity">
 
     <include
@@ -27,7 +28,7 @@
         app:helperTextTextColor="@color/black"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:hintAnimationEnabled="true"
-        app:boxStrokeColor="@color/toolbar_color"
+        app:boxStrokeColor="@color/main_color_light"
         app:counterTextColor="@color/black"
         app:prefixTextColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"

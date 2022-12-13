@@ -8,8 +8,27 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
     <color name="custom_tab_clicked">#64C626</color>
     <color name="color_item_repair">#08000000</color>
-    <color name="toolbar_color">#8009B36F</color>
-    <color name="frag_param_wagons_static_txt_color">#6C6C6C</color>
+    <color name="main_color_light">#8009B36F</color>
+    <color name="main_color_dark">#4FD8EB</color>
+    <color name="neutral10">#191C1D</color>
+    <color name="neutral80">#E1E3E3</color>
+    <color name="surface5">#244FD8EB</color>
+    <color name="transparent">#00FFFFFF</color>
+
+
+
+
+    <color name="static_txt_light">#6C6C6C</color>
+    <color name="static_txt_dark">#B34FD8EB</color>
+
+
+    <!-- Dark theme -->
+
+    <color name="error80">#FFB4AB</color>
+    <color name="error20">#690005</color>
+    <color name="error30">#93000A</color>
+
 </resources>

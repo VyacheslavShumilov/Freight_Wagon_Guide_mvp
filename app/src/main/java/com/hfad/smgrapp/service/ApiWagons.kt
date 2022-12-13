@@ -21,6 +21,7 @@ interface ApiWagons {
 
     @GET("dataBogiesComponents.json")
     fun getBogiesComponents(): Call<ArrayList<BogiesComponents>>
+
     companion object {
         var BASE_URL = "https://raw.githubusercontent.com/VyacheslavShumilov/JsonSMGR/main/"
         fun create(): ApiWagons {
