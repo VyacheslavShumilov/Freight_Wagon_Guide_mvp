@@ -21,7 +21,7 @@
     <color name="static_txt_light">#6C6C6C</color>
     <color name="static_txt_dark">#B34FD8EB</color>
     <color name="orv_background_color_light">#0D000000</color>
-    <color name="orv_background_color_dark">#3F484A</color>
+    <color name="orv_background_color_dark">#343738</color>
 
 
     <!-- Dark theme -->

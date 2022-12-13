@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorOnSecondary"
                 android:visibility="gone"
                 android:textSize="@dimen/frag_cargos_activity_no_matches_txt_size"
                 android:text="@string/txtView_no_info_wagon_cargos"/>
