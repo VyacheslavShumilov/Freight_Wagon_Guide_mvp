@@ -73,7 +73,6 @@ class CargosWagonFragment(var wagons: Wagons) : Fragment(), WagonCargosContract.
         binding.btnClickReply.setOnClickListener {
             presenter.responseData()
         }
-
     }
 
     override fun progress(show: Boolean) {

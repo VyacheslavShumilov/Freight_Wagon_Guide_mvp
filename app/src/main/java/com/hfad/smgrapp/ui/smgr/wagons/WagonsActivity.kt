@@ -85,7 +85,6 @@ class WagonsActivity : AppCompatActivity(), WagonsContract.View, AdapterWagons.O
         binding.btnClickReply.setOnClickListener {
            presenter.responseData()
            binding.txtInputLayout.visibility = View.VISIBLE
-
         }
     }
 

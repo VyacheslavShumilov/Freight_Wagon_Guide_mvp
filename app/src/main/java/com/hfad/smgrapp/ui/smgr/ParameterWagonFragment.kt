@@ -30,15 +30,12 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
     private lateinit var binding: FragmentParameterWagonBinding
     lateinit var appDao: WagonsDao
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentParameterWagonBinding.inflate(inflater, container, false)
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -151,6 +148,5 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
             wagonServiceLife.text = wagons.serviceLife
             wagonLong.text = wagons.long
         }
-
     }
 }

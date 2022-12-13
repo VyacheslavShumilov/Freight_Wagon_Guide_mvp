@@ -72,5 +72,4 @@ class AdapterWagonFavourite(
         fun notFavourites()
         fun onExplode(view: View)
     }
-
 }

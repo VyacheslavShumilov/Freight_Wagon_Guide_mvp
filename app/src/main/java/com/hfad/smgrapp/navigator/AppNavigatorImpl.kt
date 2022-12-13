@@ -19,7 +19,6 @@ class AppNavigatorImpl(private var fragmentActivity: FragmentActivity) : AppNavi
             Screen.WHEELSET -> WheelsetFragment()
             Screen.BOGIE -> BogieFragment()
             Screen.COMPONENTS -> BogiesListFragment()
-
         }
 
         fragmentActivity.supportFragmentManager.beginTransaction()
