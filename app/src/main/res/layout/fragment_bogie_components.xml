@@ -21,7 +21,7 @@
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            style="@style/Bogies_Components_Item_Header.Medium"
             android:textAlignment="center"
             android:textSize="15sp"
             android:textStyle="bold"

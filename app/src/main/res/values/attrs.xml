@@ -5,4 +5,5 @@
     <attr name="colorTab" format="color|reference" />
     <attr name="colorText" format="color|reference" />
     <attr name="colorStaticText" format="color|reference" />
+    <attr name="colorOrvTxtBackground" format="color|reference" />
 </resources>

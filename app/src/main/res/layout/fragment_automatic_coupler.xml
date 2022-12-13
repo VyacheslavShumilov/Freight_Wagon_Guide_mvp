@@ -24,6 +24,7 @@
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
+                android:background="?attr/colorOrvTxtBackground"
                 android:text="@string/txtView_auto_coupling_output"/>
 
             <GridLayout
@@ -31,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:rowCount="5"
                 android:columnCount="2"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:useDefaultMargins="true"
                 android:orientation="horizontal">
 
@@ -185,6 +186,7 @@
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
+                android:background="?attr/colorOrvTxtBackground"
                 android:text="@string/txtView_height_coupling_axis_above_rail"/>
 
             <GridLayout
@@ -192,7 +194,7 @@
                 android:layout_height="wrap_content"
                 android:rowCount="8"
                 android:columnCount="2"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:useDefaultMargins="true"
                 android:orientation="horizontal">
 
@@ -260,7 +262,6 @@
                     style="@style/Fragments_Orv_Text"
                     android:layout_column="0"
                     android:layout_row="5"
-                    android:textColor="@color/black"
                     android:text="@string/txtView_param_3_6"/>
 
                 <com.google.android.material.textview.MaterialTextView
@@ -273,7 +274,6 @@
                     style="@style/Fragments_Orv_Text"
                     android:layout_column="0"
                     android:layout_row="6"
-                    android:textColor="@color/black"
                     android:text="@string/txtView_param_3_7"/>
 
                 <com.google.android.material.textview.MaterialTextView

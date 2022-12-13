@@ -45,6 +45,7 @@
     <dimen name="cardView_corner_radius">10dp</dimen>
     <dimen name="cardView_elevation">8dp</dimen>
     <dimen name="cardView_margin">8dp</dimen>
+    <dimen name="cardView_margin_medium">5dp</dimen>
     <dimen name="cardView_imageView_width">150dp</dimen>
     <dimen name="cardView_imageView_height">150dp</dimen>
     <dimen name="txtView_marginTop">8dp</dimen>

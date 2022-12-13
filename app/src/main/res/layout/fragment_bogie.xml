@@ -24,13 +24,13 @@
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:text="@string/txtView_bg_param_1" />
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:columnCount="2"
                 android:orientation="horizontal"
                 android:rowCount="5"
@@ -143,13 +143,13 @@
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:text="@string/txtView_bg_param_3" />
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:columnCount="2"
                 android:orientation="horizontal"
                 android:rowCount="12"
@@ -162,8 +162,7 @@
                     android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
                     android:gravity="center"
-                    android:text="@string/txtView_bg_param_3_"
-                    android:textColor="@color/black" />
+                    android:text="@string/txtView_bg_param_3_" />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -393,13 +392,13 @@
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:text="@string/txtView_bg_param_5" />
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:columnCount="2"
                 android:orientation="horizontal"
                 android:rowCount="11"
@@ -527,13 +526,11 @@
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
-                android:background="#0D000000"
                 android:text="@string/txtView_bg_param_6" />
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0D000000"
                 android:columnCount="2"
                 android:orientation="horizontal"
                 android:rowCount="7"
@@ -625,12 +622,13 @@
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
+                android:background="?attr/colorOrvTxtBackground"
                 android:text="@string/txtView_bg_param_7" />
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:columnCount="2"
                 android:orientation="horizontal"
                 android:rowCount="26"

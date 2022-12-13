@@ -37,7 +37,7 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 style="@style/Fragments_Smgr_Item_Layout"
-                android:background="@color/color_item_repair">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"
@@ -69,7 +69,7 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 style="@style/Fragments_Smgr_Item_Layout"
-                android:background="@color/color_item_repair">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"
@@ -98,7 +98,7 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 style="@style/Fragments_Smgr_Item_Layout"
-                android:background="@color/color_item_repair">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"
@@ -127,7 +127,7 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 style="@style/Fragments_Smgr_Item_Layout"
-                android:background="@color/color_item_repair">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"
@@ -156,7 +156,7 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 style="@style/Fragments_Smgr_Item_Layout"
-                android:background="@color/color_item_repair">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"
@@ -185,7 +185,7 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 style="@style/Fragments_Smgr_Item_Layout"
-                android:background="@color/color_item_repair">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"
@@ -215,7 +215,7 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 style="@style/Fragments_Smgr_Item_Layout"
-                android:background="@color/color_item_repair">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"
@@ -246,7 +246,7 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 style="@style/Fragments_Smgr_Item_Layout"
-                android:background="@color/color_item_repair">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"
@@ -276,7 +276,7 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 style="@style/Fragments_Smgr_Item_Layout"
-                android:background="@color/color_item_repair">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Text"

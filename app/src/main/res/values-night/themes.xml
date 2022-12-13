@@ -16,6 +16,7 @@
         <item name="colorTab">@color/main_color_dark</item>
         <item name="colorText">@color/main_color_dark</item>
         <item name="colorStaticText">@color/static_txt_dark</item>
+        <item name="colorOrvTxtBackground">@color/orv_background_color_dark</item>
 
 
         <item name="colorMainBackground">@color/neutral10</item>

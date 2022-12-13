@@ -24,14 +24,13 @@
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
-                android:background="#0D000000"
-                android:text="@string/txtView_br_thickness_brake_pads"
-                android:textColor="@color/black" />
+                android:background="?attr/colorOrvTxtBackground"
+                android:text="@string/txtView_br_thickness_brake_pads" />
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:columnCount="2"
                 android:rowCount="10"
                 android:useDefaultMargins="true">
@@ -260,13 +259,13 @@
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:text="@string/txtView_br_distance_a" />
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:columnCount="2"
                 android:orientation="horizontal"
                 android:rowCount="8"
@@ -476,20 +475,19 @@
                     android:layout_row="9"
                     android:layout_column="0"
                     android:layout_columnSpan="2"
-                    android:text="@string/txtView_br_param_6_7"
-                    android:textColor="@color/black" />
+                    android:text="@string/txtView_br_param_6_7" />
 
             </GridLayout>
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:text="@string/txtView_br_check_autoregulator" />
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0D000000"
+                android:background="?attr/colorOrvTxtBackground"
                 android:columnCount="2"
                 android:orientation="horizontal"
                 android:rowCount="5"
