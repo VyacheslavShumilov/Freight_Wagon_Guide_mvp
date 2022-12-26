@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,339 +23,492 @@
             android:paddingEnd="8dp"
             android:paddingBottom="8dp">
 
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Orv_Header"
-                android:background="?attr/colorOrvTxtBackground"
-                android:text="@string/txtView_wh_distance_wheel" />
-
-            <GridLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/colorOrvTxtBackground"
-                android:columnCount="2"
-                android:orientation="horizontal"
-                android:rowCount="5"
-                android:useDefaultMargins="true">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView166"
+                    style="@style/Fragments_Orv_Header"
+                    android:text="@string/txtView_wh_distance_wheel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView169"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_1"/>
+                    android:text="@string/txtView_wh_param_1"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView166"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView166" />
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Orv_Value"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_1" />
-            </GridLayout>
+                    android:text="@string/txtView_wh_unit_1"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView166"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView169" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView176"
+                    style="@style/Fragments_Orv_Header"
+                    android:text="@string/txtView_wh_wheel_rolling"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView202"
+                    style="@style/Fragments_Orv_Text"
+                    android:text="@string/txtView_wh_param_2_1"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView176"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView176" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView208"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_2_1"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView176"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView202" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView186"
+                    style="@style/Fragments_Orv_Text"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_2_2"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView202"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView202" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView190"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_2_2"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView208"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView186" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Orv_Header"
-                android:text="@string/txtView_wh_wheel_rolling" />
 
-            <GridLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:orientation="horizontal"
-                android:rowCount="6"
-                android:useDefaultMargins="true">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView222"
+                    style="@style/Fragments_Orv_Header"
+                    android:text="@string/txtView_wh_wheel_rolling_uneven"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView226"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_2_1" />
+                    android:text="@string/txtView_wh_param_3"
+                    app:layout_constraintEnd_toStartOf="@+id/materialTextView249"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView222" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView249"
                     style="@style/Fragments_Orv_Value"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_2_1" />
+                    android:text="@string/txtView_wh_unit_3"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView222"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView226" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView229"
+                    style="@style/Fragments_Orv_Header"
+                    android:text="@string/txtView_wh_circle_workings"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView243"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_2_2" />
+                    android:text="@string/txtView_wh_param_4_1"
+                    app:layout_constraintEnd_toStartOf="@+id/materialTextView247"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView229"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView229" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView247"
                     style="@style/Fragments_Orv_Value"
-                    android:layout_row="1"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_2_2" />
+                    android:text="@string/txtView_wh_unit_4_1"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView229"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView243" />
 
 
-            </GridLayout>
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView246"
+                    style="@style/Fragments_Orv_Text"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_4_2"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView243"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView243" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView242"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_4_2"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView247"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView246" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView248"
+                    style="@style/Fragments_Orv_Text"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_4_3"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView243"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView246" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView244"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_4_3"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView247"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView248" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView252"
+                    style="@style/Fragments_Orv_Header"
+                    android:text="@string/txtView_wh_param_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView250"
+                    style="@style/Fragments_Orv_Header"
+                    android:text="@string/txtView_wh_param_6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView252"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView252" />
 
 
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Orv_Header"
-                android:background="?attr/colorOrvTxtBackground"
-                android:text="@string/txtView_wh_wheel_rolling_uneven" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView251"
+                    style="@style/Fragments_Orv_Header"
+                    android:text="@string/txtView_wh_param_7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView250" />
 
-            <GridLayout
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView254"
+                    style="@style/Fragments_Orv_Text"
+                    android:text="@string/txtView_wh_param_7_1"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView251"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView251" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView256"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_7_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView254" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView255"
+                    style="@style/Fragments_Orv_Text"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_7_2"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView254"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView254" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView253"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_7_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView255" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView258"
+                    style="@style/Fragments_Orv_Header"
+                    android:text="@string/txtView_wh_param_8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView264"
+                    style="@style/Fragments_Orv_Text"
+                    android:text="@string/txtView_wh_param_8_1"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView258"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView258" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView266"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_8_1"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView258"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView264" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView257"
+                    style="@style/Fragments_Orv_Text"
+                    android:text="@string/txtView_wh_param_8_2"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView264"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView264" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView260"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_8_2"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView266"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView264" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView267"
+                    style="@style/Fragments_Orv_Text"
+                    android:text="@string/txtView_wh_param_8_3"
+                    app:layout_constraintEnd_toStartOf="@+id/materialTextView261"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView257"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView257" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView261"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_8_3"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView266"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView267" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView259"
+                    style="@style/Fragments_Orv_Text"
+                    android:text="@string/txtView_wh_param_8_4"
+                    app:layout_constraintEnd_toStartOf="@+id/materialTextView262"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView267"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView267" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView262"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_8_4"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView266"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView259" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/colorOrvTxtBackground"
-                android:columnCount="2"
-                android:orientation="horizontal"
-                android:rowCount="8"
-                android:useDefaultMargins="true">
+                android:background="?attr/colorOrvTxtBackground">
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView268"
+                    style="@style/Fragments_Orv_Header"
+                    android:text="@string/txtView_wh_param_9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView272"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_3" />
+                    android:text="@string/txtView_wh_param_9_1"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView268"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView268" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView273"
                     style="@style/Fragments_Orv_Value"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_3" />
-            </GridLayout>
-
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Orv_Header"
-                android:text="@string/txtView_wh_circle_workings" />
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:orientation="horizontal"
-                android:rowCount="12"
-                android:useDefaultMargins="true">
+                    android:text="@string/txtView_wh_unit_9_1"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView268"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView272" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView269"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_4_1" />
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_9_2"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView272"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView272" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView270"
                     style="@style/Fragments_Orv_Value"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_4_1" />
-
+                    android:text="@string/txtView_wh_unit_9_2"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView273"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView269" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView277"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_row="2"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_4_2" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="2"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_4_2" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="3"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_4_3" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="3"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_4_3" />
-            </GridLayout>
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Orv_Header"
-                android:background="?attr/colorOrvTxtBackground"
-                android:text="@string/txtView_wh_param_5" />
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Orv_Header"
-                android:text="@string/txtView_wh_param_6" />
-
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Orv_Header"
-                android:background="?attr/colorOrvTxtBackground"
-                android:text="@string/txtView_wh_param_7" />
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorOrvTxtBackground"
-                android:columnCount="2"
-                android:orientation="horizontal"
-                android:rowCount="8"
-                android:useDefaultMargins="true">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_7_1" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_7_1" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_7_2" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="1"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_7_2" />
-            </GridLayout>
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Orv_Header"
-                android:text="@string/txtView_wh_param_8" />
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:orientation="horizontal"
-                android:rowCount="6"
-                android:useDefaultMargins="true">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_8_1" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_8_1" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_8_2" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="1"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_8_2" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="2"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_8_3" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="2"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_8_3" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="3"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_8_4" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="3"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_8_4" />
-
-            </GridLayout>
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Orv_Header"
-                android:background="?attr/colorOrvTxtBackground"
-                android:text="@string/txtView_wh_param_9" />
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorOrvTxtBackground"
-                android:columnCount="2"
-                android:orientation="horizontal"
-                android:rowCount="8"
-                android:useDefaultMargins="true">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_9_1" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_9_1" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_9_2" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="1"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_9_2" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="2"
-                    android:layout_column="0"
-                    android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
+                    android:layout_marginTop="5dp"
                     android:text="@string/txtView_wh_param_9_3"
-                    />
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView270"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView269"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView269" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView274"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_row="3"
-                    android:layout_column="0"
-                    android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
-                    android:text="@string/txtView_wh_param_9_4" />
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_9_4"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView270"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView269"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView277" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView275"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_row="4"
-                    android:layout_column="0"
-                    android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
+                    android:layout_marginTop="5dp"
                     android:text="@string/txtView_wh_param_9_5"
-                    />
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView270"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView269"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView274" />
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Orv_Text"
-                    android:layout_row="5"
-                    android:layout_column="0"
-                    android:layout_columnSpan="2"
                     android:layout_gravity="fill_horizontal"
-                    android:text="@string/txtView_wh_param_9_6" />
-            </GridLayout>
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_9_6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView269"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView275" />
 
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Orv_Header"
-                android:text="@string/txtView_wh_param_10" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView278"
+                    style="@style/Fragments_Orv_Header"
+                    android:text="@string/txtView_wh_param_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView281"
+                    style="@style/Fragments_Orv_Text"
+                    android:text="@string/txtView_wh_param_10_1"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView278"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView278" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_10_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView281" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView284"
+                    style="@style/Fragments_Orv_Text"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_10_2"
+                    app:layout_constraintEnd_toStartOf="@+id/materialTextView280"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView281"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView281" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView280"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_10_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView284" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView279"
+                    style="@style/Fragments_Orv_Text"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_10_3"
+                    app:layout_constraintEnd_toStartOf="@+id/materialTextView282"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView284"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView284" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView282"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_10_3"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView280"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView279" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView285"
+                    style="@style/Fragments_Orv_Text"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_10_4"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView282"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView279"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView279" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView286"
+                    style="@style/Fragments_Orv_Text"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtView_wh_param_10_5"
+                    app:layout_constraintEnd_toStartOf="@+id/materialTextView287"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/materialTextView285"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView285" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView287"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_10_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView286" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -364,61 +518,11 @@
                 android:rowCount="6"
                 android:useDefaultMargins="true">
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_10_1" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_10_1" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_10_2" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="1"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_10_2" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="2"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_10_3" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="2"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_10_3" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="3"
-                    android:layout_column="0"
-                    android:layout_columnSpan="2"
-                    android:layout_gravity="fill_horizontal"
-                    android:text="@string/txtView_wh_param_10_4" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Text"
-                    android:layout_row="4"
-                    android:layout_column="0"
-                    android:text="@string/txtView_wh_param_10_5" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Orv_Value"
-                    android:layout_row="4"
-                    android:layout_column="1"
-                    android:text="@string/txtView_wh_unit_10_5" />
             </GridLayout>
 
             <com.google.android.material.textview.MaterialTextView
