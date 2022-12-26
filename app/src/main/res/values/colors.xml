@@ -18,17 +18,8 @@
     <color name="surface5">#244FD8EB</color>
     <color name="transparent">#00FFFFFF</color>
 
-
     <color name="static_txt_light">#6C6C6C</color>
     <color name="static_txt_dark">#CC09BF9B</color>
     <color name="orv_background_color_light">#0D000000</color>
     <color name="orv_background_color_dark">#343738</color>
-
-
-    <!-- Dark theme -->
-
-    <color name="error80">#FFB4AB</color>
-    <color name="error20">#690005</color>
-    <color name="error30">#93000A</color>
-
 </resources>

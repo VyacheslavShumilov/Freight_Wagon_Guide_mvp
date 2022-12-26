@@ -11,8 +11,6 @@
     <dimen name="custom_tab_params_txt_size">15sp</dimen>
     <dimen name="custom_tab_repairs_txt_size">15sp</dimen>
 
-
-
     <dimen name="main_activity_btn_width">300dp</dimen>
     <dimen name="main_activity_bnt_corner_radius">15dp</dimen>
     <dimen name="main_activity_image_width">300dp</dimen>

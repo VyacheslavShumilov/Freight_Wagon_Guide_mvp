@@ -52,6 +52,7 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
             }
 
             toolbar.clickHomeBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_favorite_border))
+
             toolbar.clickHomeBtn.setOnClickListener {
                 lifecycleScope.launch(Dispatchers.IO) {
                     val wagonFavourite = WagonsFavourite(
@@ -84,6 +85,10 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
                     appDao.insertWagon(wagonFavourite)
                 }
                 toolbar.clickHomeBtn.isClickable = false
+
+
+                toolbar.clickHomeBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_favorite_24))
+
                 Toast.makeText(context, "Добавлен в избранное", Toast.LENGTH_SHORT).show()
             }
 

@@ -143,7 +143,7 @@
     <string name="txtView_unit_4_5">не менее 15 мм</string>
     <string name="txtView_param_4_6">Марка стали клина тягового хомута</string>
     <string name="txtView_unit_4_6">38ХС</string>
-    <string name="txtView_param_4_7">Длина болтов поддерживающих\n клин, диаметром 20 мм</string>
+    <string name="txtView_param_4_7">Длина болтов поддерживающих\nклин, диаметром 20 мм</string>
     <string name="txtView_unit_4_7">145 ± 3 мм</string>
 
     <!-- Strings used for fragment_break_system -->
