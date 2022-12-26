@@ -190,7 +190,7 @@
     <string name="txtView_br_lever_drive">рычажный привод</string>
     <string name="txtView_br_param_5_1">4-осный вагон, авторегулятор\n574Б и 675</string>
     <string name="txtView_br_unit_5_1">К 35 – 50 мм\nЧ 40 – 60 мм</string>
-    <string name="txtView_br_param_5_2">рефрижераторные вагоны на тележках\nКВЗ-И2 и на тележках ЦМВ-Дессау</string>
+    <string name="txtView_br_param_5_2">рефрижераторные вагоны на\nтележках КВЗ-И2 и на тележках ЦМВ-Дессау</string>
     <string name="txtView_br_unit_5_2">К 25 – 60 мм\nЧ 40 – 75 мм</string>
     <string name="txtView_br_param_5_3">4-осный вагон с двумя\nТЦ Ø 254 мм, ход 125 мм</string>
     <string name="txtView_br_unit_5_3">К 15 – 25 мм</string>
@@ -207,7 +207,7 @@
     <string name="txtView_br_unit_6_2">К 55 – 145 мм\nЧ 60 – 100 мм</string>
     <string name="txtView_br_param_6_3">Один оборот авторегулятора\nрегулирует выход штока ТЦ</string>
     <string name="txtView_br_unit_6_3">+- на 30 мм</string>
-    <string name="txtView_br_param_6_4">Зазор между упором авторежима и контактной планкой на порожнем вагоне не более 3 мм, допускается постановка не более пяти регулировочных планок\nтолщиной от 1,5 до 5 мм.</string>
+    <string name="txtView_br_param_6_4">Зазор между упором авторежима и контактной планкой на порожнем вагоне не более 3 мм, допускается постановка не более пяти регулировочных планок толщиной от 1,5 до 5 мм.</string>
     <string name="txtView_br_param_6_5">Кольцевая выточка должна\nвыступать из корпуса\nавторежима</string>
     <string name="txtView_br_unit_6_5">не менее\nчем на 2 мм</string>
     <string name="txtView_br_param_6_6">Расстояние от упора авторежима\nдо края контактной планки\nдолжно быть</string>
