@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.orv.AutomaticCouplerFragment">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,15 +18,15 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:paddingBottom="8dp"
-            android:orientation="vertical">
+            android:paddingBottom="8dp">
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/Fragments_Orv_Header"
                 android:background="?attr/colorOrvTxtBackground"
-                android:text="@string/txtView_auto_coupling_output"/>
+                android:text="@string/txtView_auto_coupling_output" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -49,7 +50,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView2"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_1_2"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
@@ -64,7 +65,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView3"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_1_3"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
@@ -79,7 +80,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView5"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_1_4"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView3" />
@@ -93,7 +94,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView8"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_1_5"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView5" />
@@ -135,7 +136,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView11"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_2_2"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView10"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView10" />
@@ -150,7 +151,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView13"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_2_3"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView10"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView11" />
@@ -164,7 +165,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView14"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_2_4"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView10"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView13" />
@@ -179,7 +180,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView15"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_2_5"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView10"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView14" />
@@ -190,11 +191,10 @@
                     app:layout_constraintEnd_toEndOf="@+id/materialTextView12"
                     app:layout_constraintTop_toTopOf="@+id/materialTextView15" />
 
-
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView16"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_2_6"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView10"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView15" />
@@ -205,9 +205,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/materialTextView12"
                     app:layout_constraintTop_toTopOf="@+id/materialTextView16" />
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -241,7 +239,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView21"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_3_2"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView20"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView20" />
@@ -256,7 +254,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView23"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_3_3"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView20"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView21" />
@@ -268,11 +266,10 @@
                     app:layout_constraintEnd_toEndOf="@+id/materialTextView22"
                     app:layout_constraintTop_toTopOf="@+id/materialTextView23" />
 
-
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView25"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_3_4"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView20"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView23" />
@@ -288,7 +285,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView26"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_3_5"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView20"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView25" />
@@ -300,11 +297,10 @@
                     app:layout_constraintEnd_toEndOf="@+id/materialTextView22"
                     app:layout_constraintTop_toTopOf="@+id/materialTextView26" />
 
-
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView27"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_3_6"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView20"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView26" />
@@ -319,7 +315,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView30"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_3_7"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView20"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView27" />
@@ -334,7 +330,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView31"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_3_8"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView20"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView30" />
@@ -351,7 +347,6 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView36"
@@ -379,7 +374,7 @@
                     android:id="@+id/materialTextView39"
                     style="@style/Fragments_Orv_Text"
                     android:layout_gravity="fill_horizontal"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_4_2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView37"
@@ -388,7 +383,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView40"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_4_2_1"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView37"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView39" />
@@ -403,7 +398,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView43"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_4_2_2"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView37"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView40" />
@@ -419,7 +414,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView44"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_4_2_3"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView37"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView43" />
@@ -435,7 +430,7 @@
                     android:id="@+id/materialTextView45"
                     style="@style/Fragments_Orv_Text"
                     android:layout_gravity="fill_horizontal"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_4_3"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView37"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView44" />
@@ -445,7 +440,7 @@
                     android:id="@+id/materialTextView46"
                     style="@style/Fragments_Orv_Text"
                     android:layout_gravity="fill_horizontal"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_unit_4_3"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView37"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView45" />
@@ -453,7 +448,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView47"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_4_4"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView37"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView46" />
@@ -469,7 +464,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView48"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_4_5"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView37"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView47" />
@@ -484,7 +479,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView49"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_4_6"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView37"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView48" />
@@ -498,7 +493,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView51"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_param_4_7"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView37"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView49" />
@@ -509,9 +504,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/materialTextView51" />
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -54,5 +54,6 @@
     <dimen name="item_wagons_cardView_linLayout_padding">8dp</dimen>
 
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fragment_margin_top">5dp</dimen>
 
 </resources>
