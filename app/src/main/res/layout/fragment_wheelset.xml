@@ -19,9 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="8dp">
+            android:paddingStart="@dimen/frag_orv_padding_start"
+            android:paddingEnd="@dimen/frag_orv_padding_end"
+            android:paddingBottom="@dimen/frag_orv_padding_bottom">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

@@ -57,7 +57,7 @@
     <string name="txtView_Dr_Aft_Kr">ДР после КР в г.:</string>
     <string name="txtView_Kr_Aft_Release">КР после постройки в г.:</string>
     <string name="txtView_Kr_Aft_Kr">КР после КР в г.:</string>
-    <string name="txtView_Dr_Aft_Release_Rep_Prob_Km">ДР после постройки, рем. по проб. в т. км.:</string>
+    <string name="txtView_Dr_Aft_Release_Rep_Prob_Km">ДР после постр., рем. по проб. в т. км.:</string>
     <string name="txtView_Dr_Aft_Release_Rep_Years">ДР после постройки, рем. по проб. в г.:</string>
     <string name="txtView_Dr_Aft_Dr_Rep_Prob_Km">ДР после ДР, рем. по проб. в т. км.:</string>
     <string name="txtView_Dr_Aft_Dr_Rep_Prob_Years">ДР после ДР, рем. по проб. в г.:</string>

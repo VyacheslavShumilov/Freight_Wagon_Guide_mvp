@@ -55,5 +55,8 @@
 
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="fragment_margin_top">5dp</dimen>
+    <dimen name="frag_orv_padding_start">8dp</dimen>
+    <dimen name="frag_orv_padding_end">8dp</dimen>
+    <dimen name="frag_orv_padding_bottom">8dp</dimen>
 
 </resources>
