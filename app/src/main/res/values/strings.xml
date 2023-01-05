@@ -474,6 +474,7 @@
     <string name="txtView_service_life_short">Срок службы:</string>
     <string name="activity_main_push_train">Нажми на поезд!</string>
     <string name="main_activity_push_the_train_txt_view">Нажми на поезд</string>
+    <string name="txtView_sample">Шаблоны</string>
 
 
 </resources>

@@ -57,7 +57,9 @@ class OrvListFragment : Fragment() {
             cardViewComponents.setOnClickListener {
                 appNavigator.navigateTo(Screen.COMPONENTS)
             }
-
+            cardViewSamples.setOnClickListener {
+                appNavigator.navigateTo(Screen.SAMPLES)
+            }
         }
     }
 }

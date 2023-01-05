@@ -6,7 +6,8 @@ enum class Screen {
     BREAK_SYSTEM,
     WHEELSET,
     BOGIE,
-    COMPONENTS
+    COMPONENTS,
+    SAMPLES
 }
 
 interface AppNavigator {
