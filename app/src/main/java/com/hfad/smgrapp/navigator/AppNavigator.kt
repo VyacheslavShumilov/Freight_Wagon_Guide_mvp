@@ -7,7 +7,10 @@ enum class Screen {
     WHEELSET,
     BOGIE,
     COMPONENTS,
-    SAMPLES
+    SAMPLES,
+    SAMPLE_ABS,
+    SAMPLE_VPG,
+    SAMPLE_THICK,
 }
 
 interface AppNavigator {

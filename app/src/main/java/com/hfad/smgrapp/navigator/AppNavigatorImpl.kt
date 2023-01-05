@@ -5,6 +5,9 @@ import com.hfad.smgrapp.ui.orv.bogies_components.BogieComponentsFragment
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.ui.orv.*
 import com.hfad.smgrapp.ui.orv.bogies.BogiesListFragment
+import com.hfad.smgrapp.ui.orv.samples.SampleAbsFragment
+import com.hfad.smgrapp.ui.orv.samples.SampleThickFragment
+import com.hfad.smgrapp.ui.orv.samples.SampleVpgFragment
 
 class AppNavigatorImpl(private var fragmentActivity: FragmentActivity) : AppNavigator, AppNavigatorParam {
     override fun navigateTo(screen: Screen) {
@@ -16,6 +19,9 @@ class AppNavigatorImpl(private var fragmentActivity: FragmentActivity) : AppNavi
             Screen.BOGIE -> BogieFragment()
             Screen.COMPONENTS -> BogiesListFragment()
             Screen.SAMPLES -> SamplesFragment()
+            Screen.SAMPLE_ABS -> SampleAbsFragment()
+            Screen.SAMPLE_VPG -> SampleVpgFragment()
+            Screen.SAMPLE_THICK -> SampleThickFragment()
 
         }
 
