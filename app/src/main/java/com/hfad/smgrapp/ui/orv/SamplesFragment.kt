@@ -51,6 +51,14 @@ class SamplesFragment: Fragment() {
                 appNavigator.navigateTo(Screen.SAMPLE_VPG)
             }
 
+            cardViewThick.setOnClickListener {
+                appNavigator.navigateTo(Screen.SAMPLE_THICK)
+            }
+
+            cardViewComb.setOnClickListener {
+                appNavigator.navigateTo(Screen.SAMPLE_COMB)
+            }
+
         }
     }
 }
