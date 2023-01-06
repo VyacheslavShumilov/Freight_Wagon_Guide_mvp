@@ -180,5 +180,13 @@
         <item name="android:textColor">?attr/colorText</item>
     </style>
 
+    <style name="Fragment_Sample_ImageView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:adjustViewBounds">true</item>
+
+    </style>
+
 
 </resources>

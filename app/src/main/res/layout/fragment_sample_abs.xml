@@ -21,11 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/Fragment_Sample_ImageView"
                 android:src="@drawable/sample_abs_1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +32,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_1"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="Измерение неравномерного проката производится в местах повышенного видимого износа колеса (сечении) с помощью вертикального движка абсолютного шаблона.\nУстановка шаблона производится в месте расположения дефекта. Вертикальный движок опускают на поверхность катания колеса в месте дефекта и производят измерения по шкале и нониусу.\nДля определения величины неравномерного проката дополнительно производятся измерения рядом с этим сечением. По результатам измерений определяют разность.\nМаксимальное значение разности результатов измерений принимается за действительную величину неравномерного проката.\nВ приведенном примере максимальное значение разности результатов измерений равно Змм."
+                android:text="@string/txtView_sample_abs_1"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,8 +49,7 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/sample_abs_2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +59,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_2"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="Для случая, когда дефект смещен от круга катания, в основании шаблона имеется прорезь, по которой вертикальный движок можно перенести до совпадения с местом расположения дефекта."
+                android:text="@string/txtView_sample_abs_2"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -79,10 +76,9 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                style="@style/Fragment_Sample_ImageView"
                 android:src="@drawable/sample_abs_3"
+                android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/sample_divider_2" />
@@ -90,7 +86,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_3"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="Тонкомерный гребень колесной пары может быть выявлен в условиях эксплуатации и специальной браковочной прорезью абсолютного шаблона, ширина которой равна 25, а глубина - 18 мм.\nЕсли при установке абсолютного шаблона между вершиной гребня и горизонтальной гранью браковочной прорези имеется зазор, то колесную пару эксплуатировать разрешается, так как толщина гребня колеса, измеренная на расстоянии 18 мм от вершины, в этом случае более 25 мм."
+                android:text="@string/txtView_sample_abs_3"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -107,8 +103,7 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/sample_abs_4"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +113,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_4"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="При измерении толщины гребня шаблон устанавливается на поверхность катания обода цельнокатаного колеса. При этом опорная поверхность (1) шаблона должна плотно прилегать к внутренней грани колеса, а опорная ножка (2) должна опираться на вершину гребня."
+                android:text="@string/txtView_sample_abs_4"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -135,8 +130,7 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/sample_abs_5"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -146,7 +140,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_5"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="Толщина гребня колеса определяется с помощью горизонтального движка абсолютного шаблона.\nДля выполнения измерения переместить горизонтальный движок (3) шаблона до соприкосновения с поверхностью гребня.\nПо делению шкалы на направляющей движка (4), остановившемуся против риски (5), определить толщину гребня колеса."
+                android:text="@string/txtView_sample_abs_5"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -163,8 +157,7 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/sample_abs_6"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -174,7 +167,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_6"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="Для измерения равномерного проката по кругу катания колеса используется шаблон абсолютный вагонный чертеж Т 447.05.000 ПКБ ЦВ; ТУ 32 ТДВ 1801-95.\nПри измерении шаблон установить на поверхность катания обода цельнокатаного колеса так, чтобы его вертикальная грань и лапка (1) плотно прилегала к внутренней грани обода колеса. При этом опорная ножка шаблона (4) должна опираться на вершину гребня."
+                android:text="@string/txtView_sample_abs_6"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -191,8 +184,7 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/sample_abs_7"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -202,7 +194,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_7"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="Величина проката определяется с помощью вертикального движка (1) шаблона, который устанавливается на расстоянии 70 мм от внутренней грани колеса, для чего риска на сухаре движка (2) должна совпадать с контрольной риской на основании (3) шаблона."
+                android:text="@string/txtView_sample_abs_7"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -219,8 +211,7 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/sample_abs_8"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -230,8 +221,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_8"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="Затем вертикальный движок опускается до соприкосновения с поверхностью катания колеса и производится считывание показаний по шкале движка и нониусу.\nОтсчет по нониусу шаблона - 0,1 мм.\nЦена деления шкалы вертикального движка - 1,0 мм.
-"               android:textAlignment="gravity"
+                android:text="@string/txtView_sample_abs_8"               android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_8" />
@@ -247,8 +237,7 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/sample_abs_9"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -258,7 +247,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_9"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="При совпадении крайнего нижнего (или нулевого) штриха нониуса с любой отметкой (оцифрованной или неоцифрованной) основной шкалы вертикального движка результат показаний будет выражен целями числами без десятичных значений.\nКрайний нижний штрих нониуса совпадает со вторым делением основной шкалы (2 мм).\nИзмеряемая величина проката равна 2 мм."
+                android:text="@string/txtView_sample_abs_9"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -275,8 +264,7 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/sample_abs_10"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -286,7 +274,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_10"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="При несовпадении вышеуказанных штриха нониуса и отметок движка результат измерений определяется как сумма целого числа, считываемого по основной шкале вертикального движка и десятичного значения, определяемого по шкале нониуса.\nЦелое число определяется по количеству полных делений на шкале вертикального движка до крайнего нижнего штриха нониуса и будет равно 2.\nОтсчет по нониусу сводится к определению совпадения одного из штрихов нониуса с любым штрихом шкалы движка. Десятичное значение определяется как произведение величины отсчета по нониусу (0,1 мм) на количество делений нониуса до совпадающего штриха. Десятичное значение определится по количеству делений нониуса до совпадающего штриха - 6 делений.\n0,1 мм х 6 делений = 0,6 м\nИзмеряемая величина будет равна 2,6 мм."
+                android:text="@string/txtView_sample_abs_10"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
