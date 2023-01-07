@@ -12,6 +12,8 @@ enum class Screen {
     SAMPLE_VPG,
     SAMPLE_THICK,
     SAMPLE_COMB,
+    SAMPLE_BRACE,
+    SAMPLE_PROF
 }
 
 interface AppNavigator {

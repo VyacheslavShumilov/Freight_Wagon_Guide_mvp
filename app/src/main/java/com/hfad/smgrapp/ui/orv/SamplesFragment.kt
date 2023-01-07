@@ -59,6 +59,14 @@ class SamplesFragment: Fragment() {
                 appNavigator.navigateTo(Screen.SAMPLE_COMB)
             }
 
+            cardViewBrace.setOnClickListener {
+                appNavigator.navigateTo(Screen.SAMPLE_BRACE)
+            }
+
+            cardViewProf.setOnClickListener {
+                appNavigator.navigateTo(Screen.SAMPLE_PROF)
+            }
+
         }
     }
 }

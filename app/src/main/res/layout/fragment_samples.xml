@@ -200,6 +200,94 @@
 
 
 
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewBrace"
+                style="@style/Base.Widget.Material3.CardView.CustomCardView"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintEnd_toStartOf="@+id/cardViewProf"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewThick"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginBottom="@dimen/txtView_marginBottom"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imageBrace"
+                        android:layout_width="@dimen/cardView_imageView_width"
+                        android:layout_height="@dimen/cardView_imageView_height"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/sample_brace"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/Bogies_Components_Item_Header"
+                        android:text="МАИК"
+                        app:layout_constraintEnd_toEndOf="@+id/imageBrace"
+                        app:layout_constraintStart_toStartOf="@+id/imageBrace"
+                        app:layout_constraintTop_toBottomOf="@+id/imageBrace" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewProf"
+                style="@style/Base.Widget.Material3.CardView.CustomCardView"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintBottom_toBottomOf="@+id/cardViewBrace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cardViewBrace"
+                app:layout_constraintTop_toTopOf="@+id/cardViewBrace">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginBottom="@dimen/txtView_marginBottom"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imageProf"
+                        android:layout_width="@dimen/cardView_imageView_width"
+                        android:layout_height="@dimen/cardView_imageView_height"
+                        android:src="@drawable/sample_prof"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/Bogies_Components_Item_Header"
+                        app:layout_constraintEnd_toEndOf="@+id/imageProf"
+                        app:layout_constraintStart_toStartOf="@+id/imageProf"
+                        app:layout_constraintTop_toBottomOf="@+id/imageProf"
+                        android:text="Макс. профильный" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
 
 
 
