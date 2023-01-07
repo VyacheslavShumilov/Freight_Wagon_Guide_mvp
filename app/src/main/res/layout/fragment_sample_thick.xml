@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="@dimen/frag_orv_padding_start"
+    android:paddingEnd="@dimen/frag_orv_padding_end"
+    android:paddingBottom="@dimen/frag_orv_padding_bottom"
     tools:context=".ui.orv.samples.SampleThickFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_1"
+                style="@style/Fragment_Sample_ImageView"
+                android:src="@drawable/sample_thick_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/fragment_sample_txt_1"
+                style="@style/Fragments_Orv_Sample_Text"
+                android:text="@string/txtView_sample_thick_1"
+                android:textAlignment="gravity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_1" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/sample_divider_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/frag_sample_divider_height"
+                android:layout_marginTop="@dimen/frag_sample_divider_margin_top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_sample_txt_1" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_2"
+                style="@style/Fragment_Sample_ImageView"
+                android:layout_marginTop="@dimen/frag_sample_img_margin_top"
+                android:src="@drawable/sample_thick_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sample_divider_1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/fragment_sample_txt_2"
+                style="@style/Fragments_Orv_Sample_Text"
+                android:text="@string/txtView_sample_thick_2"
+                android:textAlignment="gravity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_2" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/sample_divider_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/frag_sample_divider_height"
+                android:layout_marginTop="@dimen/frag_sample_divider_margin_top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_sample_txt_2" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_3"
+                style="@style/Fragment_Sample_ImageView"
+                android:layout_marginTop="@dimen/frag_sample_img_margin_top"
+                android:src="@drawable/sample_thick_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sample_divider_2" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/fragment_sample_txt_3"
+                style="@style/Fragments_Orv_Sample_Text"
+                android:text="@string/txtView_sample_thick_3"
+                android:textAlignment="gravity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
