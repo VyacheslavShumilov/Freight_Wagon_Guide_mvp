@@ -1,4 +1,4 @@
-package com.hfad.smgrapp.ui.orv.samples
+package com.hfad.smgrapp.ui.orv.samples.coupler
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,11 +8,7 @@ import android.view.ViewGroup
 import com.hfad.smgrapp.R
 
 
-class SampleCombFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+class SampleHeightFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -20,7 +16,7 @@ class SampleCombFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sample_comb, container, false)
+        return inflater.inflate(R.layout.fragment_sample_height, container, false)
     }
 
 }

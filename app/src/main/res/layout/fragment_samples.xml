@@ -60,7 +60,7 @@
 
                     <TextView
                         style="@style/Bogies_Components_Item_Header"
-                        android:text="Абсолютный"
+                        android:text="@string/txtView_samples_1"
                         app:layout_constraintEnd_toEndOf="@+id/imageAbs"
                         app:layout_constraintStart_toStartOf="@+id/imageAbs"
                         app:layout_constraintTop_toBottomOf="@+id/imageAbs" />
@@ -104,7 +104,7 @@
                         app:layout_constraintEnd_toEndOf="@+id/imageVpg"
                         app:layout_constraintStart_toStartOf="@+id/imageVpg"
                         app:layout_constraintTop_toBottomOf="@+id/imageVpg"
-                        android:text="ВПГ" />
+                        android:text="@string/txtView_samples_2" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -143,7 +143,7 @@
 
                     <TextView
                         style="@style/Bogies_Components_Item_Header"
-                        android:text="Толщиномер"
+                        android:text="@string/txtView_samples_3"
                         app:layout_constraintEnd_toEndOf="@+id/imageThick"
                         app:layout_constraintStart_toStartOf="@+id/imageThick"
                         app:layout_constraintTop_toBottomOf="@+id/imageThick" />
@@ -187,18 +187,11 @@
                         app:layout_constraintEnd_toEndOf="@+id/imageVComb"
                         app:layout_constraintStart_toStartOf="@+id/imageVComb"
                         app:layout_constraintTop_toBottomOf="@+id/imageVComb"
-                        android:text="Комбинированный" />
+                        android:text="@string/txtView_samples_4" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.card.MaterialCardView>
-
-
-
-
-
-
-
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewBrace"
@@ -233,7 +226,7 @@
 
                     <TextView
                         style="@style/Bogies_Components_Item_Header"
-                        android:text="МАИК"
+                        android:text="@string/txtView_samples_5"
                         app:layout_constraintEnd_toEndOf="@+id/imageBrace"
                         app:layout_constraintStart_toStartOf="@+id/imageBrace"
                         app:layout_constraintTop_toBottomOf="@+id/imageBrace" />
@@ -277,7 +270,91 @@
                         app:layout_constraintEnd_toEndOf="@+id/imageProf"
                         app:layout_constraintStart_toStartOf="@+id/imageProf"
                         app:layout_constraintTop_toBottomOf="@+id/imageProf"
-                        android:text="Макс. профильный" />
+                        android:text="@string/txtView_samples_6" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView873"
+                style="@style/Base.Widget.Material3.CardView.CustomCardView"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintEnd_toStartOf="@+id/cardViewHeight"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewBrace"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginBottom="@dimen/txtView_marginBottom"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/image873"
+                        android:layout_width="@dimen/cardView_imageView_width"
+                        android:layout_height="@dimen/cardView_imageView_height"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/sample_873"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/Bogies_Components_Item_Header"
+                        android:text="@string/txtView_samples_7"
+                        app:layout_constraintEnd_toEndOf="@+id/image873"
+                        app:layout_constraintStart_toStartOf="@+id/image873"
+                        app:layout_constraintTop_toBottomOf="@+id/image873" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewHeight"
+                style="@style/Base.Widget.Material3.CardView.CustomCardView"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView873"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cardView873"
+                app:layout_constraintTop_toTopOf="@+id/cardView873">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginBottom="@dimen/txtView_marginBottom"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imageHeight"
+                        android:layout_width="@dimen/cardView_imageView_width"
+                        android:layout_height="@dimen/cardView_imageView_height"
+                        android:src="@drawable/sample_height"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/Bogies_Components_Item_Header"
+                        app:layout_constraintEnd_toEndOf="@+id/imageHeight"
+                        app:layout_constraintStart_toStartOf="@+id/imageHeight"
+                        app:layout_constraintTop_toBottomOf="@+id/imageHeight"
+                        android:text="@string/txtView_samples_8" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

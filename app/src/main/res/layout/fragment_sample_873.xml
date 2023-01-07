@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +8,7 @@
     android:paddingStart="@dimen/frag_orv_padding_start"
     android:paddingEnd="@dimen/frag_orv_padding_end"
     android:paddingBottom="@dimen/frag_orv_padding_bottom"
-    tools:context=".ui.orv.samples.wheels.SampleAbsFragment">
+    tools:context=".ui.orv.samples.coupler.Sample873Fragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -22,18 +21,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_1"
-                style="@style/Fragment_Sample_ImageView"
-                android:src="@drawable/sample_abs_1"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/fragment_sample_txt"
+                style="@style/Fragments_Orv_Sample_Text"
+                android:text="@string/txtView_sample_873"
+                android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_1"
+                style="@style/Fragment_Sample_ImageView"
+                android:src="@drawable/sample_873_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_sample_txt" />
+
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_1"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="@string/txtView_sample_abs_1"
+                android:text="@string/txtView_sample_873_1"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +60,7 @@
                 android:id="@+id/image_2"
                 style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="@dimen/frag_sample_img_margin_top"
-                android:src="@drawable/sample_abs_2"
+                android:src="@drawable/sample_873_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/sample_divider_1" />
@@ -60,7 +68,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_2"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="@string/txtView_sample_abs_2"
+                android:text="@string/txtView_sample_873_2"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -78,8 +86,8 @@
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_3"
                 style="@style/Fragment_Sample_ImageView"
-                android:src="@drawable/sample_abs_3"
                 android:layout_marginTop="@dimen/frag_sample_img_margin_top"
+                android:src="@drawable/sample_873_3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/sample_divider_2" />
@@ -87,7 +95,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_3"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="@string/txtView_sample_abs_3"
+                android:text="@string/txtView_sample_873_3"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +114,7 @@
                 android:id="@+id/image_4"
                 style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="@dimen/frag_sample_img_margin_top"
-                android:src="@drawable/sample_abs_4"
+                android:src="@drawable/sample_873_4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/sample_divider_3" />
@@ -114,7 +122,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_4"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="@string/txtView_sample_abs_4"
+                android:text="@string/txtView_sample_873_4"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +141,7 @@
                 android:id="@+id/image_5"
                 style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="@dimen/frag_sample_img_margin_top"
-                android:src="@drawable/sample_abs_5"
+                android:src="@drawable/sample_873_5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/sample_divider_4" />
@@ -141,7 +149,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_5"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="@string/txtView_sample_abs_5"
+                android:text="@string/txtView_sample_873_5"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -160,7 +168,7 @@
                 android:id="@+id/image_6"
                 style="@style/Fragment_Sample_ImageView"
                 android:layout_marginTop="@dimen/frag_sample_img_margin_top"
-                android:src="@drawable/sample_abs_6"
+                android:src="@drawable/sample_873_6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/sample_divider_5" />
@@ -168,119 +176,12 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_6"
                 style="@style/Fragments_Orv_Sample_Text"
-                android:text="@string/txtView_sample_abs_6"
+                android:text="@string/txtView_sample_873_6"
                 android:textAlignment="gravity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_6" />
 
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/sample_divider_6"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/frag_sample_divider_height"
-                android:layout_marginTop="@dimen/frag_sample_divider_margin_top"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sample_txt_6" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_7"
-                style="@style/Fragment_Sample_ImageView"
-                android:layout_marginTop="@dimen/frag_sample_img_margin_top"
-                android:src="@drawable/sample_abs_7"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/sample_divider_6" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/fragment_sample_txt_7"
-                style="@style/Fragments_Orv_Sample_Text"
-                android:text="@string/txtView_sample_abs_7"
-                android:textAlignment="gravity"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_7" />
-
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/sample_divider_7"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/frag_sample_divider_height"
-                android:layout_marginTop="@dimen/frag_sample_divider_margin_top"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sample_txt_7" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_8"
-                style="@style/Fragment_Sample_ImageView"
-                android:layout_marginTop="@dimen/frag_sample_img_margin_top"
-                android:src="@drawable/sample_abs_8"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/sample_divider_7" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/fragment_sample_txt_8"
-                style="@style/Fragments_Orv_Sample_Text"
-                android:text="@string/txtView_sample_abs_8"
-                android:textAlignment="gravity"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_8" />
-
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/sample_divider_8"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/frag_sample_divider_height"
-                android:layout_marginTop="@dimen/frag_sample_divider_margin_top"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sample_txt_8" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_9"
-                style="@style/Fragment_Sample_ImageView"
-                android:layout_marginTop="@dimen/frag_sample_img_margin_top"
-                android:src="@drawable/sample_abs_9"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/sample_divider_8" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/fragment_sample_txt_9"
-                style="@style/Fragments_Orv_Sample_Text"
-                android:text="@string/txtView_sample_abs_9"
-                android:textAlignment="gravity"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_9" />
-
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/sample_divider_9"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/frag_sample_divider_height"
-                android:layout_marginTop="@dimen/frag_sample_divider_margin_top"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sample_txt_9" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_10"
-                style="@style/Fragment_Sample_ImageView"
-                android:layout_marginTop="@dimen/frag_sample_img_margin_top"
-                android:src="@drawable/sample_abs_10"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/sample_divider_9" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/fragment_sample_txt_10"
-                style="@style/Fragments_Orv_Sample_Text"
-                android:text="@string/txtView_sample_abs_10"
-                android:textAlignment="gravity"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_10" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -67,6 +67,14 @@ class SamplesFragment: Fragment() {
                 appNavigator.navigateTo(Screen.SAMPLE_PROF)
             }
 
+            cardView873.setOnClickListener {
+                appNavigator.navigateTo(Screen.SAMPLE_873)
+            }
+
+            cardViewHeight.setOnClickListener {
+                appNavigator.navigateTo(Screen.SAMPLE_HEIGHT)
+            }
+
         }
     }
 }

@@ -13,7 +13,9 @@ enum class Screen {
     SAMPLE_THICK,
     SAMPLE_COMB,
     SAMPLE_BRACE,
-    SAMPLE_PROF
+    SAMPLE_PROF,
+    SAMPLE_873,
+    SAMPLE_HEIGHT,
 }
 
 interface AppNavigator {

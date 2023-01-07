@@ -6,6 +6,9 @@ import com.hfad.smgrapp.R
 import com.hfad.smgrapp.ui.orv.*
 import com.hfad.smgrapp.ui.orv.bogies.BogiesListFragment
 import com.hfad.smgrapp.ui.orv.samples.*
+import com.hfad.smgrapp.ui.orv.samples.coupler.Sample873Fragment
+import com.hfad.smgrapp.ui.orv.samples.coupler.SampleHeightFragment
+import com.hfad.smgrapp.ui.orv.samples.wheels.*
 
 class AppNavigatorImpl(private var fragmentActivity: FragmentActivity) : AppNavigator, AppNavigatorParam {
     override fun navigateTo(screen: Screen) {
@@ -23,6 +26,8 @@ class AppNavigatorImpl(private var fragmentActivity: FragmentActivity) : AppNavi
             Screen.SAMPLE_COMB -> SampleCombFragment()
             Screen.SAMPLE_BRACE -> SampleBraceFragment()
             Screen.SAMPLE_PROF -> SampleProfFragment()
+            Screen.SAMPLE_873 -> Sample873Fragment()
+            Screen.SAMPLE_HEIGHT -> SampleHeightFragment()
 
         }
 

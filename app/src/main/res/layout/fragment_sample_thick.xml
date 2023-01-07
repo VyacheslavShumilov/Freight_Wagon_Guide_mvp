@@ -8,7 +8,7 @@
     android:paddingStart="@dimen/frag_orv_padding_start"
     android:paddingEnd="@dimen/frag_orv_padding_end"
     android:paddingBottom="@dimen/frag_orv_padding_bottom"
-    tools:context=".ui.orv.samples.SampleThickFragment">
+    tools:context=".ui.orv.samples.wheels.SampleThickFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

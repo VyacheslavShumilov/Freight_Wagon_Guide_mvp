@@ -1,4 +1,4 @@
-package com.hfad.smgrapp.ui.orv.samples
+package com.hfad.smgrapp.ui.orv.samples.wheels
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
