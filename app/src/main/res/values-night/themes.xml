@@ -18,6 +18,8 @@
         <item name="colorStaticText">@color/static_txt_dark</item>
         <item name="colorOrvTxtBackground">@color/orv_background_color_dark</item>
         <item name="colorMainBackground">@color/neutral10</item>
+        <item name="colorPlayBtn">@color/play_btn_color_dark</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

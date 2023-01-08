@@ -6,10 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebView
 import android.widget.MediaController
 import com.hfad.smgrapp.R
-import com.hfad.smgrapp.databinding.FragmentBogieBinding
 import com.hfad.smgrapp.databinding.FragmentSample873Binding
 
 
@@ -23,9 +21,7 @@ class Sample873Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSample873Binding.inflate(inflater, container, false)
-
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,7 +33,9 @@ class Sample873Fragment : Fragment() {
         val offlineUri = Uri.parse("android.resource://"+ activity?.packageName + "/" + R.raw.sample_873)
 
         with(binding) {
-            videoView.setOnClickListener {
+
+            playBtn.setOnClickListener {
+                playBtn.visibility = View.GONE
                 videoView.setMediaController(mediaController)
                 videoView.setVideoURI(offlineUri)
                 videoView.requestFocus()

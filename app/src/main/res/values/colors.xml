@@ -22,4 +22,6 @@
     <color name="static_txt_dark">#CC09BF9B</color>
     <color name="orv_background_color_light">#0D000000</color>
     <color name="orv_background_color_dark">#343738</color>
+    <color name="play_btn_color_light">#BA1A1A</color>
+    <color name="play_btn_color_dark">#FFB4AB</color>
 </resources>

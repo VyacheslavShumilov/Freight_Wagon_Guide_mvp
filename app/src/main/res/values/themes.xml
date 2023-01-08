@@ -18,6 +18,7 @@
         <item name="colorStaticText">@color/static_txt_light</item>
         <item name="colorOrvTxtBackground">@color/orv_background_color_light</item>
         <item name="colorMainBackground">@color/white</item>
+        <item name="colorPlayBtn">@color/play_btn_color_light</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor"
             tools:targetApi="l">?attr/colorPrimaryVariant</item>

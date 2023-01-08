@@ -22,13 +22,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <FrameLayout
+                android:id="@+id/frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/frag_orv_padding_top"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <VideoView
+                    android:id="@+id/videoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/videoView_layout_height"
+                    android:layout_gravity="center"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/playBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_play_circle"
+                    android:background="@color/transparent"/>
+            </FrameLayout>
+
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_1"
                 style="@style/Fragment_Sample_ImageView"
                 android:src="@drawable/sample_abs_1"
+                android:paddingTop="@dimen/frag_orv_padding_top"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/frame_layout" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_1"

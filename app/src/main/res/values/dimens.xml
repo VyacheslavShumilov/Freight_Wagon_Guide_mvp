@@ -58,9 +58,11 @@
     <dimen name="frag_orv_padding_start">8dp</dimen>
     <dimen name="frag_orv_padding_end">8dp</dimen>
     <dimen name="frag_orv_padding_bottom">8dp</dimen>
+    <dimen name="frag_orv_padding_top">8dp</dimen>
 
     <dimen name="frag_sample_divider_height">2dp</dimen>
     <dimen name="frag_sample_divider_margin_top">5dp</dimen>
     <dimen name="frag_sample_img_margin_top">5dp</dimen>
+    <dimen name="videoView_layout_height">200dp</dimen>
 
 </resources>

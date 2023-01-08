@@ -21,22 +21,40 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <VideoView
-                android:id="@+id/videoView"
+            <FrameLayout
+                android:id="@+id/frame_layout"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/frag_orv_padding_top"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <VideoView
+                    android:id="@+id/videoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/videoView_layout_height"
+                    android:layout_gravity="center"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/playBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_play_circle"
+                    android:background="@color/transparent"/>
+            </FrameLayout>
+
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt"
                 style="@style/Fragments_Orv_Sample_Text"
                 android:text="@string/txtView_sample_873"
                 android:textAlignment="gravity"
+                android:paddingTop="@dimen/frag_orv_padding_top"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/videoView"/>
+                app:layout_constraintTop_toBottomOf="@+id/frame_layout"/>
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_1"
