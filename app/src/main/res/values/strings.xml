@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SMGR App</string>
+    <string name="app_name">СМГР</string>
     <string name="search">Введите модель вагона</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -17,8 +17,8 @@
     <!-- Strings used for activity_main -->
     <string name="txtView_title_name">СВОДНЫЙ \nСПРАВОЧНИК\nГРУЗОВЫХ ВАГОНОВ</string>
     <string name="txtView_about_guides">Включает данные справочников:</string>
-    <string name="txtView_smgr1">СМГР1 от 01.09.2022 г.</string>
-    <string name="txtView_smgr2">СМГР2 от 01.09.2022 г.</string>
+    <string name="txtView_smgr1">СМГР1 от 14.12.2022 г.</string>
+    <string name="txtView_smgr2">СМГР2 от 14.12.2022 г.</string>
     <string name="btn_enter_smgr">Вход в СМГР</string>
     <string name="btn_enter_orv">Вход в памятку ОРВ</string>
     <string name="editTxt_hint">Поиск модели вагона</string>
