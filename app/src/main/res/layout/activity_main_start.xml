@@ -8,7 +8,6 @@
     tools:context=".ui.MainActivity"
     android:background="?attr/colorMainBackground">
 
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/containerTitle"
         android:layout_width="match_parent"
@@ -73,7 +72,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/containerSmgrDate" />
 
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnToSmgr"
         android:layout_width="@dimen/main_activity_btn_width"
@@ -106,7 +104,5 @@
         app:layout_constraintBottom_toTopOf="@+id/titleImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

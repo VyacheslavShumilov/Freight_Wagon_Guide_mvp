@@ -71,7 +71,6 @@
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent" />
 
-
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/titleImage"
         android:layout_width="@dimen/main_activity_image_width"
@@ -82,7 +81,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/containerSmgrDate" />
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnToSmgr"
