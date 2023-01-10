@@ -61,6 +61,28 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <FrameLayout
+        android:id="@+id/layout_smoke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/titleImage"
+        app:layout_constraintTop_toBottomOf="@+id/containerSmgrDate">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/smoke"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toTopOf="@+id/titleImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/smoke" />
+    </FrameLayout>
+
     <TextView
         android:id="@+id/clickToStart"
         android:layout_width="wrap_content"
@@ -76,7 +98,7 @@
         android:layout_width="@dimen/main_activity_image_width"
         android:layout_height="@dimen/main_activity_image_height"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="100dp"
         android:src="@drawable/title_image"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -95,13 +117,28 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnToOrv"
+        style="@style/Widget.Material3.Button.Main_Activity_Btn"
         android:layout_width="@dimen/main_activity_btn_width"
         android:layout_height="wrap_content"
-        style="@style/Widget.Material3.Button.Main_Activity_Btn"
         android:layout_marginTop="16dp"
         android:text="@string/btn_enter_orv"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToSmgr" />
+        app:layout_constraintTop_toBottomOf="@+id/btnToSmgr"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/btnHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_baseline_self_improvemen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnToOrv"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

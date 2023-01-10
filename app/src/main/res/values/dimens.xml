@@ -3,6 +3,7 @@
     <dimen name="toolbar_text_size">20sp</dimen>
     <dimen name="main_activity_name_app_text_size">30sp</dimen>
     <dimen name="main_activity_info_app_text_size">15sp</dimen>
+    <dimen name="help_activity_text_size">20sp</dimen>
     <dimen name="frag_param_wagon_dynamic_txt_size">18sp</dimen>
     <dimen name="frag_param_wagon_header_txt_size">16sp</dimen>
     <dimen name="frag_param_rep_carg_model_txt_size">18sp</dimen>
@@ -18,6 +19,10 @@
     <dimen name="main_activity_name_app_padding_top">25dp</dimen>
     <dimen name="main_activity_txt_padding_top">15dp</dimen>
     <dimen name="main_activity_space_btn_padding">15dp</dimen>
+
+    <dimen name="help_activity_marginStart">8dp</dimen>
+    <dimen name="help_activity_marginTop">8dp</dimen>
+    <dimen name="help_activity_marginEnd">8dp</dimen>
 
     <dimen name="frag_smgr_header_paddingStart">0dp</dimen>
     <dimen name="frag_smgr_header_paddingEnd">8dp</dimen>

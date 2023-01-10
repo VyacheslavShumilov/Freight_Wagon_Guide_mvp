@@ -8,6 +8,7 @@
     tools:context=".ui.MainActivity"
     android:background="?attr/colorMainBackground">
 
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/containerTitle"
         android:layout_width="match_parent"
@@ -60,6 +61,25 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <FrameLayout
+        android:id="@+id/layout_smoke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerSmgrDate">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/smoke"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toTopOf="@+id/titleImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/smoke" />
+    </FrameLayout>
+
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/titleImage"
@@ -104,5 +124,16 @@
         app:layout_constraintBottom_toTopOf="@+id/titleImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_baseline_self_improvemen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnToOrv"
+        app:layout_constraintVertical_bias="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

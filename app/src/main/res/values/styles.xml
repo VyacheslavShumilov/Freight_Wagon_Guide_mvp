@@ -10,6 +10,24 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Help_Activity_Header">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/main_activity_name_app_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Help_Activity_Medium_Txt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/help_activity_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="Main_Activity_Txt">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnticipateOvershootInterpolator
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
@@ -16,6 +18,8 @@ import com.hfad.smgrapp.ui.orv.OrvActivity
 import com.hfad.smgrapp.ui.smgr.wagons.WagonsActivity
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var mAlertDialogBuilder: AlertDialog.Builder
+    private lateinit var mAlertDialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,5 +85,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, OrvActivity::class.java)
             startActivity(intent)
         }
+
+        findViewById<ImageButton>(R.id.btnHelp).setOnClickListener {
+            val intent = Intent(this, HelpActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

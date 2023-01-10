@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorMainBackground"
+    tools:context=".ui.HelpActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txt_support_project"
+        style="@style/Help_Activity_Header"
+        android:layout_marginStart="@dimen/help_activity_marginStart"
+        android:layout_marginTop="@dimen/help_activity_marginTop"
+        android:layout_marginEnd="@dimen/help_activity_marginEnd"
+        android:text="@string/txtView_title_help"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txt_card"
+        style="@style/Help_Activity_Medium_Txt"
+        android:layout_marginStart="@dimen/help_activity_marginStart"
+        android:layout_marginTop="@dimen/help_activity_marginTop"
+        android:layout_marginEnd="@dimen/help_activity_marginEnd"
+        android:text="@string/txtView_transaction_to_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_support_project" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txt_card_number"
+        style="@style/Help_Activity_Medium_Txt"
+        android:layout_marginStart="@dimen/help_activity_marginStart"
+        android:layout_marginTop="@dimen/help_activity_marginTop"
+        android:layout_marginEnd="@dimen/help_activity_marginEnd"
+        android:text="@string/txtView_card_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_card" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txt_connect_developer"
+        style="@style/Help_Activity_Header"
+        android:layout_marginStart="@dimen/help_activity_marginStart"
+        android:layout_marginTop="@dimen/help_activity_marginTop"
+        android:layout_marginEnd="@dimen/help_activity_marginEnd"
+        android:text="@string/txtView_connect_developer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_card_number" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txt_mail"
+        style="@style/Help_Activity_Medium_Txt"
+        android:layout_marginStart="@dimen/help_activity_marginStart"
+        android:layout_marginTop="@dimen/help_activity_marginTop"
+        android:layout_marginEnd="@dimen/help_activity_marginEnd"
+        android:text="@string/txtView_mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_connect_developer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
