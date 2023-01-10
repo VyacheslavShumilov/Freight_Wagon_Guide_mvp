@@ -3,22 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.orv.SamplesFragment">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:paddingBottom="100dp">
@@ -31,14 +28,13 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewAbs"
                 style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="0dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/frag_samples_cardView_width"
+                android:layout_height="@dimen/frag_samples_cardView_height"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintEnd_toStartOf="@+id/cardViewVpg"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="8dp">
+                app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
@@ -73,8 +69,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewVpg"
                 style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="0dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/frag_samples_cardView_width"
+                android:layout_height="@dimen/frag_samples_cardView_height"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintBottom_toBottomOf="@+id/cardViewAbs"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -114,8 +110,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewThick"
                 style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="0dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/frag_samples_cardView_width"
+                android:layout_height="@dimen/frag_samples_cardView_height"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintEnd_toStartOf="@+id/cardViewComb"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -156,8 +152,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewComb"
                 style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="0dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/frag_samples_cardView_width"
+                android:layout_height="@dimen/frag_samples_cardView_height"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintBottom_toBottomOf="@+id/cardViewThick"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -197,8 +193,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewBrace"
                 style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="0dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/frag_samples_cardView_width"
+                android:layout_height="@dimen/frag_samples_cardView_height"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintEnd_toStartOf="@+id/cardViewProf"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -239,8 +235,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewProf"
                 style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="0dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/frag_samples_cardView_width"
+                android:layout_height="@dimen/frag_samples_cardView_height"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintBottom_toBottomOf="@+id/cardViewBrace"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -281,8 +277,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardView873"
                 style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="0dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/frag_samples_cardView_width"
+                android:layout_height="@dimen/frag_samples_cardView_height"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintEnd_toStartOf="@+id/cardViewHeight"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -323,8 +319,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewHeight"
                 style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="0dp"
-                android:layout_height="180dp"
+                android:layout_width="@dimen/frag_samples_cardView_width"
+                android:layout_height="@dimen/frag_samples_cardView_height"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintBottom_toBottomOf="@+id/cardView873"
                 app:layout_constraintEnd_toEndOf="parent"

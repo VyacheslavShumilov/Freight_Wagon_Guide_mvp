@@ -17,23 +17,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        style="@style/SMGR.Widget.TextInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeColor="?attr/colorPrimary"
         app:counterEnabled="true"
         app:counterMaxLength="12"
-        app:counterTextColor="?attr/colorStaticText"
         app:endIconMode="clear_text"
         app:endIconDrawable="@drawable/ic_clear"
-        app:endIconTint="?attr/colorOnSecondary"
         app:helperText="@string/editTxt_hint"
-        app:helperTextTextColor="?attr/colorStaticText"
         app:hintAnimationEnabled="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -82,12 +74,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/No_Internet_Text"
             android:gravity="center"
-            android:paddingBottom="10dp"
+            android:layout_marginBottom="@dimen/txtView_no_internet_margin_bottom"
             android:text="@string/no_internet_txtView" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnClickReply"
+            style="@style/Widget.Material3.Button.Main_Activity_Btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/repeated_request_bnt" />

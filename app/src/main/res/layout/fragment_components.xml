@@ -39,11 +39,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/txtView_no_internet_margin_bottom"
+            style="@style/No_Internet_Text"
             android:gravity="center"
             android:text="@string/no_internet_txtView" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnClickReply"
+            style="@style/Widget.Material3.Button.Main_Activity_Btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/repeated_request_bnt" />

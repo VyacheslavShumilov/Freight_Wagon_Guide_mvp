@@ -6,4 +6,5 @@
     <attr name="colorStaticText" format="color|reference" />
     <attr name="colorOrvTxtBackground" format="color|reference" />
     <attr name="colorPlayBtn" format="color|reference" />
+    <attr name="colorInputTxtError" format="color|reference" />
 </resources>

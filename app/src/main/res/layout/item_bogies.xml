@@ -22,7 +22,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/bogieFactoryTextView"
-            style="@style/Bogies_Components_Item_Header.Medium"
+            style="@style/Bogies_Components_Item_Header_Small"
             android:hint="@string/item_bogie_comp_txtView_bogieFactory"
             android:layout_marginTop="@dimen/txtView_marginTop"
             android:layout_marginStart="@dimen/txtView_marginStart"/>

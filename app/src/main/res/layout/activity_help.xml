@@ -44,7 +44,7 @@
         android:id="@+id/txt_connect_developer"
         style="@style/Help_Activity_Header"
         android:layout_marginStart="@dimen/help_activity_marginStart"
-        android:layout_marginTop="@dimen/help_activity_marginTop"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="@dimen/help_activity_marginEnd"
         android:text="@string/txtView_connect_developer"
         app:layout_constraintEnd_toEndOf="parent"

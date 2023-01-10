@@ -25,7 +25,7 @@
 
     <!-- Strings used for activity_help -->
     <string name="txtView_title_help">Поддержать проект</string>
-    <string name="txtView_transaction_to_card">Перевод на карту:</string>
+    <string name="txtView_transaction_to_card">Перевод на карту Тинькофф:</string>
     <string name="txtView_card_number">5536 9137 5524 9618</string>
     <string name="txtView_connect_developer">Контакты разработчика</string>
     <string name="txtView_mail">vvshumilov@mail.ru</string>
