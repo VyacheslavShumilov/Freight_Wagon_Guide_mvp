@@ -11,9 +11,9 @@
         android:id="@+id/txt_support_project"
         style="@style/Help_Activity_Header"
         android:layout_marginStart="@dimen/help_activity_marginStart"
-        android:layout_marginTop="@dimen/help_activity_marginTop"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="@dimen/help_activity_marginEnd"
-        android:text="@string/txtView_title_help"
+        android:text="@string/txtView_support_project"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +24,7 @@
         android:layout_marginStart="@dimen/help_activity_marginStart"
         android:layout_marginTop="@dimen/help_activity_marginTop"
         android:layout_marginEnd="@dimen/help_activity_marginEnd"
-        android:text="@string/txtView_transaction_to_card"
+        android:text="@string/txtView_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_support_project" />
@@ -49,7 +49,7 @@
         android:text="@string/txtView_connect_developer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_card_number" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_link_gp" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txt_mail"
@@ -61,5 +61,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_connect_developer" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txt_rate"
+        style="@style/Help_Activity_Header"
+        android:layout_marginStart="@dimen/help_activity_marginStart"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/help_activity_marginEnd"
+        android:text="@string/txtView_rate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_card_number" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txt_link_gp"
+        style="@style/Help_Activity_Medium_Txt"
+        android:layout_marginStart="@dimen/help_activity_marginStart"
+        android:layout_marginEnd="@dimen/help_activity_marginEnd"
+        android:text="@string/txtView_link_gp"
+        android:autoLink="all"
+        android:layout_marginTop="@dimen/help_activity_marginTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_rate" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

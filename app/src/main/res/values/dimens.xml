@@ -1,7 +1,7 @@
 <resources>
 
     <dimen name="toolbar_text_size">20sp</dimen>
-    <dimen name="main_activity_name_app_text_size">30sp</dimen>
+    <dimen name="main_activity_name_app_text_size">25sp</dimen>
     <dimen name="main_activity_info_app_text_size">18sp</dimen>
     <dimen name="help_activity_text_size">20sp</dimen>
     <dimen name="frag_param_wagon_dynamic_txt_size">18sp</dimen>

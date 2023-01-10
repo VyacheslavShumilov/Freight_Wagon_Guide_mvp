@@ -24,11 +24,13 @@
     <string name="editTxt_hint">Поиск модели вагона</string>
 
     <!-- Strings used for activity_help -->
-    <string name="txtView_title_help">Поддержать проект</string>
-    <string name="txtView_transaction_to_card">Перевод на карту Тинькофф:</string>
+    <string name="txtView_support_project">Поддержать проект</string>
+    <string name="txtView_card">Перевод на карту Тинькофф:</string>
     <string name="txtView_card_number">5536 9137 5524 9618</string>
     <string name="txtView_connect_developer">Контакты разработчика</string>
     <string name="txtView_mail">vvshumilov@mail.ru</string>
+    <string name="txtView_rate">Оценить проект в Google Play</string>
+    <string name="txtView_link_gp">https://play.google.com/store/apps/details?id=com.hfad.smgrapp</string>
 
     <!-- Strings used for fragment_parameter_wagon -->
     <string name="txtView_model">Модель:</string>
@@ -536,6 +538,5 @@
     <string name="txtView_samples_7">873</string>
     <string name="txtView_samples_8">Высота автосцепки</string>
     <string name="txtView_sample_height_1">Измерения автосцепок СА-3 и СА-3М\nУстройство или основание рейки устанавливают на обе головки рельсов.Измерения производятся от литейного шва, проходящего вдоль хвостовика корпуса автосцепки. Если шов плохо заметен, через середину хвостовика проводят продольную линию. В случае использования специального устройства высота измеряется при помощи указателя, перемещающегося в вертикальном направлении, при использовании рейки – стойки с делениями (линейки). Высоту измеряют в месте выхода хвостовика автосцепки из ударной розетки по передней плоскости центрирующей балочки (точка а).\nПоложение автосцепки относительно горизонтали определяют по разности между значениями ее высоты от головок рельсов до литейного шва, измеренной в двух местах: у входа хвостовика в ударную розетку (точка а) и по линии зацепления (точка б).</string>
-
 
 </resources>
