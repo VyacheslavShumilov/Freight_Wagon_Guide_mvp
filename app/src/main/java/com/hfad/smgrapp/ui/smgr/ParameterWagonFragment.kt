@@ -85,8 +85,6 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
                     appDao.insertWagon(wagonFavourite)
                 }
                 toolbar.clickHomeBtn.isClickable = false
-
-
                 toolbar.clickHomeBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_favorite_24))
 
                 Toast.makeText(context, "Добавлен в избранное", Toast.LENGTH_SHORT).show()
@@ -122,6 +120,11 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
                     withContext(Dispatchers.Main) {
                         @Suppress("SENSELESS_COMPARISON")
                         toolbar.clickHomeBtn.isClickable = a == null
+                        if (toolbar.clickHomeBtn.isClickable) {
+                            toolbar.clickHomeBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_favorite_border))
+                        } else {
+                            toolbar.clickHomeBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_favorite_24))
+                        }
                     }
                 }
             }

@@ -62,6 +62,33 @@ class AdapterWagons(
 
     override fun getItemCount(): Int = wagonsListFilters.size
 
+//    fun getFilter(): Filter {
+//        return object : Filter() {
+//            override fun performFiltering(charSequence: CharSequence?): FilterResults {
+//                val charSearch = charSequence?.toString()
+//                wagonsListFilters = if (charSearch.isNullOrEmpty())
+//                    wagonsList
+//                else
+//                    wagonsList.filter { it.model.contains(charSearch) } as ArrayList<Wagons>
+//                return FilterResults().apply { values = wagonsListFilters }
+//            }
+//
+//            override fun publishResults(
+//                charSequence: CharSequence?,
+//                filterResults: FilterResults?
+//            ) {
+//                wagonsListFilters = if (filterResults?.values == null)
+//                    ArrayList()
+//                else
+//                    filterResults.values as ArrayList<Wagons>
+//                notifyDataSetChanged()
+//            }
+//        }
+//    }
+
+
+
+
     @Suppress("UNCHECKED_CAST")
     fun getFilter(): Filter {
         return object : Filter() {

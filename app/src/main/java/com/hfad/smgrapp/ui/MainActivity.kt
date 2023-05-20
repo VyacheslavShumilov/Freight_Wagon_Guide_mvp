@@ -18,8 +18,6 @@ import com.hfad.smgrapp.ui.orv.OrvActivity
 import com.hfad.smgrapp.ui.smgr.wagons.WagonsActivity
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var mAlertDialogBuilder: AlertDialog.Builder
-    private lateinit var mAlertDialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

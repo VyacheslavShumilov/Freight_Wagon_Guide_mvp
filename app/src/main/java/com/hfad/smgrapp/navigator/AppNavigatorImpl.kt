@@ -5,7 +5,6 @@ import com.hfad.smgrapp.ui.orv.bogies_components.BogieComponentsFragment
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.ui.orv.*
 import com.hfad.smgrapp.ui.orv.bogies.BogiesListFragment
-import com.hfad.smgrapp.ui.orv.samples.*
 import com.hfad.smgrapp.ui.orv.samples.coupler.Sample873Fragment
 import com.hfad.smgrapp.ui.orv.samples.coupler.SampleHeightFragment
 import com.hfad.smgrapp.ui.orv.samples.wheels.*

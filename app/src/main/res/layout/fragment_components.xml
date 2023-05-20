@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    tools:context=".ui.smgr.wagon_cargos.CargosWagonFragment">
+    tools:context=".ui.orv.bogies.BogiesListFragment">
 
     <include
         android:id="@+id/toolbar"

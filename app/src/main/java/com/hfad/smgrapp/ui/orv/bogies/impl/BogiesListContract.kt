@@ -13,5 +13,4 @@ interface BogiesListContract {
     interface Presenter: BaseContract.Presenter<View> {
         fun responseData()
     }
-
 }
