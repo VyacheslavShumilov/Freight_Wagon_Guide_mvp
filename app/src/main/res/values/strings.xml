@@ -17,8 +17,8 @@
     <!-- Strings used for activity_main -->
     <string name="txtView_title_name">СВОДНЫЙ \nСПРАВОЧНИК\nГРУЗОВЫХ ВАГОНОВ</string>
     <string name="txtView_about_guides">Включает данные справочников:</string>
-    <string name="txtView_smgr1">СМГР1 от 12.05.2023 г.</string>
-    <string name="txtView_smgr2">СМГР2 от 20.04.2023 г.</string>
+    <string name="txtView_smgr1">СМГР1 от 16.11.2023 г.</string>
+    <string name="txtView_smgr2">СМГР2 от 13.11.2023 г.</string>
     <string name="btn_enter_smgr">Вход в СМГР</string>
     <string name="btn_enter_orv">Вход в памятку ОРВ</string>
     <string name="editTxt_hint">Поиск модели вагона</string>
@@ -31,6 +31,8 @@
     <string name="txtView_mail">vvshumilov@mail.ru</string>
     <string name="txtView_rate">Оценить проект в Google Play</string>
     <string name="txtView_link_gp">https://play.google.com/store/apps/details?id=com.hfad.smgrapp</string>
+    <string name="txtView_link_projects">https://play.google.com/store/apps/developer?id=Viacheslav+Shumilov</string>
+    <string name="txtView_projects">Остальные приложения\nв Google Play</string>
 
     <!-- Strings used for fragment_parameter_wagon -->
     <string name="txtView_model">Модель:</string>
