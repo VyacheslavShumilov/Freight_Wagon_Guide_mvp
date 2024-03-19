@@ -17,8 +17,8 @@
     <!-- Strings used for activity_main -->
     <string name="txtView_title_name">СВОДНЫЙ \nСПРАВОЧНИК\nГРУЗОВЫХ ВАГОНОВ</string>
     <string name="txtView_about_guides">Включает данные справочников:</string>
-    <string name="txtView_smgr1">СМГР1 от 16.11.2023 г.</string>
-    <string name="txtView_smgr2">СМГР2 от 13.11.2023 г.</string>
+    <string name="txtView_smgr1">СМГР1 от 06.03.2024 г.</string>
+    <string name="txtView_smgr2">СМГР2 от 01.02.2024 г.</string>
     <string name="btn_enter_smgr">Вход в СМГР</string>
     <string name="btn_enter_orv">Вход в памятку ОРВ</string>
     <string name="editTxt_hint">Поиск модели вагона</string>
@@ -288,7 +288,7 @@
     <string name="txtView_wh_param_9_1">грузовые вагоны</string>
     <string name="txtView_wh_unit_9_1">не более 1 мм</string>
     <string name="txtView_wh_param_9_2">грузовые вагоны\nс кассетными подшипниками</string>
-    <string name="txtView_wh_unit_9_2">не более 2 мм</string>
+    <string name="txtView_wh_unit_9_2">не более 1 мм</string>
     <string name="txtView_wh_param_9_3">более 1 до 2 мм: до ближайшего ПТО, V:\nне более 70 км/ч</string>
     <string name="txtView_wh_param_9_4">от 2 до 6 мм: до ближайшей станции, V:\nне более 15 км/ч</string>
     <string name="txtView_wh_param_9_5">от 6 до 12 мм: до ближайшей станции, V:\nне более 10 км/ч</string>
