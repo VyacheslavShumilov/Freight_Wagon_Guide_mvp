@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.MainActivity"
-    android:background="?attr/colorMainBackground">
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".ui.MainActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/containerTitle"
@@ -27,15 +29,15 @@
         android:id="@+id/containerData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/containerTitle"
+        android:paddingTop="@dimen/main_activity_txt_padding_top"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:paddingTop="@dimen/main_activity_txt_padding_top">
+        app:layout_constraintTop_toBottomOf="@+id/containerTitle">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/data"
             style="@style/Main_Activity_Txt"
-            android:text="@string/txtView_about_guides"/>
+            android:text="@string/txtView_about_guides" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -44,20 +46,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/containerData"
+        android:paddingTop="@dimen/main_activity_txt_padding_top"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:paddingTop="@dimen/main_activity_txt_padding_top">
+        app:layout_constraintTop_toBottomOf="@+id/containerData">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/smgr1Txt"
             style="@style/Main_Activity_Txt"
-            android:text="@string/txtView_smgr1"/>
+            android:text="@string/txtView_smgr1" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/smgr2Txt"
             style="@style/Main_Activity_Txt"
-            android:text="@string/txtView_smgr2"/>
+            android:text="@string/txtView_smgr2" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -88,9 +90,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/main_activity_push_the_train_txt_view"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/titleImage"
         app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -106,9 +108,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnToSmgr"
+        style="@style/Widget.Material3.Button.Main_Activity_Btn"
         android:layout_width="@dimen/main_activity_btn_width"
         android:layout_height="wrap_content"
-        style="@style/Widget.Material3.Button.Main_Activity_Btn"
         android:layout_marginTop="8dp"
         android:text="@string/btn_enter_smgr"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -133,12 +135,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
         android:background="@color/transparent"
         android:src="@drawable/ic_baseline_self_improvemen"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCheckUpdate"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnCheckUpdate" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCheckUpdate"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="ОБНОВИТЬ\n ПРИЛОЖЕНИЕ"
+        android:textColor="@color/black"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/btnToOrv"
         app:layout_constraintTop_toBottomOf="@+id/btnToOrv"
-        app:layout_constraintVertical_bias="1.0" />
+        app:strokeWidth="2dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,10 @@
 package com.hfad.smgrapp.ui
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.animation.AnticipateOvershootInterpolator
 import android.widget.Button
 import android.widget.ImageButton
@@ -13,6 +15,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
+import com.google.android.material.button.MaterialButton
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.ui.orv.OrvActivity
 import com.hfad.smgrapp.ui.smgr.wagons.WagonsActivity
@@ -23,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_start)
 
+        // Обновляем использование ConstraintLayout
         val constraintsContainer: ConstraintLayout = findViewById(R.id.container)
 
         var isDetailsShown = false
@@ -35,9 +39,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             ChangeBounds().apply {
-                interpolator = AnticipateOvershootInterpolator(1.0f).apply {
-                    duration = 2000L
-                }
+                interpolator = AnticipateOvershootInterpolator(1.0f)
+                duration = 2000L
             }.also {
                 TransitionManager.beginDelayedTransition(constraintsContainer, it)
             }
@@ -48,15 +51,13 @@ class MainActivity : AppCompatActivity() {
         fun hideDetails() {
             isDetailsShown = false
 
-
             val constraints = ConstraintSet().apply {
                 clone(this@MainActivity, R.layout.activity_main_start)
             }
 
             ChangeBounds().apply {
-                interpolator = AnticipateOvershootInterpolator(1.0f).apply {
-                    duration = 2000L
-                }
+                interpolator = AnticipateOvershootInterpolator(1.0f)
+                duration = 2000L
             }.also {
                 TransitionManager.beginDelayedTransition(constraintsContainer, it)
             }
@@ -64,12 +65,12 @@ class MainActivity : AppCompatActivity() {
             constraints.applyTo(constraintsContainer)
         }
 
-        findViewById<ImageView>(R.id.titleImage).setOnClickListener {
+        findViewById<ConstraintLayout>(R.id.container).setOnClickListener {
+            Log.d("MainActivity", "Title constraint clicked")
             if (isDetailsShown) {
                 hideDetails()
             } else {
                 showDetails()
-
             }
         }
 
@@ -79,7 +80,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnToOrv).setOnClickListener {
-
             val intent = Intent(this, OrvActivity::class.java)
             startActivity(intent)
         }
@@ -89,5 +89,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<MaterialButton>(R.id.btnCheckUpdate).setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.hfad.smgrapp"))
+            startActivity(intent)
+        }
     }
 }

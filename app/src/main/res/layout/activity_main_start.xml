@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/container"
-    tools:context=".ui.MainActivity"
-    android:background="?attr/colorMainBackground">
-
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".ui.MainActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/containerTitle"
@@ -29,14 +29,14 @@
         android:id="@+id/containerData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/containerTitle"
+        android:paddingTop="@dimen/main_activity_txt_padding_top"
         app:layout_constraintRight_toLeftOf="parent"
-        android:paddingTop="@dimen/main_activity_txt_padding_top">
+        app:layout_constraintTop_toBottomOf="@+id/containerTitle">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/data"
             style="@style/Main_Activity_Txt"
-            android:text="@string/txtView_about_guides"/>
+            android:text="@string/txtView_about_guides" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -45,19 +45,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/containerData"
+        android:paddingTop="@dimen/main_activity_txt_padding_top"
         app:layout_constraintRight_toLeftOf="@id/containerTitle"
-        android:paddingTop="@dimen/main_activity_txt_padding_top">
+        app:layout_constraintTop_toBottomOf="@+id/containerData">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/smgr1Txt"
             style="@style/Main_Activity_Txt"
-            android:text="@string/txtView_smgr1"/>
+            android:text="@string/txtView_smgr1" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/smgr2Txt"
             style="@style/Main_Activity_Txt"
-            android:text="@string/txtView_smgr2"/>
+            android:text="@string/txtView_smgr2" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -94,9 +94,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnToSmgr"
+        style="@style/Widget.Material3.Button.Main_Activity_Btn"
         android:layout_width="@dimen/main_activity_btn_width"
         android:layout_height="wrap_content"
-        style="@style/Widget.Material3.Button.Main_Activity_Btn"
         android:layout_marginTop="24dp"
         android:text="@string/btn_enter_smgr"
         app:layout_constraintRight_toLeftOf="@id/containerTitle"
@@ -104,9 +104,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnToOrv"
+        style="@style/Widget.Material3.Button.Main_Activity_Btn"
         android:layout_width="@dimen/main_activity_btn_width"
         android:layout_height="wrap_content"
-        style="@style/Widget.Material3.Button.Main_Activity_Btn"
         android:layout_marginBottom="80dp"
         android:text="@string/btn_enter_orv"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -134,4 +134,19 @@
         app:layout_constraintTop_toBottomOf="@+id/btnToOrv"
         app:layout_constraintVertical_bias="0.9" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCheckUpdate"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ОБНОВИТЬ\n ПРИЛОЖЕНИЕ"
+        android:textColor="@color/black"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnHelp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnHelp"
+        app:strokeWidth="2dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
