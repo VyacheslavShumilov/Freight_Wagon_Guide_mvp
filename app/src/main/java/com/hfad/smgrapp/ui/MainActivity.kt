@@ -24,55 +24,57 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_start)
+//        setContentView(R.layout.activity_main_start)
+        setContentView(R.layout.activity_main_end)
+
 
         // Обновляем использование ConstraintLayout
         val constraintsContainer: ConstraintLayout = findViewById(R.id.container)
 
-        var isDetailsShown = false
+//        var isDetailsShown = false
+//
+//        fun showDetails() {
+//            isDetailsShown = true
+//
+//            val constraints = ConstraintSet().apply {
+//                clone(this@MainActivity, R.layout.activity_main_end)
+//            }
+//
+//            ChangeBounds().apply {
+//                interpolator = AnticipateOvershootInterpolator(1.0f)
+//                duration = 2000L
+//            }.also {
+//                TransitionManager.beginDelayedTransition(constraintsContainer, it)
+//            }
+//
+//            constraints.applyTo(constraintsContainer)
+//        }
+//
+//        fun hideDetails() {
+//            isDetailsShown = false
+//
+//            val constraints = ConstraintSet().apply {
+//                clone(this@MainActivity, R.layout.activity_main_start)
+//            }
+//
+//            ChangeBounds().apply {
+//                interpolator = AnticipateOvershootInterpolator(1.0f)
+//                duration = 2000L
+//            }.also {
+//                TransitionManager.beginDelayedTransition(constraintsContainer, it)
+//            }
+//
+//            constraints.applyTo(constraintsContainer)
+//        }
 
-        fun showDetails() {
-            isDetailsShown = true
-
-            val constraints = ConstraintSet().apply {
-                clone(this@MainActivity, R.layout.activity_main_end)
-            }
-
-            ChangeBounds().apply {
-                interpolator = AnticipateOvershootInterpolator(1.0f)
-                duration = 2000L
-            }.also {
-                TransitionManager.beginDelayedTransition(constraintsContainer, it)
-            }
-
-            constraints.applyTo(constraintsContainer)
-        }
-
-        fun hideDetails() {
-            isDetailsShown = false
-
-            val constraints = ConstraintSet().apply {
-                clone(this@MainActivity, R.layout.activity_main_start)
-            }
-
-            ChangeBounds().apply {
-                interpolator = AnticipateOvershootInterpolator(1.0f)
-                duration = 2000L
-            }.also {
-                TransitionManager.beginDelayedTransition(constraintsContainer, it)
-            }
-
-            constraints.applyTo(constraintsContainer)
-        }
-
-        findViewById<ConstraintLayout>(R.id.container).setOnClickListener {
-            Log.d("MainActivity", "Title constraint clicked")
-            if (isDetailsShown) {
-                hideDetails()
-            } else {
-                showDetails()
-            }
-        }
+//        findViewById<ConstraintLayout>(R.id.container).setOnClickListener {
+//            Log.d("MainActivity", "Title constraint clicked")
+//            if (isDetailsShown) {
+//                hideDetails()
+//            } else {
+//                showDetails()
+//            }
+//        }
 
         findViewById<Button>(R.id.btnToSmgr).setOnClickListener {
             val intent = Intent(this, WagonsActivity::class.java)
