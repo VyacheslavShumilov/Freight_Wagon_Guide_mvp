@@ -31,6 +31,15 @@ class WagonsActivity : AppCompatActivity(), WagonsContract.View, AdapterWagons.O
         binding = ActivityWagonsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Инициализация пустого адаптера
+        // Для того, чтобы избежать ошибки kotlin.UninitializedPropertyAccessException
+        // Ошибка связана с тем, что переменная adapterWagons не инициализирована до того,
+        // как к ней обращаются в методе afterTextChanged.
+        // Это вызывает исключение kotlin.UninitializedPropertyAccessException,
+        // так как я пытаюсь использовать свойство adapterWagons до его инициализации
+        adapterWagons = AdapterWagons(ArrayList(), this)
+        binding.recyclerView.adapter = adapterWagons
+
         presenter = WagonsPresenterImpl()
         presenter.attachView(this)
         presenter.responseData()
