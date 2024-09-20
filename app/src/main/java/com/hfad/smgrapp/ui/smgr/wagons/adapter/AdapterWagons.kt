@@ -1,6 +1,7 @@
 package com.hfad.smgrapp.ui.smgr.wagons.adapter
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -51,41 +52,18 @@ class AdapterWagons(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        try {
+        if (position >= 0 && position < wagonsListFilters.size) {
             val wagons = wagonsListFilters[position]
             holder.bindView(wagons)
             holder.bindClickFavourites(wagons)
-        } catch (e: Exception) {
-            e.printStackTrace()
+        } else {
+            // Логирование или отладка
+            Log.e("AdapterWagons", "Позиция $position вне границ списка")
         }
     }
 
+
     override fun getItemCount(): Int = wagonsListFilters.size
-
-//    fun getFilter(): Filter {
-//        return object : Filter() {
-//            override fun performFiltering(charSequence: CharSequence?): FilterResults {
-//                val charSearch = charSequence?.toString()
-//                wagonsListFilters = if (charSearch.isNullOrEmpty())
-//                    wagonsList
-//                else
-//                    wagonsList.filter { it.model.contains(charSearch) } as ArrayList<Wagons>
-//                return FilterResults().apply { values = wagonsListFilters }
-//            }
-//
-//            override fun publishResults(
-//                charSequence: CharSequence?,
-//                filterResults: FilterResults?
-//            ) {
-//                wagonsListFilters = if (filterResults?.values == null)
-//                    ArrayList()
-//                else
-//                    filterResults.values as ArrayList<Wagons>
-//                notifyDataSetChanged()
-//            }
-//        }
-//    }
-
 
 
 
