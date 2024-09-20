@@ -40,12 +40,17 @@ class FavouriteWagonsActivity : AppCompatActivity(), AdapterWagonFavourite.OnCli
 
         appDao = (applicationContext as App).getDatabase().wagonsDao()
 
+//        Dispatchers.IO используется для загрузки данных из базы данных, так как это операция ввода-вывода.
         lifecycleScope.launch(Dispatchers.IO) {
             favourite.addAll(appDao.getAllFavouriteWagons())
-            adapterWagonFavourite = AdapterWagonFavourite(favourite, this@FavouriteWagonsActivity)
-            binding.recyclerView.adapter = adapterWagonFavourite
 
+
+
+//            withContext(Dispatchers.Main) гарантирует, что установка адаптера для RecyclerView и показ тоста выполняются в главном (UI) потоке,
+//            как это и требуется для безопасной работы с элементами пользовательского интерфейса.
             withContext(Dispatchers.Main) {
+                adapterWagonFavourite = AdapterWagonFavourite(favourite, this@FavouriteWagonsActivity)
+                binding.recyclerView.adapter = adapterWagonFavourite
                 if (favourite.size == 0) {
                     Toast.makeText(
                         this@FavouriteWagonsActivity,
