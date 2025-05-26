@@ -139,16 +139,16 @@
         app:layout_constraintTop_toBottomOf="@+id/btnToSmgr"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
-        android:id="@+id/btnHelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:background="@color/transparent"
-        android:src="@drawable/ic_baseline_self_improvemen"
-        app:layout_constraintBottom_toBottomOf="@+id/btnCheckUpdate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnCheckUpdate" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/btnHelp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="30dp"-->
+<!--        android:background="@color/transparent"-->
+<!--        android:src="@drawable/ic_baseline_self_improvemen"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/btnCheckUpdate"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/btnCheckUpdate" />-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCheckUpdate"

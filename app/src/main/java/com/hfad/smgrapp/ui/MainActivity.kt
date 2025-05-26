@@ -86,10 +86,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        findViewById<ImageButton>(R.id.btnHelp).setOnClickListener {
-            val intent = Intent(this, HelpActivity::class.java)
-            startActivity(intent)
-        }
+//        findViewById<ImageButton>(R.id.btnHelp).setOnClickListener {
+//            val intent = Intent(this, HelpActivity::class.java)
+//            startActivity(intent)
+//        }
 
         findViewById<MaterialButton>(R.id.btnCheckUpdate).setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.hfad.smgrapp"))
