@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    NEW FILE — фон filter-чипа.
+    Выбран  → 10% акцент (как у бейджей capacity "60.00 т").
+    Обычный → прозрачный (чтобы читалась только обводка).
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:color="@color/accent_badge_bg" />
+    <item android:color="@android:color/transparent" />
+</selector>

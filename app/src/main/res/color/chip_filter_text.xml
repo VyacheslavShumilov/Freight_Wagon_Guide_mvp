@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    NEW FILE — цвет текста filter-чипа.
+    Выбран  → акцентный зелёный (совпадает с обводкой = максимальный контраст).
+    Обычный → вторичный текст темы (спокойный, не конкурирует с моделями).
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:color="@color/main_color_dark" />
+    <item android:color="@color/text_secondary_dark" />
+</selector>

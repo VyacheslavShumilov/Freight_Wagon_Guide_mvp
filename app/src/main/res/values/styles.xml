@@ -387,5 +387,38 @@
         <item name="android:singleLine">false</item>
     </style>
 
+    <!-- ─── NEW: Filter chip в стилистике приложения ───────────────────────── -->
+    <!--
+        Визуальные решения:
+        • corner radius 10dp — перекликается с cardView_corner_radius,
+          не капсула (капсула смотрелась бы инородно на фоне прямых бейджей).
+        • IBM Plex Mono bold — тот же шрифт, что у номеров моделей и бейджей.
+        • Подчёркивание активного чипа акцентом — перекликается с бейджем "60.00 т".
+        • checkedIcon убрана: выделение уже читается цветом и обводкой,
+          галочка только ломала бы ширину чипа при переключении.
+    -->
+    <style name="SMGR.Chip.Filter" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_filter_background</item>
+        <item name="chipStrokeColor">@color/chip_filter_stroke</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/chip_filter_text</item>
+        <item name="rippleColor">@color/chip_filter_ripple</item>
+
+        <item name="chipCornerRadius">10dp</item>
+        <item name="chipMinHeight">34dp</item>
+        <item name="chipStartPadding">12dp</item>
+        <item name="chipEndPadding">12dp</item>
+
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/ibm_plex_mono</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+
+        <!-- убираем галочку выделения -->
+        <item name="checkedIconVisible">false</item>
+        <item name="checkedIcon">@null</item>
+        <item name="chipIconVisible">false</item>
+        <item name="closeIconVisible">false</item>
+    </style>
 
 </resources>

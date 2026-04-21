@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    NEW FILE — обводка filter-чипа.
+    Выбран  → полный акцент (зелёный).
+    Обычный → нейтральный stroke темы (почти невидим, как у карточек).
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:color="@color/main_color_dark" />
+    <item android:color="@color/bg_stroke" />
+</selector>
