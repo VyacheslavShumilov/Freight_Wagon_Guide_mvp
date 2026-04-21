@@ -150,20 +150,21 @@
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="@+id/btnCheckUpdate" />-->
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCheckUpdate"
-        style="@style/Widget.Material3.Button.OutlinedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        app:strokeColor="@color/main_color_dark"
-        android:text="@string/activity_main_btn_chk_upd_txt_btn"
-        android:textColor="@color/main_color_dark"
-        android:textSize="8sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/btnToOrv"
-        app:layout_constraintTop_toBottomOf="@+id/btnToOrv"
-        app:strokeWidth="2dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCheckUpdate"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/activity_main_btn_chk_upd_txt_btn"
+            android:textColor="@color/main_color_dark"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/btnToOrv"
+            app:layout_constraintStart_toStartOf="@+id/btnToOrv"
+            app:layout_constraintTop_toBottomOf="@+id/btnToOrv"
+            app:strokeColor="@color/main_color_dark"
+            app:strokeWidth="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    REDESIGN — Color state list for BottomNavigationView items.
+    Save as: app/src/main/res/color/bottom_nav_item_tint.xml
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#09BF9B" android:state_checked="true" />
+    <item android:color="#4A5058" />
+</selector>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Base palette (unchanged) -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,24 +8,45 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <color name="custom_tab_clicked">#64C626</color>
-    <color name="color_item_repair">#08000000</color>
-    <color name="main_color_light">#8009B36F</color>
-<!--    <color name="main_color_dark">#4FD8EB</color>-->
-    <color name="main_color_dark">#09BF9B</color>
-    <color name="neutral10">#191C1D</color>
-    <color name="neutral80">#E1E3E3</color>
-    <color name="surface5">#244FD8EB</color>
     <color name="transparent">#00FFFFFF</color>
 
-    <color name="static_txt_light">#6C6C6C</color>
-    <color name="static_txt_dark">#CC09BF9B</color>
+    <!-- Redesign: accent (kept from original) -->
+    <color name="main_color_light">#8009B36F</color>
+    <color name="main_color_dark">#09BF9B</color>
 
+    <!-- Redesign: dark theme surfaces -->
+    <color name="bg_primary">#0C0E10</color>
+    <color name="bg_surface">#141618</color>
+    <color name="bg_raised">#1C1F22</color>
+    <color name="bg_stroke">#242729</color>
+
+    <!-- Redesign: text hierarchy -->
+    <color name="text_primary_dark">#D8DCE0</color>
+    <color name="text_secondary_dark">#6B7580</color>
+    <color name="text_dim_dark">#4A5058</color>
+
+    <!-- Redesign: light theme text -->
+    <color name="text_primary_light">#1A1C1E</color>
+    <color name="text_secondary_light">#44474A</color>
+
+    <!-- Accent badge background (10% opacity of accent) -->
+    <color name="accent_badge_bg">#1A09BF9B</color>
+    <color name="accent_badge_stroke">#4009BF9B</color>
+
+    <!-- Danger / Warning -->
+    <color name="danger">#E05252</color>
+    <color name="warning">#E09820</color>
+
+    <!-- Legacy names kept for compatibility -->
+    <color name="neutral10">#0C0E10</color>
+    <color name="neutral80">#D8DCE0</color>
+    <color name="surface5">#1A09BF9B</color>
+    <color name="static_txt_light">#44474A</color>
+    <color name="static_txt_dark">#6B7580</color>
     <color name="orv_background_color_light">#0D000000</color>
-    <color name="orv_background_color_dark">#343738</color>
-
+    <color name="orv_background_color_dark">#141618</color>
     <color name="play_btn_color_light">#BA1A1A</color>
     <color name="play_btn_color_dark">#FFB4AB</color>
-
+    <color name="custom_tab_clicked">#09BF9B</color>
+    <color name="color_item_repair">#141618</color>
 </resources>

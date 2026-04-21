@@ -1,5 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ─── Базовый стиль-маркер (корень иерархии SMGR.*) ─── -->
+    <style name="SMGR" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- ─── Контейнер элемента списка (строка в RecyclerView) ─── -->
+    <style name="SMGR.ListItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <!-- ─── Доработка CLAUDE Section header inside grouped param/repair screens ─── -->
+    <style name="SMGR.SectionHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.10</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <!-- ─── Param row: label (left, flex) ─── -->
+    <style name="SMGR.ParamLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- ─── Param row: numeric value (right, monospace) ─── -->
+    <style name="SMGR.ParamValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">56dp</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <!-- ─── Param row: unit label (fixed width, after value) ─── -->
+    <style name="SMGR.ParamUnit">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingStart">4dp</item>
+    </style>
+
+    <!-- ─── Row container inside a grouped card ─── -->
+    <style name="SMGR.CardRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- ─── Hero capacity number (large, accent) ─── -->
+    <style name="SMGR.HeroCapacity">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <!-- ─── Hero capacity label ("тонн") ─── -->
+    <style name="SMGR.HeroCapacityLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <!-- ─── Model code in hero (large mono) ─── -->
+    <style name="SMGR.HeroModelCode">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <!-- ─── List item: model code (top line) ─── -->
+    <style name="SMGR.ListItem.ModelCode">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingMultiplier">1.0</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- ─── List item: subtitle (year · type) ─── -->
+    <style name="SMGR.ListItem.Subtitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingMultiplier">1.0</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- ─── Bottom nav bar style ─── -->
+    <style name="SMGR.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/bottom_nav_item_tint</item>
+        <item name="itemTextColor">@color/bottom_nav_item_tint</item>
+        <item name="backgroundTint">?attr/colorMainBackground</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemActiveIndicatorStyle">@style/SMGR.BottomNav.ActiveIndicator</item>
+    </style>
+
+    <style name="SMGR.BottomNav.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/accent_badge_bg</item>
+    </style>
+
+
+    <!--Оригианльный мой код -->
 
     <style name="Main_Activity_Name_App">
         <item name="android:layout_width">match_parent</item>

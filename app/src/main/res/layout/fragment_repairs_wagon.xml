@@ -1,297 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    REDESIGN — fragment_repairs_wagon.xml
+    Copy to: app/src/main/res/layout/fragment_repairs_wagon.xml
+
+    Changes vs original:
+    - Flat list → 4 grouped MaterialCardView sections
+    - Section headers: ДР / КР / Ресурс по пробегу / По продлению ТУ
+    - Short label text (section header carries the context)
+    - Values right-aligned with unit column
+    - All view IDs preserved — no Kotlin changes needed
+-->
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="?attr/colorMainBackground"
     tools:context=".ui.smgr.RepairsWagonFragment">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
+    <include layout="@layout/toolbar" android:id="@+id/toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/frag_smgr_default_padding">
+            android:orientation="vertical">
 
+            <!-- Model header -->
             <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:gravity="center">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="12dp"
+                android:paddingBottom="8dp"
+                android:background="?attr/colorSurface">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/Fragments_Smgr_Static_Header"
-                    android:paddingStart="@dimen/frag_smgr_header_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_header_paddingEnd"
-                    android:text="@string/txtView_model"/>
-
+                    android:text="@string/txtView_model" />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/wagonModel"
-                    style="@style/Fragments_Smgr_Static_Header" />
+                    style="@style/Fragments_Smgr_Static_Header"
+                    android:paddingStart="8dp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:background="?attr/colorOrvTxtBackground">
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="?attr/colorSurfaceVariant" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_dr_aft_release"
-                    />
+            <!-- ══ SECTION 1: Деповской ремонт (ДР) ══ -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/SMGR.SectionHeader"
+                android:text="Деповской ремонт (ДР)" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Release"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text"
-                    android:hint="@string/txtView_property"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="4dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="10dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorSurfaceVariant"
+                app:cardElevation="0dp">
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout">
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="После постройки" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Release" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Dr_To_1kr" />
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="После ДР, до 1 КР" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Dr_To_1kr" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Dr_To_1kr"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="После ДР, после 1 КР" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Dr_Aft_1Kr" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:background="?attr/colorOrvTxtBackground">
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="После КР" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Kr" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Dr_Aft_1Kr" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Dr_Aft_1Kr"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- ══ SECTION 2: Капитальный ремонт (КР) ══ -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/SMGR.SectionHeader"
+                android:text="Капитальный ремонт (КР)" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout">
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="4dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="10dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorSurfaceVariant"
+                app:cardElevation="0dp">
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Kr" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Kr"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="После постройки" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Kr_Aft_Release" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:background="?attr/colorOrvTxtBackground">
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="После КР" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Kr_Aft_Kr" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Kr_Aft_Release" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Kr_Aft_Release"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- ══ SECTION 3: Ресурс по пробегу ══ -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/SMGR.SectionHeader"
+                android:text="Ресурс по пробегу" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout">
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="4dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="10dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorSurfaceVariant"
+                app:cardElevation="0dp">
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Kr_Aft_Kr" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Kr_Aft_Kr"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="ДР после постройки" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Release_Rep_Prob_Km" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="тыс.км" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:background="?attr/colorOrvTxtBackground">
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="ДР после постройки" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Release_Rep_Years" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Release_Rep_Prob_Km" />
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="ДР после ДР" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Dr_Rep_Prob_Km" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="тыс.км" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Release_Rep_Prob_Km"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="ДР после ДР" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Dr_Rep_Prob_Years" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout">
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="ДР после КР" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Kr_Rep_Prob_Km" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="тыс.км" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Release_Rep_Years" />
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="ДР после КР" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Kr_Rep_Years" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Release_Rep_Years"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:background="?attr/colorOrvTxtBackground">
+            <!-- ══ SECTION 4: По продлению ТУ ══ -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/SMGR.SectionHeader"
+                android:text="По продлению ТУ" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Dr_Rep_Prob_Km" />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="10dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorSurfaceVariant"
+                app:cardElevation="0dp">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Dr_Rep_Prob_Km"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout">
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="ДР после КРП" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Krp_Rep_Prob_Km" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="тыс.км" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Dr_Rep_Prob_Years" />
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="ДР после КРП" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Krp_Rep_Prob_Years" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Dr_Rep_Prob_Years"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_Continue_Tu" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Continue_Tu" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:background="?attr/colorOrvTxtBackground">
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="ДР после КРП по ТУ" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Dr_Aft_Krp_Tu" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Kr_Rep_Prob_Km" />
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="КР после КРП по ТУ" />
+                        <com.google.android.material.textview.MaterialTextView android:id="@+id/text_Kr_Aft_Krp_Tu" style="@style/SMGR.ParamValue" />
+                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="лет" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Kr_Rep_Prob_Km"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Kr_Rep_Years" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Kr_Rep_Years"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:background="?attr/colorOrvTxtBackground">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Krp_Rep_Prob_Km" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Krp_Rep_Prob_Km"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Krp_Rep_Prob_Years" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Krp_Rep_Prob_Years"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:background="?attr/colorOrvTxtBackground">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Continue_Tu"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Continue_Tu"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Dr_Aft_Krp_Tu" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Dr_Aft_Krp_Tu"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:background="?attr/colorOrvTxtBackground">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Text"
-                    android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"
-                    android:text="@string/txtView_Kr_Aft_Krp_Tu" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_Kr_Aft_Krp_Tu"
-                    style="@style/Fragments_Smgr_Static_Text.Dynamic_Text" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
     </ScrollView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

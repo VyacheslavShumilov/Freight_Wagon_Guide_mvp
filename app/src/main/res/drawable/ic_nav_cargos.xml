@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Box / cargo icon -->
+    <path android:fillColor="@android:color/white"
+        android:pathData="M20.5,3.5l-8.5,-2 -8.5,2v17l8.5,2 8.5,-2V3.5zM13,19.4l-6,-1.4V5.6l6,1.4V19.4zM18.5,18l-4,0.9V6.9l4,-0.9V18z"/>
+</vector>

@@ -60,7 +60,8 @@ class CargosWagonFragment(var wagons: Wagons) : Fragment(), WagonCargosContract.
 
         if (adapterWagonCargos.isListEmpty()) {
             binding.recyclerView.visibility = View.GONE
-            binding.noCargosTextView.visibility = View.VISIBLE
+            binding.noCargosLayout.visibility = View.VISIBLE
+            binding.noCargosTextView.visibility = View.VISIBLE  // текст внутри layout
         } else {
             binding.recyclerView.visibility = View.VISIBLE
             binding.noCargosTextView.visibility = View.GONE

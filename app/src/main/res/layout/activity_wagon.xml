@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    REDESIGN — activity_wagon.xml
+    Copy to: app/src/main/res/layout/activity_wagon.xml
+
+    Changes vs original:
+    - Removed DotsIndicator (viewpagerdotsindicator library)
+    - Removed TabLayout
+    - Added BottomNavigationView with labeled tabs
+    - ViewPager2 fills remaining space
+-->
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ui.smgr.WagonActivity"
-    android:background="?attr/colorMainBackground">
+    android:background="?attr/colorMainBackground"
+    tools:context=".ui.smgr.WagonActivity">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
@@ -14,28 +25,17 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-        android:id="@+id/dots_indicator"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:dotsColor="?attr/colorMainBackground"
-        app:dotsCornerRadius="8dp"
-        app:dotsSize="16dp"
-        app:dotsSpacing="4dp"
-        app:dotsWidthFactor="2.5"
-        app:selectedDotColor="?attr/colorPrimary"
-        app:progressMode="true"/>
+    <!-- Divider above bottom nav -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorSurfaceVariant" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        style="@style/Widget.Material3.TabLayout"
-        android:background="@color/transparent"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        style="@style/SMGR.BottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabSelectedTextColor="?attr/colorPrimary"
-        app:tabIndicatorAnimationMode="elastic"/>
+        app:menu="@menu/wagon_bottom_nav" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,70 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/Widget.Material3.CardView.Filled"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="?attr/colorMainBackground">
+    android:background="?attr/colorMainBackground"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp">
 
+    <!-- Series prefix badge — 32dp вместо 36dp -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/seriesCard"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:cardCornerRadius="6dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="?attr/colorSurfaceVariant"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/seriesBadgeText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:includeFontPadding="false" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Body -->
+
+    <!-- Capacity badge — компактнее -->
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
+        android:id="@+id/itemBody"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
         android:orientation="vertical"
-        android:padding="@dimen/item_wagons_cardView_linLayout_padding">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/capacityBadgeLayout"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/seriesCard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/modelTextView"
+            style="@style/SMGR.ListItem.ModelCode"
+          />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/modelTextView"
-                style="@style/Activity_Wagons_Item_Header" />
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Activity_Wagons_Item_Header"
-                android:paddingStart="@dimen/activity_wagons_item_header_paddingStart"
-                android:paddingEnd="@dimen/activity_wagons_item_header_paddingEnd"
-                android:text="@string/item_wagons_txtView_release" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/yearOfReleaseTextView"
-                style="@style/Activity_Wagons_Item_Header" />
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Activity_Wagons_Item_Header"
-                android:text="@string/item_wagons_txtView_dash" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/yearEndOfReleaseTextView"
-                style="@style/Activity_Wagons_Item_Header" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="@dimen/activity_wagons_layout_header_paddingTop">
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Activity_Wagons_Item_Header_Medium"
-                android:paddingStart="@dimen/activity_wagons_item_header_paddingStart"
-                android:paddingEnd="@dimen/activity_wagons_item_header_paddingEnd"
-                android:text="@string/item_wagons_txtView_capacity" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/capacityTextView"
-                style="@style/Activity_Wagons_Item_Header_Medium"
-                android:paddingStart="@dimen/activity_wagons_item_header_paddingStart"
-                android:paddingEnd="@dimen/activity_wagons_item_header_paddingEnd" />
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Activity_Wagons_Item_Header_Medium"
-                android:text="@string/item_wagons_txtView_unit" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/subtitleTextView"
+            style="@style/SMGR.ListItem.Subtitle"
+            />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-</com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/capacityBadgeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/accent_badge_bg"
+        app:cardCornerRadius="4dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/accent_badge_stroke"
+        app:cardElevation="0dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintEnd_toStartOf="@id/arrowText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/capacityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:includeFontPadding="false"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/arrowText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="›"
+        android:textColor="?attr/colorStaticText"
+        android:textSize="18sp"
+        android:includeFontPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- hidden bindings -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/yearOfReleaseTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/yearEndOfReleaseTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,109 +1,102 @@
 package com.hfad.smgrapp.ui.smgr.wagons.adapter
 
+// REDESIGN v2 — AdapterWagons.kt
+// Изменения относительно предыдущей версии:
+//   1. Фильтрация по категории теперь идёт не по полю `rod`, а по префиксу
+//      модели (первые 2 цифры до "-"). Это единственный надёжный признак типа.
+//   2. Убран legacy-метод getFilter() — он не использовался активити,
+//      только засорял код.
+//   3. Убран избыточный Log.e — out-of-bounds невозможен при корректной
+//      работе нотификаций.
+//   4. Счётчик видимых элементов доступен снаружи через visibleCount.
+
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.smgrapp.databinding.ItemWagonsBinding
 import com.hfad.smgrapp.model.Wagons
-import android.widget.Filter
-import kotlin.collections.ArrayList
 
 class AdapterWagons(
     private var wagonsList: ArrayList<Wagons>,
     private val listener: OnClickListener
 ) : RecyclerView.Adapter<AdapterWagons.ViewHolder>() {
 
-    var wagonsListFilters = ArrayList<Wagons>()
+    private var wagonsListFilters: ArrayList<Wagons> = ArrayList(wagonsList)
 
-    init {
-        wagonsListFilters = wagonsList
+    // Активные фильтры
+    private var currentQuery: String = ""
+    private var currentPrefixes: List<String> = emptyList() // пустой = "все"
+
+    /** Сколько элементов сейчас видно — удобно для счётчика "найдено X". */
+    val visibleCount: Int get() = wagonsListFilters.size
+
+    inner class ViewHolder(val binding: ItemWagonsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(wagons: Wagons) = with(binding) {
+            modelTextView.text = wagons.model
+
+            // Бейдж серии — первые 2 символа до "-"
+            seriesBadgeText.text = wagons.model.substringBefore("-").take(2)
+
+            val yearEnd = wagons.yearEndOfRelease.ifBlank { "н.в." }
+            val rodLabel = wagons.rod.ifBlank { wagons.specialization }
+            subtitleTextView.text = "${wagons.yearOfRelease}–$yearEnd · $rodLabel"
+
+            capacityTextView.text = "${wagons.capacity} т"
+
+            // Скрытые вьюшки — оставлены для обратной совместимости
+            yearOfReleaseTextView.text = wagons.yearOfRelease
+            yearEndOfReleaseTextView.text = wagons.yearEndOfRelease
+
+            root.setOnClickListener { listener.onClickModel(wagons) }
+        }
     }
 
-
-    inner class ViewHolder(var binding: ItemWagonsBinding) : RecyclerView.ViewHolder(binding.root) {
-
-        fun bindView(wagons: Wagons) {
-            with(binding) {
-                modelTextView.text = wagons.model
-                yearOfReleaseTextView.text = wagons.yearOfRelease
-                yearEndOfReleaseTextView.text = wagons.yearEndOfRelease
-                capacityTextView.text = wagons.capacity
-            }
-        }
-
-        fun bindClickFavourites(wagons: Wagons) {
-            itemView.setOnClickListener {
-                listener.onClickModel(wagons)
-            }
-        }
-    }
-
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            ItemWagonsBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+        ViewHolder(
+            ItemWagonsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
-    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if (position >= 0 && position < wagonsListFilters.size) {
-            val wagons = wagonsListFilters[position]
-            holder.bindView(wagons)
-            holder.bindClickFavourites(wagons)
-        } else {
-            // Логирование или отладка
-            Log.e("AdapterWagons", "Позиция $position вне границ списка")
-        }
+        holder.bind(wagonsListFilters[position])
     }
-
 
     override fun getItemCount(): Int = wagonsListFilters.size
 
+    // ── Фильтрация: текст + категория по префиксу ────────────────────────────
 
+    /**
+     * Применяет текущие фильтры.
+     * @param query текстовый запрос; пустая строка — без фильтра по тексту.
+     * @param prefixes список допустимых префиксов модели (например ["10","11"]);
+     *                пустой список — без фильтра по категории.
+     */
+    @SuppressLint("NotifyDataSetChanged")
+    fun applyFilters(
+        query: String = currentQuery,
+        prefixes: List<String> = currentPrefixes
+    ) {
+        currentQuery = query
+        currentPrefixes = prefixes
 
-    @Suppress("UNCHECKED_CAST")
-    fun getFilter(): Filter {
-        return object : Filter() {
-            override fun performFiltering(charSequence: CharSequence?): FilterResults {
-                val charSearch = charSequence?.toString() ?: ""
-                if (charSearch.isEmpty()) {
-                    wagonsListFilters = wagonsList
-                } else {
-                    val filteredList = ArrayList<Wagons>()
-                    wagonsList.filter {
-                        (it.model.contains(charSequence!!))
-                    }.forEach {
-                        filteredList.add(it)
-                    }
-                    wagonsListFilters = filteredList
-                }
-                return FilterResults().apply { values = wagonsListFilters }
-            }
+        wagonsListFilters = wagonsList.filterTo(ArrayList()) { wagon ->
+            val matchesQuery = query.isBlank() ||
+                    wagon.model.contains(query, ignoreCase = true)
 
+            val matchesCategory = prefixes.isEmpty() ||
+                    extractPrefix(wagon.model) in prefixes
 
-            @SuppressLint("UNCHECKED_CAST", "NotifyDataSetChanged")
-            override fun publishResults(
-                charSequence: CharSequence?,
-                filterResults: FilterResults?
-            ) {
-                wagonsListFilters = if (filterResults?.values == null)
-                    ArrayList()
-                else
-                    filterResults.values as ArrayList<Wagons>
-                notifyDataSetChanged()
-            }
+            matchesQuery && matchesCategory
         }
+        notifyDataSetChanged()
     }
 
+    private fun extractPrefix(model: String): String =
+        model.substringBefore("-").take(2)
 
     interface OnClickListener {
         fun onClickModel(wagons: Wagons)
     }
 }
-

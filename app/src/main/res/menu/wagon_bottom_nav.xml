@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    REDESIGN — Bottom nav menu for WagonActivity.
+    Save as: app/src/main/res/menu/wagon_bottom_nav.xml
+    Requires 3 vector drawables (see redesign/res/drawable/).
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_params"
+        android:icon="@drawable/ic_nav_params"
+        android:title="Параметры" />
+
+    <item
+        android:id="@+id/nav_repairs"
+        android:icon="@drawable/ic_nav_repairs"
+        android:title="Ремонты" />
+
+    <item
+        android:id="@+id/nav_cargos"
+        android:icon="@drawable/ic_nav_cargos"
+        android:title="Грузы" />
+
+</menu>

@@ -1,75 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    REDESIGN — fragment_cargos_wagon.xml
+    Copy to: app/src/main/res/layout/fragment_cargos_wagon.xml
+
+    Changes vs original:
+    - Improved empty state: icon + explanation + action button
+    - RecyclerView with card wrapper
+    - All view IDs preserved
+-->
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorMainBackground"
     tools:context=".ui.smgr.wagon_cargos.CargosWagonFragment">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+    <include android:id="@+id/toolbar" layout="@layout/toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/modelWagon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/frag_smgr_default_padding">
+            android:orientation="vertical">
 
+            <!-- Model header -->
             <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Fragments_Smgr_Item_Layout"
-                android:gravity="center">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Fragments_Smgr_Static_Header"
-                    android:paddingStart="@dimen/frag_smgr_header_paddingStart"
-                    android:paddingEnd="@dimen/frag_smgr_header_paddingEnd"
-                    android:text="@string/txtView_model" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/wagonModel"
-                    style="@style/Fragments_Smgr_Static_Header" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:visibility="visible" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/noCargosTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="?attr/colorOnSecondary"
-                android:visibility="gone"
-                android:textSize="@dimen/frag_cargos_activity_no_matches_txt_size"
-                android:text="@string/txtView_no_info_wagon_cargos"/>
+                android:gravity="center"
+                android:paddingTop="12dp"
+                android:paddingBottom="8dp"
+                android:background="?attr/colorSurface">
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Fragments_Smgr_Static_Header"
+                    android:text="@string/txtView_model" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wagonModel"
+                    style="@style/Fragments_Smgr_Static_Header"
+                    android:paddingStart="8dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="?attr/colorSurfaceVariant" />
+
+            <!-- Section header -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/SMGR.SectionHeader"
+                android:text="Перевозимые грузы (ЕТСНГ)" />
+
+            <!-- Cargo list wrapped in a card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="10dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorSurfaceVariant"
+                app:cardElevation="0dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:visibility="visible" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Loading -->
             <ProgressBar
                 android:id="@+id/progressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:layout_marginTop="48dp" />
 
+            <!-- Empty state — redesigned -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/noCargosLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="48dp"
+                android:paddingBottom="48dp"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:visibility="gone">
+
+                <!-- Icon placeholder -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    app:cardBackgroundColor="?attr/colorSurface"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/colorSurfaceVariant"
+                    app:cardElevation="0dp"
+                    android:layout_gravity="center">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="◻"
+                        android:textSize="26sp"
+                        android:textColor="?attr/colorStaticText" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Данные отсутствуют"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center" />
+
+                <!-- Hidden original TextView — kept for code compatibility -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/noCargosTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorStaticText"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingMultiplier="1.4"
+                    android:text="@string/txtView_no_info_wagon_cargos" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- No connection state -->
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/layoutNotConnection"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
+                android:padding="32dp"
                 android:visibility="gone">
 
                 <TextView
@@ -90,7 +170,6 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
     </ScrollView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -28,7 +28,14 @@ import kotlinx.coroutines.withContext
 class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
 
     private lateinit var binding: FragmentParameterWagonBinding
-    lateinit var appDao: WagonsDao
+    private lateinit var appDao: WagonsDao
+
+
+    private var isPhotoZoomed = false
+
+    // Высоты для двух состояний, в dp.
+    private val collapsedHeightDp = 180
+    private val zoomedHeightDp = 320
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,7 +58,9 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
                 (requireActivity() as WagonActivity).onBackPressed()
             }
 
-            toolbar.clickHomeBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_favorite_border))
+            toolbar.clickHomeBtn.setImageDrawable(
+                resources.getDrawable(R.drawable.ic_baseline_favorite_border)
+            )
 
             toolbar.clickHomeBtn.setOnClickListener {
                 lifecycleScope.launch(Dispatchers.IO) {
@@ -85,33 +94,15 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
                     appDao.insertWagon(wagonFavourite)
                 }
                 toolbar.clickHomeBtn.isClickable = false
-                toolbar.clickHomeBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_favorite_24))
+                toolbar.clickHomeBtn.setImageDrawable(
+                    resources.getDrawable(R.drawable.ic_baseline_favorite_24)
+                )
 
                 Toast.makeText(context, "Добавлен в избранное", Toast.LENGTH_SHORT).show()
             }
 
-            var isFullScreen = false
-
-            wagonPhotoUrl.setOnClickListener {
-                isFullScreen = isFullScreen.not()
-                TransitionManager.beginDelayedTransition(
-                    imageIdContainer,
-                    TransitionSet()
-                        .addTransition(ChangeBounds())
-                        .addTransition(ChangeImageTransform())
-                )
-                val dimensionWidth = if(isFullScreen) ViewGroup.LayoutParams.WRAP_CONTENT else resources.getDimension(R.dimen.frag_param_wagon_image_width).toInt()
-                val dimensionHeight = if(isFullScreen) ViewGroup.LayoutParams.WRAP_CONTENT else resources.getDimension(R.dimen.frag_param_wagon_image_height).toInt()
-
-                val scaleType = if(isFullScreen) ImageView.ScaleType.CENTER else ImageView.ScaleType.CENTER_INSIDE
-
-                wagonPhotoUrl.updateLayoutParams {
-                    width = dimensionWidth
-                    height = dimensionHeight
-                }
-
-                wagonPhotoUrl.scaleType = scaleType
-            }
+            // Клик по картинке — переключение зума
+            wagonPhotoUrl.setOnClickListener { togglePhotoZoom() }
 
             lifecycleScope.launch(Dispatchers.IO) {
                 val wagonFav = appDao.getWagonFavorite(wagons.modelCode)
@@ -121,21 +112,26 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
                         @Suppress("SENSELESS_COMPARISON")
                         toolbar.clickHomeBtn.isClickable = a == null
                         if (toolbar.clickHomeBtn.isClickable) {
-                            toolbar.clickHomeBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_favorite_border))
+                            toolbar.clickHomeBtn.setImageDrawable(
+                                resources.getDrawable(R.drawable.ic_baseline_favorite_border)
+                            )
                         } else {
-                            toolbar.clickHomeBtn.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_favorite_24))
+                            toolbar.clickHomeBtn.setImageDrawable(
+                                resources.getDrawable(R.drawable.ic_baseline_favorite_24)
+                            )
                         }
                     }
                 }
             }
 
-
-
+            // Фото вагона
             if (wagons.photoURL.isEmpty()) {
                 wagonPhotoUrl.setImageResource(R.drawable.no_image_wagon)
             } else {
                 Picasso.get().load(wagons.photoURL).into(wagonPhotoUrl)
             }
+
+            // Параметры
             wagonModel.text = wagons.model
             wagonProperty.text = wagons.property
             wagonSpecialization.text = wagons.specialization
@@ -155,6 +151,41 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
             wagonYearEndOfRelease.text = wagons.yearEndOfRelease
             wagonServiceLife.text = wagons.serviceLife
             wagonLong.text = wagons.long
+        }
+    }
+
+    /**
+     * Свёрнутое: фикс. высота, ширина match_parent, fitCenter — картинка вписана целиком.
+     * Развёрнутое: увеличенная высота, ширина wrap_content + adjustViewBounds —
+     * картинка вылезает за экран по ширине, HorizontalScrollView даёт горизонтальный скролл.
+     */
+    private fun togglePhotoZoom() = with(binding) {
+        isPhotoZoomed = !isPhotoZoomed
+
+        TransitionManager.beginDelayedTransition(
+            imageScrollView,
+            TransitionSet()
+                .addTransition(ChangeBounds())
+                .addTransition(ChangeImageTransform())
+        )
+
+        val density = resources.displayMetrics.density
+
+        if (isPhotoZoomed) {
+            wagonPhotoUrl.adjustViewBounds = true
+            wagonPhotoUrl.updateLayoutParams {
+                width = ViewGroup.LayoutParams.WRAP_CONTENT
+                height = (zoomedHeightDp * density).toInt()
+            }
+            wagonPhotoUrl.scaleType = ImageView.ScaleType.FIT_CENTER
+        } else {
+            wagonPhotoUrl.adjustViewBounds = false
+            wagonPhotoUrl.updateLayoutParams {
+                width = ViewGroup.LayoutParams.MATCH_PARENT
+                height = (collapsedHeightDp * density).toInt()
+            }
+            wagonPhotoUrl.scaleType = ImageView.ScaleType.FIT_CENTER
+            imageScrollView.smoothScrollTo(0, 0)
         }
     }
 }

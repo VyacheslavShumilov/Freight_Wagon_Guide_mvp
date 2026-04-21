@@ -35,10 +35,7 @@
             android:label="@string/title_activity_orv"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SMGRApp.NoActionBar" />
-        <activity
-            android:name=".ui.smgr.WagonActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name=".ui.smgr.wagons.WagonsActivity"
             android:exported="false"
@@ -53,6 +50,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.hfad.smgrapp.ui.smgr.WagonActivity" />
     </application>
 
 </manifest>
