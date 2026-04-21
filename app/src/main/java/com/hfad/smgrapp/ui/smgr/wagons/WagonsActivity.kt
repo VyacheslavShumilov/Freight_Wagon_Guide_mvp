@@ -1,16 +1,15 @@
 package com.hfad.smgrapp.ui.smgr.wagons
 
-// REDESIGN v2 — WagonsActivity.kt
-// Изменения относительно предыдущей версии:
-//   1. Вместо чипов по полю `rod` (где были числа "10", "11"…) —
-//      человекочитаемые категории: Крытые, Полувагоны, Платформы и т.д.
-//   2. Категории описаны в одном месте (CATEGORIES) — легко расширять.
-//   3. В чипе показывается количество моделей в категории: "Крытые · 12".
-//   4. Чипы строятся только для категорий, реально присутствующих в данных.
-//   5. ChipGroup работает в режиме single-select с обязательным выбором.
-//   6. Выбранный фильтр переживает поворот экрана (onSaveInstanceState).
-//   7. После смены фильтра список скроллится наверх.
-//   8. TextWatcher заменён на doAfterTextChanged (core-ktx) — чище и короче.
+// REDESIGN v3 — WagonsActivity.kt
+// Изменения относительно v2:
+//   1. Отключён счётчик символов TextInputLayout (counterEnabled = false).
+//   2. Добавлен динамический счётчик результатов через helperText:
+//      "Найдено: 12 моделей" / "Найдена 1 модель" / "Ничего не найдено".
+//   3. Счётчик обновляется:
+//        - после каждого applyFilters()
+//        - после загрузки данных (onSuccessList)
+//        - скрывается в состоянии ошибки (error)
+//   4. Русское склонение числительных через helper pluralize().
 
 import android.content.Intent
 import android.os.Bundle
@@ -33,23 +32,21 @@ class WagonsActivity : AppCompatActivity(),
     AdapterWagons.OnClickListener {
 
     // ── Категории вагонов ────────────────────────────────────────────────────
-    // Префикс — это первые две цифры модели (до знака "-").
-    // Пример: "10-4022" → "10" → категория "Крытые".
     private data class WagonCategory(
         val displayName: String,
         val prefixes: List<String>
     )
 
     private val categories = listOf(
-        WagonCategory("Крытые",       listOf("10", "11")),
-        WagonCategory("Полувагоны",   listOf("12")),
-        WagonCategory("Платформы",    listOf("13", "23")),
-        WagonCategory("Транспортёры", listOf("14")),
-        WagonCategory("Цистерны",     listOf("15")),
-        WagonCategory("Рефрижераторы", listOf("16")), // "Рефы" — разговорное; в UI лучше полное
-        WagonCategory("Бункерные",    listOf("17")),
-        WagonCategory("Хопперы",      listOf("19", "20", "55")),
-        WagonCategory("Самосвалы",    listOf("31"))
+        WagonCategory("Крытые",        listOf("10", "11")),
+        WagonCategory("Полувагоны",    listOf("12")),
+        WagonCategory("Платформы",     listOf("13", "23")),
+        WagonCategory("Транспортёры",  listOf("14")),
+        WagonCategory("Цистерны",      listOf("15")),
+        WagonCategory("Рефрижераторы", listOf("16")),
+        WagonCategory("Бункерные",     listOf("17")),
+        WagonCategory("Хопперы",       listOf("19", "20", "55")),
+        WagonCategory("Самосвалы",     listOf("31"))
     )
 
     // ── Состояние ────────────────────────────────────────────────────────────
@@ -60,7 +57,6 @@ class WagonsActivity : AppCompatActivity(),
     /** Префиксы выбранной категории; пустой список = "Все". */
     private var selectedPrefixes: List<String> = emptyList()
 
-    /** Ключ для восстановления выбранного фильтра. */
     companion object {
         private const val STATE_SELECTED_PREFIXES = "state_selected_prefixes"
     }
@@ -70,7 +66,6 @@ class WagonsActivity : AppCompatActivity(),
         binding = ActivityWagonsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Восстанавливаем фильтр после поворота
         savedInstanceState?.getStringArrayList(STATE_SELECTED_PREFIXES)?.let {
             selectedPrefixes = it.toList()
         }
@@ -112,25 +107,57 @@ class WagonsActivity : AppCompatActivity(),
         }
     }
 
-    // ── Поиск ────────────────────────────────────────────────────────────────
+    // ── Поиск + счётчик результатов ──────────────────────────────────────────
     private fun setupSearch() {
+        with(binding.txtInputLayout) {
+            // NEW: убиваем бесполезный счётчик символов "0/12"
+            isCounterEnabled = false
+            // NEW: резервируем место под helperText, чтобы layout не "прыгал"
+            isHelperTextEnabled = true
+        }
         binding.searchView.doAfterTextChanged { applyFilters() }
+    }
+
+    /**
+     * NEW: обновляет helperText поля поиска числом найденных моделей.
+     * Вызывается после каждого applyFilters() и после загрузки данных.
+     */
+    private fun updateResultsCounter() {
+        val count = adapterWagons.visibleCount
+        binding.txtInputLayout.helperText = when (count) {
+            0 -> "Ничего не найдено"
+            else -> "Найдено: $count ${pluralize(count, "модель", "модели", "моделей")}"
+        }
+    }
+
+    /**
+     * NEW: русское склонение числительных.
+     * pluralize(1,  "модель", "модели", "моделей") → "модель"
+     * pluralize(3,  …) → "модели"
+     * pluralize(12, …) → "моделей"
+     */
+    private fun pluralize(n: Int, one: String, few: String, many: String): String {
+        val mod100 = n % 100
+        val mod10 = n % 10
+        return when {
+            mod100 in 11..14 -> many
+            mod10 == 1 -> one
+            mod10 in 2..4 -> few
+            else -> many
+        }
     }
 
     // ── Чипы категорий ───────────────────────────────────────────────────────
     private fun buildChips(wagons: List<Wagons>) {
         val chipGroup = binding.chipGroup
         chipGroup.removeAllViews()
-        // Ровно один чип всегда активен — это правильный UX для режима "фильтр-табы":
         chipGroup.isSingleSelection = true
         chipGroup.isSelectionRequired = true
 
-        // Какой чип должен быть выбран при открытии (учитываем восстановленный стейт)
         val restoredCategory = categories.firstOrNull {
             it.prefixes == selectedPrefixes
         }
 
-        // Чип "Все" — всегда первый
         chipGroup.addView(
             makeChip(
                 label = "Все",
@@ -141,7 +168,6 @@ class WagonsActivity : AppCompatActivity(),
             }
         )
 
-        // Строим чипы только для категорий, реально представленных в данных.
         val presentPrefixes = wagons.mapTo(HashSet()) { extractPrefix(it.model) }
         categories
             .filter { cat -> cat.prefixes.any { it in presentPrefixes } }
@@ -171,7 +197,6 @@ class WagonsActivity : AppCompatActivity(),
         setOnClickListener { onClick() }
     }
 
-    /** Первые 2 символа до "-": "11-066-04" → "11". */
     private fun extractPrefix(model: String): String =
         model.substringBefore("-").take(2)
 
@@ -179,8 +204,8 @@ class WagonsActivity : AppCompatActivity(),
     private fun applyFilters() {
         val query = binding.searchView.text?.toString().orEmpty()
         adapterWagons.applyFilters(query = query, prefixes = selectedPrefixes)
-        // Возвращаем пользователя наверх списка, чтобы он видел свежие результаты.
         binding.recyclerView.scrollToPosition(0)
+        updateResultsCounter() // NEW
     }
 
     // ── WagonsContract.View ──────────────────────────────────────────────────
@@ -188,11 +213,13 @@ class WagonsActivity : AppCompatActivity(),
         adapterWagons = AdapterWagons(wagons, this)
         binding.recyclerView.adapter = adapterWagons
         buildChips(wagons)
-        // Применяем восстановленный фильтр (если был)
+
         if (selectedPrefixes.isNotEmpty() ||
             !binding.searchView.text.isNullOrEmpty()
         ) {
             applyFilters()
+        } else {
+            updateResultsCounter() // NEW: показываем счётчик сразу после загрузки
         }
     }
 
@@ -200,6 +227,9 @@ class WagonsActivity : AppCompatActivity(),
         binding.layoutNotConnection.visibility = View.VISIBLE
         binding.txtInputLayout.visibility = View.GONE
         binding.chipScrollView.visibility = View.GONE
+        // NEW: скрываем счётчик, пока нет данных
+        binding.txtInputLayout.helperText = null
+
         binding.btnClickReply.setOnClickListener {
             presenter.responseData()
             binding.txtInputLayout.visibility = View.VISIBLE
