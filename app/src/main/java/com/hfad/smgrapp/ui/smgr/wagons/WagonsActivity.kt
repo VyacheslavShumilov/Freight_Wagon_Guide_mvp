@@ -133,7 +133,7 @@ class WagonsActivity : AppCompatActivity(),
     private fun setupSearch() {
         with(binding.txtInputLayout) {
             // Убиваем бесполезный счётчик символов "0/12"
-            isCounterEnabled = false
+//            isCounterEnabled = false
             // Резервируем место под helperText, чтобы layout не "прыгал"
             isHelperTextEnabled = true
         }

@@ -198,15 +198,40 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="SMGR.Widget.TextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+    <!--
+    CHANGED — SMGR.Widget.TextInput.
+    Было: OutlinedBox с прозрачным фоном → поле терялось на тёмном background.
+    Стало: OutlinedBox с заливкой colorSurface + видимой обводкой.
+    Визуально — "карточка-контейнер", как в Gmail/Telegram.
+-->
+    <style name="SMGR.Widget.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
+        <!-- Скругление (было 20dp, оставляем) -->
         <item name="boxCornerRadiusTopStart">20dp</item>
         <item name="boxCornerRadiusTopEnd">20dp</item>
         <item name="boxCornerRadiusBottomStart">20dp</item>
         <item name="boxCornerRadiusBottomEnd">20dp</item>
-        <item name="counterTextColor">?attr/colorStaticText</item>
-        <item name="boxStrokeColor">?attr/colorPrimary</item>
-        <item name="endIconTint">?attr/colorOnSecondary</item>
+
+        <!-- NEW: заливка, из-за неё поле видно даже без фокуса -->
+        <item name="boxBackgroundColor">?attr/colorSurface</item>
+
+        <!-- NEW: обводка через ColorStateList, видна в покое -->
+        <item name="boxStrokeColor">@color/text_input_stroke</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeErrorColor">@color/danger</item>
+
+        <!-- Hint: в покое и при фокусе -->
+        <item name="android:textColorHint">?attr/colorStaticText</item>
+        <item name="hintTextColor">?attr/colorPrimary</item>
+
+        <!-- Иконки: нейтральные, как иконки навигации в приложении -->
+        <item name="startIconTint">?attr/colorStaticText</item>
+        <item name="endIconTint">?attr/colorStaticText</item>
+
+        <!-- Helper / counter / error — все в ?colorStaticText для спокойного тона -->
         <item name="helperTextTextColor">?attr/colorStaticText</item>
+        <item name="counterTextColor">?attr/colorStaticText</item>
+        <item name="errorTextColor">@color/danger</item>
     </style>
 
 
