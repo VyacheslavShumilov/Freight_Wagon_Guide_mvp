@@ -56,15 +56,15 @@ class WagonsActivity : AppCompatActivity(),
     )
 
     private val categories = listOf(
-        WagonCategory("Крытые",        listOf("10", "11")),
-        WagonCategory("Полувагоны",    listOf("12")),
-        WagonCategory("Платформы",     listOf("13", "23")),
-        WagonCategory("Транспортёры",  listOf("14")),
-        WagonCategory("Цистерны",      listOf("15")),
-        WagonCategory("Рефрижераторы", listOf("16")),
+        WagonCategory("Крытые",        listOf("10", "11", "17Т", "8Т", "Р-")),
+        WagonCategory("Полувагоны",    listOf("12", "17")),
+        WagonCategory("Платформы",     listOf("13", "23", "903", "ПМ")),
+        WagonCategory("Транспортёры",  listOf("14", "ТМ")),
+        WagonCategory("Цистерны",      listOf("15", "8Г", "90", "Ж", "91")),
+        WagonCategory("Рефрижераторы", listOf("15Т", "16", "МК", "ТН", "ЦБ")),
         WagonCategory("Бункерные",     listOf("17")),
-        WagonCategory("Хопперы",       listOf("19", "20", "55")),
-        WagonCategory("Самосвалы",     listOf("31"))
+        WagonCategory("Хопперы",       listOf("19", "20", "55", "ВПМ")),
+        WagonCategory("Самосвалы",     listOf("31", "4ВС"))
     )
 
     // ── Состояние ────────────────────────────────────────────────────────────
