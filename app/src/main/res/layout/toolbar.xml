@@ -1,46 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    REDESIGN — toolbar.xml
+    Изменения:
+    1. Высота Toolbar зафиксирована в 56dp — стандарт Material AppBar
+       (раньше был wrap_content, высота «плавала»).
+    2. Убран прозрачный фон AppBarLayout — стало ?attr/colorMainBackground,
+       чтобы тулбар выглядел как часть поверхности, а не «дырка».
+    3. Кнопки 40x40 с padding=8dp и borderless ripple — соответствуют
+       спецификации Material touch target (48dp с учётом margin у иконки 24dp).
+    4. app:tint="?attr/colorOnSurface" на обеих кнопках — иконки теперь
+       видны на тёмном фоне.
+    5. У textView: width=0dp + layout_weight=1 — он разрастается на всю
+       свободную ширину и толкает home-кнопку к правому краю.
+       Раньше wrap_content без weight => home-кнопка липла к тексту.
+    6. Стиль заголовка SMGR.Toolbar.Title (новый) вместо моноширинного
+       SMGR.ListItem.ModelCode.
+-->
+<com.google.android.material.appbar.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/transparent">
+    android:background="?attr/colorMainBackground">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:contentInsetStart="0dp">
+        android:layout_height="56dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetEnd="0dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp">
 
+            <!-- Кнопка "Назад" -->
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/clickBackBtn"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:layout_marginStart="@dimen/toolbar_img_btn_margin_start"
-                app:srcCompat="@drawable/arrow_back" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:contentDescription="Назад"
+                app:srcCompat="@drawable/arrow_back"
+                app:tint="?attr/colorOnSurface" />
 
+            <!-- Заголовок: растягивается на всю свободную ширину -->
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView"
-                style="@style/SMGR.ListItem.ModelCode"
-                android:layout_width="wrap_content"
+                style="@style/SMGR.Toolbar.Title"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="start" />
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
 
+            <!-- Кнопка действия (избранное) -->
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/clickHomeBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingEnd="@dimen/toolbar_img_btn_margin_end"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/ic_baseline_home" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:contentDescription="Избранное"
+                app:srcCompat="@drawable/ic_baseline_home"
+                app:tint="?attr/colorPrimary" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

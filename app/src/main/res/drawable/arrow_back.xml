@@ -1,11 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    CHANGED — tint/fillColor убраны из drawable.
+    Раньше оба были ?attr/colorSurface (#141618) — стрелка сливалась с фоном.
+    Теперь fillColor=white, а реальный цвет задаётся родительским ImageButton
+    через app:tint. Это правильный паттерн для переиспользуемых иконок.
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="20"
     android:viewportHeight="20"
-    android:tint="?attr/colorSurface"
     android:autoMirrored="true">
   <path
-      android:fillColor="?attr/colorSurface"
+      android:fillColor="#FFFFFFFF"
       android:pathData="M17,9H6.83l4.59,-4.59L10,3l-7,7 7,7 1.41,-1.41L6.83,11H17z"/>
 </vector>

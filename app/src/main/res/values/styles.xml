@@ -459,4 +459,24 @@
         <item name="closeIconVisible">false</item>
     </style>
 
+    <!--
+     FIXED — добавлен явный parent="".
+     Без parent Android пытается неявно наследовать от "SMGR.Toolbar"
+     (имени до последней точки), которого не существует → ошибка AAPT.
+     parent="" отключает неявное наследование и делает стиль самодостаточным.
+ -->
+    <style name="SMGR.Toolbar.Title" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
 </resources>
