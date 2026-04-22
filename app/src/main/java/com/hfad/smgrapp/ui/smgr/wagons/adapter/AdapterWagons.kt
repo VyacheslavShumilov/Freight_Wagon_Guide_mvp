@@ -40,9 +40,12 @@ class AdapterWagons(
             // Бейдж серии — первые 2 символа до "-"
             seriesBadgeText.text = wagons.model.substringBefore("-").take(2)
 
+            // CHANGED: subtitle теперь только диапазон годов.
+            // Раньше в конец добавлялось wagons.rod (число осей) без подписи,
+            // что читалось как случайная цифра. Убрано до тех пор, пока не появится
+            // нормальное UI-решение (например, иконка + "5 осей" где-то в детальном экране).
             val yearEnd = wagons.yearEndOfRelease.ifBlank { "н.в." }
-            val rodLabel = wagons.rod.ifBlank { wagons.specialization }
-            subtitleTextView.text = "${wagons.yearOfRelease}–$yearEnd · $rodLabel"
+            subtitleTextView.text = "${wagons.yearOfRelease}–$yearEnd"
 
             capacityTextView.text = "${wagons.capacity} т"
 

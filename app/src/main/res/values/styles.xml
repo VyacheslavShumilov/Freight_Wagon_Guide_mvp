@@ -110,7 +110,11 @@
         <item name="android:fontFamily">monospace</item>
     </style>
 
-    <!-- ─── List item: model code (top line) ─── -->
+    <!--
+     CHANGED (rollback + correction) — SMGR.ListItem.ModelCode
+     • lineSpacingMultiplier возвращён к 1.0 (0.9 делал строку "сплющенной").
+     • paddingTop/Bottom=0dp оставляем — убирают внешний запас TextView.
+ -->
     <style name="SMGR.ListItem.ModelCode">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -119,12 +123,19 @@
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">monospace</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:lineSpacingMultiplier">1.0</item>
+        <item name="android:lineSpacingMultiplier">1.0</item>  <!-- вернули -->
         <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
         <item name="android:singleLine">true</item>
     </style>
 
-    <!-- ─── List item: subtitle (year · type) ─── -->
+    <!--
+        CHANGED (rollback + correction) — SMGR.ListItem.Subtitle
+        • layout_marginTop: -2dp → 3dp. Отрицательный margin давал слипание,
+          3dp — оптимальный "воздух" между заголовком и подписью для 12sp текста.
+        • lineSpacingMultiplier вернули к 1.0.
+    -->
     <style name="SMGR.ListItem.Subtitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -134,7 +145,9 @@
         <item name="android:includeFontPadding">false</item>
         <item name="android:lineSpacingMultiplier">1.0</item>
         <item name="android:lineSpacingExtra">0dp</item>
-        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginTop">3dp</item>       <!-- было -2dp -->
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
         <item name="android:singleLine">true</item>
     </style>
 

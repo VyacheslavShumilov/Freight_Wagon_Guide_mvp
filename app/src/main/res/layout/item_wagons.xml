@@ -1,15 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/colorMainBackground"
-    android:paddingStart="12dp"
-    android:paddingEnd="12dp"
-    android:paddingTop="0dp"
-    android:paddingBottom="0dp">
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
 
-    <!-- Series prefix badge — 32dp вместо 36dp -->
+    <!-- Series prefix badge — 32dp -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/seriesCard"
         android:layout_width="32dp"
@@ -36,9 +37,7 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Body -->
-
-    <!-- Capacity badge — компактнее -->
+    <!-- Body: model code + subtitle -->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/itemBody"
         android:layout_width="0dp"
@@ -55,16 +54,15 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/modelTextView"
-            style="@style/SMGR.ListItem.ModelCode"
-          />
+            style="@style/SMGR.ListItem.ModelCode" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/subtitleTextView"
-            style="@style/SMGR.ListItem.Subtitle"
-            />
+            style="@style/SMGR.ListItem.Subtitle" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <!-- Capacity badge -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/capacityBadgeLayout"
         android:layout_width="wrap_content"
@@ -107,7 +105,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <!-- hidden bindings -->
+    <!--
+        CHANGED — divider на границе между item'ами.
+        layout_marginBottom="-8dp" компенсирует paddingBottom=8dp родителя,
+        выталкивая разделитель за зону padding'а. Итог: 8dp воздуха сверху
+        от divider'а и 8dp снизу (paddingTop следующего item'а) = симметрия.
+    -->
+    <View
+        android:id="@+id/itemDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="?attr/colorSurfaceVariant"
+        android:alpha="0.4"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="-8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Hidden bindings (обратная совместимость) -->
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/yearOfReleaseTextView"
         android:layout_width="0dp"
