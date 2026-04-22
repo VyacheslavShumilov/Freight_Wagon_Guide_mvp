@@ -479,4 +479,52 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
+    <!-- ─── Favourite card: компактные label/value пары ─────────────────── -->
+
+    <!--
+        NEW — SMGR.Favourite.ParamLabel
+        Мелкая подпись параметра. Uppercase + letter-spacing = визуальный сигнал
+        "вторичная информация, не читается как текст". Моноширинный — чтобы
+        две колонки меток выравнивались по ширине.
+    -->
+    <style name="SMGR.Favourite.ParamLabel" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--
+        NEW — SMGR.Favourite.ParamValue
+        Значение параметра. Моноширинный bold для табличной выровненности
+        чисел. Размер (13sp) балансирует читаемость и компактность в 2-колоночной сетке.
+    -->
+    <style name="SMGR.Favourite.ParamValue" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_marginTop">2dp</item>
+    </style>
+
+    <!--
+        NEW — SMGR.Favourite.ParamValue.Separator
+        Разделитель между значениями тары ("/"). Тусклее основного,
+        чтобы не спорил с цифрами за внимание.
+    -->
+    <style name="SMGR.Favourite.ParamValue.Separator">
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+    </style>
+
 </resources>

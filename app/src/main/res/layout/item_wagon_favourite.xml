@@ -1,250 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    REDESIGN — item_wagon_favourite.xml
+    Подход: hero-метрика сверху (capacity) + параметры в 2-колоночной сетке
+    парами "label/value". Единая типографическая система с остальным приложением
+    (моноширинный IBM Plex Mono на числах, accent-бейдж как на других экранах).
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/Base.Widget.Material3.CardView.CustomCardView"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:layout_weight="1">
+    android:layout_margin="6dp"
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="0dp"
+    app:strokeColor="?attr/colorSurfaceVariant"
+    app:strokeWidth="1dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="12dp">
 
+        <!-- ── HEADER: model + delete ──────────────────────────────────── -->
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:padding="@dimen/frag_smgr_default_padding">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/modelTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:ellipsize="end"
+                tools:text="11-066-04" />
+
+            <!-- Увеличенный touch target 32dp с полупрозрачным ripple -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/deleteFavouriteWagonBtn"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="6dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Удалить"
+                app:srcCompat="@drawable/ic_baseline_delete_24"
+                app:tint="@color/danger" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!-- ── HERO: capacity (главный параметр сравнения) ─────────────── -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/capacityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:includeFontPadding="false"
+                tools:text="66.50" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="т"
+                android:textColor="?attr/colorStaticText"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="3dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ГРУЗОПОДЪЁМНОСТЬ"
+            android:textColor="?attr/colorStaticText"
+            android:textSize="9sp"
+            android:letterSpacing="0.1"
+            android:fontFamily="monospace"
+            android:layout_marginTop="-2dp" />
+
+        <!-- ── DIVIDER ──────────────────────────────────────────────────── -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorSurfaceVariant"
+            android:alpha="0.4"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="6dp" />
+
+        <!-- ── PARAMS ROW 1: длина + осевая нагрузка ───────────────────── -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/SMGR.Favourite.ParamLabel"
+                    android:text="ДЛИНА" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/lengthTextView"
+                    style="@style/SMGR.Favourite.ParamValue"
+                    tools:text="14730 мм" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/SMGR.Favourite.ParamLabel"
+                    android:text="ОСЕВАЯ НАГР." />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/axialLoadTextView"
+                    style="@style/SMGR.Favourite.ParamValue"
+                    tools:text="22.43 т/ось" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!-- ── PARAMS ROW 2: объём + срок службы ───────────────────────── -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/SMGR.Favourite.ParamLabel"
+                    android:text="ОБЪЁМ" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/volumeTextView"
+                    style="@style/SMGR.Favourite.ParamValue"
+                    tools:text="80.0 м³" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/SMGR.Favourite.ParamLabel"
+                    android:text="СРОК СЛУЖБЫ" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/serviceLifeTextView"
+                    style="@style/SMGR.Favourite.ParamValue"
+                    tools:text="32" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!-- ── PARAM: выпуск (во всю ширину) ───────────────────────────── -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/SMGR.Favourite.ParamLabel"
+                android:text="ВЫПУСК" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/modelTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header"
-                    android:layout_gravity="start"
-                    android:layout_weight="1"
-                    android:hint="@string/item_wagon_fav_txtView_model" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/deleteFavouriteWagonBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_delete_24" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
-                android:paddingTop="5dp">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
-                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
-                    android:text="@string/txtView_length" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/lengthTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                    android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
-                    android:text="@string/txtView_length_unit" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="5dp">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
-                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
-                    android:text="@string/txtView_axial_load" />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/axialLoadTextView"
-                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                        android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
-                        android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
-                        android:text="@string/txtView_axial_load_unit" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
-                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
-                    android:text="@string/txtView_capacity_short" />
-
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/capacityTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                    android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
-                    android:text="@string/txtView_capacity_unit" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingTop="5dp">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
-                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
-                    android:text="@string/item_wagon_fav_txtView_tare" />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tareMinExpTextView"
-                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
-
-
-                    <com.google.android.material.textview.MaterialTextView
-                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                        android:text="@string/item_slash" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tareMinTextView"
-                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                        android:text="@string/item_slash" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tareMaxTextView"
-                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                        android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
-                        android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
-                        android:text="@string/txtView_capacity_unit" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="5dp">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
-                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
-                    android:text="@string/txtView_volume" />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/volumeTextView"
-                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                        android:paddingStart="@dimen/activity_wagon_fav_value_txt_paddingStart"
-                        android:paddingEnd="@dimen/activity_wagon_fav_value_txt_paddingEnd"
-                        android:text="@string/txtView_volume_unit" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
-                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
-                    android:text="@string/item_wagon_fav_txtView_release" />
-
-                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/yearReleaseTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+                    style="@style/SMGR.Favourite.ParamValue"
+                    tools:text="1960" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Value"
-                    android:text="@string/item_wagons_txtView_dash" />
+                    style="@style/SMGR.Favourite.ParamValue"
+                    android:text="–"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/yearEndReleaseTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+                    style="@style/SMGR.Favourite.ParamValue"
+                    tools:text="1984" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!-- ── PARAM: тара min/эксп/max (во всю ширину) ────────────────── -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="2dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/SMGR.Favourite.ParamLabel"
+                android:text="ТАРА МИН / ЭКСП / МАКС" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp">
+                android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium"
-                    android:paddingStart="@dimen/activity_wagon_fav_param_txt_paddingStart"
-                    android:paddingEnd="@dimen/activity_wagon_fav_param_txt_paddingEnd"
-                    android:text="@string/txtView_service_life_short" />
+                    android:id="@+id/tareMinTextView"
+                    style="@style/SMGR.Favourite.ParamValue"
+                    tools:text="н.д." />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/serviceLifeTextView"
-                    style="@style/Activity_Wagons_Favourite_Item_Header_Medium.Dynamic" />
+                    style="@style/SMGR.Favourite.ParamValue.Separator"
+                    android:text="/" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tareMinExpTextView"
+                    style="@style/SMGR.Favourite.ParamValue"
+                    tools:text="22.3" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/SMGR.Favourite.ParamValue.Separator"
+                    android:text="/" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tareMaxTextView"
+                    style="@style/SMGR.Favourite.ParamValue"
+                    tools:text="23.7" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="т"
+                    android:layout_marginStart="4dp"
+                    android:textColor="?attr/colorStaticText"
+                    android:textSize="12sp"
+                    android:fontFamily="monospace" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
-
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
