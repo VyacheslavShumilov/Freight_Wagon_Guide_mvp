@@ -268,7 +268,7 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
             }
             wagonPhotoUrl.scaleType = ImageView.ScaleType.FIT_CENTER
         } else {
-            wagonPhotoUrl.adjustViewBounds = false
+            wagonPhotoUrl.adjustViewBounds = true  // было false
             wagonPhotoUrl.updateLayoutParams {
                 width = ViewGroup.LayoutParams.MATCH_PARENT
                 height = (collapsedHeightDp * density).toInt()

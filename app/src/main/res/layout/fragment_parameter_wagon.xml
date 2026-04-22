@@ -43,18 +43,28 @@
                 android:background="?attr/colorSurface"
                 android:gravity="center_vertical">
 
+                <!--
+    CHANGED — HorizontalScrollView сохранён (он нужен для зума),
+    но ImageView теперь явно получает ширину viewport'а через match_parent.
+    Раньше ScrollView передавал UNSPECIFIED width, и картинка занимала
+    свою натуральную ширину, уезжая вправо.
+-->
+                <!-- ── HERO HEADER ── -->
                 <HorizontalScrollView
                     android:id="@+id/imageScrollView"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="?attr/colorSurface"
                     android:fillViewport="true"
-                    android:scrollbars="horizontal">
+                    android:scrollbars="none"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/wagonPhotoUrl"
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
+                        android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
                         android:clickable="true"
                         android:focusable="true"
