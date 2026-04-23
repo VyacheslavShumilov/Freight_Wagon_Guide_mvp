@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    REDESIGN — activity_main_start.xml
+    Compact-версия стартового экрана до тапа.
+    Содержит ТОЛЬКО видимые элементы:
+      • Заголовок "Сводный справочник / грузовых вагонов" (2 строки, акцент на "вагонов")
+      • Поезд + дым (Lottie)
+      • Подсказка "Нажми на поезд!"
+    Остальные элементы (description, dates, кнопки) присутствуют, но
+    alpha=0 + invisible — проявятся при expandLayout().
+
+    Типографика приведена к общей дизайн-системе:
+      Lato Bold для hero-title, Lato Caption для описаний, IBM Plex Mono
+      для технических данных (дат).
+
+    Дым привязан к Guideline на 18% ширины экрана — ровно по трубе поезда.
+-->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,148 +22,164 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorMainBackground"
     android:clickable="true"
     android:focusable="true"
     tools:context=".ui.MainActivity">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/containerTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <!-- ── Заголовок: "Сводный справочник" ────────────────────── -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        style="@style/SMGR.Main.HeroTitle"
+        android:text="Сводный справочник"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/title"
-            style="@style/Main_Activity_Name_App"
-            android:text="@string/txtView_title_name" />
+    <!-- ── Заголовок: "грузовых вагонов" (акцент) ─────────────── -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/titleAccent"
+        style="@style/SMGR.Main.HeroTitle"
+        android:text="грузовых вагонов"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    <!-- ── Описание (скрыто до раскрытия) ─────────────────────── -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/data"
+        style="@style/SMGR.Main.Caption"
+        android:text="Включает данные справочников"
+        android:paddingTop="20dp"
+        android:alpha="0"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleAccent" />
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/containerData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/main_activity_txt_padding_top"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerTitle">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/data"
-            style="@style/Main_Activity_Txt"
-            android:text="@string/txtView_about_guides" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
+    <!-- ── Даты СМГР (скрыты до раскрытия) ────────────────────── -->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/containerSmgrDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="@dimen/main_activity_txt_padding_top"
-        app:layout_constraintRight_toLeftOf="@id/containerTitle"
-        app:layout_constraintTop_toBottomOf="@+id/containerData">
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:alpha="0"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/data">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/smgr1Txt"
-            style="@style/Main_Activity_Txt"
+            style="@style/SMGR.Main.TechLine"
             android:text="@string/txtView_smgr1" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/smgr2Txt"
-            style="@style/Main_Activity_Txt"
+            style="@style/SMGR.Main.TechLine"
             android:text="@string/txtView_smgr2" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <FrameLayout
-        android:id="@+id/layout_smoke"
+    <!-- ── Guideline для дыма (18% от левого края экрана) ─────── -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/smokeGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerSmgrDate">
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.28" />
+
+    <!-- ── Дым (Lottie) ───────────────────────────────────────── -->
+    <FrameLayout
+        android:id="@+id/layout_smoke"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="-15dp"
+        app:layout_constraintBottom_toTopOf="@id/titleImage"
+        app:layout_constraintStart_toStartOf="@id/smokeGuideline"
+        app:layout_constraintEnd_toEndOf="@id/smokeGuideline">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/smoke"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            app:layout_constraintBottom_toTopOf="@+id/titleImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/smoke" />
     </FrameLayout>
 
-
+    <!-- ── Поезд (центральное изображение) ────────────────────── -->
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/titleImage"
         android:layout_width="match_parent"
         android:layout_height="@dimen/main_activity_image_height"
-        android:layout_gravity="center"
-        android:layout_marginTop="32dp"
+        android:background="?attr/colorMainBackground"
+        android:scaleType="centerCrop"
         android:src="@drawable/title_image"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerSmgrDate" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnToSmgr"
-        style="@style/Widget.Material3.Button.Main_Activity_Btn"
-        android:layout_width="@dimen/main_activity_btn_width"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/btn_enter_smgr"
-        app:layout_constraintRight_toLeftOf="@id/containerTitle"
-        app:layout_constraintTop_toBottomOf="@+id/titleImage" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnToOrv"
-        style="@style/Widget.Material3.Button.Main_Activity_Btn"
-        android:layout_width="@dimen/main_activity_btn_width"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:text="@string/btn_enter_orv"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/containerTitle"
-        app:layout_constraintTop_toBottomOf="@+id/btnToSmgr" />
-
+    <!-- ── Подсказка "Нажми на поезд!" ────────────────────────── -->
     <TextView
         android:id="@+id/clickToStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/activity_main_push_train"
         android:textColor="?attr/colorStaticText"
-        app:layout_constraintBottom_toTopOf="@+id/titleImage"
+        android:textSize="13sp"
+        android:fontFamily="@font/lato"
+        android:letterSpacing="0.05"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/btnHelp"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@color/transparent"-->
-<!--        android:src="@drawable/ic_baseline_self_improvemen"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btnToOrv"-->
-<!--        app:layout_constraintVertical_bias="0.9" />-->
+    <!-- ── Кнопки (скрыты до раскрытия) ───────────────────────── -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToSmgr"
+        style="@style/Widget.Material3.Button.Main_Activity_Btn"
+        android:layout_width="@dimen/main_activity_btn_width"
+        android:layout_height="50dp"
+        android:text="@string/btn_enter_smgr"
+        android:alpha="0"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/btnCheckUpdate"-->
-<!--        style="@style/Widget.Material3.Button.OutlinedButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/activity_main_btn_chk_upd_txt_btn"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="8sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/btnHelp"-->
-<!--        app:layout_constraintEnd_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/btnHelp"-->
-<!--        app:strokeWidth="2dp" />-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToOrv"
+        style="@style/Widget.Material3.Button.Main_Activity_Btn"
+        android:layout_width="@dimen/main_activity_btn_width"
+        android:layout_height="50dp"
+        android:text="@string/btn_enter_orv"
+        android:alpha="0"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCheckUpdate"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main_btn_chk_upd_txt_btn"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:alpha="0"
+        android:visibility="invisible"
+        app:strokeColor="?attr/colorPrimary"
+        app:strokeWidth="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

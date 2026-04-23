@@ -535,4 +535,66 @@
         <item name="android:paddingEnd">4dp</item>
     </style>
 
+    <!-- ═══════════════════════════════════════════════════════════════════
+     Стили для стартового экрана (MainActivity) — переработаны.
+     Выстраивают чёткую типографическую иерархию:
+       Hero title (крупный) > Caption (мелкий, приглушённый) > Tech data (моно)
+═══════════════════════════════════════════════════════════════════ -->
+
+    <!--
+        NEW — SMGR.Main.HeroTitle
+        Главный заголовок приложения. Крупный Lato Bold с letter-spacing —
+        такой приём "разрежённого заголовка" используется в премиальных
+        приложениях (Telegram FAQ, Spotify splash), создаёт ощущение
+        "доверенного продукта".
+    -->
+    <style name="SMGR.Main.HeroTitle" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!--
+        NEW — SMGR.Main.Caption
+        Подзаголовок типа "Включает данные справочников:". Мелкий, приглушённый,
+        uppercase с letter-spacing — типичный паттерн "служебная метка" в
+        Material-приложениях (Google Keep, Notes-приложения).
+    -->
+    <style name="SMGR.Main.Caption" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!--
+        NEW — SMGR.Main.TechLine
+        Строка технических данных (версия, дата). Моноширинный IBM Plex Mono —
+        как в списках моделей и карточках вагона, создаёт визуальную связь
+        "это тоже техническая/справочная информация".
+    -->
+    <style name="SMGR.Main.TechLine" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/ibm_plex_mono</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
 </resources>
