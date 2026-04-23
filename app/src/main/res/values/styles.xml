@@ -56,13 +56,21 @@
         <item name="android:fontFamily">monospace</item>
     </style>
 
-    <!-- ─── Param row: unit label (fixed width, after value) ─── -->
+    <!--
+    CHANGED — ширина колонки единиц.
+    Было: width=44dp — создавало отступ справа от значения, из-за чего
+    строки с единицами ("23.8 т", "14730 мм") не выравнивались по правому
+    краю со строками без единиц ("ОАО МЗТМ").
+    Стало: wrap_content — unit отрисовывается сразу после значения,
+    а общий правый край строки остаётся ровным благодаря padding родителя.
+-->
     <style name="SMGR.ParamUnit">
-        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_width">wrap_content</item>  <!-- было 44dp -->
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">?attr/colorStaticText</item>
         <item name="android:textSize">12sp</item>
         <item name="android:paddingStart">4dp</item>
+        <item name="android:minWidth">0dp</item>                <!-- NEW: страховка -->
     </style>
 
     <!-- ─── Row container inside a grouped card ─── -->

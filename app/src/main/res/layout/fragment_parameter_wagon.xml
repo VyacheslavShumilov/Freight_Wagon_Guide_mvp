@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     REDESIGN — fragment_parameter_wagon.xml
     Copy to: app/src/main/res/layout/fragment_parameter_wagon.xml
 
@@ -10,14 +9,13 @@
     - Values right-aligned with fixed unit column
     - All view IDs preserved — no Kotlin changes needed
 -->
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="?attr/colorMainBackground"
+    android:orientation="vertical"
     tools:context=".ui.smgr.ParameterWagonFragment">
 
     <include
@@ -37,11 +35,11 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="?attr/colorSurface"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:background="?attr/colorSurface"
-                android:gravity="center_vertical">
+                android:paddingBottom="8dp">
 
                 <!--
     CHANGED — HorizontalScrollView сохранён (он нужен для зума),
@@ -56,46 +54,48 @@
                     android:layout_height="wrap_content"
                     android:background="?attr/colorSurface"
                     android:fillViewport="true"
-                    android:scrollbars="none"
                     android:paddingTop="8dp"
-                    android:paddingBottom="8dp">
+                    android:paddingBottom="8dp"
+                    android:scrollbars="none">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/wagonPhotoUrl"
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
                         android:adjustViewBounds="true"
-                        android:scaleType="fitCenter"
                         android:clickable="true"
+                        android:contentDescription="@null"
                         android:focusable="true"
-                        android:contentDescription="@null" />
+                        android:scaleType="fitCenter" />
 
                 </HorizontalScrollView>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- Divider -->
-            <View android:layout_width="match_parent" android:layout_height="1dp"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
                 android:background="?attr/colorSurfaceVariant" />
 
             <!-- Model + type info + capacity -->
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_gravity="center"
                 android:layout_marginStart="12dp"
-                android:layout_gravity="center">
+                android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/wagonModel"
                     style="@style/SMGR.HeroModelCode"
-                    android:layout_marginEnd="5dp"/>
+                    android:layout_marginEnd="5dp" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/wagonCapacity"
                     style="@style/SMGR.HeroCapacity"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginTop="4dp" />
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp" />
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/SMGR.HeroCapacityLabel"
@@ -118,9 +118,9 @@
                 android:layout_marginBottom="4dp"
                 app:cardBackgroundColor="?attr/colorSurface"
                 app:cardCornerRadius="10dp"
-                app:strokeWidth="1dp"
+                app:cardElevation="0dp"
                 app:strokeColor="?attr/colorSurfaceVariant"
-                app:cardElevation="0dp">
+                app:strokeWidth="1dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -131,90 +131,153 @@
                     <androidx.appcompat.widget.LinearLayoutCompat
                         style="@style/SMGR.CardRow"
                         android:background="?attr/colorMainBackground">
+
                         <com.google.android.material.textview.MaterialTextView
                             style="@style/SMGR.ParamLabel"
                             android:text="@string/txtView_property" />
+
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/wagonProperty"
                             style="@style/SMGR.ParamValue"
-                            android:maxWidth="180dp"
                             android:gravity="end"
-                            android:hint="@string/txtView_property" />
+                            android:hint="@string/txtView_property"
+                            android:maxWidth="180dp" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
                     <!-- Специализация -->
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        style="@style/SMGR.CardRow">
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+
                         <com.google.android.material.textview.MaterialTextView
                             style="@style/SMGR.ParamLabel"
                             android:text="@string/txtView_specialization" />
+
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/wagonSpecialization"
                             style="@style/SMGR.ParamValue" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
                     <!-- Материал кузова -->
                     <androidx.appcompat.widget.LinearLayoutCompat
                         style="@style/SMGR.CardRow"
                         android:background="?attr/colorMainBackground">
+
                         <com.google.android.material.textview.MaterialTextView
                             style="@style/SMGR.ParamLabel"
                             android:text="@string/txtView_material" />
+
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/wagonMaterial"
                             style="@style/SMGR.ParamValue" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
                     <!-- Изготовитель -->
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        style="@style/SMGR.CardRow">
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+
                         <com.google.android.material.textview.MaterialTextView
                             style="@style/SMGR.ParamLabel"
                             android:text="@string/txtView_factory" />
+
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/wagonFactory"
                             style="@style/SMGR.ParamValue"
-                            android:maxWidth="160dp"
-                            android:gravity="end" />
+                            android:gravity="end"
+                            android:maxWidth="160dp" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
-                    <!-- Год выпуска -->
+                    <!--
+      FIXED — годы выпуска выровнены по правому краю.
+      Ключевое:
+      • Внешний LinearLayout получает layout_weight=1 — занимает всё место
+        после label и прижимает содержимое к правому краю через gravity=end.
+      • Спейсер справа — ровно "ширина ParamUnit" чтобы значение оказалось
+        в той же колонке, что значения в строках с единицами (т/мм/лет).
+        ParamUnit имеет width=44dp + paddingStart=4dp → итого 48dp.
+  -->
                     <androidx.appcompat.widget.LinearLayoutCompat
                         style="@style/SMGR.CardRow"
                         android:background="?attr/colorMainBackground">
+
                         <com.google.android.material.textview.MaterialTextView
                             style="@style/SMGR.ParamLabel"
                             android:text="@string/txtView_year_release" />
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/wagonYearOfRelease"
-                            style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView
-                            style="@style/SMGR.ParamUnit"
-                            android:text="–" />
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/wagonYearEndOfRelease"
-                            style="@style/SMGR.ParamValue" />
+
+                        <!-- Контейнер значения: растягивается, прижимается вправо -->
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="end|center_vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/wagonYearOfRelease"
+                                style="@style/SMGR.ParamValue"
+                                android:minWidth="0dp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SMGR.ParamValue"
+                                android:minWidth="0dp"
+                                android:paddingStart="6dp"
+                                android:paddingEnd="6dp"
+                                android:text="–"
+                                android:textColor="?attr/colorStaticText"
+                                android:textStyle="normal" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/wagonYearEndOfRelease"
+                                style="@style/SMGR.ParamValue"
+                                android:minWidth="0dp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <!--
+                            Спейсер, заменяющий колонку "единиц измерения" в этой строке.
+                            Ширина = ширина ParamUnit (44dp). paddingStart у ParamUnit (4dp)
+                            НЕ учитываем здесь — он создаёт визуальный отступ от значения,
+                            которого у нас нет единицы, поэтому "1969–1995" прижато
+                            к правому краю ровно как "23.8" без учёта отступа до "т".
+                        -->
+                        <View
+                            android:layout_width="44dp"
+                            android:layout_height="0dp" />
+
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
-
                     <!-- Срок службы -->
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        style="@style/SMGR.CardRow">
+                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
+
                         <com.google.android.material.textview.MaterialTextView
                             style="@style/SMGR.ParamLabel"
                             android:text="@string/txtView_service_life" />
+
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/wagonServiceLife"
                             style="@style/SMGR.ParamValue" />
+
                         <com.google.android.material.textview.MaterialTextView
                             style="@style/SMGR.ParamUnit"
                             android:text="лет" />
@@ -238,9 +301,9 @@
                 android:layout_marginBottom="4dp"
                 app:cardBackgroundColor="?attr/colorSurface"
                 app:cardCornerRadius="10dp"
-                app:strokeWidth="1dp"
+                app:cardElevation="0dp"
                 app:strokeColor="?attr/colorSurfaceVariant"
-                app:cardElevation="0dp">
+                app:strokeWidth="1dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -248,34 +311,89 @@
                     android:orientation="vertical">
 
                     <!-- Тара min -->
-                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_tare_min" />
-                        <com.google.android.material.textview.MaterialTextView android:id="@+id/wagonTareMin" style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="@string/txtView_tare_min_unit" />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        style="@style/SMGR.CardRow"
+                        android:background="?attr/colorMainBackground">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamLabel"
+                            android:text="@string/txtView_tare_min" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/wagonTareMin"
+                            style="@style/SMGR.ParamValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamUnit"
+                            android:text="@string/txtView_tare_min_unit" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
                     <!-- Тара max -->
                     <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_tare_max" />
-                        <com.google.android.material.textview.MaterialTextView android:id="@+id/wagonTareMax" style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="@string/txtView_tare_max_unit" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamLabel"
+                            android:text="@string/txtView_tare_max" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/wagonTareMax"
+                            style="@style/SMGR.ParamValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamUnit"
+                            android:text="@string/txtView_tare_max_unit" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
                     <!-- Тара min (эксп.) -->
-                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_tare_min_exp" />
-                        <com.google.android.material.textview.MaterialTextView android:id="@+id/wagonTareMinExp" style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="@string/txtView_tare_min_exp_unit" />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        style="@style/SMGR.CardRow"
+                        android:background="?attr/colorMainBackground">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamLabel"
+                            android:text="@string/txtView_tare_min_exp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/wagonTareMinExp"
+                            style="@style/SMGR.ParamValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamUnit"
+                            android:text="@string/txtView_tare_min_exp_unit" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
                     <!-- Осевая нагрузка -->
                     <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_axial_load" />
-                        <com.google.android.material.textview.MaterialTextView android:id="@+id/wagonAxialLoad" style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="@string/txtView_axial_load_unit" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamLabel"
+                            android:text="@string/txtView_axial_load" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/wagonAxialLoad"
+                            style="@style/SMGR.ParamValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamUnit"
+                            android:text="@string/txtView_axial_load_unit" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -296,9 +414,9 @@
                 android:layout_marginBottom="4dp"
                 app:cardBackgroundColor="?attr/colorSurface"
                 app:cardCornerRadius="10dp"
-                app:strokeWidth="1dp"
+                app:cardElevation="0dp"
                 app:strokeColor="?attr/colorSurfaceVariant"
-                app:cardElevation="0dp">
+                app:strokeWidth="1dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -306,34 +424,89 @@
                     android:orientation="vertical">
 
                     <!-- Длина -->
-                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_length" />
-                        <com.google.android.material.textview.MaterialTextView android:id="@+id/wagonLength" style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="@string/txtView_length_unit" />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        style="@style/SMGR.CardRow"
+                        android:background="?attr/colorMainBackground">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamLabel"
+                            android:text="@string/txtView_length" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/wagonLength"
+                            style="@style/SMGR.ParamValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamUnit"
+                            android:text="@string/txtView_length_unit" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
                     <!-- Длина по а/с -->
                     <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_long" />
-                        <com.google.android.material.textview.MaterialTextView android:id="@+id/wagonLong" style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="мм" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamLabel"
+                            android:text="@string/txtView_long" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/wagonLong"
+                            style="@style/SMGR.ParamValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamUnit"
+                            android:text="мм" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
                     <!-- Осность -->
-                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_num_axles" />
-                        <com.google.android.material.textview.MaterialTextView android:id="@+id/wagonNumAxles" style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text=" " />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        style="@style/SMGR.CardRow"
+                        android:background="?attr/colorMainBackground">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamLabel"
+                            android:text="@string/txtView_num_axles" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/wagonNumAxles"
+                            style="@style/SMGR.ParamValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamUnit"
+                            android:text=" " />
                     </androidx.appcompat.widget.LinearLayoutCompat>
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
                     <!-- Объём -->
                     <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_volume" />
-                        <com.google.android.material.textview.MaterialTextView android:id="@+id/wagonVolume" style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text="@string/txtView_volume_unit" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamLabel"
+                            android:text="@string/txtView_volume" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/wagonVolume"
+                            style="@style/SMGR.ParamValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamUnit"
+                            android:text="@string/txtView_volume_unit" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -354,9 +527,9 @@
                 android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="?attr/colorSurface"
                 app:cardCornerRadius="10dp"
-                app:strokeWidth="1dp"
+                app:cardElevation="0dp"
                 app:strokeColor="?attr/colorSurfaceVariant"
-                app:cardElevation="0dp">
+                app:strokeWidth="1dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -364,18 +537,43 @@
                     android:orientation="vertical">
 
                     <!-- Тележка -->
-                    <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow" android:background="?attr/colorMainBackground">
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_bogie" />
-                        <com.google.android.material.textview.MaterialTextView android:id="@+id/wagonBogie" style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text=" " />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        style="@style/SMGR.CardRow"
+                        android:background="?attr/colorMainBackground">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamLabel"
+                            android:text="@string/txtView_bogie" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/wagonBogie"
+                            style="@style/SMGR.ParamValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamUnit"
+                            android:text=" " />
                     </androidx.appcompat.widget.LinearLayoutCompat>
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="?attr/colorSurfaceVariant" android:layout_marginStart="14dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:background="?attr/colorSurfaceVariant" />
 
                     <!-- Габарит -->
                     <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.CardRow">
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamLabel" android:text="@string/txtView_size" />
-                        <com.google.android.material.textview.MaterialTextView android:id="@+id/wagonSize" style="@style/SMGR.ParamValue" />
-                        <com.google.android.material.textview.MaterialTextView style="@style/SMGR.ParamUnit" android:text=" " />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamLabel"
+                            android:text="@string/txtView_size" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/wagonSize"
+                            style="@style/SMGR.ParamValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/SMGR.ParamUnit"
+                            android:text=" " />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
