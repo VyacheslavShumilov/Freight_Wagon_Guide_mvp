@@ -1,46 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    REDESIGN — item_cargos.xml
+    Было: MaterialCardView с margin 6dp + border → визуально "таблетки".
+    Стало: обычная строка списка с:
+      • бейджем кода ЕТСНГ слева (как seriesBadge в списке моделей),
+      • названием груза справа (основной текст),
+      • тонким divider'ом между строками (как в WagonsActivity).
+    Единая эстетика со списком моделей и деталями вагона.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/Base.Widget.Material3.CardView.CustomCardView"
-    app:strokeColor="@color/transparent"
-    android:layout_margin="@dimen/cardView_margin_medium"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/colorMainBackground"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
+    <!-- Бейдж кода ЕТСНГ — визуальный эквивалент seriesBadge -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/codeBadgeCard"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:minWidth="56dp"
+        app:cardBackgroundColor="@color/accent_badge_bg"
+        app:cardCornerRadius="6dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/accent_badge_stroke"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/codeEtsngTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:includeFontPadding="false"
+            android:layout_gravity="center"
+            tools:text="211030" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/nameEtsngTextView"
-               style="@style/Fragments_Smgr_Static_Text.Dynamic_Text"/>
+    </com.google.android.material.card.MaterialCardView>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+    <!-- Название груза — читаемый Lato, многострочный по необходимости -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/nameEtsngTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="14sp"
+        android:fontFamily="@font/lato"
+        android:includeFontPadding="false"
+        android:lineSpacingMultiplier="1.2"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/codeBadgeCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/codeBadgeCard"
+        app:layout_constraintBottom_toBottomOf="@id/codeBadgeCard"
+        app:layout_constraintVertical_bias="0"
+        tools:text="Бензин для промышленных целей" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <!-- Divider на границе между строками -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="?attr/colorSurfaceVariant"
+        android:alpha="0.4"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="-10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Fragments_Smgr_Static_Text"
-                android:text="@string/item_cargos_txtView_code"
-                android:paddingStart="@dimen/frag_smgr_static_txt_paddingStart"
-                android:paddingEnd="@dimen/frag_smgr_static_txt_paddingEnd"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/codeEtsngTextView"
-                style="@style/Fragments_Smgr_Static_Text.Dynamic_Text"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-</com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
