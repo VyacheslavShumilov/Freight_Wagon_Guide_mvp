@@ -43,6 +43,7 @@ class BogiesListFragment : Fragment(), BogiesListContract.View, AdapterBogies.Se
             toolbar.clickBackBtn.setOnClickListener{
                 (requireActivity() as OrvActivity).onBackPressed()
             }
+            binding.toolbar.clickHomeBtn.visibility = View.GONE  // или иконка home-раздела
 
             toolbar.clickHomeBtn.setOnClickListener {
                 (requireActivity() as OrvActivity).finish()

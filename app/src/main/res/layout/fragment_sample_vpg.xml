@@ -21,29 +21,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <FrameLayout
-                android:id="@+id/frame_layout"
+            <!--
+    CHANGED — видео обёрнуто в MaterialCardView.
+    Раньше видео висело прямо на фоне экрана — выглядело "не
+    содержится". Теперь у него есть явный контейнер: фон colorSurface,
+    тонкая рамка, скругление — как у hero-секции с фото вагона на
+    экране параметров.
+-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/videoCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/frag_orv_padding_top"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeColor="?attr/colorSurfaceVariant"
+                app:strokeWidth="1dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <VideoView
-                    android:id="@+id/videoView"
+                <FrameLayout
+                    android:id="@+id/frame_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/videoView_layout_height"
-                    android:layout_gravity="center" />
+                    android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/playBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@color/transparent"
-                    android:src="@drawable/ic_baseline_play_circle" />
-            </FrameLayout>
+                    <VideoView
+                        android:id="@+id/videoView"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/videoView_layout_height"
+                        android:layout_gravity="center" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/playBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_baseline_play_circle" />
+
+                </FrameLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_1"
@@ -52,7 +72,7 @@
                 android:src="@drawable/sample_vpg_1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/frame_layout" />
+                app:layout_constraintTop_toBottomOf="@+id/videoCard" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fragment_sample_txt_1"

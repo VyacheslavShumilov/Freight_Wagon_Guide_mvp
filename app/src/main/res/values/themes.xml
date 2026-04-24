@@ -18,12 +18,14 @@
         <item name="colorStaticText">@color/static_txt_light</item>
         <item name="colorOrvTxtBackground">@color/bg_surface</item>
         <item name="colorMainBackground">@color/white</item>
-        <item name="colorPlayBtn">@color/play_btn_color_light</item>
+        <item name="colorPlayBtn">@color/main_color_dark</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor"
             tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/lato</item>
+        <!-- CHANGED: все MaterialDivider в приложении получают SMGR.Sample.Divider по умолчанию -->
+        <item name="materialDividerStyle">@style/SMGR.Sample.Divider</item>
     </style>
 
     <style name="Theme.SMGRApp.NoActionBar">

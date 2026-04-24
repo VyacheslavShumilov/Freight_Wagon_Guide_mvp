@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    REDESIGN — fragment_bogie_components.xml
+    Изменения:
+      • Хедер "frag_bogie_components_txtView_document" переведён на стиль
+        SMGR.SectionHeader (та же эстетика, что разделы на экране вагона).
+      • RecyclerView получил паддинги 4dp по краям — чтобы карточки
+        с margin=6dp встали в аккуратную сетку 2×N.
+      • Экран теперь использует фон colorMainBackground — раньше брался
+        системный.
+-->
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorMainBackground"
     android:orientation="vertical"
-    tools:context=".ui.smgr.wagon_cargos.CargosWagonFragment">
+    tools:context=".ui.orv.bogies.BogiesListFragment">
 
     <include
         android:id="@+id/toolbar"
@@ -15,45 +26,48 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/modelWagon"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <com.google.android.material.textview.MaterialTextView
+            style="@style/SMGR.SectionHeader"
+            android:paddingTop="14dp"
+            android:paddingBottom="8dp"
+            android:text="@string/frag_bogie_components_txtView_document" />
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Bogies_Components_Item_Header_Medium"
-            android:textAlignment="center"
-            android:paddingTop="@dimen/frag_bogie_comp_txtView_paddingTop"
-            android:paddingBottom="@dimen/frag_bogie_comp_txtView_paddingBottom"
-            android:text="@string/frag_bogie_components_txtView_document"/>
+            android:layout_height="1dp"
+            android:alpha="0.4"
+            android:background="?attr/colorSurfaceVariant" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="16dp"
             android:visibility="visible"
-            app:layout_constraintTop_toBottomOf="@id/modelWagon" />
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:visibility="gone" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/layoutNotConnection"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             android:visibility="gone">
 
             <TextView

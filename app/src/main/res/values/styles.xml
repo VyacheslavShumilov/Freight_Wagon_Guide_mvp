@@ -408,27 +408,48 @@
     </style>
 
 
+    <!--
+    CHANGED — Bogies_Components_Item_Header
+    Было: bold 16sp ?attr/colorText.
+    Стало: моноширинный bold 15sp colorOnSurface — та же эстетика,
+    что Bogie.Code в новом item_bogies.
+-->
     <style name="Bogies_Components_Item_Header">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
+    <!--
+        CHANGED — Medium = секционный заголовок уровнем выше строк
+        (используется в fragment_bogie_components для "документ").
+        Переведён на Lato bold, как hero-title в списке вагонов.
+    -->
     <style name="Bogies_Components_Item_Header_Medium">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
+    <!--
+        CHANGED — Small = второстепенная подпись (например, название производителя
+        в компоненте).
+    -->
     <style name="Bogies_Components_Item_Header_Small">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="Base.Widget.Material3.CardView.CustomCardView">
@@ -441,19 +462,60 @@
         <item name="cardBackgroundColor">?attr/colorSurface</item>
     </style>
 
+    <!--
+    CHANGED — Fragments_Orv_Sample_Text
+    Учебный длинный текст. Ключевые параметры:
+    • Lato 15sp — на 1sp мельче основного для плотности, но по-прежнему
+      комфортно читается (шрифт Lato специально разработан для длинных
+      текстов).
+    • lineSpacingMultiplier=1.4 — обязательно для абзацев от 3 строк;
+      без этого строки слипаются, глаз устаёт.
+    • colorOnSurface — чуть приглушённый белый, не перегружает зрение
+      на тёмном фоне (чистый белый слишком контрастен для длинных
+      текстов).
+    • letterSpacing=0.01 — микро-разрежение для удобства чтения на тёмной
+      теме (стандартный приём из Notion, Medium dark mode).
+    • Вертикальные паддинги 12dp — текст не липнет к картинкам сверху/снизу.
+    • Горизонтальные паддинги 4dp — компенсация того, что родительский
+      padding 8dp, а картинки идут в match_parent без отступов.
+-->
     <style name="Fragments_Orv_Sample_Text">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">start</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:lineSpacingMultiplier">1.4</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
     </style>
 
+    <!--
+        CHANGED — Fragment_Sample_ImageView
+        Учебные иллюстрации. Ключевое:
+        • centerInside вместо centerCrop — картинка не обрезается.
+          Для обучающих схем это критично: обрезанная деталь = потерянная
+          информация.
+        • adjustViewBounds=true — высота пропорциональна ширине, нет
+          артистично-растянутых картинок.
+        • Фон colorSurface — даёт едва заметную подложку под картинки
+          с прозрачными краями, делает их связкой "это одно изображение"
+          на фоне экрана.
+        • Верхний margin 4dp — воздух от предыдущего текстового блока.
+    -->
     <style name="Fragment_Sample_ImageView">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">centerInside</item>
         <item name="android:adjustViewBounds">true</item>
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
     </style>
 
     <style name="No_Internet_Text">
@@ -694,5 +756,64 @@
          (BreakSystem, Wheelset, Bogie, Sample, AutomaticCoupler, Components).
          Меняем их — меняется весь раздел разом, без правки 3000+ строк XML.
     ═══════════════════════════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════════════════════════════════════
+         Карточки тележек и компонентов (item_bogies / item_bogie_components).
+         Отдельные стили вместо Bogies_Components_Item_* — те оставим живыми
+         для обратной совместимости, новые сюда.
+    ═══════════════════════════════════════════════════════════════════ -->
 
+    <!--
+        NEW — SMGR.Bogie.Code
+        Код модели тележки — моноширинный bold, как код вагона в списке моделей.
+        Создаёт визуальную связь: "18-100" и "11-066-04" читаются одинаково.
+    -->
+    <style name="SMGR.Bogie.Code" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--
+        NEW — SMGR.Bogie.Factory
+        Производитель — Lato обычный, приглушённый серый colorStaticText.
+        Вторичная информация, визуально подчинённая коду.
+    -->
+    <style name="SMGR.Bogie.Factory" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+    <!--
+    NEW — SMGR.Sample.Divider
+    Тонкий приглушённый разделитель между секциями "картинка+текст".
+    Используется в fragment_sample_*.xml вместо дефолтных параметров
+    MaterialDivider, которые слишком резкие для учебных экранов.
+
+    Применять через style="..." в MaterialDivider.
+    Либо — если не хотите трогать 8 файлов — переопределить атрибуты
+    MaterialDivider глобально в теме через materialDividerStyle.
+-->
+    <style name="SMGR.Sample.Divider" parent="Widget.Material3.MaterialDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="dividerColor">?attr/colorSurfaceVariant</item>
+        <item name="android:alpha">0.4</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
 </resources>
