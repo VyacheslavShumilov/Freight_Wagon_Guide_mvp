@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    REDESIGN — fragment_orv_list.xml
+    Было: MaterialCardView-тайлы через CustomCardView-стиль с серыми границами
+    и большими отступами — визуально «тяжёлая» плитка 90-х.
+    Стало: та же сетка 2x3, но тайлы в единой стилистике с карточками
+    моделей/параметров — тонкая граница colorSurfaceVariant, фон colorSurface,
+    акцент на иконке, заголовок моноширинным IBM Plex Mono bold.
+-->
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorMainBackground"
     tools:context=".ui.orv.OrvActivity">
 
     <include
@@ -12,201 +23,165 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <GridLayout
+        <androidx.gridlayout.widget.GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="3">
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            app:columnCount="2"
+            app:rowCount="3">
 
+            <!-- 1. Автосцепка -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewAutomaticCoupler"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill">
+                style="@style/SMGR.Orv.Tile"
+                app:layout_row="0"
+                app:layout_column="0"
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                app:layout_columnWeight="1">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    style="@style/SMGR.Orv.Tile.Content">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="@dimen/cardView_imageView_width"
                         android:layout_height="@dimen/cardView_imageView_height"
-                        android:src="@drawable/automatic_coupler" />
+                        android:src="@drawable/automatic_coupler"
+                         />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
                         android:text="@string/txtView_automatic_coupler" />
-                </LinearLayout>
 
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 2. Тормозная система -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewBreakSystem"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill">
+                style="@style/SMGR.Orv.Tile"
+                app:layout_row="0"
+                app:layout_column="1"
+                app:layout_columnWeight="1">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    style="@style/SMGR.Orv.Tile.Content">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="@dimen/cardView_imageView_width"
                         android:layout_height="@dimen/cardView_imageView_height"
-                        android:src="@drawable/brake_system" />
+                        android:src="@drawable/brake_system"
+                         />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
                         android:text="@string/txtView_brake_system" />
-                </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 3. Колёсная пара -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewWheelset"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill">
+                style="@style/SMGR.Orv.Tile"
+                app:layout_row="1"
+                app:layout_column="0"
+                app:layout_columnWeight="1">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    style="@style/SMGR.Orv.Tile.Content">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="@dimen/cardView_imageView_width"
                         android:layout_height="@dimen/cardView_imageView_height"
-                        android:src="@drawable/wheelset" />
+                        android:src="@drawable/wheelset"
+                         />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
                         android:text="@string/txtView_wheelset" />
-                </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 4. Тележка -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewBogie"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_rowWeight="1"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill">
+                style="@style/SMGR.Orv.Tile"
+                app:layout_row="1"
+                app:layout_column="1"
+                app:layout_columnWeight="1">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    style="@style/SMGR.Orv.Tile.Content">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="@dimen/cardView_imageView_width"
                         android:layout_height="@dimen/cardView_imageView_height"
-                        android:src="@drawable/bogie" />
+                        android:src="@drawable/bogie"
+                         />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
                         android:text="@string/rag_orv_list_txtView_bogie" />
 
-                </LinearLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 5. Детали тележки -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewComponents"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="2"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill">
+                style="@style/SMGR.Orv.Tile"
+                app:layout_row="2"
+                app:layout_column="0"
+                app:layout_columnWeight="1">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    style="@style/SMGR.Orv.Tile.Content">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="@dimen/cardView_imageView_width"
                         android:layout_height="@dimen/cardView_imageView_height"
-                        android:src="@drawable/components" />
+                        android:src="@drawable/components"
+                         />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
                         android:text="@string/txtView_components" />
-                </LinearLayout>
 
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 6. Шаблоны -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewSamples"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="2"
-                android:layout_rowWeight="1"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill">
+                style="@style/SMGR.Orv.Tile"
+                app:layout_row="2"
+                app:layout_column="1"
+                app:layout_columnWeight="1">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    style="@style/SMGR.Orv.Tile.Content">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="@dimen/cardView_imageView_width"
                         android:layout_height="@dimen/cardView_imageView_height"
-                        android:src="@drawable/sample" />
+                        android:src="@drawable/sample"
+                        />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
                         android:text="@string/txtView_sample" />
-                </LinearLayout>
 
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
-        </GridLayout>
-
+        </androidx.gridlayout.widget.GridLayout>
     </ScrollView>
 
-</RelativeLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

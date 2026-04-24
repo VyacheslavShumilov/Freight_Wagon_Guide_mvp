@@ -323,6 +323,25 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+            <!-- ══════════════════════════════════════════════════════════
+                 РАЗДЕЛ 9 — "Ползун (выбоина)"
+                 CHANGED: для строк param_9_3 ... param_9_6 добавлены
+                 парные Value-TextView справа (wh_unit_9_3 ... wh_unit_9_6).
+                 Раньше у этих строк не было unit — текст занимал всю ширину
+                 одним куском. Теперь условие (левая часть) отделено от
+                 скорости (правая часть, моноширинный Value).
+
+                 У каждого param-TextView:
+                   • layout_width=0dp + constraintEnd_toStartOf=unit — левая
+                     колонка обрезается до правой
+                   • constraintHorizontal_bias=0.0 — текст выровнен слева
+                   • constraintEnd изменён со _270 на соответствующий unit
+
+                 Value-TextView:
+                   • constraintTop_toTopOf — выравнивается по верху своего param
+                   • constraintEnd_toEndOf=@id/materialTextView270 — правый
+                     край на уровне unit_9_2 (сохраняет единую колонку)
+            ══════════════════════════════════════════════════════════ -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -365,48 +384,81 @@
                     app:layout_constraintEnd_toEndOf="@+id/materialTextView273"
                     app:layout_constraintTop_toTopOf="@+id/materialTextView269" />
 
+                <!-- 9_3: условие слева, скорость справа (моноширинный value) -->
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView277"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_gravity="fill_horizontal"
+                    android:layout_width="0dp"
                     android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_wh_param_9_3"
-                    app:layout_constraintEnd_toEndOf="@+id/materialTextView270"
+                    app:layout_constraintEnd_toStartOf="@+id/wh_unit_9_3"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView269"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView269" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wh_unit_9_3"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_9_3"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView270"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView277" />
+
+                <!-- 9_4 -->
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView274"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_gravity="fill_horizontal"
+                    android:layout_width="0dp"
                     android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_wh_param_9_4"
-                    app:layout_constraintEnd_toEndOf="@+id/materialTextView270"
+                    app:layout_constraintEnd_toStartOf="@+id/wh_unit_9_4"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView269"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView277" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wh_unit_9_4"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_9_4"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView270"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView274" />
+
+                <!-- 9_5 -->
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/materialTextView275"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_gravity="fill_horizontal"
+                    android:layout_width="0dp"
                     android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_wh_param_9_5"
-                    app:layout_constraintEnd_toEndOf="@+id/materialTextView270"
+                    app:layout_constraintEnd_toStartOf="@+id/wh_unit_9_5"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView269"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView274" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wh_unit_9_5"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_9_5"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView270"
+                    app:layout_constraintTop_toTopOf="@+id/materialTextView275" />
+
+                <!-- 9_6: скорость справа, пояснение в левой части -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wh_param_9_6"
                     style="@style/Fragments_Orv_Text"
-                    android:layout_gravity="fill_horizontal"
+                    android:layout_width="0dp"
                     android:layout_marginTop="@dimen/fragment_margin_top"
                     android:text="@string/txtView_wh_param_9_6"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/wh_unit_9_6"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/materialTextView269"
                     app:layout_constraintTop_toBottomOf="@+id/materialTextView275" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/wh_unit_9_6"
+                    style="@style/Fragments_Orv_Value"
+                    android:text="@string/txtView_wh_unit_9_6"
+                    app:layout_constraintEnd_toEndOf="@+id/materialTextView270"
+                    app:layout_constraintTop_toTopOf="@+id/wh_param_9_6" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

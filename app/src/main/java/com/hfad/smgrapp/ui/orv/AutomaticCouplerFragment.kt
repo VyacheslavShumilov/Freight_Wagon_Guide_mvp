@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.hfad.smgrapp.R
 import com.hfad.smgrapp.databinding.FragmentAutomaticCouplerBinding
 
 class AutomaticCouplerFragment : Fragment() {
@@ -33,6 +34,9 @@ class AutomaticCouplerFragment : Fragment() {
             toolbar.clickHomeBtn.setOnClickListener {
                 (requireActivity() as OrvActivity).finish()
             }
+            toolbar.clickHomeBtn.setImageResource(R.drawable.ic_baseline_home)
+// если в drawable уже есть fill=white — tint применится из stylesheet'а toolbar.xml
+// (app:tint="?attr/colorOnSurface")
         }
     }
 }

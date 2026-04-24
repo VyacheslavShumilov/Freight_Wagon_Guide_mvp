@@ -347,33 +347,64 @@
     </style>
 
 
+    <!--
+    CHANGED — Fragments_Orv_Header
+    Было: textStyle=bold, 18sp, ?attr/colorText.
+    Стало: Lato bold с letter-spacing, colorPrimary (зелёный акцент) —
+    секционные заголовки теперь визуально отделены от параметров.
+-->
     <style name="Fragments_Orv_Header">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">?attr/colorText</item>
-        <item name="android:paddingTop">5dp</item>
-        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">10dp</item>
     </style>
 
+    <!--
+        CHANGED — Fragments_Orv_Text
+        Название параметра. Lato обычный (не bold) — иерархия: жирность
+        только у значений, как в ParamValue на экране вагона.
+    -->
     <style name="Fragments_Orv_Text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">start</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">?attr/colorStaticText</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
         <item name="android:singleLine">false</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
     </style>
 
+    <!--
+        CHANGED — Fragments_Orv_Value
+        Значение параметра (допуск, размер). Моноширинный IBM Plex Mono bold —
+        та же визуальная роль, что ParamValue в экране параметров вагона
+        (монospace для чисел → табличное выравнивание и мгновенная считываемость).
+    -->
     <style name="Fragments_Orv_Value">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">end</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:includeFontPadding">false</item>
         <item name="android:singleLine">false</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
     </style>
 
 
@@ -596,5 +627,72 @@
         <item name="android:fontFamily">@font/ibm_plex_mono</item>
         <item name="android:includeFontPadding">false</item>
     </style>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+     Унификация ОРВ-экранов. Заменяют старые Fragments_Orv_* и
+     Bogies_Components_Item_Header — но оставляем старые стили живыми
+     через наследование, чтобы существующие 6 фрагментов продолжали
+     работать и автоматически получили новый вид.
+═══════════════════════════════════════════════════════════════════ -->
+
+    <!--
+        NEW — SMGR.Orv.Tile (card)
+        Тайл-кнопка в сетке OrvListFragment. Та же эстетика, что карточки
+        параметров вагона: фон colorSurface, тонкая граница, радиус 14dp.
+    -->
+    <style name="SMGR.Orv.Tile" parent="Widget.Material3.CardView.Outlined">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">6dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="cardCornerRadius">14dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">?attr/colorSurfaceVariant</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!--
+    CHANGED — SMGR.Orv.Tile.Content
+    Было: paddingTop/Bottom=20dp — давало 40dp пустоты.
+    Стало: 12dp — компактнее, карточки перестают вытягиваться.
+-->
+    <style name="SMGR.Orv.Tile.Content" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">12dp</item>         <!-- было 20dp -->
+        <item name="android:paddingBottom">12dp</item>      <!-- было 20dp -->
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+    </style>
+
+    <!--
+        CHANGED — SMGR.Orv.Tile.Title
+        Было: paddingTop=12dp между иконкой и текстом.
+        Стало: 8dp — текст ближе к иконке, "связанная" пара.
+    -->
+    <style name="SMGR.Orv.Tile.Title" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+        <item name="android:paddingTop">8dp</item>           <!-- было 12dp -->
+    </style>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         ПЕРЕОПРЕДЕЛЕНИЕ существующих стилей ОРВ-фрагментов.
+         Fragments_Orv_Header/Text/Value используются во ВСЕХ 6 фрагментах
+         (BreakSystem, Wheelset, Bogie, Sample, AutomaticCoupler, Components).
+         Меняем их — меняется весь раздел разом, без правки 3000+ строк XML.
+    ═══════════════════════════════════════════════════════════════════ -->
 
 </resources>

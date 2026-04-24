@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.hfad.smgrapp.App
+import com.hfad.smgrapp.R
 import com.hfad.smgrapp.databinding.FragmentSamplesBinding
 import com.hfad.smgrapp.navigator.AppNavigator
 import com.hfad.smgrapp.navigator.Screen
@@ -74,6 +75,9 @@ class SamplesFragment: Fragment() {
             cardViewHeight.setOnClickListener {
                 appNavigator.navigateTo(Screen.SAMPLE_HEIGHT)
             }
+            toolbar.clickHomeBtn.setImageResource(R.drawable.ic_baseline_home)
+// если в drawable уже есть fill=white — tint применится из stylesheet'а toolbar.xml
+// (app:tint="?attr/colorOnSurface")
 
         }
     }

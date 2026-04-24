@@ -289,10 +289,22 @@
     <string name="txtView_wh_unit_9_1">не более 1 мм</string>
     <string name="txtView_wh_param_9_2">грузовые вагоны\nс кассетными подшипниками</string>
     <string name="txtView_wh_unit_9_2">не более 1 мм</string>
-    <string name="txtView_wh_param_9_3">более 1 до 2 мм: до ближайшего ПТО, V:\nне более 70 км/ч</string>
-    <string name="txtView_wh_param_9_4">от 2 до 6 мм: до ближайшей станции, V:\nне более 15 км/ч</string>
-    <string name="txtView_wh_param_9_5">от 6 до 12 мм: до ближайшей станции, V:\nне более 10 км/ч</string>
-    <string name="txtView_wh_param_9_6">более 12 мм: до ближайшей станции, V:\nне более 10 км/ч, с исключением вращения КП</string>
+
+    <string name="txtView_wh_param_9_3">более 1 до 2 мм: до ближайшего ПТО</string>
+    <string name="txtView_wh_unit_9_3">не более 70 км/ч</string>
+
+    <string name="txtView_wh_param_9_4">от 2 до 6 мм: до ближайшей станции</string>
+    <string name="txtView_wh_unit_9_4">не более 15 км/ч</string>
+
+    <string name="txtView_wh_param_9_5">от 6 до 12 мм: до ближайшей станции</string>
+    <string name="txtView_wh_unit_9_5">не более 10 км/ч</string>
+
+    <!--
+        9_6 — особый случай: и скорость, и пояснение ("с исключением вращения КП").
+        Оставляем скорость в unit, пояснение уходит в param (как часть условия).
+    -->
+    <string name="txtView_wh_param_9_6">более 12 мм: до ближайшей станции, с исключением вращения КП</string>
+    <string name="txtView_wh_unit_9_6">не более 10 км/ч</string>
     <string name="txtView_wh_param_10">Навар (смещение металла)</string>
     <string name="txtView_wh_param_10_1">грузовые вагоны</string>
     <string name="txtView_wh_unit_10_1">не более 1 мм</string>
