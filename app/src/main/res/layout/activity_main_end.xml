@@ -27,7 +27,8 @@
     android:background="?attr/colorMainBackground"
     android:clickable="true"
     android:focusable="true"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.MainActivity"
+    android:fitsSystemWindows="true">    <!-- ← добавить -->>
 
     <!-- ── Заголовок: "Сводный справочник" ────────────────────── -->
     <com.google.android.material.textview.MaterialTextView

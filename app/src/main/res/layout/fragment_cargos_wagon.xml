@@ -18,7 +18,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="?attr/colorMainBackground"
-    tools:context=".ui.smgr.wagon_cargos.CargosWagonFragment">
+    tools:context=".ui.smgr.wagon_cargos.CargosWagonFragment"
+    android:fitsSystemWindows="true">    <!-- ← добавить -->>
 
     <include android:id="@+id/toolbar" layout="@layout/toolbar" />
 

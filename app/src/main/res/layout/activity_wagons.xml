@@ -16,7 +16,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorMainBackground"
-    tools:context=".ui.smgr.wagons.WagonsActivity">
+    tools:context=".ui.smgr.wagons.WagonsActivity"
+    android:fitsSystemWindows="true">    <!-- ← добавить -->>
 
     <include
         android:id="@+id/toolbar"

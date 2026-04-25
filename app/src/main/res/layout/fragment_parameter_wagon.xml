@@ -16,7 +16,8 @@
     android:layout_height="match_parent"
     android:background="?attr/colorMainBackground"
     android:orientation="vertical"
-    tools:context=".ui.smgr.ParameterWagonFragment">
+    tools:context=".ui.smgr.ParameterWagonFragment"
+    android:fitsSystemWindows="true">    <!-- ← добавить -->>
 
     <include
         android:id="@+id/toolbar"

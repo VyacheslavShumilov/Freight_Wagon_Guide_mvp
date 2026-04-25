@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.orv.SamplesFragment">
+    tools:context=".ui.orv.SamplesFragment"
+    android:fitsSystemWindows="true">    <!-- ← добавить -->>
 
     <include
         android:id="@+id/toolbar"

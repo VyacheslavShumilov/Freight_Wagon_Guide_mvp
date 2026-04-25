@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    tools:context=".ui.orv.bogies.BogiesListFragment">
+    tools:context=".ui.orv.bogies.BogiesListFragment"
+    android:fitsSystemWindows="true">    <!-- ← добавить -->>
 
     <include
         android:id="@+id/toolbar"

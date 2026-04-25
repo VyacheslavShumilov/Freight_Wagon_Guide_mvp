@@ -15,7 +15,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="?attr/colorMainBackground"
-    tools:context=".ui.orv.OrvActivity">
+    tools:context=".ui.orv.OrvActivity"
+    android:fitsSystemWindows="true">    <!-- ← добавить -->>
 
     <include
         android:id="@+id/toolbar"

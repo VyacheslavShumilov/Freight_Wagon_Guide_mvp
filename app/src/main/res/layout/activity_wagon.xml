@@ -17,7 +17,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="?attr/colorMainBackground"
-    tools:context=".ui.smgr.WagonActivity">
+    tools:context=".ui.smgr.WagonActivity"
+    android:fitsSystemWindows="true">    <!-- ← добавить -->>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"

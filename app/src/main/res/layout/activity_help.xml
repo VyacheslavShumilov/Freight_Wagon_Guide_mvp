@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorMainBackground"
-    tools:context=".ui.HelpActivity">
+    tools:context=".ui.HelpActivity"
+    android:fitsSystemWindows="true">    <!-- ← добавить -->>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txt_connect_developer"
