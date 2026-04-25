@@ -29,9 +29,13 @@
     <color name="text_primary_light">#1A1C1E</color>
     <color name="text_secondary_light">#44474A</color>
 
-    <!-- Accent badge background (10% opacity of accent) -->
-    <color name="accent_badge_bg">#1A09BF9B</color>
-    <color name="accent_badge_stroke">#4009BF9B</color>
+    <!--
+    CHANGED — accent_badge_bg/stroke теперь привязан к светлому акценту
+    (00A380 вместо 09BF9B). На белой карточке бейдж читается чётко,
+    зелёный достаточно тёмный.
+-->
+    <color name="accent_badge_bg">#1A00A380</color>
+    <color name="accent_badge_stroke">#5500A380</color>
 
     <!-- Danger / Warning -->
     <color name="danger">#E05252</color>
@@ -49,4 +53,26 @@
     <color name="play_btn_color_dark">#FFB4AB</color>
     <color name="custom_tab_clicked">#09BF9B</color>
     <color name="color_item_repair">#141618</color>
+
+    <!--
+    NEW — surfaces для светлой темы.
+    Теперь у светлой темы есть та же 4-уровневая иерархия фонов,
+    что у тёмной (background → surface → raised → stroke).
+    Это даёт «карточки», которые видно на фоне экрана за счёт
+    тонального контраста, а не теней.
+-->
+    <color name="bg_primary_light">#F5F6F7</color>     <!-- фон экрана: чуть холоднее белого -->
+    <color name="bg_surface_light">#FFFFFF</color>     <!-- карточки: чистый белый -->
+    <color name="bg_raised_light">#FAFBFC</color>      <!-- вложенные блоки -->
+    <color name="bg_stroke_light">#E1E4E8</color>      <!-- обводки: видны на белом -->
+
+    <!--
+        NEW — насыщенный акцент для светлой темы.
+        Зелёный сделан немного темнее, чем в тёмной (#09BF9B → #00A380),
+        чтобы хватало контраста с белыми кнопками.
+        accent_badge_bg_light — заметная подложка бейджей capacity.
+    -->
+    <color name="main_color_light_solid">#00A380</color>
+    <color name="accent_badge_bg_light">#1A00A380</color>
+    <color name="accent_badge_stroke_light">#5500A380</color>
 </resources>

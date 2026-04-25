@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     REDESIGN — fragment_bogie_components.xml
+
     Изменения:
-      • Хедер "frag_bogie_components_txtView_document" переведён на стиль
-        SMGR.SectionHeader (та же эстетика, что разделы на экране вагона).
-      • RecyclerView получил паддинги 4dp по краям — чтобы карточки
-        с margin=6dp встали в аккуратную сетку 2×N.
-      • Экран теперь использует фон colorMainBackground — раньше брался
-        системный.
+    1. ProgressBar и layoutNotConnection помещены внутрь FrameLayout
+       вместе с RecyclerView. Они лежат слоями: лоадер поверх списка,
+       блок "нет интернета" поверх лоадера. layout_gravity=center
+       центрирует лоадер на экране, а не клеит его под списком.
+    2. Удалены неработающие app:layout_constraint* — они применимы только
+       внутри ConstraintLayout, а корень здесь LinearLayoutCompat,
+       и константы просто игнорировались.
+    3. RecyclerView получил layout_height=match_parent — занимает всё
+       свободное место под заголовком, чтобы скролл работал корректно
+       (раньше при wrap_content список мог обрезаться/скроллится с
+       внешним ScrollView).
 -->
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,13 +32,16 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/modelWagon"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <com.google.android.material.textview.MaterialTextView
-            style="@style/SMGR.SectionHeader"
-            android:paddingTop="14dp"
-            android:paddingBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Bogies_Components_Item_Header_Medium"
+            android:textAlignment="center"
+            android:paddingTop="@dimen/frag_bogie_comp_txtView_paddingTop"
+            android:paddingBottom="@dimen/frag_bogie_comp_txtView_paddingBottom"
             android:text="@string/frag_bogie_components_txtView_document" />
 
         <View
@@ -41,11 +50,21 @@
             android:alpha="0.4"
             android:background="?attr/colorSurfaceVariant" />
 
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--
+        Контейнер контента и состояний.
+        FrameLayout укладывает дочерние элементы слоями;
+        видимость переключается из Kotlin (view.visibility = ...).
+    -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:clipToPadding="false"
             android:paddingStart="4dp"
             android:paddingEnd="4dp"
@@ -55,6 +74,7 @@
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2" />
 
+        <!-- ProgressBar центрируется по экрану через layout_gravity -->
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
@@ -62,12 +82,15 @@
             android:layout_gravity="center"
             android:visibility="gone" />
 
+        <!-- Блок "нет интернета" — тоже по центру -->
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/layoutNotConnection"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical"
+            android:padding="32dp"
             android:visibility="gone">
 
             <TextView
@@ -87,6 +110,6 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

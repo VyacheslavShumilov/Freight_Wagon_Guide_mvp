@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    NEW FILE — values-night/colors.xml
+    Переопределяем accent_badge_* для тёмной темы — там нужен оригинальный
+    яркий зелёный 09BF9B (на тёмном фоне светлый зелёный смотрится лучше).
+-->
+<resources>
+    <color name="accent_badge_bg">#1A09BF9B</color>
+    <color name="accent_badge_stroke">#4009BF9B</color>
+</resources>

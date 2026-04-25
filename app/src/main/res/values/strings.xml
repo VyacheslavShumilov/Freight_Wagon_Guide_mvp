@@ -490,7 +490,7 @@
     <string name="repeated_request_bnt">Повторный запрос</string>
     <string name="item_wagon_fav_txtView_release">Выпуск:</string>
     <string name="item_wagons_txtView_dash">-</string>
-    <string name="frag_bogie_components_txtView_document">Основные комплектующие тележки по\nРД ЦВ 052–2009 приложение Е\n(последнее изменение ЦВ 38–2020)</string>
+    <string name="frag_bogie_components_txtView_document">Основные комплектующие тележки по\nРД ЦВ 052–2009 приложение Е\n(последнее изменение документа 32 ЦВ 43–2025)</string>
 
     <!-- Strings used for activity_favorite -->
     <string name="txtView_capacity_short">Грузоп-ть:</string>
