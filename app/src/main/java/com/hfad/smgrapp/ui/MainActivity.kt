@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.animation.AnticipateOvershootInterpolator
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
@@ -15,22 +16,38 @@ import com.google.android.material.button.MaterialButton
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.ui.orv.OrvActivity
 import com.hfad.smgrapp.ui.smgr.wagons.WagonsActivity
+import com.hfad.smgrapp.update.UpdateManager
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var container: ConstraintLayout
     private var isExpanded = false
 
+    private lateinit var updateManager: UpdateManager
+
+    /**
+     * Launcher для In-App Updates. Регистрируется на этапе создания поля
+     * (до super.onCreate), потому что AndroidX требует регистрацию
+     * до вступления Activity в STARTED state.
+     */
+    private val updateLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.StartIntentSenderForResult()
+        ) { result ->
+            updateManager.handleUpdateResult(result.resultCode)
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Стартуем с compact-макета (только поезд + заголовок + подсказка).
-        // По тапу развернётся до полного activity_main_end.
         setContentView(R.layout.activity_main_start)
 
         container = findViewById(R.id.container)
 
-        // Тап по любой части экрана (кроме кнопок) раскрывает макет.
+        // ── In-App Updates ─────────────────────────────────────────
+        updateManager = UpdateManager(this, updateLauncher)
+        updateManager.checkForUpdate()
+
+        // ── Тап по экрану раскрывает макет ──────────────────────────
         container.setOnClickListener {
             if (!isExpanded) expandLayout()
         }
@@ -43,30 +60,25 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, OrvActivity::class.java))
         }
 
-        findViewById<MaterialButton>(R.id.btnCheckUpdate).setOnClickListener {
-            startActivity(
-                Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse("https://play.google.com/store/apps/details?id=com.hfad.smgrapp")
-                )
-            )
+        // CHANGED — кнопка "Обновить приложение" больше не нужна,
+        // обновление теперь через In-App Updates. Если в layout
+        // btnCheckUpdate ещё присутствует — её можно удалить из XML.
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (::updateManager.isInitialized) {
+            updateManager.checkUpdateInProgress()
         }
     }
 
-    /**
-     * RESTORED — анимация раскрытия макета при тапе.
-     *
-     * ConstraintSet.clone(this, R.layout.activity_main_end) читает
-     * constraints целевого макета и применяет их к текущему контейнеру.
-     * TransitionManager анимирует ВСЕ изменения constraints одновременно:
-     *   • поезд и дым уезжают на позицию из activity_main_end;
-     *   • текстовые блоки и кнопки плавно появляются благодаря Fade.
-     *
-     * AnticipateOvershootInterpolator — характерная "пружинистая" кривая,
-     * которая была в старой версии: сначала лёгкий откат назад, потом
-     * движение с перелётом и возврат. Даёт ощущение веса и инерции —
-     * уместно для поезда.
-     */
+    override fun onDestroy() {
+        if (::updateManager.isInitialized) {
+            updateManager.unregisterListener()
+        }
+        super.onDestroy()
+    }
+
     private fun expandLayout() {
         isExpanded = true
 
