@@ -2,7 +2,6 @@ package com.hfad.smgrapp.ui.smgr.favourite.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.smgrapp.databinding.ItemWagonFavouriteBinding
 import com.hfad.smgrapp.model.WagonsFavourite
@@ -29,11 +28,8 @@ class AdapterWagonFavourite(
                 yearEndReleaseTextView.text = wagonsFavourite.yearEndOfRelease
                 serviceLifeTextView.text = wagonsFavourite.serviceLife
 
-                // Сбрасываем трансформации — ViewHolder мог быть переиспользован
-                // после анимации удаления предыдущей карточки.
-                itemView.alpha = 1f
-                itemView.scaleX = 1f
-                itemView.scaleY = 1f
+                // Сброс alpha/scaleX/scaleY больше не нужен:
+                // ItemAnimator сам управляет трансформациями ViewHolder'а.
                 deleteFavouriteWagonBtn.isEnabled = true
 
                 deleteFavouriteWagonBtn.setOnClickListener {
@@ -43,18 +39,23 @@ class AdapterWagonFavourite(
         }
 
         /**
-         * Корректная анимация удаления:
-         *  1. Сразу удаляем из БД (IO-запрос в activity).
-         *  2. Блокируем кнопку от повторных нажатий.
-         *  3. Анимируем карточку: fade + scale down (220ms, Material-стандарт).
-         *  4. По завершении — notifyItemRemoved(pos): это активирует
-         *     DefaultItemAnimator, который плавно сдвинет оставшиеся карточки.
-         *  5. Сбрасываем трансформации ViewHolder'а для безопасного
-         *     переиспользования в будущем.
+         * Удаление карточки из избранного.
          *
-         * FIXED — используется adapterPosition вместо bindingAdapterPosition:
-         * последний доступен только с RecyclerView 1.2.0+. Для этого проекта
-         * (один простой адаптер без ConcatAdapter) семантика идентична.
+         * История:
+         *  v1: ручной itemView.animate() (fade + scale) + notifyItemRemoved.
+         *      Проблема: DefaultItemAnimator при notifyItemRemoved тоже
+         *      стартовал свою анимацию (fade + slide), две анимации
+         *      конфликтовали → "моргание" в момент перехода.
+         *
+         *  v2 (текущая): анимация полностью делегирована ItemAnimator'у
+         *      RecyclerView. Адаптер только обновляет данные и зовёт
+         *      notifyItemRemoved — DefaultItemAnimator делает плавный
+         *      fade + сдвиг соседей за 250ms (Material-стандарт, как
+         *      в Gmail/Telegram).
+         *
+         * Защита от двойного нажатия: deleteFavouriteWagonBtn.isEnabled = false
+         * блокирует кнопку до полного удаления, isEnabled = true в bindView
+         * восстанавливает кнопку при перевязке ViewHolder'а.
          */
         private fun animateAndDelete(wagonsFavourite: WagonsFavourite) {
             @Suppress("DEPRECATION")
@@ -63,38 +64,17 @@ class AdapterWagonFavourite(
 
             binding.deleteFavouriteWagonBtn.isEnabled = false
 
-            // БД-удаление параллельно анимации
+            // БД-удаление — параллельно с анимацией ItemAnimator'а
             listener.onDeleteFavourite(wagonsFavourite)
 
-            itemView.animate()
-                .alpha(0f)
-                .scaleX(0.85f)
-                .scaleY(0.85f)
-                .setDuration(220L)
-                .setInterpolator(AccelerateDecelerateInterpolator())
-                .withEndAction {
-                    @Suppress("DEPRECATION")
-                    val current = adapterPosition
+            if (pos < wagonsFavourites.size) {
+                wagonsFavourites.removeAt(pos)
+                notifyItemRemoved(pos)
+            }
 
-                    // Сброс трансформаций — обязательно ПЕРЕД notifyItemRemoved,
-                    // чтобы освобождаемый ViewHolder не ушёл в пул "битым".
-                    itemView.alpha = 1f
-                    itemView.scaleX = 1f
-                    itemView.scaleY = 1f
-                    binding.deleteFavouriteWagonBtn.isEnabled = true
-
-                    if (current != RecyclerView.NO_POSITION &&
-                        current < wagonsFavourites.size
-                    ) {
-                        wagonsFavourites.removeAt(current)
-                        notifyItemRemoved(current)
-                    }
-
-                    if (wagonsFavourites.isEmpty()) {
-                        listener.notFavourites()
-                    }
-                }
-                .start()
+            if (wagonsFavourites.isEmpty()) {
+                listener.notFavourites()
+            }
         }
     }
 

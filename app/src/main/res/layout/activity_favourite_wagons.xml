@@ -13,10 +13,26 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
+    <!--
+    CHANGED — recyclerView.
+    1. layout_height теперь match_parent (вместо wrap_content) — чтобы
+       список занимал всю доступную высоту, иначе при удалении
+       последнего видимого элемента RecyclerView "схлопывается" вверх,
+       создавая впечатление моргания.
+    2. animateLayoutChanges="false" на RecyclerView — отключает
+       LayoutTransition родителя, который дублирует анимацию удаления
+       и создаёт конфликт с ViewPropertyAnimator из адаптера.
+-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="false"
+        android:clipToPadding="false"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="16dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2" />
 
