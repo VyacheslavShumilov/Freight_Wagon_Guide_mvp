@@ -119,9 +119,7 @@ class WagonsActivity : AppCompatActivity(),
         textView.text = "Модели вагонов"
         clickBackBtn.setOnClickListener { onBackPressed() }
         clickHomeBtn.visibility = View.VISIBLE
-        clickHomeBtn.setImageDrawable(
-            resources.getDrawable(R.drawable.ic_favourite_list, theme)
-        )
+        clickHomeBtn.setImageResource(R.drawable.ic_train)
         clickHomeBtn.setOnClickListener {
             startActivity(
                 Intent(this@WagonsActivity, FavouriteWagonsActivity::class.java)
