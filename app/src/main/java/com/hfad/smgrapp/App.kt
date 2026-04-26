@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.hfad.smgrapp.dao.AppDatabase
 import com.hfad.smgrapp.service.ServicesLocator
 
-class App: Application() {
+class App : Application() {
 
     private lateinit var database: AppDatabase
 
@@ -15,12 +15,18 @@ class App: Application() {
         super.onCreate()
         servicesLocator = ServicesLocator()
 
-        database = Room.databaseBuilder(applicationContext,
+        // CHANGED — добавлена миграция 1→2 для расширения WagonsFavourite.
+        // Имя БД "wagons_database" сохранено без изменений.
+        database = Room.databaseBuilder(
+            applicationContext,
             AppDatabase::class.java,
-            "wagons_database").build()
+            "wagons_database"
+        )
+            .addMigrations(AppDatabase.MIGRATION_1_2)
+            .build()
     }
 
-    fun getDatabase():AppDatabase{
+    fun getDatabase(): AppDatabase {
         return database
     }
 }

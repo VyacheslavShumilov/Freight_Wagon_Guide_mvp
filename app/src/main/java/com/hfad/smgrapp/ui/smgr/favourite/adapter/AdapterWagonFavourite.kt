@@ -35,6 +35,12 @@ class AdapterWagonFavourite(
                 deleteFavouriteWagonBtn.setOnClickListener {
                     animateAndDelete(wagonsFavourite)
                 }
+                // NEW — клик по карточке открывает экран параметров вагона.
+                // Кнопка удаления обрабатывает свой клик отдельно (см. выше) —
+                // тапы по корзине не пробрасываются в карточку.
+                root.setOnClickListener {
+                    listener.onClickFavourite(wagonsFavourite)
+                }
             }
         }
 
@@ -94,5 +100,6 @@ class AdapterWagonFavourite(
     interface OnClickListener {
         fun onDeleteFavourite(wagonsFavourite: WagonsFavourite)
         fun notFavourites()
+        fun onClickFavourite(wagonsFavourite: WagonsFavourite)  // NEW
     }
 }

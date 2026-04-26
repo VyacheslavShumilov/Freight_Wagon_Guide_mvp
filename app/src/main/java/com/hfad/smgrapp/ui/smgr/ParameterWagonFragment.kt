@@ -165,7 +165,28 @@ class ParameterWagonFragment(var wagons: Wagons) : Fragment() {
                 wagons.calibration,
                 wagons.bogie,
                 wagons.size,
-                wagons.serviceLife
+                wagons.serviceLife,
+                // NEW — все ремонты, пробеги, инвентарные номера
+                wagonLong = wagons.long,
+                inventoryNum = wagons.inventoryNum,
+                typeOfOwnCar = wagons.typeOfOwnCar,
+                drAftRelease = wagons.drAftRelease,
+                drAftDrTo1Kr = wagons.drAftDrTo1Kr,
+                drAftDraft1Kr = wagons.drAftDraft1Kr,
+                drAftKr = wagons.drAftKr,
+                krAftRelease = wagons.krAftRelease,
+                krAftKr = wagons.krAftKr,
+                drAftReleaseRepProbKm = wagons.drAftReleaseRepProbKm,
+                drAftReleaseRepYears = wagons.drAftReleaseRepYears,
+                drAftDrRepProbKm = wagons.drAftDrRepProbKm,
+                drAftDrRepProbYears = wagons.drAftDrRepProbYears,
+                drAftKrRepProbKm = wagons.drAftKrRepProbKm,
+                drAftKrRepProbYears = wagons.drAftKrRepProbYears,
+                drAftKrpRepProbKm = wagons.drAftKrpRepProbKm,
+                drAftKrpRepProbYears = wagons.drAftKrpRepProbYears,
+                continueTu = wagons.continueTu,
+                drAftKrpTu = wagons.drAftKrpTu,
+                krAftKrpTu = wagons.krAftKrpTu
             )
             lifecycleScope.launch(Dispatchers.IO) {
                 appDao.insertWagon(toInsert)
