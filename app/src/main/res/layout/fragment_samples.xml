@@ -1,365 +1,258 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    REDESIGN — fragment_samples.xml
+
+    Изменения:
+    1. Корень был ConstraintLayout с попарными привязками карточек
+       cardView2.constraintTop_toBottomOf=cardView1. Перешли на GridLayout
+       с 2 колонками — карточки сами выстраиваются, привязки не нужны.
+    2. Решена проблема "плохой скролл": ScrollView + GridLayout не имеют
+       прослойки constraints, которые перехватывали жесты — теперь
+       прокрутка работает на любом месте экрана.
+    3. Стиль карточек переведён на SMGR.Orv.Tile (тот же, что в
+       fragment_orv_list и fragment_bogie_components):
+         • тонкая граница colorSurfaceVariant 1dp
+         • радиус 14dp
+         • elevation 0dp
+         • воздух 6dp между карточками
+       Это даёт визуальную связь со всеми остальными ОРВ-экранами.
+    4. Текст карточек переведён на SMGR.Orv.Tile.Title (Lato bold) —
+       сейчас был старый Bogies_Components_Item_Header.
+-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".ui.orv.SamplesFragment"
-    android:fitsSystemWindows="true">    <!-- ← добавить -->>
+    android:layout_height="match_parent"
+    android:background="?attr/colorMainBackground"
+    tools:context=".ui.orv.SamplesFragment">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:paddingBottom="100dp">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.gridlayout.widget.GridLayout
             android:id="@+id/constrainSamples"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="16dp"
+            app:columnCount="2">
 
+            <!-- 1. Абсолютный шаблон -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewAbs"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="@dimen/frag_samples_cardView_width"
-                android:layout_height="@dimen/frag_samples_cardView_height"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintEnd_toStartOf="@+id/cardViewVpg"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                style="@style/SMGR.Orv.Tile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.Orv.Tile.Content">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imageAbs"
-                        android:layout_width="@dimen/cardView_imageView_width"
-                        android:layout_height="@dimen/cardView_imageView_height"
-                        android:layout_marginTop="3dp"
-                        android:src="@drawable/sample_abs"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="64dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sample_abs" />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
-                        android:text="@string/txtView_samples_1"
-                        app:layout_constraintEnd_toEndOf="@+id/imageAbs"
-                        app:layout_constraintStart_toStartOf="@+id/imageAbs"
-                        app:layout_constraintTop_toBottomOf="@+id/imageAbs" />
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
+                        android:text="@string/txtView_samples_1" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 2. ВПГ -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewVpg"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="@dimen/frag_samples_cardView_width"
-                android:layout_height="@dimen/frag_samples_cardView_height"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintBottom_toBottomOf="@+id/cardViewAbs"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cardViewAbs"
-                app:layout_constraintTop_toTopOf="@+id/cardViewAbs">
+                style="@style/SMGR.Orv.Tile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.Orv.Tile.Content">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imageVpg"
-                        android:layout_width="@dimen/cardView_imageView_width"
-                        android:layout_height="@dimen/cardView_imageView_height"
-                        android:src="@drawable/sample_vpg"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="64dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sample_vpg" />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
-                        app:layout_constraintEnd_toEndOf="@+id/imageVpg"
-                        app:layout_constraintStart_toStartOf="@+id/imageVpg"
-                        app:layout_constraintTop_toBottomOf="@+id/imageVpg"
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
                         android:text="@string/txtView_samples_2" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 3. Толщина гребня -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewThick"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="@dimen/frag_samples_cardView_width"
-                android:layout_height="@dimen/frag_samples_cardView_height"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintEnd_toStartOf="@+id/cardViewComb"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintTop_toBottomOf="@+id/cardViewAbs"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="8dp">
+                style="@style/SMGR.Orv.Tile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.Orv.Tile.Content">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imageThick"
-                        android:layout_width="@dimen/cardView_imageView_width"
-                        android:layout_height="@dimen/cardView_imageView_height"
-                        android:layout_marginTop="3dp"
-                        android:src="@drawable/sample_thick"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="64dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sample_thick" />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
-                        android:text="@string/txtView_samples_3"
-                        app:layout_constraintEnd_toEndOf="@+id/imageThick"
-                        app:layout_constraintStart_toStartOf="@+id/imageThick"
-                        app:layout_constraintTop_toBottomOf="@+id/imageThick" />
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
+                        android:text="@string/txtView_samples_3" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 4. Комбинированный -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewComb"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="@dimen/frag_samples_cardView_width"
-                android:layout_height="@dimen/frag_samples_cardView_height"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintBottom_toBottomOf="@+id/cardViewThick"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cardViewThick"
-                app:layout_constraintTop_toTopOf="@+id/cardViewThick">
+                style="@style/SMGR.Orv.Tile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.Orv.Tile.Content">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imageVComb"
-                        android:layout_width="@dimen/cardView_imageView_width"
-                        android:layout_height="@dimen/cardView_imageView_height"
-                        android:src="@drawable/sample_comb"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:id="@+id/imageComb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="64dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sample_comb" />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
-                        app:layout_constraintEnd_toEndOf="@+id/imageVComb"
-                        app:layout_constraintStart_toStartOf="@+id/imageVComb"
-                        app:layout_constraintTop_toBottomOf="@+id/imageVComb"
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
                         android:text="@string/txtView_samples_4" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 5. Скоба -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewBrace"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="@dimen/frag_samples_cardView_width"
-                android:layout_height="@dimen/frag_samples_cardView_height"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintEnd_toStartOf="@+id/cardViewProf"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintTop_toBottomOf="@+id/cardViewThick"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="8dp">
+                style="@style/SMGR.Orv.Tile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.Orv.Tile.Content">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imageBrace"
-                        android:layout_width="@dimen/cardView_imageView_width"
-                        android:layout_height="@dimen/cardView_imageView_height"
-                        android:layout_marginTop="3dp"
-                        android:src="@drawable/sample_brace"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="64dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sample_brace" />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
-                        android:text="@string/txtView_samples_5"
-                        app:layout_constraintEnd_toEndOf="@+id/imageBrace"
-                        app:layout_constraintStart_toStartOf="@+id/imageBrace"
-                        app:layout_constraintTop_toBottomOf="@+id/imageBrace" />
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
+                        android:text="@string/txtView_samples_5" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 6. Профиль -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewProf"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="@dimen/frag_samples_cardView_width"
-                android:layout_height="@dimen/frag_samples_cardView_height"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintBottom_toBottomOf="@+id/cardViewBrace"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cardViewBrace"
-                app:layout_constraintTop_toTopOf="@+id/cardViewBrace">
+                style="@style/SMGR.Orv.Tile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.Orv.Tile.Content">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imageProf"
-                        android:layout_width="@dimen/cardView_imageView_width"
-                        android:layout_height="@dimen/cardView_imageView_height"
-                        android:src="@drawable/sample_prof"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="64dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sample_prof" />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
-                        app:layout_constraintEnd_toEndOf="@+id/imageProf"
-                        app:layout_constraintStart_toStartOf="@+id/imageProf"
-                        app:layout_constraintTop_toBottomOf="@+id/imageProf"
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
                         android:text="@string/txtView_samples_6" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
-
+            <!-- 7. T873 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardView873"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="@dimen/frag_samples_cardView_width"
-                android:layout_height="@dimen/frag_samples_cardView_height"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintEnd_toStartOf="@+id/cardViewHeight"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintTop_toBottomOf="@+id/cardViewBrace"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="8dp">
+                style="@style/SMGR.Orv.Tile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.Orv.Tile.Content">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/image873"
-                        android:layout_width="@dimen/cardView_imageView_width"
-                        android:layout_height="@dimen/cardView_imageView_height"
-                        android:layout_marginTop="3dp"
-                        android:src="@drawable/sample_873"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="64dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sample_873" />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
-                        android:text="@string/txtView_samples_7"
-                        app:layout_constraintEnd_toEndOf="@+id/image873"
-                        app:layout_constraintStart_toStartOf="@+id/image873"
-                        app:layout_constraintTop_toBottomOf="@+id/image873" />
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
+                        android:text="@string/txtView_samples_7" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 8. Высота гребня -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewHeight"
-                style="@style/Base.Widget.Material3.CardView.CustomCardView"
-                android:layout_width="@dimen/frag_samples_cardView_width"
-                android:layout_height="@dimen/frag_samples_cardView_height"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintBottom_toBottomOf="@+id/cardView873"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cardView873"
-                app:layout_constraintTop_toTopOf="@+id/cardView873">
+                style="@style/SMGR.Orv.Tile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="@dimen/txtView_marginBottom"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                <androidx.appcompat.widget.LinearLayoutCompat style="@style/SMGR.Orv.Tile.Content">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imageHeight"
-                        android:layout_width="@dimen/cardView_imageView_width"
-                        android:layout_height="@dimen/cardView_imageView_height"
-                        android:src="@drawable/sample_height"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="64dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sample_height" />
 
-                    <TextView
-                        style="@style/Bogies_Components_Item_Header"
-                        app:layout_constraintEnd_toEndOf="@+id/imageHeight"
-                        app:layout_constraintStart_toStartOf="@+id/imageHeight"
-                        app:layout_constraintTop_toBottomOf="@+id/imageHeight"
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SMGR.Orv.Tile.Title"
                         android:text="@string/txtView_samples_8" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </com.google.android.material.card.MaterialCardView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.gridlayout.widget.GridLayout>
 
     </ScrollView>
 
