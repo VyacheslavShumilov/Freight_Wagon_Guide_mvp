@@ -4,6 +4,8 @@ import android.app.Activity
 import android.util.Log
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
+import com.google.android.gms.common.ConnectionResult
+import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -13,53 +15,55 @@ import com.google.android.play.core.install.InstallStateUpdatedListener
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
+import com.hfad.smgrapp.BuildConfig
 import com.hfad.smgrapp.R
 
 /**
  * Менеджер обновлений приложения через Google Play In-App Updates API.
  *
- * Стратегия — FLEXIBLE update:
- *   • При запуске проверяем наличие новой версии в Google Play.
- *   • Если есть — стартуем фоновую загрузку (пользователь продолжает работать).
- *   • После окончания загрузки показываем Snackbar с кнопкой "Перезапустить".
- *   • Если пользователь сворачивает приложение во время загрузки —
- *     onResume → checkUpdateInProgress() ловит готовность.
- *
- * Использование в MainActivity:
- *
- *     private lateinit var updateManager: UpdateManager
- *
- *     // ВАЖНО: launcher нужно создавать в onCreate ДО updateManager,
- *     // на этапе инициализации — иначе AndroidX упадёт с
- *     // "LifecycleOwners must call register before they are STARTED".
- *     private val updateLauncher =
- *         registerForActivityResult(
- *             ActivityResultContracts.StartIntentSenderForResult()
- *         ) { result -> updateManager.handleUpdateResult(result.resultCode) }
- *
- *     override fun onCreate(savedInstanceState: Bundle?) {
- *         super.onCreate(savedInstanceState)
- *         setContentView(...)
- *         updateManager = UpdateManager(this, updateLauncher)
- *         updateManager.checkForUpdate()
- *     }
- *
- *     override fun onResume() {
- *         super.onResume()
- *         updateManager.checkUpdateInProgress()
- *     }
- *
- *     override fun onDestroy() {
- *         updateManager.unregisterListener()
- *         super.onDestroy()
- *     }
+ * Защитные механизмы:
+ *   • isUpdateSupported — проверяем, есть ли Google Play Services на устройстве.
+ *     На AOSP-эмуляторах без Play они отсутствуют, и API In-App Updates
+ *     зависает без ответа. Если Play нет — менеджер сразу превращается
+ *     в no-op, ничего не блокирует.
+ *   • Debug-сборки тоже пропускаем: In-App Updates работают только для
+ *     APK, скачанных из Play Store. На debug-сборке проверка обречена.
+ *   • Все вызовы Play Core обёрнуты в try-catch — на случай экзотических
+ *     состояний устройств (Huawei AppGallery, Russian forks Android и т.п.).
  */
 class UpdateManager(
     private val activity: Activity,
     private val updateLauncher: ActivityResultLauncher<IntentSenderRequest>
 ) {
-    private val appUpdateManager: AppUpdateManager =
-        AppUpdateManagerFactory.create(activity)
+
+    /**
+     * Условие, при котором имеет смысл вообще обращаться к Play Core.
+     * • debug = false (debug-APK не из Play, обновлять нечего)
+     * • Google Play Services установлены и работают
+     */
+    private val isUpdateSupported: Boolean by lazy {
+        if (BuildConfig.DEBUG) {
+            Log.i(TAG, "Debug-сборка — In-App Updates пропущены")
+            return@lazy false
+        }
+        val status = GoogleApiAvailability.getInstance()
+            .isGooglePlayServicesAvailable(activity)
+        if (status != ConnectionResult.SUCCESS) {
+            Log.i(TAG, "Google Play Services недоступны (status=$status) — In-App Updates пропущены")
+            return@lazy false
+        }
+        true
+    }
+
+    private val appUpdateManager: AppUpdateManager? by lazy {
+        if (!isUpdateSupported) null
+        else try {
+            AppUpdateManagerFactory.create(activity)
+        } catch (e: Exception) {
+            Log.w(TAG, "Не удалось создать AppUpdateManager: ${e.message}")
+            null
+        }
+    }
 
     private val installListener = InstallStateUpdatedListener { state ->
         when (state.installStatus()) {
@@ -71,34 +75,51 @@ class UpdateManager(
     }
 
     init {
-        appUpdateManager.registerListener(installListener)
+        try {
+            appUpdateManager?.registerListener(installListener)
+        } catch (e: Exception) {
+            Log.w(TAG, "registerListener: ${e.message}")
+        }
     }
 
     /** Главная точка входа. Вызвать в onCreate активити. */
     fun checkForUpdate() {
-        appUpdateManager.appUpdateInfo
-            .addOnSuccessListener { info -> handleUpdateInfo(info) }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Не удалось проверить обновление: ${e.message}")
-                // Молча игнорируем — обновление это бонус, не критика UX.
-            }
+        val mgr = appUpdateManager ?: return
+        try {
+            mgr.appUpdateInfo
+                .addOnSuccessListener { info -> handleUpdateInfo(info) }
+                .addOnFailureListener { e ->
+                    Log.w(TAG, "Не удалось проверить обновление: ${e.message}")
+                }
+        } catch (e: Exception) {
+            Log.w(TAG, "checkForUpdate: ${e.message}")
+        }
     }
 
     /**
      * Вызывается из onResume активити.
      * Если пользователь свернул приложение во время скачивания —
-     * проверяем, не завершилась ли загрузка в фоне, чтобы показать Snackbar.
+     * проверяем, не завершилась ли загрузка в фоне.
      */
     fun checkUpdateInProgress() {
-        appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
-            if (info.installStatus() == InstallStatus.DOWNLOADED) {
-                showCompleteUpdateSnackbar()
+        val mgr = appUpdateManager ?: return
+        try {
+            mgr.appUpdateInfo.addOnSuccessListener { info ->
+                if (info.installStatus() == InstallStatus.DOWNLOADED) {
+                    showCompleteUpdateSnackbar()
+                }
             }
+        } catch (e: Exception) {
+            Log.w(TAG, "checkUpdateInProgress: ${e.message}")
         }
     }
 
     fun unregisterListener() {
-        appUpdateManager.unregisterListener(installListener)
+        try {
+            appUpdateManager?.unregisterListener(installListener)
+        } catch (e: Exception) {
+            Log.w(TAG, "unregisterListener: ${e.message}")
+        }
     }
 
     fun handleUpdateResult(resultCode: Int) {
@@ -120,20 +141,17 @@ class UpdateManager(
         }
     }
 
-    /**
-     * FIXED — используется новый API Play Core 2.x:
-     * appUpdateManager.startUpdateFlow(info, launcher, options).
-     *
-     * Старый startUpdateFlowForResult(info, type, activity, requestCode)
-     * deprecated и предполагал onActivityResult, который тоже deprecated.
-     * Новый API принимает launcher напрямую — никаких intentSender.
-     */
     private fun startFlexibleUpdate(info: AppUpdateInfo) {
-        appUpdateManager.startUpdateFlowForResult(
-            info,
-            updateLauncher,
-            AppUpdateOptions.newBuilder(AppUpdateType.FLEXIBLE).build()
-        )
+        val mgr = appUpdateManager ?: return
+        try {
+            mgr.startUpdateFlowForResult(
+                info,
+                updateLauncher,
+                AppUpdateOptions.newBuilder(AppUpdateType.FLEXIBLE).build()
+            )
+        } catch (e: Exception) {
+            Log.e(TAG, "startFlexibleUpdate: ${e.message}")
+        }
     }
 
     private fun showCompleteUpdateSnackbar() {
@@ -143,7 +161,7 @@ class UpdateManager(
             Snackbar.LENGTH_INDEFINITE
         ).apply {
             setAction("Перезапустить") {
-                appUpdateManager.completeUpdate()
+                appUpdateManager?.completeUpdate()
             }
             setActionTextColor(activity.getColor(R.color.main_color_dark))
             show()
