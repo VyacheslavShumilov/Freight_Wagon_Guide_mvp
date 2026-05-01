@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.28" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <!-- ── Дым ───────────────────────────────────────────────── -->
     <FrameLayout
@@ -114,15 +114,15 @@
     <!-- ── Поезд ─────────────────────────────────────────────── -->
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/titleImage"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/main_activity_image_width"
         android:layout_height="@dimen/main_activity_image_height"
         android:background="?attr/colorMainBackground"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         android:src="@drawable/title_image"
-        android:layout_marginTop="160dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/containerSmgrDate" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleAccent" />
 
     <!-- ── Подсказка (скрыта после раскрытия) ────────────────── -->
     <TextView
@@ -141,7 +141,7 @@
         style="@style/Widget.Material3.Button.Main_Activity_Btn"
         android:layout_width="@dimen/main_activity_btn_width"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:text="@string/btn_enter_smgr"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,10 +153,11 @@
         style="@style/Widget.Material3.Button.Main_Activity_Btn"
         android:layout_width="@dimen/main_activity_btn_width"
         android:layout_height="50dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="@string/btn_enter_orv"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnToSmgr" />
 
 

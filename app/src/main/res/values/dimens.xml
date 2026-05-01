@@ -15,7 +15,7 @@
     <dimen name="main_activity_btn_width">300dp</dimen>
     <dimen name="main_activity_bnt_corner_radius">15dp</dimen>
     <dimen name="main_activity_image_width">300dp</dimen>
-    <dimen name="main_activity_image_height">250dp</dimen>
+    <dimen name="main_activity_image_height">180dp</dimen>
     <dimen name="main_activity_name_app_padding_top">25dp</dimen>
     <dimen name="main_activity_txt_padding_top">15dp</dimen>
     <dimen name="main_activity_space_btn_padding">15dp</dimen>

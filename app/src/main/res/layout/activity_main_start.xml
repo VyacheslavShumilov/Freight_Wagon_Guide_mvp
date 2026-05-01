@@ -44,8 +44,8 @@
         style="@style/SMGR.Main.HeroTitle"
         android:text="грузовых вагонов"
         android:textColor="?attr/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
     <!-- ── Описание (скрыто до раскрытия) ─────────────────────── -->
@@ -92,7 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.28" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <!-- ── Дым (Lottie) ───────────────────────────────────────── -->
     <FrameLayout
@@ -114,19 +114,21 @@
     </FrameLayout>
 
     <!-- ── Поезд (центральное изображение) ────────────────────── -->
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/titleImage"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/main_activity_image_height"
-        android:background="?attr/colorMainBackground"
-        android:scaleType="centerCrop"
-        android:src="@drawable/title_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- ── Подсказка "Нажми на поезд!" ────────────────────────── -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/titleImage"
+        android:layout_width="@dimen/main_activity_image_width"
+        android:layout_height="@dimen/main_activity_image_height"
+        android:background="?attr/colorMainBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/title_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleAccent"
+         />
+
     <TextView
         android:id="@+id/clickToStart"
         android:layout_width="wrap_content"
