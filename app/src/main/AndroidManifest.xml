@@ -17,6 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SMGRApp"
         tools:targetApi="31">
+
+        <!-- AdMob App ID — обязателен для инициализации SDK -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9715390414515402~5113664836" />
         <activity
             android:name=".ui.HelpActivity"
             android:exported="false">

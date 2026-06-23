@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.animation.AnticipateOvershootInterpolator
+import android.widget.FrameLayout
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -12,7 +13,11 @@ import androidx.transition.ChangeBounds
 import androidx.transition.Fade
 import androidx.transition.TransitionManager
 import androidx.transition.TransitionSet
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import com.google.android.material.button.MaterialButton
+import com.hfad.smgrapp.BuildConfig
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.ui.orv.OrvActivity
 import com.hfad.smgrapp.ui.smgr.wagons.WagonsActivity
@@ -24,6 +29,9 @@ class MainActivity : AppCompatActivity() {
     private var isExpanded = false
 
     private lateinit var updateManager: UpdateManager
+
+    // Ссылка на баннер AdMob — нужна для управления жизненным циклом
+    private var adView: AdView? = null
 
     /**
      * Launcher для In-App Updates. Регистрируется на этапе создания поля
@@ -63,6 +71,9 @@ class MainActivity : AppCompatActivity() {
         // CHANGED — кнопка "Обновить приложение" больше не нужна,
         // обновление теперь через In-App Updates. Если в layout
         // btnCheckUpdate ещё присутствует — её можно удалить из XML.
+
+        // ── Загружаем баннерную рекламу ─────────────────────────────
+        loadBannerAd()
     }
 
     override fun onResume() {
@@ -70,13 +81,50 @@ class MainActivity : AppCompatActivity() {
         if (::updateManager.isInitialized) {
             updateManager.checkUpdateInProgress()
         }
+        // Возобновляем баннер при возврате в активити
+        adView?.resume()
+    }
+
+    override fun onPause() {
+        // Приостанавливаем баннер, пока активити не видна
+        adView?.pause()
+        super.onPause()
     }
 
     override fun onDestroy() {
+        // Освобождаем ресурсы баннера при уничтожении активити
+        adView?.destroy()
         if (::updateManager.isInitialized) {
             updateManager.unregisterListener()
         }
         super.onDestroy()
+    }
+
+    /**
+     * Создаёт и загружает адаптивный баннер AdMob.
+     * В debug-сборке используется тестовый ID — переключается автоматически.
+     */
+    private fun loadBannerAd() {
+        // Тестовый ID для отладки, реальный — для релиза
+        val adUnitId = if (BuildConfig.DEBUG) {
+            "ca-app-pub-3940256099942544/6300978111"
+        } else {
+            "ca-app-pub-9715390414515402/8078293386"
+        }
+
+        // Ширина контейнера в dp — нужна для расчёта адаптивного размера
+        val adWidth = (resources.displayMetrics.widthPixels / resources.displayMetrics.density).toInt()
+        val adSize = AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth)
+
+        adView = AdView(this).apply {
+            this.adUnitId = adUnitId
+            setAdSize(adSize)
+        }
+
+        // Добавляем баннер в контейнер и запрашиваем рекламу
+        val adContainer = findViewById<FrameLayout>(R.id.adContainer)
+        adContainer.addView(adView)
+        adView?.loadAd(AdRequest.Builder().build())
     }
 
     private fun expandLayout() {
