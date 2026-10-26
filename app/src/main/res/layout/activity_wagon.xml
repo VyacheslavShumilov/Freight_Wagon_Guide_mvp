@@ -26,6 +26,23 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
+    <!-- Кнопка «Посмотреть в 3D» — видна, если для рода вагона есть раздел
+         на сайте (Wagons3dLauncher.anchorFor) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnView3d"
+        style="@style/SMGR.Button.View3d"
+        android:text="@string/wagons3d_btn_view"
+        android:visibility="gone" />
+
+    <!-- Баннер AdMob (BannerAdHelper): GONE до onAdLoaded -->
+    <FrameLayout
+        android:id="@+id/ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
     <!-- Divider above bottom nav -->
     <View
         android:layout_width="match_parent"

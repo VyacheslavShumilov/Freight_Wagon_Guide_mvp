@@ -17,11 +17,14 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.card.MaterialCardView
 import com.hfad.smgrapp.BuildConfig
 import com.hfad.smgrapp.R
+import com.hfad.smgrapp.review.AppReviewManager
 import com.hfad.smgrapp.ui.orv.OrvActivity
 import com.hfad.smgrapp.ui.smgr.wagons.WagonsActivity
 import com.hfad.smgrapp.update.UpdateManager
+import com.hfad.smgrapp.web.Wagons3dLauncher
 
 class MainActivity : AppCompatActivity() {
 
@@ -55,6 +58,9 @@ class MainActivity : AppCompatActivity() {
         updateManager = UpdateManager(this, updateLauncher)
         updateManager.checkForUpdate()
 
+        // ── In-App Review — просим оценку на 5-м, 15-м, 30-м запуске ─
+        AppReviewManager(this).maybeRequestReview(this)
+
         // ── Тап по экрану раскрывает макет ──────────────────────────
         container.setOnClickListener {
             if (!isExpanded) expandLayout()
@@ -66,6 +72,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<MaterialButton>(R.id.btnToOrv).setOnClickListener {
             startActivity(Intent(this, OrvActivity::class.java))
+        }
+
+        findViewById<MaterialCardView>(R.id.card3dWagons).setOnClickListener {
+            Wagons3dLauncher.open(this)
         }
 
         // CHANGED — кнопка "Обновить приложение" больше не нужна,

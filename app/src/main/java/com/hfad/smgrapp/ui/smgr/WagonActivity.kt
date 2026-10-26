@@ -8,13 +8,16 @@ package com.hfad.smgrapp.ui.smgr
 //   - Bottom nav tap changes ViewPager2 page
 
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.hfad.smgrapp.R
+import com.hfad.smgrapp.ads.BannerAdHelper
 import com.hfad.smgrapp.ui.smgr.adapter_view_pager.ViewPagerAdapter
 import com.hfad.smgrapp.databinding.ActivityWagonBinding
 import com.hfad.smgrapp.model.Wagons
+import com.hfad.smgrapp.web.Wagons3dLauncher
 
 class WagonActivity : FragmentActivity() {
 
@@ -43,6 +46,14 @@ class WagonActivity : FragmentActivity() {
         bottomNav = binding.bottomNav
 
         viewPager.adapter = adapter
+
+        // ── Кнопка «Посмотреть в 3D» — только для родов, что есть на сайте ──
+        val anchor3d = Wagons3dLauncher.anchorFor(wagons.model)
+        binding.btnView3d.visibility = if (anchor3d != null) View.VISIBLE else View.GONE
+        binding.btnView3d.setOnClickListener { Wagons3dLauncher.open(this, anchor3d) }
+
+        // ── Баннер AdMob внизу экрана ──
+        BannerAdHelper.attach(this, binding.adContainer)
 
         // Disable swipe (bottom nav is the navigation mechanism)
         // Comment out this line to re-enable swipe if desired:

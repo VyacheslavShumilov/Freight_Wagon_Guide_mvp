@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.hfad.smgrapp.R
 import com.hfad.smgrapp.databinding.FragmentBogieBinding
+import com.hfad.smgrapp.web.Wagons3dLauncher
 
 class BogieFragment : Fragment() {
     private lateinit var binding: FragmentBogieBinding
@@ -35,6 +36,10 @@ class BogieFragment : Fragment() {
                 (requireActivity() as OrvActivity).finish()
             }
             toolbar.clickHomeBtn.setImageResource(R.drawable.ic_baseline_home)
+
+            btnView3d.setOnClickListener {
+                Wagons3dLauncher.open(requireContext(), Wagons3dLauncher.ANCHOR_BOGIE)
+            }
 // если в drawable уже есть fill=white — tint применится из stylesheet'а toolbar.xml
 // (app:tint="?attr/colorOnSurface")
         }

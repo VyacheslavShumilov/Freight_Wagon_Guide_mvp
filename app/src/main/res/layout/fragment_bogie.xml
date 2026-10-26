@@ -12,6 +12,11 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnView3d"
+        style="@style/SMGR.Button.View3d"
+        android:text="@string/wagons3d_btn_view" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

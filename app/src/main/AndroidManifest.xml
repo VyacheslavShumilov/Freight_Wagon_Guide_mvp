@@ -5,6 +5,18 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SEND_EMAIL" />
 
+    <!-- Android 11+: видимость браузеров для Custom Tabs (Wagons3dLauncher) -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+    </queries>
+
 
     <application
         android:name=".App"

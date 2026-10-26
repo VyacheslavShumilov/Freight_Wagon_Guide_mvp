@@ -816,4 +816,28 @@
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginBottom">4dp</item>
     </style>
+
+    <!--
+        NEW — SMGR.Button.View3d
+        Кнопка «Посмотреть в 3D» (WagonActivity, BogieFragment).
+        Outlined на подложке colorSurface: зелёными остаются только обводка
+        и иконка, текст — colorOnSurface. Зелёный текст на светлом фоне
+        (#00A380 на #F5F6F7) даёт ~3:1 — ниже AA для 14sp.
+    -->
+    <style name="SMGR.Button.View3d" parent="Widget.Material3.Button.OutlinedButton.Icon">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="backgroundTint">?attr/colorSurface</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="icon">@drawable/ic_cube_3d</item>
+        <item name="iconTint">?attr/colorPrimary</item>
+        <item name="cornerRadius">14dp</item>
+    </style>
 </resources>
