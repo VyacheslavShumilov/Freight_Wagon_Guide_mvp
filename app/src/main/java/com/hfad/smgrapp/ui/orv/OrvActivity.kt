@@ -3,6 +3,7 @@ package com.hfad.smgrapp.ui.orv
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.hfad.smgrapp.App
+import com.hfad.smgrapp.ads.BannerAdHelper
 import com.hfad.smgrapp.databinding.ActivityOrvBinding
 import com.hfad.smgrapp.navigator.AppNavigator
 import com.hfad.smgrapp.navigator.Screen
@@ -22,6 +23,9 @@ class OrvActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             appNavigator.navigateTo(Screen.ORV_LIST)
         }
+
+        // ── Баннер AdMob внизу экрана ──
+        BannerAdHelper.attach(this, binding.adContainer)
     }
 
     override fun onBackPressed() {

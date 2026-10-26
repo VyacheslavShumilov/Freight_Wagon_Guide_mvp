@@ -26,7 +26,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:animateLayoutChanges="false"
         android:clipToPadding="false"
         android:paddingStart="4dp"
@@ -64,5 +65,12 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <!-- Баннер AdMob (BannerAdHelper): GONE до onAdLoaded -->
+    <FrameLayout
+        android:id="@+id/ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

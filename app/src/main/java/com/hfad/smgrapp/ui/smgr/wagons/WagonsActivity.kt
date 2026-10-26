@@ -34,6 +34,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.chip.Chip
 import com.hfad.smgrapp.R
+import com.hfad.smgrapp.ads.BannerAdHelper
 import com.hfad.smgrapp.databinding.ActivityWagonsBinding
 import com.hfad.smgrapp.model.Wagons
 import com.hfad.smgrapp.ui.smgr.WagonActivity
@@ -99,6 +100,9 @@ class WagonsActivity : AppCompatActivity(),
 
         setupToolbar()
         setupSearch()
+
+        // ── Баннер AdMob внизу экрана ──
+        BannerAdHelper.attach(this, binding.adContainer)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

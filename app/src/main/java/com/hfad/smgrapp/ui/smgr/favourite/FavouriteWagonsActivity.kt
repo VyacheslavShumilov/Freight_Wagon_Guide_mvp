@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.hfad.smgrapp.App
 import com.hfad.smgrapp.dao.WagonsDao
+import com.hfad.smgrapp.ads.BannerAdHelper
 import com.hfad.smgrapp.databinding.ActivityFavouriteWagonsBinding
 import com.hfad.smgrapp.model.Wagons
 import com.hfad.smgrapp.model.WagonsFavourite
@@ -28,6 +29,9 @@ class FavouriteWagonsActivity : AppCompatActivity(), AdapterWagonFavourite.OnCli
         super.onCreate(savedInstanceState)
         binding = ActivityFavouriteWagonsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // ── Баннер AdMob внизу экрана ──
+        BannerAdHelper.attach(this, binding.adContainer)
 
         with(binding) {
             toolbar.textView.text = "Список сравнения"
